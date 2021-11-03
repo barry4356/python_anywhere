@@ -68,6 +68,14 @@ def calculate_odds(results, count):
         odds[index] = (value/count)*100
     return odds
 
+def calculate_chances(odds, goal):
+    val = 0
+    if goal > len(odds):
+        return 0
+    for i in range(goal, len(odds)):
+        val = val + odds[i]
+    return round(val)
+
 def print_odds(odds):
     counter = 0
     print()
@@ -96,4 +104,6 @@ while exit != True:
     rolls = simulate_rolls(d4, d6, d8, d10, d12, d20, bonus, roll_count)
     odds = calculate_odds(rolls, roll_count)
     print_odds(odds)
+    chances = calculate_chances(odds, mymin)
+    print(f'Chance of success: {chances}%')
 
