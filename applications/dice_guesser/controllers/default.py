@@ -129,7 +129,11 @@ def calculate_odds(results, count):
     for value in results:
         odds[value] = odds[value] + 1
     for index, value in enumerate(odds):
-        odds[index] = round((value/count)*100)
+        odds[index] = (value/count) * 100
+        if odds[index] < 1:
+            odds[index] = round(odds[index],1)
+        else:
+            odds[index] = round(odds[index])
     return odds
 
 def calculate_chances(odds, goal):
