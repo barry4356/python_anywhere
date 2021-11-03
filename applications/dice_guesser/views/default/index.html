@@ -26,13 +26,30 @@
     {{if displayodds > 0:}}
         {{counter = 0}}
         <ul style="list-style: none;">
-        <p>Chances of Success: {{=mychances}}%</p>
-        <li>{{=T('Simulated Odds:')}}</li>
-        {{for odds in oddslist:}}<li>{{=counter}}: {{=odds}}%</li>{{counter=counter+1}}{{pass}}
+            <p>Dice Rolled:</p>
+            {{if selection_list[0]:}}
+            <li>{{=selection_list[0]}}d4</li>{{pass}}
+            {{if selection_list[1]:}}
+            <li>{{=selection_list[1]}}d6</li>{{pass}}
+            {{if selection_list[2]:}}
+            <li>{{=selection_list[2]}}d8</li>{{pass}}
+            {{if selection_list[3]:}}
+            <li>{{=selection_list[3]}}d10</li>{{pass}}
+            {{if selection_list[4]:}}
+            <li>{{=selection_list[4]}}d12</li>{{pass}}
+            {{if selection_list[5]:}}
+            <li>{{=selection_list[5]}}d20</li>{{pass}}
+            {{if selection_list[6]:}}
+            <li>Bonus: +{{=selection_list[6]}}</li>{{pass}}
+            <li>Goal: {{=selection_list[7]}}</li><br />
+            <p>Chance of Success: {{=mychances}}%</p>
+            <li>{{=T('Simulated Odds:')}}</li>
+            {{for odds in oddslist:}}<li>{{=counter}}: {{=odds}}%</li>{{counter=counter+1}}{{pass}}
         </ul>
-    {{pass}}
+        {{pass}}
 </div>
 
+<!--
 <div class="row">
   <div class="col-md-12">
     <ol style="word-wrap:break-word;">
@@ -47,3 +64,4 @@
     {{pass}}
   </div>
 </div>
+--->

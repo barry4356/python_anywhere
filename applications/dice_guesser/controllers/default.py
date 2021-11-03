@@ -9,6 +9,7 @@ import random
 def index():
     roll_count = 30000
     myoddslist = []
+    myselections = []
     mydisplayodds = 0
     calculated_chances = 0
 
@@ -21,12 +22,13 @@ def index():
         d20 = sanitize_int(request.vars.d20)
         bonus = sanitize_int(request.vars.bonus)
         goal = sanitize_int(request.vars.goal)
+        myselections = [d4,d6,d8,d10,d12,d20,bonus,goal]
         #myoddslist = (d4, d6, d8, d10, d12, d20, bonus)
         rolls = simulate_rolls(d4, d6, d8, d10, d12, d20, bonus, roll_count)
         myoddslist = calculate_odds(rolls, roll_count)
         calculated_chances = calculate_chances(myoddslist, goal)
         mydisplayodds = 1
-    return dict(message=T('Welcome to web2py!'), displayodds=mydisplayodds, oddslist=myoddslist, mychances=calculated_chances)
+    return dict(selection_list=myselections, displayodds=mydisplayodds, oddslist=myoddslist, mychances=calculated_chances)
 
 # ---- API (example) -----
 @auth.requires_login()
@@ -142,4 +144,6 @@ def calculate_chances(odds, goal):
         return 0
     for i in range(goal, len(odds)):
         val = val + odds[i]
+    if val > 100:
+        val = 100
     return round(val)
