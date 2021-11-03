@@ -1,0 +1,49 @@
+{{extend 'layout.html'}}
+
+
+{{block header}}
+<div class="jumbotron jumbotron-fluid background" style="background-color: #333; color:white; padding:30px;word-wrap:break-word;">
+  <div class="container center">
+    <h1 class="display-5">Dice Guesser</h1>
+  </div>
+</div>
+{{end}}
+
+<form>
+  <p class="lead">{{=T('What dice are we using?')}}</p>
+  <label>d4----></label><input name="d4" /><br />
+  <label>d6----></label><input name="d6" /><br />
+  <label>d8----></label><input name="d8" /><br />
+  <label>d10---></label><input name="d10" /><br />
+  <label>d12---></label><input name="d12" /><br />
+  <label>d20---></label><input name="d20" /><br />
+  <label>Bonus-></label><input name="bonus" /><br /><br />
+  <label>Goal--></label><input name="goal" /><br />
+  <input type="submit" />
+</form>
+
+<div>
+    {{if displayodds > 0:}}
+        {{counter = 0}}
+        {{for odds in oddslist:}}<p>{{=counter}}: {{=odds}}%</p>{{counter=counter+1}}{{pass}}
+    {{pass}}
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <p class="lead">{{=T('How did you get here?')}}</p>
+    <ol style="word-wrap:break-word;">
+      <li>{{=T('You are successfully running web2py')}}</li>
+      <li>{{=XML(T('You visited the url %s', A(request.env.path_info,_href=request.env.path_info)))}}</li>
+      <li>{{=XML(T('Which called the function %s located in the file %s',
+        (A(request.function+'()',_href='#'),
+        A('web2py/applications/%(application)s/controllers/%(controller)s.py' % request,
+        _href=URL('admin','default','peek', args=(request.application,'controllers',request.controller+'.py'))))))}}</li>
+      <li>{{=XML(T('The output of the file is a dictionary that was rendered by the view %s',
+        A('web2py/applications/%(application)s/views/%(controller)s/index.html' % request,
+        _href=URL('admin','default','peek',args=(request.application,'views',request.controller,'index.html')))))}}</li>
+      <li>{{=T('You can modify this application and adapt it to your needs')}}</li>
+    </ol>
+    {{pass}}
+  </div>
+</div>
