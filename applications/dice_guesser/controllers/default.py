@@ -3,16 +3,30 @@
 # This is a sample controller
 # this file is released under public domain and you can use without limitations
 # -------------------------------------------------------------------------
+import random
 
 # ---- example index page ----
 def index():
+    roll_count = 30000
     myoddslist = []
     mydisplayodds = 0
+    calculated_chances = 0
+
     if request.vars.d4 or request.vars.d6 or request.vars.d8 or request.vars.d10 or request.vars.d12 or request.vars.d20:
+        d4 = sanitize_int(request.vars.d4)
+        d6 = sanitize_int(request.vars.d6)
+        d8 = sanitize_int(request.vars.d8)
+        d10 = sanitize_int(request.vars.d10)
+        d12 = sanitize_int(request.vars.d12)
+        d20 = sanitize_int(request.vars.d20)
+        bonus = sanitize_int(request.vars.bonus)
+        goal = sanitize_int(request.vars.goal)
+        #myoddslist = (d4, d6, d8, d10, d12, d20, bonus)
+        rolls = simulate_rolls(d4, d6, d8, d10, d12, d20, bonus, roll_count)
+        myoddslist = calculate_odds(rolls, roll_count)
+        calculated_chances = calculate_chances(myoddslist, goal)
         mydisplayodds = 1
-        myoddslist=[25,25,25,25]
-        myvar = 1
-    return dict(message=T('Welcome to web2py!'), displayodds=mydisplayodds, oddslist=myoddslist)
+    return dict(message=T('Welcome to web2py!'), displayodds=mydisplayodds, oddslist=myoddslist, mychances=calculated_chances)
 
 # ---- API (example) -----
 @auth.requires_login()
@@ -61,3 +75,67 @@ def download():
     http://..../[app]/default/download/[filename]
     """
     return response.download(request, db)
+
+def roll_1d4():
+    return (random.randrange(4) + 1)
+
+def roll_1d6():
+    return (random.randrange(6) + 1)
+
+def roll_1d8():
+    return (random.randrange(8) + 1)
+
+def roll_1d10():
+    return (random.randrange(10) + 1)
+
+def roll_1d12():
+    return (random.randrange(12) + 1)
+
+def roll_1d20():
+    return (random.randrange(20) + 1)
+
+def simulate_rolls(d4, d6, d8, d10, d12, d20, bonus, count):
+    results = []
+
+    for j in range(count):
+        total = 0
+        for i in range(d4):
+            total = total + (roll_1d4())
+        for i in range(d6):
+            total = total + (roll_1d6())
+        for i in range(d8):
+            total = total + (roll_1d8())
+        for i in range(d10):
+            total = total + (roll_1d10())
+        for i in range(d12):
+            total = total + (roll_1d12())
+        for i in range(d20):
+            total = total + (roll_1d20())
+        total = total + bonus
+        results.append(total)
+
+    return(results)
+
+def sanitize_int(myinput):
+    val = 0
+    try:
+        val = int(myinput)
+    except:
+        val = 0
+    return val
+
+def calculate_odds(results, count):
+    odds = [0] * (max(results)+1)
+    for value in results:
+        odds[value] = odds[value] + 1
+    for index, value in enumerate(odds):
+        odds[index] = round((value/count)*100)
+    return odds
+
+def calculate_chances(odds, goal):
+    val = 0
+    if goal > len(odds):
+        return 0
+    for i in range(goal, len(odds)):
+        val = val + odds[i]
+    return round(val)

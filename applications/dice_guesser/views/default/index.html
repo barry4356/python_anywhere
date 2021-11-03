@@ -25,24 +25,24 @@
 <div>
     {{if displayodds > 0:}}
         {{counter = 0}}
-        {{for odds in oddslist:}}<p>{{=counter}}: {{=odds}}%</p>{{counter=counter+1}}{{pass}}
+        <ul style="list-style: none;">
+        <p>Chances of Success: {{=mychances}}%</p>
+        <li>{{=T('Simulated Odds:')}}</li>
+        {{for odds in oddslist:}}<li>{{=counter}}: {{=odds}}%</li>{{counter=counter+1}}{{pass}}
+        </ul>
     {{pass}}
 </div>
 
 <div class="row">
   <div class="col-md-12">
-    <p class="lead">{{=T('How did you get here?')}}</p>
     <ol style="word-wrap:break-word;">
-      <li>{{=T('You are successfully running web2py')}}</li>
-      <li>{{=XML(T('You visited the url %s', A(request.env.path_info,_href=request.env.path_info)))}}</li>
-      <li>{{=XML(T('Which called the function %s located in the file %s',
+      <li>{{=XML(T('function %s located in the file %s',
         (A(request.function+'()',_href='#'),
         A('web2py/applications/%(application)s/controllers/%(controller)s.py' % request,
         _href=URL('admin','default','peek', args=(request.application,'controllers',request.controller+'.py'))))))}}</li>
       <li>{{=XML(T('The output of the file is a dictionary that was rendered by the view %s',
         A('web2py/applications/%(application)s/views/%(controller)s/index.html' % request,
         _href=URL('admin','default','peek',args=(request.application,'views',request.controller,'index.html')))))}}</li>
-      <li>{{=T('You can modify this application and adapt it to your needs')}}</li>
     </ol>
     {{pass}}
   </div>
