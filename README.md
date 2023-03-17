@@ -1,8 +1,8 @@
 # python_anywhere
-This repo includes code written to be run on the pythonanywhere website. Includes both webpages, and standalone python scripts
+This repo includes code written to be run on the web2py framework. Includes both webpages, and standalone python scripts
 
-Designed to run on web2py framework. Landing page can be found [here](http://barry4356.pythonanywhere.com/welcome/default/index).
-For administrative functions, log into [pythonanywhere](https://www.pythonanywhere.com/user/Barry4356/) website.
+Deployed to pythonanywhere. Landing page can be found [here](http://barry4356.pythonanywhere.com/welcome/default/index).
+For administrative functions, log into [pythonanywhere](https://www.pythonanywhere.com/user/Barry4356/) console.
 
 ## [dice_guesser](applications/dice_guesser)
 App to calculate the probability of rolling certain values based on dice.
