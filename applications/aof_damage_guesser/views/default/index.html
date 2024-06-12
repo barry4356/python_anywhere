@@ -1,0 +1,36 @@
+{{extend 'layout.html'}}
+
+
+{{block header}}
+<div class="jumbotron jumbotron-fluid background" style="background-color: #333; color:white; padding:30px;word-wrap:break-word;">
+  <div class="container center">
+    <h1 class="display-5">Age of Fantasy: Damage Guesser</h1>
+  </div>
+</div>
+{{end}}
+
+<form>
+  <p class="lead">{{=T('What stats are we using?')}}</p>
+  <label>Attacker Quality----></label><input type="number" name="quality" /><br />
+  <label>Number of Attacks-></label><input type="number" name="attacks" /><br />
+  <label>AP--></label><input type="number" name="armorPiercing" /><br />
+  <label>Poison------></label><input type="checkbox" name="poison" /><br />
+  <label>Rending-----></label><input type="checkbox" name="rending" /><br />
+  <label>Furious-----></label><input type="checkbox" name="furious" /><br />
+  <label>Furious-er--></label><input type="checkbox" name="furiouser" /><br />
+  <br/>
+  <label>Defender Defense--></label><input type="number" name="defense" /><br />
+  <label>Defense Bonus------></label><input type="number" name="defenseBonus" /><br />
+  <input type="submit" />
+</form>
+
+<div>
+    {{if displayodds > 0:}}
+        {{counter = 0}}
+        <ul style="list-style: none;">
+            <li>{{=T('Simulated Hits:')}}</li>
+            {{for odds in oddslist:}}<li>{{=counter}} hits: {{=odds}}%</li>{{counter=counter+1}}{{pass}}
+        </ul>
+        {{pass}}
+</div>
+
