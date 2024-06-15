@@ -35,8 +35,8 @@ def index():
         if request.vars.regen:
             regen = True
 
-        hits = simulate_hits(quality, attacks, defense, armorPiercing, furious, furiouser, poison, rending, defenseBonus, regen, roll_count)
-        myoddslist = calculate_odds(hits, roll_count)
+        damage = simulate_damage(quality, attacks, defense, armorPiercing, furious, furiouser, poison, rending, defenseBonus, regen, roll_count)
+        myoddslist = calculate_odds(damage, roll_count)
         mydisplayodds = 1
     return dict(displayodds=mydisplayodds, oddslist=myoddslist)
 
@@ -100,11 +100,11 @@ def sanitize_int(myinput):
         val = 0
     return val
 
-def simulate_hits(quality, attacks, defense, ap, furious, furiouser, poison, rending, defBonus, regen, count):
+def simulate_damage(quality, attacks, defense, ap, furious, furiouser, poison, rending, defBonus, regen, count):
     results = []
     # Run one simulation for each 'count'
     for j in range(count):
-        hits = 0
+        damage = 0
         # Roll each attack, and immediately roll defense
         for i in range(attacks):
             dieroll_a = roll_1d6()
@@ -114,38 +114,38 @@ def simulate_hits(quality, attacks, defense, ap, furious, furiouser, poison, ren
                 dieroll_d = roll_1d6()
                 if dieroll_d <= 1:
                     if not regen:
-                        hits += 1
+                        damage += 1
                     else:
                         dieroll_d = roll_1d6()
                         if dieroll_d < 5:
-                            hits += 1
+                            damage += 1
 
                 elif dieroll_d < 6:
                     if dieroll_d < (defense - defBonus):
                         if not regen:
-                            hits += 1
+                            damage += 1
                         else:
                             dieroll_d = roll_1d6()
                             if dieroll_d < 5:
-                                hits += 1
+                                damage += 1
             # If 'furious'; 6 results in an extra hit w/o AP
             elif furious and dieroll_a == 6:
                 dieroll_d = roll_1d6()
                 if dieroll_d <= 1:
                     if not regen:
-                        hits += 1
+                        damage += 1
                     else:
                         dieroll_d = roll_1d6()
                         if dieroll_d < 5:
-                            hits += 1
+                            damage += 1
                 elif dieroll_d < 6:
                     if dieroll_d < (defense - defBonus):
                         if not regen:
-                            hits += 1
+                            damage += 1
                         else:
                             dieroll_d = roll_1d6()
                             if dieroll_d < 5:
-                                hits += 1
+                                damage += 1
             # If 'rending'; 6 results in extra AP
             if rending and dieroll_a == 6:
                 applied_ap = 4
@@ -158,22 +158,22 @@ def simulate_hits(quality, attacks, defense, ap, furious, furiouser, poison, ren
                 # Def rolls of 1 always fail
                 if dieroll_d <= 1:
                     if not regen:
-                        hits += 1
+                        damage += 1
                     else:
                         dieroll_d = roll_1d6()
                         if dieroll_d < 5:
-                            hits += 1
+                            damage += 1
                 # Def rolls of 6 always succeed
                 elif dieroll_d < 6:
                     # Apply any AP or defense bonus
                     if dieroll_d < (defense + applied_ap - defBonus):
                         if not regen:
-                            hits += 1
+                            damage += 1
                         else:
                             dieroll_d = roll_1d6()
                             if dieroll_d < 5:
-                                hits += 1
-        results.append(hits)
+                                damage += 1
+        results.append(damage)
     return results
 
 
