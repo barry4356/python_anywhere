@@ -113,69 +113,47 @@ def simulate_damage(quality, attacks, defense, ap, furious, furiouser, poison, r
             if furiouser and dieroll_a >= 5:
                 dieroll_d = roll_1d6()
                 if dieroll_d <= 1:
-                    if not regen:
-                        damage += 1
-                    else:
-                        dieroll_d = roll_1d6()
-                        if dieroll_d < 5:
-                            damage += 1
+                    damage += defender_takes_damage(regen)
 
                 elif dieroll_d < 6:
                     if dieroll_d < (defense - defBonus):
-                        if not regen:
-                            damage += 1
-                        else:
-                            dieroll_d = roll_1d6()
-                            if dieroll_d < 5:
-                                damage += 1
+                        damage += defender_takes_damage(regen)
             # If 'furious'; 6 results in an extra hit w/o AP
             elif furious and dieroll_a == 6:
                 dieroll_d = roll_1d6()
                 if dieroll_d <= 1:
-                    if not regen:
-                        damage += 1
-                    else:
-                        dieroll_d = roll_1d6()
-                        if dieroll_d < 5:
-                            damage += 1
+                    damage += defender_takes_damage(regen)
                 elif dieroll_d < 6:
                     if dieroll_d < (defense - defBonus):
-                        if not regen:
-                            damage += 1
-                        else:
-                            dieroll_d = roll_1d6()
-                            if dieroll_d < 5:
-                                damage += 1
+                        damage += defender_takes_damage(regen)
             # If 'rending'; 6 results in extra AP
             if rending and dieroll_a == 6:
                 applied_ap = 4
-            # Check if the attack meets the quality value
+            # Check if the initial attack roll meets the quality value
             if dieroll_a >= quality:
                 dieroll_d = roll_1d6()
-                # If 'poison'; re-roll
+                # If 'poison'; re-roll on a defense roll of 6
                 if poison and dieroll_d == 6:
                     dieroll_d = roll_1d6()
-                # Def rolls of 1 always fail
+                # Defense rolls of 1 always fail
                 if dieroll_d <= 1:
-                    if not regen:
-                        damage += 1
-                    else:
-                        dieroll_d = roll_1d6()
-                        if dieroll_d < 5:
-                            damage += 1
-                # Def rolls of 6 always succeed
+                    damage += defender_takes_damage(regen)
+                # Defense rolls of 6 always succeed
                 elif dieroll_d < 6:
                     # Apply any AP or defense bonus
                     if dieroll_d < (defense + applied_ap - defBonus):
-                        if not regen:
-                            damage += 1
-                        else:
-                            dieroll_d = roll_1d6()
-                            if dieroll_d < 5:
-                                damage += 1
+                        damage += defender_takes_damage(regen)
         results.append(damage)
     return results
 
+# Handle regen check
+def defender_takes_damage(regen):
+    damage = 1
+    if regen:
+        dieroll_d = roll_1d6()
+        if dieroll_d >= 5:
+            damage = 0
+    return damage
 
 def calculate_odds(results, count):
     odds = [0] * (max(results)+1)
