@@ -18,6 +18,7 @@ def index():
     rending = False
     armorPiercing = 0
     defenseBonus = 0
+    regen = 0
     if request.vars.quality and request.vars.attacks and request.vars.defense:
         quality = sanitize_int(request.vars.quality)
         attacks = sanitize_int(request.vars.attacks)
@@ -31,8 +32,10 @@ def index():
             poison = True
         if request.vars.rending:
             rending = True
+        if request.vars.regen:
+            regen = True
 
-        hits = simulate_hits(quality, attacks, defense, armorPiercing, furious, furiouser, poison, rending, defenseBonus, roll_count)
+        hits = simulate_hits(quality, attacks, defense, armorPiercing, furious, furiouser, poison, rending, defenseBonus, regen, roll_count)
         myoddslist = calculate_odds(hits, roll_count)
         mydisplayodds = 1
     return dict(displayodds=mydisplayodds, oddslist=myoddslist)
@@ -97,7 +100,7 @@ def sanitize_int(myinput):
         val = 0
     return val
 
-def simulate_hits(quality, attacks, defense, ap, furious, furiouser, poison, rending, defBonus, count):
+def simulate_hits(quality, attacks, defense, ap, furious, furiouser, poison, rending, defBonus, regen, count):
     results = []
     # Run one simulation for each 'count'
     for j in range(count):
@@ -110,18 +113,39 @@ def simulate_hits(quality, attacks, defense, ap, furious, furiouser, poison, ren
             if furiouser and dieroll_a >= 5:
                 dieroll_d = roll_1d6()
                 if dieroll_d <= 1:
-                    hits += 1
+                    if not regen:
+                        hits += 1
+                    else:
+                        dieroll_d = roll_1d6()
+                        if dieroll_d < 5:
+                            hits += 1
+
                 elif dieroll_d < 6:
                     if dieroll_d < (defense - defBonus):
-                        hits += 1
+                        if not regen:
+                            hits += 1
+                        else:
+                            dieroll_d = roll_1d6()
+                            if dieroll_d < 5:
+                                hits += 1
             # If 'furious'; 6 results in an extra hit w/o AP
             elif furious and dieroll_a == 6:
                 dieroll_d = roll_1d6()
                 if dieroll_d <= 1:
-                    hits += 1
+                    if not regen:
+                        hits += 1
+                    else:
+                        dieroll_d = roll_1d6()
+                        if dieroll_d < 5:
+                            hits += 1
                 elif dieroll_d < 6:
                     if dieroll_d < (defense - defBonus):
-                        hits += 1
+                        if not regen:
+                            hits += 1
+                        else:
+                            dieroll_d = roll_1d6()
+                            if dieroll_d < 5:
+                                hits += 1
             # If 'rending'; 6 results in extra AP
             if rending and dieroll_a == 6:
                 applied_ap = 4
@@ -133,12 +157,22 @@ def simulate_hits(quality, attacks, defense, ap, furious, furiouser, poison, ren
                     dieroll_d = roll_1d6()
                 # Def rolls of 1 always fail
                 if dieroll_d <= 1:
-                    hits += 1
+                    if not regen:
+                        hits += 1
+                    else:
+                        dieroll_d = roll_1d6()
+                        if dieroll_d < 5:
+                            hits += 1
                 # Def rolls of 6 always succeed
                 elif dieroll_d < 6:
                     # Apply any AP or defense bonus
                     if dieroll_d < (defense + applied_ap - defBonus):
-                        hits += 1
+                        if not regen:
+                            hits += 1
+                        else:
+                            dieroll_d = roll_1d6()
+                            if dieroll_d < 5:
+                                hits += 1
         results.append(hits)
     return results
 
