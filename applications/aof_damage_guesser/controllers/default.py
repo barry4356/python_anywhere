@@ -13,32 +13,38 @@ def index():
     myselections = []
     mydisplayodds = 0
     calculated_chances = 0
-    furious = False
-    furiouser = False
-    poison = False
-    rending = False
-    armorPiercing = 0
-    defenseBonus = 0
-    regen = 0
+    stats = {
+        'quality': 0,
+        'attacks': 0,
+        'armorPiercing': 0,
+        'poison': False,
+        'rending': False,
+        'furious': False,
+        'furiouser': False,
+        'defense': 0,
+        'defenseBonus': 0,
+        'regen': False
+    }
     # Get input vars from form
     if request.vars.quality and request.vars.attacks and request.vars.defense:
-        quality = sanitize_int(request.vars.quality)
-        attacks = sanitize_int(request.vars.attacks)
-        defense = sanitize_int(request.vars.defense)
-        armorPiercing = sanitize_int(request.vars.armorPiercing)
+        stats["quality"] = sanitize_int(request.vars.quality)
+        stats["attacks"] = sanitize_int(request.vars.attacks)
+        stats["defense"] = sanitize_int(request.vars.defense)
+        stats["defenseBonus"] = sanitize_int(request.vars.defenseBonus)
+        stats["armorPiercing"] = sanitize_int(request.vars.armorPiercing)
         if request.vars.furiouser:
-            furiouser = True
+            stats["furiouser"] = True
         elif request.vars.furious:
-            furious = True
+            stats["furious"] = True
         if request.vars.poison:
-            poison = True
+            stats["poison"] = True
         if request.vars.rending:
-            rending = True
+            stats["rending"] = True
         if request.vars.regen:
-            regen = True
+            stats["regen"] = True
 
         # Run the simulation and calculate odds
-        damage = simulate_damage(quality, attacks, defense, armorPiercing, furious, furiouser, poison, rending, defenseBonus, regen, roll_count)
+        damage = simulate_damage(stats, roll_count)
         myoddslist = calculate_odds(damage, roll_count)
         mydisplayodds = 1
     return dict(displayodds=mydisplayodds, oddslist=myoddslist)
@@ -103,61 +109,61 @@ def sanitize_int(myinput):
         val = 0
     return val
 
-def simulate_damage(quality, attacks, defense, ap, furious, furiouser, poison, rending, defBonus, regen, count):
+def simulate_damage(stats, count):
     results = []
     # Run one simulation for each 'count'
     for j in range(count):
         damage = 0
         # Roll each attack, and immediately roll defense
-        for i in range(attacks):
+        for i in range(stats["attacks"]):
             dieroll_a = roll_1d6()
-            damage += handle_furious(dieroll_a, furious, furiouser, defense, defBonus, regen)
-            applied_ap = ap
+            damage += handle_furious(dieroll_a, stats)
+            applied_ap = stats["armorPiercing"]
             # If 'rending'; 6 results in extra AP
-            if rending and dieroll_a == 6:
+            if stats["rending"] and dieroll_a == 6:
                 applied_ap = 4
             # Check if the initial attack roll meets the quality value
-            if dieroll_a >= quality:
+            if dieroll_a >= stats["quality"]:
                 dieroll_d = roll_1d6()
                 # If 'poison'; re-roll on a defense roll of 6
-                if poison and dieroll_d == 6:
+                if stats["poison"] and dieroll_d == 6:
                     dieroll_d = roll_1d6()
                 # Defense rolls of 1 always fail
                 if dieroll_d <= 1:
-                    damage += defender_takes_damage(regen)
+                    damage += defender_takes_damage(stats)
                 # Defense rolls of 6 always succeed
                 elif dieroll_d < 6:
                     # Apply any AP or defense bonus
-                    if dieroll_d < (defense + applied_ap - defBonus):
-                        damage += defender_takes_damage(regen)
+                    if dieroll_d < (stats["defense"] + applied_ap - stats['defenseBonus']):
+                        damage += defender_takes_damage(stats)
         results.append(damage)
     return results
 
 # Handle Furiousness
-def handle_furious(dieroll_a, furious, furiouser, defense, defBonus, regen):
+def handle_furious(dieroll_a, stats):
     damage = 0
     # If 'furiouser'; 5 & 6 result in an extra hit w/o AP
-    if furiouser and dieroll_a >= 5:
+    if stats["furiouser"] and dieroll_a >= 5:
         dieroll_d = roll_1d6()
         if dieroll_d <= 1:
-            damage += defender_takes_damage(regen)
+            damage += defender_takes_damage(stats["regen"])
         elif dieroll_d < 6:
-            if dieroll_d < (defense - defBonus):
-                damage += defender_takes_damage(regen)
+            if dieroll_d < (stats["defense"] - stats['defenseBonus']):
+                damage += defender_takes_damage(stats["regen"])
     # If 'furious'; 6 results in an extra hit w/o AP
-    elif furious and dieroll_a == 6:
+    elif stats["furious"] and dieroll_a == 6:
         dieroll_d = roll_1d6()
         if dieroll_d <= 1:
-            damage += defender_takes_damage(regen)
+            damage += defender_takes_damage(stats["regen"])
         elif dieroll_d < 6:
-            if dieroll_d < (defense - defBonus):
-                damage += defender_takes_damage(regen)
+            if dieroll_d < (stats["defense"] - stats['defenseBonus']):
+                damage += defender_takes_damage(stats["regen"])
     return damage
 
 # Handle regen check
-def defender_takes_damage(regen):
+def defender_takes_damage(stats):
     damage = 1
-    if regen:
+    if stats["regen"]:
         dieroll_d = roll_1d6()
         if dieroll_d >= 5:
             damage = 0
