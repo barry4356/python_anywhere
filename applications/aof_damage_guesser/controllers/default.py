@@ -7,6 +7,7 @@ import random
 
 # ---- example index page ----
 def index():
+    # Initialize input vars
     roll_count = 30000
     myoddslist = []
     myselections = []
@@ -19,6 +20,7 @@ def index():
     armorPiercing = 0
     defenseBonus = 0
     regen = 0
+    # Get input vars from form
     if request.vars.quality and request.vars.attacks and request.vars.defense:
         quality = sanitize_int(request.vars.quality)
         attacks = sanitize_int(request.vars.attacks)
@@ -35,6 +37,7 @@ def index():
         if request.vars.regen:
             regen = True
 
+        # Run the simulation and calculate odds
         damage = simulate_damage(quality, attacks, defense, armorPiercing, furious, furiouser, poison, rending, defenseBonus, regen, roll_count)
         myoddslist = calculate_odds(damage, roll_count)
         mydisplayodds = 1
@@ -108,24 +111,8 @@ def simulate_damage(quality, attacks, defense, ap, furious, furiouser, poison, r
         # Roll each attack, and immediately roll defense
         for i in range(attacks):
             dieroll_a = roll_1d6()
+            damage += handle_furious(dieroll_a, furious, furiouser, defense, defBonus, regen)
             applied_ap = ap
-            # If 'furiouser'; 5 & 6 result in an extra hit w/o AP
-            if furiouser and dieroll_a >= 5:
-                dieroll_d = roll_1d6()
-                if dieroll_d <= 1:
-                    damage += defender_takes_damage(regen)
-
-                elif dieroll_d < 6:
-                    if dieroll_d < (defense - defBonus):
-                        damage += defender_takes_damage(regen)
-            # If 'furious'; 6 results in an extra hit w/o AP
-            elif furious and dieroll_a == 6:
-                dieroll_d = roll_1d6()
-                if dieroll_d <= 1:
-                    damage += defender_takes_damage(regen)
-                elif dieroll_d < 6:
-                    if dieroll_d < (defense - defBonus):
-                        damage += defender_takes_damage(regen)
             # If 'rending'; 6 results in extra AP
             if rending and dieroll_a == 6:
                 applied_ap = 4
@@ -146,6 +133,27 @@ def simulate_damage(quality, attacks, defense, ap, furious, furiouser, poison, r
         results.append(damage)
     return results
 
+# Handle Furiousness
+def handle_furious(dieroll_a, furious, furiouser, defense, defBonus, regen):
+    damage = 0
+    # If 'furiouser'; 5 & 6 result in an extra hit w/o AP
+    if furiouser and dieroll_a >= 5:
+        dieroll_d = roll_1d6()
+        if dieroll_d <= 1:
+            damage += defender_takes_damage(regen)
+        elif dieroll_d < 6:
+            if dieroll_d < (defense - defBonus):
+                damage += defender_takes_damage(regen)
+    # If 'furious'; 6 results in an extra hit w/o AP
+    elif furious and dieroll_a == 6:
+        dieroll_d = roll_1d6()
+        if dieroll_d <= 1:
+            damage += defender_takes_damage(regen)
+        elif dieroll_d < 6:
+            if dieroll_d < (defense - defBonus):
+                damage += defender_takes_damage(regen)
+    return damage
+
 # Handle regen check
 def defender_takes_damage(regen):
     damage = 1
@@ -155,6 +163,7 @@ def defender_takes_damage(regen):
             damage = 0
     return damage
 
+# Take all results and calculate odds of each
 def calculate_odds(results, count):
     odds = [0] * (max(results)+1)
     for value in results:
