@@ -1,0 +1,12 @@
+{
+    "quality": 4,
+    "attacks": 5,
+    "armorPiercing": 1,
+    "poison": false,
+    "rending": false,
+    "furious": false,
+    "furiouser": false,
+    "defense": 2,
+    "defenseBonus": 0,
+    "regen": false
+}

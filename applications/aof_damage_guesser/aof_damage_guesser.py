@@ -3,6 +3,7 @@ import os
 from modules.simulator import simulate_damage
 
 datadir = './dataFiles/'
+count = 30000
 
 dataFilesRaw = os.listdir(datadir)
 dataFiles = []
@@ -13,7 +14,7 @@ for myfile in dataFilesRaw:
 
 validSelection = False
 while not validSelection:
-    print("\nChoose attacker stat file:")
+    print("\nChoose attacker/defender stat files:")
     fileCounter = 1
     for dataFile in dataFiles:
         print('{0}: {1}'.format(fileCounter, dataFile))
@@ -45,4 +46,14 @@ stats['defense'] = defender_data['defense']
 stats['defenseBonus'] = defender_data['defenseBonus']
 stats['regen'] = defender_data['regen']
 
-print(simulate_damage(stats, 20))
+results = simulate_damage(stats, count)
+odds = [0] * (max(results)+1)
+for value in results:
+    odds[value] = odds[value] + 1
+for index, value in enumerate(odds):
+    odds[index] = (value/count) * 100
+    if odds[index] < 1:
+        odds[index] = round(odds[index],1)
+    else:
+        odds[index] = round(odds[index])
+print(odds)
