@@ -42,7 +42,7 @@ def handle_furious(dieroll_a, stats):
         if dieroll_d <= 1:
             damage += defender_takes_damage(stats)
         elif dieroll_d < 6:
-            if dieroll_d < (stats["defense"] - stats['defenseBonus']):
+            if dieroll_d < (stats["defense"] - stats['defenseBonus'] + stats['armorPiercing']):
                 damage += defender_takes_damage(stats)
     # If 'furious'; 6 results in an extra hit w/o AP
     elif stats["furious"] and dieroll_a == 6:
@@ -50,14 +50,14 @@ def handle_furious(dieroll_a, stats):
         if dieroll_d <= 1:
             damage += defender_takes_damage(stats)
         elif dieroll_d < 6:
-            if dieroll_d < (stats["defense"] - stats['defenseBonus']):
+            if dieroll_d < (stats["defense"] - stats['defenseBonus'] + stats['armorPiercing']):
                 damage += defender_takes_damage(stats)
     return damage
 
 # Handle regen check
 def defender_takes_damage(stats):
     damage = 1
-    if stats["regen"]:
+    if stats["regen"] and not stats["rending"]:
         dieroll_d = roll_1d6()
         if dieroll_d >= 5:
             damage = 0
