@@ -1,0 +1,73 @@
+{{extend 'layout.html'}}
+
+<link href="{{=URL('static', 'css/overlay.css')}}" rel="stylesheet" type="text/css" />
+
+<style>
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+</style>
+
+{{block header}}
+<div class="jumbotron jumbotron-fluid background" style="background-color: #333; color:white; padding:30px;word-wrap:break-word;">
+  <div class="container center">
+    <h1 class="display-5">Age of Fantasy: World Map</h1>
+  </div>
+</div>
+{{end}}
+
+<form>
+  <p class="lead">{{=T('Map Filters:')}}</p>
+  <label>Zones of Control--</label><input type="checkbox" name="showZones" /><br />
+  <label>Battlefields--</label><input type="checkbox" name="showBattles" /><br />
+  <input type="submit" />
+</form>
+
+<div id='container'>
+{{if False:}}
+<img src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png" alt="Workplace" usemap="#workmap" id="overlay_image">
+{{pass}}
+<img src="{{=URL('static', 'images')}}/Export_06072024.png" alt="Workplace" usemap="#workmap" id='main_image'>
+{{if showZones:}}
+<img src="{{=URL('static', 'images')}}/Background.png" alt="Workplace" usemap="#workmap" id='zones_image'>
+{{pass}}
+{{if False:}}
+<img src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png" alt="Workplace" usemap="#workmap" id="temp_image">
+{{pass}}
+{{if showBattles:}}
+<img src="{{=URL('static', 'images')}}/battlefield.svg" alt="Workplace" href="?displayBattle1=True" id="battle1_image">
+<img src="{{=URL('static', 'images')}}/battlefield.svg" alt="Workplace" usemap="#workmap" id="battle2_image">
+<img src="{{=URL('static', 'images')}}/battlefield.svg" alt="Workplace" usemap="#workmap" id="battle3_image">
+{{pass}}
+</div>
+
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="?option1=on" title="COMPUTER&#013;HELP">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+  <area shape="circle" coords="736,406,10" alt="Jameson-town" href="coffee.htm" title="{{=townPrints['jamesonTown']}}">
+  <area shape="circle" coords="1121,292,100" alt="battle1" href="?displayBattle1=on" title="Battle 1">
+</map>
+
+
