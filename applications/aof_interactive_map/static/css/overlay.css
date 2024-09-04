@@ -31,6 +31,11 @@
     height: 20px;
     opacity: 1;
 }
+#battle1_image_inner{
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+}
 #battle2_image{
     position: absolute;
     top: 439px;
