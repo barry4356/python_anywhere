@@ -27,11 +27,8 @@
     position: absolute;
     top: 282px;
     left: 1111px;
-    width: 20px;
-    height: 20px;
-    opacity: 1;
 }
-#battle1_image_inner{
+#battle_image_inner{
     width: 20px;
     height: 20px;
     opacity: 1;
@@ -40,15 +37,9 @@
     position: absolute;
     top: 439px;
     left: 696px;
-    width: 20px;
-    height: 20px;
-    opacity: 1;
 }
 #battle3_image{
     position: absolute;
     top: 417px;
     left: 709px;
-    width: 20px;
-    height: 20px;
-    opacity: 1;
 }
