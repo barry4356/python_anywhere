@@ -5,3 +5,8 @@
 ## Overview
 ## Battle Reports
 ### Battle 7
+| Player | Win/Loss | VP | Points |
+| --- | --- | --- | --- |
+| Barry | Loss | 0 | 225 | 
+| Alex | Win | 2 | 150 | 
+| Caleb | 2nd | 1 | 300 | 
