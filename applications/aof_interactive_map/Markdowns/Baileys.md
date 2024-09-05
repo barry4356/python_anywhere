@@ -7,8 +7,13 @@
 
 | Faction | Buildings | Battles Fought |
 | --- | --- | --- |
-| Empire | Local Farms | 2 |
+| Progolfia | Local Farms | 2 |
 
 ## Battle Reports
 ### Battle 2
+| Player | Win/Loss | VP | Points |
+| --- | --- | --- | --- |
+| Barry(Defender) | Loss | 0 | 300 | 
+| Alex(Attacker) | Loss | 0 | 300 | 
+| Caleb(Attacker) | Win | 2 | 150 | 
 ### Battle 4
