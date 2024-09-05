@@ -5,17 +5,17 @@
 
 ## Overview
 
-| Faction | Buildings | Battles Fought |
-| --- | --- | --- |
-| Progolfia | Local Farms | 2 |
+| Settlement Type | Tier | Faction | Buildings | Battles Fought |
+| --- | --- | --- | --- | --- |
+| Village | 1 | Progolfia | Local Farms | 2 |
 
 ## Battle Reports
 ### Battle 2
 | Player | Win/Loss | VP | Points |
 | --- | --- | --- | --- |
-| Barry(Defender) | Loss | 0 | 300 | 
+| Barry(Defender) | Loss | 0 | 375 | 
 | Alex(Attacker) | Loss | 0 | 300 | 
-| Caleb(Attacker) | Win | 2 | 150 | 
+| Caleb(Attacker) | Win | 2 | 225 | 
 
 ### Battle 4
 | Player | Win/Loss | VP | Points |
