@@ -5,3 +5,8 @@
 ## Overview
 ## Battle Reports
 ### Battle 5
+| Player | Win/Loss | VP | Points |
+| --- | --- | --- | --- |
+| Barry | Loss | 0 | 300 | 
+| Alex | Win | 2 | 150 | 
+| Caleb | 2nd | 1 | 225 | 
