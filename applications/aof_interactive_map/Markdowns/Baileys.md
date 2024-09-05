@@ -16,4 +16,10 @@
 | Barry(Defender) | Loss | 0 | 300 | 
 | Alex(Attacker) | Loss | 0 | 300 | 
 | Caleb(Attacker) | Win | 2 | 150 | 
+
 ### Battle 4
+| Player | Win/Loss | VP | Points |
+| --- | --- | --- | --- |
+| Barry(Attacker) | Loss | 0 | 300 | 
+| Alex(Attacker) | Loss | 0 | 300 | 
+| Caleb(Defender) | Win | 2 | 150 | 
