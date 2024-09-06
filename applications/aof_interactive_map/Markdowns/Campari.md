@@ -9,7 +9,7 @@
 
 | Settlement Type | Tier | Faction | Buildings | Battles Fought |
 | --- | --- | --- | --- | --- |
-| Village | 1 | Progolfia | Local Farms | 2 |
+| Village | 1 | Progolfia | Local Farms | 1 |
 
 ## Battle Reports
 ### Battle 6
