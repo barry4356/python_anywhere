@@ -9,6 +9,6 @@ Our characters move through a forrest outside a walled fortrest. After killing a
 ## Quest Report
 | Player | Character | XP | GP | Survived |
 | --- | --- | --- | --- | --- |
-| Barry | Basil Hayden | ? | ? | ? | 
+| Barry | Loger | ? | ? | ? | 
 | Lindsey | Dresden Hammorsbreath | ? | ? | ? | 
 | Caleb | El Tigre de' Bosque | ? | ? | ? | 
