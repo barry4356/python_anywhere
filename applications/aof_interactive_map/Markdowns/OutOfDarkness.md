@@ -5,4 +5,4 @@
 ## Overview
 
 ## Chapter 1 - Raid at Oakmont Keep
-* Mission 1 - [Raid at Oakmont Keep](RaidAtOakmont.md)
+* Mission 1 - [Raid at Oakmont Keep](RaidAtOakmont.md#Overview)
