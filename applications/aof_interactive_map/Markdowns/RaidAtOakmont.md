@@ -8,6 +8,6 @@ Characters leave bar in Downtown Oakmont and walk into the middle of a raid. Zom
 ## Quest Report
 | Player | Character | XP | GP | Survived |
 | --- | --- | --- | --- | --- |
-| Barry | Loger | 10 | 10 | YES | 
-| Caleb | El Tigre de' Boxque | 10 | 10 | YES | 
-| Alex | ? | 10 | 10 | YES | 
+| Barry | Loger | 6 | 10 | YES | 
+| Caleb | El Tigre de' Boxque | 6 | 10 | YES | 
+| Alex | ? | 6 | 10 | YES | 
