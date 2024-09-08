@@ -58,3 +58,19 @@
     top: 238px;
     left: 476px;
 }
+#quest_image_inner{
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+}
+#oakmont_image{
+    position: absolute;
+    top: 278px;
+    left: 850px;
+}
+#shipwreck_image{
+    position: absolute;
+    top: 478px;
+    left: 550px;
+}
+

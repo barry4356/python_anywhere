@@ -20,12 +20,15 @@ def index():
     # Initialize input vars
     myshowZones = False
     myshowBattles = False
+    myshowQuests = False
     if request.vars.showZones:
         myshowZones = True
     if request.vars.showBattles:
         myshowBattles = True
+    if request.vars.showQuests:
+        myshowQuests = True
     myTownPrints = getStats(townStats)
-    return dict(showZones=myshowZones, townPrints=myTownPrints, showBattles=myshowBattles)
+    return dict(showZones=myshowZones, townPrints=myTownPrints, showBattles=myshowBattles, showQuests=myshowQuests)
 
 def getStats(myStats):
     townPrints = {}

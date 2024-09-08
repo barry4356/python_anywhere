@@ -41,6 +41,7 @@
   <p class="lead">{{=T('Map Filters:')}}</p>
   <label>Zones of Control--</label><input type="checkbox" name="showZones" /><br />
   <label>Battlefields--</label><input type="checkbox" name="showBattles" /><br />
+  <label>Quest Locations--</label><input type="checkbox" name="showQuests" /><br />
   <input type="submit" />
 </form>
 
@@ -56,12 +57,16 @@
 <img src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png" alt="Workplace" usemap="#workmap" id="temp_image">
 {{pass}}
 {{if showBattles:}}
-<a href=https://github.com/barry4356/python_anywhere/blob/master/applications/aof_interactive_map/Markdowns/Battlefield1.md#overview id="battle1_image"> <img src="{{=URL('static', 'images')}}/battlefield.svg" id=battle_image_inner loading="lazy"> </a>
-<a href=https://github.com/barry4356/python_anywhere/blob/master/applications/aof_interactive_map/Markdowns/Baileys.md#overview id="battle2_image"> <img src="{{=URL('static', 'images')}}/battlefield.svg" id=battle_image_inner loading="lazy"> </a>
-<a href=https://github.com/barry4356/python_anywhere/blob/master/applications/aof_interactive_map/Markdowns/Battlefield2.md#overview id="battle3_image"> <img src="{{=URL('static', 'images')}}/battlefield.svg" id=battle_image_inner loading="lazy"> </a>
-<a href=https://github.com/barry4356/python_anywhere/blob/master/applications/aof_interactive_map/Markdowns/Battlefield3.md#overview id="battle5_image"> <img src="{{=URL('static', 'images')}}/battlefield.svg" id=battle_image_inner loading="lazy"> </a>
-<a href=https://github.com/barry4356/python_anywhere/blob/master/applications/aof_interactive_map/Markdowns/Campari.md#overview id="battle6_image"> <img src="{{=URL('static', 'images')}}/battlefield.svg" id=battle_image_inner loading="lazy"> </a>
-<a href=https://github.com/barry4356/python_anywhere/blob/master/applications/aof_interactive_map/Markdowns/Battlefield4.md#overview id="battle7_image"> <img src="{{=URL('static', 'images')}}/battlefield.svg" id=battle_image_inner loading="lazy"> </a>
+<a href=https://github.com/barry4356/python_anywhere/blob/master/applications/aof_interactive_map/Markdowns/Battlefield1.md#overview id="battle1_image" title="Bogey Mountains"> <img src="{{=URL('static', 'images')}}/battlefield.svg" id=battle_image_inner loading="lazy"> </a>
+<a href=https://github.com/barry4356/python_anywhere/blob/master/applications/aof_interactive_map/Markdowns/Baileys.md#overview id="battle2_image" title="Bailey's"> <img src="{{=URL('static', 'images')}}/battlefield.svg" id=battle_image_inner loading="lazy"> </a>
+<a href=https://github.com/barry4356/python_anywhere/blob/master/applications/aof_interactive_map/Markdowns/Battlefield2.md#overview id="battle3_image" title="Bailey's Forest"> <img src="{{=URL('static', 'images')}}/battlefield.svg" id=battle_image_inner loading="lazy"> </a>
+<a href=https://github.com/barry4356/python_anywhere/blob/master/applications/aof_interactive_map/Markdowns/Battlefield3.md#overview id="battle5_image" title="Sprinkle Port River"> <img src="{{=URL('static', 'images')}}/battlefield.svg" id=battle_image_inner loading="lazy"> </a>
+<a href=https://github.com/barry4356/python_anywhere/blob/master/applications/aof_interactive_map/Markdowns/Campari.md#overview id="battle6_image" title="Campari"> <img src="{{=URL('static', 'images')}}/battlefield.svg" id=battle_image_inner loading="lazy"> </a>
+<a href=https://github.com/barry4356/python_anywhere/blob/master/applications/aof_interactive_map/Markdowns/Battlefield4.md#overview id="battle7_image" title="Toppington Crossing"> <img src="{{=URL('static', 'images')}}/battlefield.svg" id=battle_image_inner loading="lazy"> </a>
+{{pass}}
+{{if showQuests:}}
+<a href=https://github.com/barry4356/python_anywhere/blob/master/applications/aof_interactive_map/Markdowns/RaidAtOakmont.md#overview id="oakmont_image" title="Oakmont Keep"> <img src="{{=URL('static', 'images')}}/exclamation-mark.svg" id=quest_image_inner loading="lazy"> </a>
+<a href=https://github.com/barry4356/python_anywhere/blob/master/applications/aof_interactive_map/Markdowns/Shipwrecked.md#overview id="shipwreck_image" title="Shipwreck"> <img src="{{=URL('static', 'images')}}/exclamation-mark.svg" id=quest_image_inner loading="lazy"> </a>
 {{pass}}
 </div>
 
