@@ -1,9 +1,8 @@
 [Return to Map](https://barry4356.pythonanywhere.com/aof_interactive_map?showBattles=on)
 
-# Shipwrecked
+# Out of Darkness
 
 ## Overview
-Characters find themselves shipwrecked on an uncharted island...
 
-## Chapter 1 - Shipwrecked
-* Mission 1 - [Shipwrecked](Shipwrecked.md)
+## Chapter 1 - Raid at Oakmont Keep
+* Mission 1 - [Raid at Oakmont Keep](RaidAtOakmont.md)
