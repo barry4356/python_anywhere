@@ -1,4 +1,4 @@
-[Return to Map](https://barry4356.pythonanywhere.com/aof_interactive_map?showBattles=on)
+[Return to Map](https://barry4356.pythonanywhere.com/aof_interactive_map?showQuests=on)
 
 # Raid at Oakmont
 ![Oakmont](../static/images/DowntownOakmont1.jpg "Oakmont")

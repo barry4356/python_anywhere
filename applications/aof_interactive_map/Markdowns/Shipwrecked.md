@@ -1,8 +1,8 @@
-[Return to Map](https://barry4356.pythonanywhere.com/aof_interactive_map?showBattles=on)
+[Return to Map](https://barry4356.pythonanywhere.com/aof_interactive_map?showQuests=on)
 
 # Shipwrecked
 ## Overview
-Characters find themselves shipwrecked on an uncharted island. Seeing a village in the woods, they set off towards it. Attacked by zombies and zombie dogs, they scramble to find a place to hide, after picking up a strange artifact...
+Characters find themselves shipwrecked on an uncharted island. Seeing lights from a town in the woods, they set off towards it. Attacked by zombies and zombie dogs, they scramble to find a place to hide, after picking up a strange artifact...
 ## Quest Report
 | Player | Character | XP | GP | Survived |
 | --- | --- | --- | --- | --- |
