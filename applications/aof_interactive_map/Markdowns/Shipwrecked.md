@@ -6,6 +6,6 @@ Characters find themselves shipwrecked on an uncharted island. Seeing a village 
 ## Quest Report
 | Player | Character | XP | GP | Survived |
 | --- | --- | --- | --- | --- |
-| Barry | Basil Hayden | 5 | 5 | YES | 
-| Lindsey | Dresden Hammorsbreath | 5 | 5 | YES | 
-| Aaron | ? | 5 | 5| YES | 
+| Barry | Basil Hayden | 3 | 5 | YES | 
+| Lindsey | Dresden Hammorsbreath | 3 | 5 | YES | 
+| Aaron | ? | 3 | 5| YES | 
