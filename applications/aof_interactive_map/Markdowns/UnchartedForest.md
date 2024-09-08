@@ -7,8 +7,6 @@ A forested island that is left alone by all of the major factions in the area. M
 
 ## Quest Campaigns
 
-### [Shipwrecked](Shipwrecked.md)
-* Chapter 1 - Shipwrecked
-    * [Mission 1 - Shipwrecked](Shipwrecked.md)
-### Miscellaneous
-* [Fortresss Investigation](FortressInvestigation.md)
+* [Shipwrecked](ShipwreckedCampaign.md)
+* Miscellaneous
+    * [Fortresss Investigation](FortressInvestigation.md)
