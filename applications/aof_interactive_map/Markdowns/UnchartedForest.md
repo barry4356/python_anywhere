@@ -3,7 +3,7 @@
 # Uncharted Forest
 
 ## Overview
-A forested island that is left alone by all of the major factions in the area. Many ships and travelers go missing, and word about the happenings on the island is scarce and mysterious...
+A forested island that is left alone by all of the major factions in the area. Many ships and travelers passing through go missing, and word about the happenings on the island is scarce and mysterious...
 
 ## Quest Campaigns
 
