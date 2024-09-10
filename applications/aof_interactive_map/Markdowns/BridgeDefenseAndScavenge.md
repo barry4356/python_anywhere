@@ -1,14 +1,14 @@
 [Return to Map](https://barry4356.pythonanywhere.com/aof_interactive_map?showBattles=on)
 
-# Fortress Investigation
-![Fortress](../static/images/IMG_20240908_175247589_HDR.jpg "Fortresss")
+# Bridge Defense And Scavenge
+![Bridge](../static/images/IMG_20240908_193146265.jpg "Bridge")
 
 ## Overview
-Our characters move through a forrest outside a walled fortrest. After killing a group of zombies, and investigating the area, the heroes sneak over the walls into the fortress. A heated battle insues, with drained soldiers, undead dogs, and zombies attacking from within the keep, and a giant bat leading an ambush from the forrest through the open gates. Dresden provides overwatch from the keep's tower, as Loger and El Tigre hold back the horde. El Tigre faints from exurtion, but is rescued by Loger, and the trio escapes the fortress after completing their investigation, before reinforcements can arrive...
+Our characters work together to defend the bridge against waves of enemies. Loger and Dresden teleport to the bridge and hold against the onslought, while El Tigre fights his way through zombies, ghouls, undead wolves and undead archers. After pushing the enemy back of the bridge, our heroes hold their ground until the last of the undead falls. They then scavenge from a nearby abandoned town and continue on their way...
 
 ## Quest Report
 | Player | Character | XP | GP | Survived |
 | --- | --- | --- | --- | --- |
-| Barry | Loger | 4 | 10 | YES | 
-| Lindsey | Dresden Hammorsbreath | 4 | 10 | YES | 
-| Caleb | El Tigre de' Bosque | 4 | 10 | REVIVED | 
+| Barry | Loger | 6 | 10 | YES | 
+| Lindsey | Dresden Hammorsbreath | 6 | 20 | YES | 
+| Caleb | El Tigre de' Bosque | 6 | 10 | YES | 
