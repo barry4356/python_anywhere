@@ -1,6 +1,6 @@
 [Return to Map](https://barry4356.pythonanywhere.com/aof_interactive_map?showBattles=on)
 
-# Shipwrecked
+# Shipwrecked Campaign 
 
 ## Overview
 Characters find themselves shipwrecked on an uncharted island...
