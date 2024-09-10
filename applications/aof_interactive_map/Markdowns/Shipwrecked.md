@@ -1,6 +1,6 @@
 [Return to Map](https://barry4356.pythonanywhere.com/aof_interactive_map?showQuests=on)
 
-# Shipwrecked
+# Mission 1 - Shipwrecked
 ## Overview
 Mission 1 - Chapter 1 of the [Shipwrecked Campaign](ShipwreckedCampaign.md)
 
