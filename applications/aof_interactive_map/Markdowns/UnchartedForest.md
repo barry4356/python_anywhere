@@ -10,3 +10,4 @@ A forested island that is left alone by all of the major factions in the area. M
 * [Shipwrecked](ShipwreckedCampaign.md)
 * Miscellaneous
     * [Fortresss Investigation](FortressInvestigation.md#overview)
+    * [Bridge Defense and Scavenge](BridgeDefenseAndScavenge.md#overview)
