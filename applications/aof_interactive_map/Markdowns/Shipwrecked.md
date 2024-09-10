@@ -2,7 +2,7 @@
 
 # Mission 1 - Shipwrecked
 ## Overview
-Mission 1 - Chapter 1 of the [Shipwrecked Campaign](ShipwreckedCampaign.md)
+Chapter 1 - Mission 1 of the [Shipwrecked Campaign](ShipwreckedCampaign.md)
 
 Characters find themselves shipwrecked on an [uncharted island](UnchartedForest). Seeing lights from a town in the woods, they set off towards it. Attacked by zombies and zombie dogs, they scramble to find a place to hide, after picking up a strange artifact...
 ## Quest Report
