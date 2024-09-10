@@ -1,4 +1,4 @@
-[Return to Map](https://barry4356.pythonanywhere.com/aof_interactive_map?showBattles=on)
+[Return to Map](https://barry4356.pythonanywhere.com/aof_interactive_map?showQuests=on)
 
 # Bridge Defense And Scavenge
 ![Bridge](../static/images/IMG_20240908_193146265.jpg "Bridge")
