@@ -1,8 +1,7 @@
 # Timeline
-* Miscellaneous Quests
-    * Shipwrecked
-    * Fortress Investigation
-    * Bridge Defense
+* Shipwrecked (Quest)
+* Fortress Investigation (Quest)
+* Bridge Defense (Quest)
 * Battle at Bogey Mountains
 * Battle at Bailey's
 * Battle at Bailey's Forest
