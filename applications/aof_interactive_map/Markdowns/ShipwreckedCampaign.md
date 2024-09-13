@@ -5,7 +5,7 @@
 ## Chapter 1 - Shipwrecked
 
 ### Mission 1 - Shipwrecked
-Characters find themselves shipwrecked on an [uncharted island](UnchartedForest.md). Seeing lights from a town in the woods, they set off towards it. Attacked by zombies and zombie dogs, they scramble to find a place to hide, after picking up a strange artifact...
+Characters find themselves shipwrecked on an [uncharted island](UnchartedForest.md#overview). Seeing lights from a town in the woods, they set off towards it. Attacked by zombies and zombie dogs, they scramble to find a place to hide, after picking up a strange artifact...
 ## Quest Report
 | Player | Character | XP | GP | Survived |
 | --- | --- | --- | --- | --- |
