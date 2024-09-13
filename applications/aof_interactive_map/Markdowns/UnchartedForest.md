@@ -7,7 +7,7 @@ A forested island that is left alone by all of the major factions in the area. M
 
 ## Quest Campaigns
 
-* [Shipwrecked](ShipwreckedCampaign.md)
+* [Shipwrecked](ShipwreckedCampaign.md#shipwrecked-campaign)
 * Miscellaneous
     * [Fortresss Investigation](FortressInvestigation.md#overview)
     * [Bridge Defense and Scavenge](BridgeDefenseAndScavenge.md#overview)
