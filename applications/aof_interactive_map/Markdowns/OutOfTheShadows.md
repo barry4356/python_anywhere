@@ -1,10 +1,12 @@
 [Return to Map](https://barry4356.pythonanywhere.com/aof_interactive_map?showQuests=on)
 
-# Raid at Oakmont
-![Oakmont](../static/images/DowntownOakmont1.jpg "Oakmont")
+# Out of The Shadows
 
 ## Overview
-Mission 1 - Chapter 1 of the [Out of the Shadows Campaign](OutOfTheShadows.md)
+
+## Chapter 1 - The Scourging of Oakmont
+### Mission 1 - Raid at Oakmont Keep
+![Oakmont](../static/images/DowntownOakmont1.jpg "Oakmont")
 
 Characters leave bar in Downtown Oakmont and walk into the middle of a raid. Zombies, bat swarms, undead dogs, and a necromancer kill villagers and comb the streets. Our brave heroes fight there way to a hiding place after ringing the town warning bell...
 ## Quest Report
