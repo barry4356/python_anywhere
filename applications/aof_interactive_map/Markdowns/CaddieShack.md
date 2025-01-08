@@ -1,6 +1,6 @@
 [Return to Map](https://barry4356.pythonanywhere.com/aof_interactive_map?showBattles=on)
 
-# Campari
+# The Caddie-Shacks
 ![Battle8](../static/images/.jpg "Battle8")
 
 ## Overview
