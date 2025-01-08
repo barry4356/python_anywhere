@@ -1,6 +1,6 @@
 [Return to Map](https://barry4356.pythonanywhere.com/aof_interactive_map?showBattles=on)
 
-# Campari
+# The Caddie-Shacks
 ![Battle8](../static/images/.jpg "Battle8")
 
 ## Overview
@@ -14,6 +14,6 @@
 | Player | Win/Loss | VP | Points |
 | --- | --- | --- | --- |
 | Caleb(Defender) | Loss | 0 | 300 | 
-| Alex(Attacker) | 2nd | 1 | 200 | 
-| Barry(Attacker) | Win | 2 | 225 | 
+| Alex(Attacker) | 2nd | 1 | 225 | 
+| Barry(Attacker) | Win | 2 | 150 | 
 
