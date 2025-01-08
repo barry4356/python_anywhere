@@ -1,7 +1,7 @@
 [Return to Map](https://barry4356.pythonanywhere.com/aof_interactive_map?showBattles=on)
 
 # Magical Loot 1
-![Battle7](../static/images/Battlefield4.jpg "Battle7")
+![Battle7](../static/images/Battlefield9Peasants.jpg "Battle7")
 ## Overview
 A vampire lord and his loot have been targeted by all three great nations. None can stand against their combined force...
 ## Battle Reports
