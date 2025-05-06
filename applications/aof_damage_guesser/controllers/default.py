@@ -14,6 +14,7 @@ def index():
     myselections = []
     mydisplayodds = 0
     calculated_chances = 0
+    myExpectedDamage = 0
     stats = {
         'quality': 0,
         'attacks': 0,
@@ -47,8 +48,9 @@ def index():
         # Run the simulation and calculate odds
         damage = simulate_damage(stats, roll_count)
         myoddslist = calculate_odds(damage, roll_count)
+        myExpectedDamage = round(sum(damage) / roll_count, 2)
         mydisplayodds = 1
-    return dict(displayodds=mydisplayodds, oddslist=myoddslist)
+    return dict(displayodds=mydisplayodds, oddslist=myoddslist, expectedDamage = myExpectedDamage)
 
 
 # ---- API (example) -----
