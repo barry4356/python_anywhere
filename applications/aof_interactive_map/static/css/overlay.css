@@ -53,10 +53,15 @@
     top: 524px;
     left: 946px;
 }
-#battle7_image{
+#toppington_bridge_image{
     position: absolute;
     top: 238px;
     left: 476px;
+}
+#caddie_shacks_image{
+    position: absolute;
+    top: 80px;
+    left: 980px;
 }
 #quest_image_inner{
     width: 20px;
