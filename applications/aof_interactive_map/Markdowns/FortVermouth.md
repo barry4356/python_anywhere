@@ -1,6 +1,6 @@
 [Return to Map](https://barry4356.pythonanywhere.com/aof_interactive_map?showBattles=on)
 
-# Campari
+# Fort Vermouth
 ![Battle10](../static/images/None "Battle10")
 
 ## Overview
