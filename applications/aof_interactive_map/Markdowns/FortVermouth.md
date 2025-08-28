@@ -10,7 +10,7 @@
 | Village | 1 | Progolfia | Local Farms | 1 |
 
 ## Battle Reports
-### Battle 6
+### Battle 10
 | Player | Win/Loss | VP | Points |
 | --- | --- | --- | --- |
 | Barry(Defender) | 3rd | 0 | 300 | 
