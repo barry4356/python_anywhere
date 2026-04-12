@@ -1,0 +1,698 @@
+[
+  {
+    "Model Qty": 1,
+    "Quality": 8,
+    "Defense": 8,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 3,
+        "Quantity": 1
+      }
+    ],
+    "Cost": 25,
+    "Special Perks": [
+      "Tough(3)",
+      "Hero",
+      "Vale Formation"
+    ]
+  },
+  {
+    "Model Qty": 1,
+    "Quality": 8,
+    "Defense": 8,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 3,
+        "Quantity": 1
+      }
+    ],
+    "Cost": 25,
+    "Special Perks": [
+      "Tough(3)",
+      "Hold the Line",
+      "Hero"
+    ]
+  },
+  {
+    "Model Qty": 10,
+    "Quality": 10,
+    "Defense": 10,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": 6,
+        "Weapon qty per model": 1,
+        "Quantity": 10
+      },
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 10
+      }
+    ],
+    "Cost": 40,
+    "Special Perks": [
+      "Vale Formation"
+    ]
+  },
+  {
+    "Model Qty": 1,
+    "Quality": 6,
+    "Defense": 6,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 3,
+        "Quantity": 1
+      }
+    ],
+    "Cost": 40,
+    "Special Perks": [
+      "Tough(3)",
+      "Hold the Line",
+      "Hero"
+    ]
+  },
+  {
+    "Model Qty": 1,
+    "Quality": 6,
+    "Defense": 6,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 3,
+        "Quantity": 1
+      }
+    ],
+    "Cost": 45,
+    "Special Perks": [
+      "Tough(3)",
+      "Hero",
+      "Fearless",
+      "Vale Formation"
+    ]
+  },
+  {
+    "Model Qty": 5,
+    "Quality": 8,
+    "Defense": 8,
+    "Weapons": [
+      {
+        "Weapon Perks": [
+          "Fracture"
+        ],
+        "Weapon Range": 9,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      },
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      }
+    ],
+    "Cost": 55,
+    "Special Perks": [
+      "Hold the Line",
+      "Scout"
+    ]
+  },
+  {
+    "Model Qty": 5,
+    "Quality": 8,
+    "Defense": 8,
+    "Weapons": [
+      {
+        "Weapon Perks": [
+          "Fracture"
+        ],
+        "Weapon Range": 18,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      },
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      }
+    ],
+    "Cost": 60,
+    "Special Perks": [
+      "Hold the Line"
+    ]
+  },
+  {
+    "Model Qty": 5,
+    "Quality": 8,
+    "Defense": 8,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": 30,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      },
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      }
+    ],
+    "Cost": 65,
+    "Special Perks": [
+      "Vale Formation"
+    ]
+  },
+  {
+    "Model Qty": 5,
+    "Quality": 8,
+    "Defense": 8,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": 24,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      },
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      }
+    ],
+    "Cost": 65,
+    "Special Perks": [
+      "Vale Formation",
+      "Fast"
+    ]
+  },
+  {
+    "Model Qty": 1,
+    "Quality": 8,
+    "Defense": 8,
+    "Weapons": [
+      {
+        "Weapon Perks": [
+          "Fracture"
+        ],
+        "Weapon Range": 18,
+        "Weapon qty per model": 6,
+        "Quantity": 1
+      },
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 3,
+        "Quantity": 1
+      }
+    ],
+    "Cost": 65,
+    "Special Perks": [
+      "Tough(3)",
+      "Hold the Line",
+      "Artillery"
+    ]
+  },
+  {
+    "Model Qty": 10,
+    "Quality": 8,
+    "Defense": 8,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 10
+      }
+    ],
+    "Cost": 70,
+    "Special Perks": [
+      "Vale Formation"
+    ]
+  },
+  {
+    "Model Qty": 5,
+    "Quality": 6,
+    "Defense": 6,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      }
+    ],
+    "Cost": 70,
+    "Special Perks": [
+      "Fearless",
+      "Vale Formation"
+    ]
+  },
+  {
+    "Model Qty": 10,
+    "Quality": 8,
+    "Defense": 8,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 10
+      }
+    ],
+    "Cost": 70,
+    "Special Perks": [
+      "Hold the Line"
+    ]
+  },
+  {
+    "Model Qty": 5,
+    "Quality": 6,
+    "Defense": 6,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      }
+    ],
+    "Cost": 70,
+    "Special Perks": [
+      "Hold the Line"
+    ]
+  },
+  {
+    "Model Qty": 5,
+    "Quality": 8,
+    "Defense": 8,
+    "Weapons": [
+      {
+        "Weapon Perks": [
+          "Fracture"
+        ],
+        "Weapon Range": 18,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      },
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      }
+    ],
+    "Cost": 70,
+    "Special Perks": [
+      "Hold the Line",
+      "Scout",
+      "Fast"
+    ]
+  },
+  {
+    "Model Qty": 5,
+    "Quality": 8,
+    "Defense": 8,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": 24,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      },
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      }
+    ],
+    "Cost": 75,
+    "Special Perks": [
+      "Hold the Line",
+      "Stealth",
+      "Scout"
+    ]
+  },
+  {
+    "Model Qty": 5,
+    "Quality": 8,
+    "Defense": 8,
+    "Weapons": [
+      {
+        "Weapon Perks": [
+          "Thrust"
+        ],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      }
+    ],
+    "Cost": 85,
+    "Special Perks": [
+      "Impact(1)",
+      "Scout",
+      "Vale Formation",
+      "Fast"
+    ]
+  },
+  {
+    "Model Qty": 1,
+    "Quality": 10,
+    "Defense": 10,
+    "Weapons": [
+      {
+        "Weapon Perks": [
+          "Rending"
+        ],
+        "Weapon Range": -1,
+        "Weapon qty per model": 6,
+        "Quantity": 1
+      }
+    ],
+    "Cost": 85,
+    "Special Perks": [
+      "Tough(6)",
+      "Courage Buff",
+      "ValeFormation",
+      "Furious Buff",
+      "Furious",
+      "Fear(1)"
+    ]
+  },
+  {
+    "Model Qty": 10,
+    "Quality": 8,
+    "Defense": 10,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 10
+      }
+    ],
+    "Cost": 85,
+    "Special Perks": [
+      "Hold the Line",
+      "Furious"
+    ]
+  },
+  {
+    "Model Qty": 5,
+    "Quality": 6,
+    "Defense": 6,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      }
+    ],
+    "Cost": 85,
+    "Special Perks": [
+      "Impact(1)",
+      "Hold the Line",
+      "Fast"
+    ]
+  },
+  {
+    "Model Qty": 1,
+    "Quality": 6,
+    "Defense": 4,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 2,
+        "Quantity": 1
+      }
+    ],
+    "Cost": 95,
+    "Special Perks": [
+      "Tough(6)",
+      "Hold the Line",
+      "Transport(11)"
+    ]
+  },
+  {
+    "Model Qty": 5,
+    "Quality": 6,
+    "Defense": 4,
+    "Weapons": [
+      {
+        "Weapon Perks": [
+          "Thrust"
+        ],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      }
+    ],
+    "Cost": 100,
+    "Special Perks": [
+      "Impact(1)",
+      "Hold the Line",
+      "Fast"
+    ]
+  },
+  {
+    "Model Qty": 5,
+    "Quality": 6,
+    "Defense": 6,
+    "Weapons": [
+      {
+        "Weapon Perks": [
+          "Thrust"
+        ],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      }
+    ],
+    "Cost": 120,
+    "Special Perks": [
+      "Impact(1)",
+      "Fearless",
+      "Vale Formation",
+      "Fast"
+    ]
+  },
+  {
+    "Model Qty": 5,
+    "Quality": 6,
+    "Defense": 6,
+    "Weapons": [
+      {
+        "Weapon Perks": [
+          "Bane",
+          "Shred"
+        ],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      }
+    ],
+    "Cost": 125,
+    "Special Perks": [
+      "Impact(1)",
+      "Fast",
+      "Versatile Attack",
+      "Vale Formation",
+      "Fearless"
+    ]
+  },
+  {
+    "Model Qty": 5,
+    "Quality": 6,
+    "Defense": 4,
+    "Weapons": [
+      {
+        "Weapon Perks": [
+          "Thrust"
+        ],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      }
+    ],
+    "Cost": 125,
+    "Special Perks": [
+      "Impact(1)",
+      "Fearless",
+      "Vale Formation",
+      "Fast"
+    ]
+  },
+  {
+    "Model Qty": 5,
+    "Quality": 6,
+    "Defense": 4,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 5
+      }
+    ],
+    "Cost": 130,
+    "Special Perks": [
+      "Melee Slayer",
+      "Impact(1)",
+      "Fast",
+      "Vale Formation",
+      "Fearless"
+    ]
+  },
+  {
+    "Model Qty": 1,
+    "Quality": 6,
+    "Defense": 4,
+    "Weapons": [
+      {
+        "Weapon Perks": [
+          "Rending"
+        ],
+        "Weapon Range": 18,
+        "Weapon qty per model": 6,
+        "Quantity": 1
+      },
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 2,
+        "Quantity": 1
+      }
+    ],
+    "Cost": 135,
+    "Special Perks": [
+      "Tough(6)",
+      "Hold the Line",
+      "Furious Buff"
+    ]
+  },
+  {
+    "Model Qty": 3,
+    "Quality": 6,
+    "Defense": 4,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 3
+      },
+      {
+        "Weapon Perks": [
+          "Thrust"
+        ],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 3
+      }
+    ],
+    "Cost": 165,
+    "Special Perks": [
+      "Tough(3)",
+      "Hold the Line",
+      "Impact(2)",
+      "Fast"
+    ]
+  },
+  {
+    "Model Qty": 3,
+    "Quality": 6,
+    "Defense": 6,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 3
+      },
+      {
+        "Weapon Perks": [
+          "Thrust"
+        ],
+        "Weapon Range": -1,
+        "Weapon qty per model": 1,
+        "Quantity": 3
+      }
+    ],
+    "Cost": 210,
+    "Special Perks": [
+      "Flying",
+      "Heavy Impact(2)",
+      "Fast",
+      "Tough(3)",
+      "Vale Formation",
+      "Fearless"
+    ]
+  },
+  {
+    "Model Qty": 1,
+    "Quality": 6,
+    "Defense": 2,
+    "Weapons": [
+      {
+        "Weapon Perks": [
+          "Blast(3)"
+        ],
+        "Weapon Range": 18,
+        "Weapon qty per model": 2,
+        "Quantity": 1
+      },
+      {
+        "Weapon Perks": [],
+        "Weapon Range": 12,
+        "Weapon qty per model": 3,
+        "Quantity": 1
+      }
+    ],
+    "Cost": 230,
+    "Special Perks": [
+      "Tough(9)",
+      "Hold the Line",
+      "Fear(2)",
+      "Impact(6)"
+    ]
+  },
+  {
+    "Model Qty": 1,
+    "Quality": 4,
+    "Defense": 2,
+    "Weapons": [
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 6,
+        "Quantity": 1
+      },
+      {
+        "Weapon Perks": [],
+        "Weapon Range": -1,
+        "Weapon qty per model": 12,
+        "Quantity": 1
+      }
+    ],
+    "Cost": 655,
+    "Special Perks": [
+      "Caster(3)",
+      "Tough(18)",
+      "Breath Attack"
+    ]
+  }
+]
