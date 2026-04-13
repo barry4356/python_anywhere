@@ -324,3 +324,12 @@ li.w2p_grid_breadcrumb_elem {
 
 .left { background-color: #f1f1f1; }
 .right { background-color: #ddd; }
+
+.vertical-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  border-left: 2px solid black;
+  transform: translateX(-50%); /* Perfectly offsets the line's own width */
+}

@@ -3,19 +3,45 @@
 {{block header}}
 <div class="jumbotron jumbotron-fluid background" style="background-color: #333; color:white; padding:30px;word-wrap:break-word;">
   <div class="container center">
-    <h1 class="display-5">Army Creation Tool</h1>
+    <h1 class="display-5">Army Book Creation Tool</h1>
   </div>
 </div>
 {{end}}
 
-
 <div class="split-container">
   <div class="left">
-    <h1>Unit Creation Options</h1>
-    Content for the left side
+    <h1>Unit Creation</h1>
+    <form>
+        <p class="lead">{{=T('Choose stats to create unit and calculate point cost')}}</p>
+        <hr>
+        <input type="text" name="unitname" placeholder="Unit Name">&emsp;
+        <label>Quality:&nbsp;</label><input type="number" name="modelWidth" min="2" max="10" step="1" value="10"/>&emsp;
+        <label>Defense:&nbsp;</label><input type="number" name="modelWidth" min="2" max="10" step="1" value="10"/><br />
+        <label>Model Length:&nbsp;</label><input type="number" name="modelWidth" min="1" max="10" step="1" value="1"/>&emsp;
+        <label>Model Width:&nbsp;</label><input type="number" name="modelWidth" min="1" max="10" step="1" value="1"/>&emsp;
+        <label>Model Height:&nbsp;</label><input type="number" name="modelWidth" min="1" max="10" step="1" value="2"/><br />
+        <label>Fast&nbsp;</label><input type="checkbox" name="Fast">&emsp;
+        <label>Regen&nbsp;</label><input type="checkbox" name="Regen">&emsp;
+        <br />
+        <label>Tough:&nbsp;</label><input type="number" name="Tough" min="0" max="20" step="1" value="0"/>&emsp;
+        <label>Caster:&nbsp;</label><input type="number" name="Caster" min="0" max="9" step="1" value="0"/>&emsp;
+        <hr>
+    </form>
   </div>
   <div class="right">
-    <h1>Army Roster</h1>
-    Content for the right side
+    <h1>Army Book</h1>
+    Current contents of the Army Book
   </div>
 </div>
+
+<div id="target"></div>
+
+<script>
+jQuery(document).ready(function(){
+    jQuery('#qual').change(function(){
+        // Get value and send via Ajax to 'select_handler'
+        var val = jQuery(this).val();
+        ajax("{{=URL('default', 'select_handler')}}", ['qual'], 'target');
+    });
+});
+</script>
