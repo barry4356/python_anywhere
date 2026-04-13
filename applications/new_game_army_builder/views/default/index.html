@@ -7,16 +7,17 @@
   </div>
 </div>
 {{end}}
-
 <div class="split-container">
   <div class="left">
     <h1>Unit Creation</h1>
+    <div>Editor Version: V0.1&emsp;Based on OPR Version: V3.5</div>
     <form>
-        <p class="lead">{{=T('Choose stats to create unit and calculate point cost')}}</p>
         <hr>
-        <input type="text" name="unitname" placeholder="Unit Name">&emsp;
+        <p class="lead">{{=T('Unit and Model Options')}}</p>
+        <input type="text" name="unitname" placeholder="Unit Name"><br />
         <label>Quality:&nbsp;</label><input type="number" name="modelWidth" min="2" max="10" step="1" value="10"/>&emsp;
-        <label>Defense:&nbsp;</label><input type="number" name="modelWidth" min="2" max="10" step="1" value="10"/><br />
+        <label>Defense:&nbsp;</label><input type="number" name="modelWidth" min="2" max="10" step="1" value="10"/>&emsp;
+        <label>Number of Models:&nbsp;</label><input type="number" name="modelWidth" min="1" max="20" step="1" value="1"/><br />
         <label>Model Length:&nbsp;</label><input type="number" name="modelWidth" min="1" max="10" step="1" value="1"/>&emsp;
         <label>Model Width:&nbsp;</label><input type="number" name="modelWidth" min="1" max="10" step="1" value="1"/>&emsp;
         <label>Model Height:&nbsp;</label><input type="number" name="modelWidth" min="1" max="10" step="1" value="2"/><br />
@@ -26,6 +27,23 @@
         <label>Tough:&nbsp;</label><input type="number" name="Tough" min="0" max="20" step="1" value="0"/>&emsp;
         <label>Caster:&nbsp;</label><input type="number" name="Caster" min="0" max="9" step="1" value="0"/>&emsp;
         <hr>
+        <p class="lead">{{=T('Weapon Loadout Options')}}</p>
+        <table>
+          <thead>
+            <tr><th>Weapon Name&emsp;</th><th>Qty Per Model&emsp;</th><th>AP&emsp;</th><th>Range</th></tr>
+          </thead>
+          <tbody id="weap-list">
+            <tr>
+                <td><input type="text" name="weaponame" size=10></td>
+                <td><input type="number" name="qtyPer" min="1" max="20" step="1" value="1"/></td>
+                <td><input type="number" name="AP" min="0" max="8" step="1" value="0"/></td>
+                <td><input type="number" name="Range" min="0" max="48" step="1" value="0"/></td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="button" name="AddWeapon">&plus;</button>
+
+
     </form>
   </div>
   <div class="right">
