@@ -26,24 +26,20 @@
         <br />
         <label>Tough:&nbsp;</label><input type="number" name="Tough" min="0" max="20" step="1" value="0"/>&emsp;
         <label>Caster:&nbsp;</label><input type="number" name="Caster" min="0" max="9" step="1" value="0"/>&emsp;
-        <hr>
-        <p class="lead">{{=T('Weapon Loadout Options')}}</p>
-        <table>
-          <thead>
-            <tr><th>Weapon Name&emsp;</th><th>Qty Per Model&emsp;</th><th>AP&emsp;</th><th>Range</th></tr>
-          </thead>
-          <tbody id="weap-list">
-            <tr>
-                <td><input type="text" name="weaponame" size=10></td>
-                <td><input type="number" name="qtyPer" min="1" max="20" step="1" value="1"/></td>
-                <td><input type="number" name="AP" min="0" max="8" step="1" value="0"/></td>
-                <td><input type="number" name="Range" min="0" max="48" step="1" value="0"/></td>
-            </tr>
-          </tbody>
-        </table>
-        <button type="button" name="AddWeapon">&plus;</button>
-
-
+        <p class="lead">{{=T('Weaon Loadout:')}}</p>
+        <input type="submit" value="Submit" />
+    </form>
+    <hr>
+    <p class="lead">{{=T('Weapon Builder')}}</p>
+    <form action="{{=URL()}}" method="post">
+        <div id="items-container">
+            <div class="item-row">
+                <input type="text" name="name" placeholder="Item Name" required />
+                <input type="number" name="price" placeholder="Price" required />
+            </div>
+        </div>
+        <button type="button" onclick="addRow()">Add Another</button>
+        <input type="submit" value="Submit" />
     </form>
   </div>
   <div class="right">
@@ -62,4 +58,24 @@ jQuery(document).ready(function(){
         ajax("{{=URL('default', 'select_handler')}}", ['qual'], 'target');
     });
 });
+</script>
+
+<script>
+jQuery(document).ready(function(){
+    jQuery('#AddWeapon').change(function(){
+        // Get value and send via Ajax to 'select_handler'
+        var val = jQuery(this).val();
+        ajax("{{=URL('default', 'add_weapon')}}", ['qual'], 'target');
+    });
+});
+</script>
+
+<script>
+  function addRow() {
+    var container = document.getElementById('items-container');
+    var newRow = container.querySelector('.item-row').cloneNode(true);
+    // Clear values
+    newRow.querySelectorAll('input').forEach(i => i.value = '');
+    container.appendChild(newRow);
+  }
 </script>
