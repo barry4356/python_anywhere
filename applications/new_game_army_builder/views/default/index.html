@@ -7,6 +7,7 @@
   </div>
 </div>
 {{end}}
+<div id="target"></div>
 <div class="split-container">
   <div class="left">
     <h1>Unit Creation</h1>
@@ -15,32 +16,42 @@
         <hr>
         <p class="lead">{{=T('Unit and Model Options')}}</p>
         <input type="text" name="unitname" placeholder="Unit Name"><br />
-        <label>Quality:&nbsp;</label><input type="number" name="modelWidth" min="2" max="10" step="1" value="10"/>&emsp;
-        <label>Defense:&nbsp;</label><input type="number" name="modelWidth" min="2" max="10" step="1" value="10"/>&emsp;
-        <label>Number of Models:&nbsp;</label><input type="number" name="modelWidth" min="1" max="20" step="1" value="1"/><br />
-        <label>Model Length:&nbsp;</label><input type="number" name="modelWidth" min="1" max="10" step="1" value="1"/>&emsp;
+        <label>Quality:&nbsp;</label><input type="number" name="quality" min="2" max="10" step="1" value="10"/>&emsp;
+        <label>Defense:&nbsp;</label><input type="number" name="defense" min="2" max="10" step="1" value="10"/>&emsp;
+        <label>Number of Models:&nbsp;</label><input type="number" name="numOfModels" min="1" max="20" step="1" value="1"/><br />
+        <label>Model Length:&nbsp;</label><input type="number" name="modelLength" min="1" max="10" step="1" value="1"/>&emsp;
         <label>Model Width:&nbsp;</label><input type="number" name="modelWidth" min="1" max="10" step="1" value="1"/>&emsp;
-        <label>Model Height:&nbsp;</label><input type="number" name="modelWidth" min="1" max="10" step="1" value="2"/><br />
+        <label>Model Height:&nbsp;</label><input type="number" name="modelHeight" min="1" max="10" step="1" value="2"/><br />
         <label>Fast&nbsp;</label><input type="checkbox" name="Fast">&emsp;
         <label>Regen&nbsp;</label><input type="checkbox" name="Regen">&emsp;
         <br />
         <label>Tough:&nbsp;</label><input type="number" name="Tough" min="0" max="20" step="1" value="0"/>&emsp;
-        <label>Caster:&nbsp;</label><input type="number" name="Caster" min="0" max="9" step="1" value="0"/>&emsp;
-        <p class="lead">{{=T('Weaon Loadout:')}}</p>
-        <input type="submit" value="Submit" />
+        <label>Caster:&nbsp;</label><input type="number" name="Caster" min="0" max="9" step="1" value="0"/>&emsp;<br /><br />
+        <input type="submit" value="Finalize Unit" /><br />
+        <input type="hidden" name="request_id" value="unitBuild">
     </form>
     <hr>
-    <p class="lead">{{=T('Weapon Builder')}}</p>
+    <p class="lead">{{=T('Weapon Loadout (per model):')}}</p><br />
+    {{for weapon in session.new_unit['weapons']:}}
+        <div>Weapon Name: [{{=weapon['weaponName']}}] Attacks: [{{=weapon['qtyPer']}}] AP: [{{=weapon['AP']}}] </div>
+    {{pass}}
     <form action="{{=URL()}}" method="post">
+        {{if 'weapons' in session.new_unit.keys() and len(session.new_unit['weapons']):}}<input type="submit" value="Remove Weapon"/>{{pass}}
+        <input type="hidden" name="request_id" value="removeWeapon">
+    </form>
+    <form action="{{=URL()}}" method="post">
+        <!--{{if 'weapons' in session.new_unit.keys() and len(session.new_unit['weapons']):}}<input type="button" value="Remove Weapon" onclick='ajax("{{=URL("default", "remove_weapon")}}", ["qual"], "target");'/>{{pass}}-->
         <div id="items-container">
             <div class="item-row">
                 <input type="text" name="name" placeholder="Item Name" required />
                 <input type="number" name="price" placeholder="Price" required />
             </div>
         </div>
-        <button type="button" onclick="addRow()">Add Another</button>
-        <input type="submit" value="Submit" />
+        <!--<button type="button" onclick="addRow()">Add Another</button>-->
+        <input type="submit" value="Add Weapon to All Models" />
+        <input type="hidden" name="request_id" value="weaponBuild">
     </form>
+    <br /><br />
   </div>
   <div class="right">
     <h1>Army Book</h1>
@@ -48,7 +59,6 @@
   </div>
 </div>
 
-<div id="target"></div>
 
 <script>
 jQuery(document).ready(function(){
@@ -66,6 +76,16 @@ jQuery(document).ready(function(){
         // Get value and send via Ajax to 'select_handler'
         var val = jQuery(this).val();
         ajax("{{=URL('default', 'add_weapon')}}", ['qual'], 'target');
+    });
+});
+</script>
+
+<script>
+jQuery(document).ready(function(){
+    jQuery('#RmWeapon').change(function(){
+        // Get value and send via Ajax to 'select_handler'
+        var val = jQuery(this).val();
+        ajax("{{=URL('default', 'remove_weapon')}}", ['qual'], 'target');
     });
 });
 </script>

@@ -8,15 +8,19 @@ armyData = []
 armyDataFiltered = []
 QualityOptions = [2,3,4,5,6,7,8,9,10]
 DefenseOptions = [2,3,4,5,6,7,8,9,10]
-weapons = [{'weaponName': '', 'qtyPer': 1, 'AP': 0, 'range': 0}]
 Weapon = {'weaponName': '', 'qtyPer': 1, 'AP': 0, 'range': 0}
 
 def index():
+    #session.new_unit = {'weapons': []}
     dataFilePath = os.path.join(request.folder, 'private', 'AllArmyData.json')
-    with open(dataFilePath, 'r') as dataFile:
-        armyData = json.load(dataFile)
-        armyDataFiltered = armyData.copy()
-    return dict(myWeapons=weapons, newWeapon=Weapon)
+    if not request.vars or not session.new_unit:
+        session.new_unit = {'weapons': []}
+    elif request.vars.request_id and request.vars.request_id == 'weaponBuild':
+        session.new_unit['weapons'].append({'weaponName': 'newWep', 'qtyPer': 1, 'AP': 0, 'range': 0})
+        #session.weapons = []
+    elif request.vars.request_id == 'removeWeapon' and 'weapons' in session.new_unit.keys() and session.new_unit['weapons']:
+        session.new_unit['weapons'].pop()
+    return dict()
 
 
 def add_weapon():
@@ -47,7 +51,10 @@ def weapons_to_html(weapons):
     return html_string
 
 
-
+def remove_weapon():
+    if session.new_unit['weapons']:
+        session.new_unit['weapons'].pop()
+    return "I TRIED"
 
 
 
