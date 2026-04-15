@@ -4,6 +4,7 @@
 import os
 import json
 
+
 armyData = []
 armyDataFiltered = []
 QualityOptions = [2,3,4,5,6,7,8,9,10]
@@ -13,10 +14,10 @@ Weapon = {'weaponName': '', 'qtyPer': 1, 'AP': 0, 'range': 0}
 def index():
     #session.new_unit = {'weapons': []}
     dataFilePath = os.path.join(request.folder, 'private', 'AllArmyData.json')
-    if not request.vars or not session.new_unit:
+    if not session.new_unit:
         session.new_unit = {'weapons': []}
     elif request.vars.request_id and request.vars.request_id == 'weaponBuild':
-        session.new_unit['weapons'].append({'weaponName': 'newWep', 'qtyPer': 1, 'AP': 0, 'range': 0})
+        session.new_unit['weapons'].append({'weaponName': request.vars.wepName, 'qtyPer': request.vars.qty, 'AP': request.vars.ap, 'range': request.vars.range})
         #session.weapons = []
     elif request.vars.request_id == 'removeWeapon' and 'weapons' in session.new_unit.keys() and session.new_unit['weapons']:
         session.new_unit['weapons'].pop()

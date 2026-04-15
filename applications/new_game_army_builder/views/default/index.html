@@ -3,7 +3,7 @@
 {{block header}}
 <div class="jumbotron jumbotron-fluid background" style="background-color: #333; color:white; padding:30px;word-wrap:break-word;">
   <div class="container center">
-    <h1 class="display-5">Army Book Creation Tool</h1>
+    <h1 class="display-5">Unit Creation Tool</h1>
   </div>
 </div>
 {{end}}
@@ -15,7 +15,7 @@
     <form>
         <hr>
         <p class="lead">{{=T('Unit and Model Options')}}</p>
-        <input type="text" name="unitname" placeholder="Unit Name"><br />
+        <input type="text" name="unitname" placeholder="Unit Name" required ><br />
         <label>Quality:&nbsp;</label><input type="number" name="quality" min="2" max="10" step="1" value="10"/>&emsp;
         <label>Defense:&nbsp;</label><input type="number" name="defense" min="2" max="10" step="1" value="10"/>&emsp;
         <label>Number of Models:&nbsp;</label><input type="number" name="numOfModels" min="1" max="20" step="1" value="1"/><br />
@@ -33,7 +33,7 @@
     <hr>
     <p class="lead">{{=T('Weapon Loadout (per model):')}}</p><br />
     {{for weapon in session.new_unit['weapons']:}}
-        <div>Weapon Name: [{{=weapon['weaponName']}}] Attacks: [{{=weapon['qtyPer']}}] AP: [{{=weapon['AP']}}] </div>
+        <div>Weapon Name: [{{=weapon['weaponName']}}] Qty/model: [{{=weapon['qtyPer']}}] AP: [{{=weapon['AP']}}] Range: [{{=weapon['range']}}]</div>
     {{pass}}
     <form action="{{=URL()}}" method="post">
         {{if 'weapons' in session.new_unit.keys() and len(session.new_unit['weapons']):}}<input type="submit" value="Remove Weapon"/>{{pass}}
@@ -41,12 +41,24 @@
     </form>
     <form action="{{=URL()}}" method="post">
         <!--{{if 'weapons' in session.new_unit.keys() and len(session.new_unit['weapons']):}}<input type="button" value="Remove Weapon" onclick='ajax("{{=URL("default", "remove_weapon")}}", ["qual"], "target");'/>{{pass}}-->
-        <div id="items-container">
-            <div class="item-row">
-                <input type="text" name="name" placeholder="Item Name" required />
-                <input type="number" name="price" placeholder="Price" required />
-            </div>
-        </div>
+        <table>
+            <thead>
+              <tr>
+                <th>Weapon Name</th>
+                <th>Qty/Model&nbsp;</th>
+                <th>AP</th>
+                <th>Range</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="text" name="wepName" placeholder="Enter name" required ></td>
+                <td><input type="number" name="qty" min="1" max="99" step="1" value="1"></td>
+                <td><input type="number" name="ap" min="0" max="8" step="1" value="0"></td>
+                <td><input type="number" name="range" min="0" max=48 step="1" value="0"></td>
+              </tr>
+            </tbody>
+      </table>
         <!--<button type="button" onclick="addRow()">Add Another</button>-->
         <input type="submit" value="Add Weapon to All Models" />
         <input type="hidden" name="request_id" value="weaponBuild">
