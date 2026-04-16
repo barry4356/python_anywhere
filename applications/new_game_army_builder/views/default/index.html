@@ -11,11 +11,12 @@
 <div class="split-container">
   <div class="left">
     <h1>Unit Creation</h1>
-    <div>Editor Version: V0.1&emsp;Based on OPR Version: V3.5</div>
+    <div>Editor Version: V0.1&emsp;Based on OPR Version: V3.5.1</div>
     <form>
         <hr>
         <p class="lead">{{=T('Unit and Model Options')}}</p>
-        <input type="text" name="unitname" placeholder="Unit Name" required ><br />
+        <input type="text" name="unitname" placeholder="Unit Name" required >
+        <input type="text" name="factionname" placeholder="Faction Name" required ><br />
         <label>Quality:&nbsp;</label><input type="number" name="quality" min="2" max="10" step="1" value="10"/>&emsp;
         <label>Defense:&nbsp;</label><input type="number" name="defense" min="2" max="10" step="1" value="10"/>&emsp;
         <label>Number of Models:&nbsp;</label><input type="number" name="numOfModels" min="1" max="20" step="1" value="1"/><br />
@@ -32,13 +33,6 @@
     </form>
     <hr>
     <p class="lead">{{=T('Weapon Loadout (per model):')}}</p><br />
-    {{for weapon in session.new_unit['weapons']:}}
-        <div>Weapon Name: [{{=weapon['weaponName']}}] Qty/model: [{{=weapon['qtyPer']}}] AP: [{{=weapon['AP']}}] Range: [{{=weapon['range']}}]</div>
-    {{pass}}
-    <form action="{{=URL()}}" method="post">
-        {{if 'weapons' in session.new_unit.keys() and len(session.new_unit['weapons']):}}<input type="submit" value="Remove Weapon"/>{{pass}}
-        <input type="hidden" name="request_id" value="removeWeapon">
-    </form>
     <form action="{{=URL()}}" method="post">
         <!--{{if 'weapons' in session.new_unit.keys() and len(session.new_unit['weapons']):}}<input type="button" value="Remove Weapon" onclick='ajax("{{=URL("default", "remove_weapon")}}", ["qual"], "target");'/>{{pass}}-->
         <table>
@@ -48,14 +42,19 @@
                 <th>Qty/Model&nbsp;</th>
                 <th>AP</th>
                 <th>Range</th>
+                <th>Rending</th>
               </tr>
             </thead>
             <tbody>
+                {{for weapon in session.new_unit['weapons']:}}
+                    <tr><td>{{=weapon['weaponName']}}</td> <td>{{=weapon['qtyPer']}}</td> <td>{{=weapon['AP']}}</td> <td>{{=weapon['range']}}</td> <td>{{=weapon['rending']}}</td></tr>
+                {{pass}}
               <tr>
                 <td><input type="text" name="wepName" placeholder="Enter name" required ></td>
                 <td><input type="number" name="qty" min="1" max="99" step="1" value="1"></td>
                 <td><input type="number" name="ap" min="0" max="8" step="1" value="0"></td>
                 <td><input type="number" name="range" min="0" max=48 step="1" value="0"></td>
+                <td><label>Rending&nbsp;</label><input type="checkbox" name="rending"></td>
               </tr>
             </tbody>
       </table>
@@ -63,11 +62,16 @@
         <input type="submit" value="Add Weapon to All Models" />
         <input type="hidden" name="request_id" value="weaponBuild">
     </form>
-    <br /><br />
+    <form action="{{=URL()}}" method="post">
+        {{if 'weapons' in session.new_unit.keys() and len(session.new_unit['weapons']):}}<input type="submit" value="Remove Last Weapon From All Models"/>{{pass}}
+        <input type="hidden" name="request_id" value="removeWeapon">
+    </form>
+    <br /><br /><br /><br />
+    <hr>
   </div>
   <div class="right">
     <h1>Army Book</h1>
-    Current contents of the Army Book
+    Your Created Units
   </div>
 </div>
 
