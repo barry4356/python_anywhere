@@ -32,9 +32,9 @@
         <input type="hidden" name="request_id" value="unitBuild">
     </form>
     <hr>
-    <p class="lead">{{=T('Weapon Loadout (per model):')}}</p><br />
+    <p class="lead">{{=T('Weapon Loadout (per model):')}}</p>
     <form action="{{=URL()}}" method="post">
-        <!--{{if 'weapons' in session.new_unit.keys() and len(session.new_unit['weapons']):}}<input type="button" value="Remove Weapon" onclick='ajax("{{=URL("default", "remove_weapon")}}", ["qual"], "target");'/>{{pass}}-->
+        <!--{{if 'Weapons' in session.new_unit.keys() and len(session.new_unit['Weapons']):}}<input type="button" value="Remove Weapon" onclick='ajax("{{=URL("default", "remove_weapon")}}", ["qual"], "target");'/>{{pass}}-->
         <table>
             <thead>
               <tr>
@@ -46,8 +46,8 @@
               </tr>
             </thead>
             <tbody>
-                {{for weapon in session.new_unit['weapons']:}}
-                    <tr><td>{{=weapon['weaponName']}}</td> <td>{{=weapon['qtyPer']}}</td> <td>{{=weapon['AP']}}</td> <td>{{=weapon['range']}}</td> <td>{{=weapon['rending']}}</td></tr>
+                {{for weapon in session.new_unit['Weapons']:}}
+                    <tr><td>{{=weapon['Weapon Name']}}</td> <td>{{=weapon['Quantity']}}</td> <td>{{=weapon['AP']}}</td> <td>{{=weapon['Weapon Range']}}</td> <td>{{=weapon['Rending']}}</td></tr>
                 {{pass}}
               <tr>
                 <td><input type="text" name="wepName" placeholder="Enter name" required ></td>
@@ -63,7 +63,7 @@
         <input type="hidden" name="request_id" value="weaponBuild">
     </form>
     <form action="{{=URL()}}" method="post">
-        {{if 'weapons' in session.new_unit.keys() and len(session.new_unit['weapons']):}}<input type="submit" value="Remove Last Weapon From All Models"/>{{pass}}
+        {{if 'Weapons' in session.new_unit.keys() and len(session.new_unit['Weapons']):}}<input type="submit" value="Remove Last Weapon From All Models"/>{{pass}}
         <input type="hidden" name="request_id" value="removeWeapon">
     </form>
     <br /><br /><br /><br />
