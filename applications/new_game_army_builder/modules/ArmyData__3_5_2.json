@@ -1,0 +1,753 @@
+[
+  {
+    "Name": "High Champion",
+    "ModelCount": 1,
+    "Cost": 45,
+    "Qual": 4,
+    "Def": 4,
+    "Tough": 3,
+    "Specs": [
+      "Fearless",
+      "Hero",
+      "Tough(3)",
+      "Vale Formation"
+    ],
+    "Weapons": [
+      {
+        "Attacks": 3,
+        "AP": 1,
+        "Specs": [],
+        "Name": "Heavy Hand Weapon"
+      }
+    ]
+  },
+  {
+    "Name": "Vale Defender",
+    "ModelCount": 1,
+    "Cost": 25,
+    "Qual": 5,
+    "Def": 5,
+    "Tough": 3,
+    "Specs": [
+      "Hero",
+      "Tough(3)",
+      "Vale Formation"
+    ],
+    "Weapons": [
+      {
+        "Attacks": 3,
+        "Specs": [],
+        "Name": "Hand Weapon"
+      }
+    ]
+  },
+  {
+    "Name": "Peasant Levy",
+    "ModelCount": 10,
+    "Cost": 40,
+    "Qual": 6,
+    "Def": 6,
+    "Specs": [
+      "Vale Formation"
+    ],
+    "Weapons": [
+      {
+        "Count": 10,
+        "Attacks": 1,
+        "range": 6,
+        "Specs": [],
+        "Name": "Throw Stones"
+      },
+      {
+        "Count": 10,
+        "Attacks": 1,
+        "Specs": [],
+        "Name": "Hand Weapons"
+      }
+    ]
+  },
+  {
+    "Name": "Men-at-Arms",
+    "ModelCount": 10,
+    "Cost": 70,
+    "Qual": 5,
+    "Def": 5,
+    "Specs": [
+      "Vale Formation"
+    ],
+    "Weapons": [
+      {
+        "Count": 10,
+        "Attacks": 1,
+        "Specs": [],
+        "Name": "Hand Weapons"
+      }
+    ]
+  },
+  {
+    "Name": "Foot Knights",
+    "ModelCount": 5,
+    "Cost": 70,
+    "Qual": 4,
+    "Def": 4,
+    "Specs": [
+      "Fearless",
+      "Vale Formation"
+    ],
+    "Weapons": [
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "AP": 1,
+        "Specs": [],
+        "Name": "Heavy Hand Weapons"
+      }
+    ]
+  },
+  {
+    "Name": "Peasant Longbowmen",
+    "ModelCount": 5,
+    "Cost": 65,
+    "Qual": 5,
+    "Def": 5,
+    "Specs": [
+      "Vale Formation"
+    ],
+    "Weapons": [
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "range": 30,
+        "Specs": [],
+        "Name": "Longbows"
+      },
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "Specs": [],
+        "Name": "Hand Weapons"
+      }
+    ]
+  },
+  {
+    "Name": "Mounted Bowmen",
+    "ModelCount": 5,
+    "Cost": 65,
+    "Qual": 5,
+    "Def": 5,
+    "Specs": [
+      "Fast",
+      "Vale Formation"
+    ],
+    "Weapons": [
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "range": 24,
+        "Specs": [],
+        "Name": "Bows"
+      },
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "Specs": [],
+        "Name": "Hand Weapons"
+      }
+    ]
+  },
+  {
+    "Name": "Errant Knights",
+    "ModelCount": 5,
+    "Cost": 85,
+    "Qual": 5,
+    "Def": 5,
+    "Specs": [
+      "Fast",
+      "Impact(1)",
+      "Scout",
+      "Vale Formation"
+    ],
+    "Weapons": [
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "Specs": [
+          "Thrust"
+        ],
+        "Name": "Lances"
+      }
+    ]
+  },
+  {
+    "Name": "Pledge Knights",
+    "ModelCount": 5,
+    "Cost": 125,
+    "Qual": 4,
+    "Def": 4,
+    "Specs": [
+      "Fast",
+      "Fearless",
+      "Impact(1)",
+      "Vale Formation",
+      "Versatile Attack"
+    ],
+    "Weapons": [
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "Specs": [
+          "Bane",
+          "Shred"
+        ],
+        "Name": "Holy Swords,"
+      }
+    ]
+  },
+  {
+    "Name": "Vale Knights",
+    "ModelCount": 5,
+    "Cost": 120,
+    "Qual": 4,
+    "Def": 4,
+    "Specs": [
+      "Fast",
+      "Fearless",
+      "Impact(1)",
+      "Vale Formation"
+    ],
+    "Weapons": [
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "AP": 1,
+        "Specs": [
+          "Thrust"
+        ],
+        "Name": "Heavy Lances"
+      }
+    ]
+  },
+  {
+    "Name": "Quest Knights",
+    "ModelCount": 5,
+    "Cost": 130,
+    "Qual": 4,
+    "Def": 3,
+    "Specs": [
+      "Fast",
+      "Fearless",
+      "Impact(1)",
+      "Melee Slayer",
+      "Vale Formation"
+    ],
+    "Weapons": [
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "AP": 2,
+        "Specs": [],
+        "Name": "Great Weapons"
+      }
+    ]
+  },
+  {
+    "Name": "Grail Knights",
+    "ModelCount": 5,
+    "Cost": 125,
+    "Qual": 4,
+    "Def": 3,
+    "Specs": [
+      "Fast",
+      "Fearless",
+      "Impact(1)",
+      "Vale Formation"
+    ],
+    "Weapons": [
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "AP": 1,
+        "Specs": [
+          "Thrust"
+        ],
+        "Name": "Heavy Lances"
+      }
+    ]
+  },
+  {
+    "Name": "Pegasus Knights",
+    "ModelCount": 3,
+    "Cost": 210,
+    "Qual": 4,
+    "Def": 4,
+    "Tough": 3,
+    "Specs": [
+      "Fast",
+      "Fearless",
+      "Flying",
+      "Heavy Impact(2)",
+      "Tough(3)",
+      "Vale Formation"
+    ],
+    "Weapons": [
+      {
+        "Count": 3,
+        "Attacks": 1,
+        "AP": 1,
+        "Specs": [],
+        "Name": "Heavy Hooves"
+      },
+      {
+        "Count": 3,
+        "Attacks": 1,
+        "AP": 1,
+        "Specs": [
+          "Thrust"
+        ],
+        "Name": "Heavy Lances"
+      }
+    ]
+  },
+  {
+    "Name": "Grail Relic",
+    "ModelCount": 1,
+    "Cost": 85,
+    "Qual": 6,
+    "Def": 6,
+    "Tough": 6,
+    "Specs": [
+      "Courage Buff",
+      "Fear(1)",
+      "Furious",
+      "Furious Buff",
+      "Tough(6)",
+      "ValeFormation"
+    ],
+    "Weapons": [
+      {
+        "Attacks": 6,
+        "Specs": [
+          "Rending"
+        ],
+        "Name": "Pilgrim Crew"
+      }
+    ]
+  },
+  {
+    "Name": "Battle Master",
+    "ModelCount": 1,
+    "Cost": 40,
+    "Qual": 4,
+    "Def": 4,
+    "Tough": 3,
+    "Specs": [
+      "Hero",
+      "Hold the Line",
+      "Tough(3)"
+    ],
+    "Weapons": [
+      {
+        "Attacks": 3,
+        "AP": 1,
+        "Specs": [],
+        "Name": "Heavy Hand Weapon"
+      }
+    ]
+  },
+  {
+    "Name": "Champion",
+    "ModelCount": 1,
+    "Cost": 25,
+    "Qual": 5,
+    "Def": 5,
+    "Tough": 3,
+    "Specs": [
+      "Hero",
+      "Hold the Line",
+      "Tough(3)"
+    ],
+    "Weapons": [
+      {
+        "Attacks": 3,
+        "Specs": [],
+        "Name": "Hand Weapon"
+      }
+    ]
+  },
+  {
+    "Name": "Quality 5+Defense 5+Caster Group, Hold the LineWeaponRNGATKAPSPE5x Magic Staffs12\"A2-Rending5x Hand Weapons-A1--Infantrymen",
+    "ModelCount": 10,
+    "Cost": 70,
+    "Qual": 5,
+    "Def": 5,
+    "Specs": [
+      "Hold the Line"
+    ],
+    "Weapons": [
+      {
+        "Count": 10,
+        "Attacks": 1,
+        "Specs": [],
+        "Name": "Hand Weapons"
+      }
+    ]
+  },
+  {
+    "Name": "Fanatics",
+    "ModelCount": 10,
+    "Cost": 85,
+    "Qual": 5,
+    "Def": 6,
+    "Specs": [
+      "Furious",
+      "Hold the Line"
+    ],
+    "Weapons": [
+      {
+        "Count": 10,
+        "Attacks": 1,
+        "AP": 1,
+        "Specs": [],
+        "Name": "Sharp Weapons"
+      }
+    ]
+  },
+  {
+    "Name": "Mercenaries",
+    "ModelCount": 5,
+    "Cost": 55,
+    "Qual": 5,
+    "Def": 5,
+    "Specs": [
+      "Hold the Line",
+      "Scout"
+    ],
+    "Weapons": [
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "range": 9,
+        "Specs": [
+          "Fracture"
+        ],
+        "Name": "Firepowder Pistols"
+      },
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "Specs": [],
+        "Name": "Hand Weapons"
+      }
+    ]
+  },
+  {
+    "Name": "Elite Weapon Masters",
+    "ModelCount": 5,
+    "Cost": 70,
+    "Qual": 4,
+    "Def": 4,
+    "Specs": [
+      "Hold the Line"
+    ],
+    "Weapons": [
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "AP": 2,
+        "Specs": [],
+        "Name": "Great Weapons"
+      }
+    ]
+  },
+  {
+    "Name": "Marksmen",
+    "ModelCount": 5,
+    "Cost": 60,
+    "Qual": 5,
+    "Def": 5,
+    "Specs": [
+      "Hold the Line"
+    ],
+    "Weapons": [
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "range": 18,
+        "Specs": [
+          "Fracture"
+        ],
+        "Name": "Firepowder Rifles"
+      },
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "Specs": [],
+        "Name": "Hand Weapons"
+      }
+    ]
+  },
+  {
+    "Name": "Mercenary Hunters",
+    "ModelCount": 5,
+    "Cost": 75,
+    "Qual": 5,
+    "Def": 5,
+    "Specs": [
+      "Hold the Line",
+      "Scout",
+      "Stealth"
+    ],
+    "Weapons": [
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "range": 24,
+        "Specs": [],
+        "Name": "Bows"
+      },
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "Specs": [],
+        "Name": "Hand Weapons"
+      }
+    ]
+  },
+  {
+    "Name": "Horse Marksmen",
+    "ModelCount": 5,
+    "Cost": 70,
+    "Qual": 5,
+    "Def": 5,
+    "Specs": [
+      "Fast",
+      "Hold the Line",
+      "Scout"
+    ],
+    "Weapons": [
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "range": 18,
+        "Specs": [
+          "Fracture"
+        ],
+        "Name": "Firepowder Rifles"
+      },
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "Specs": [],
+        "Name": "Hand Weapons"
+      }
+    ]
+  },
+  {
+    "Name": "Knights",
+    "ModelCount": 5,
+    "Cost": 85,
+    "Qual": 4,
+    "Def": 4,
+    "Specs": [
+      "Fast",
+      "Hold the Line",
+      "Impact(1)"
+    ],
+    "Weapons": [
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "Specs": [],
+        "Name": "Hand Weapons"
+      }
+    ]
+  },
+  {
+    "Name": "Guard Knights",
+    "ModelCount": 5,
+    "Cost": 100,
+    "Qual": 4,
+    "Def": 3,
+    "Specs": [
+      "Fast",
+      "Hold the Line",
+      "Impact(1)"
+    ],
+    "Weapons": [
+      {
+        "Count": 5,
+        "Attacks": 1,
+        "Specs": [
+          "Thrust"
+        ],
+        "Name": "Lances"
+      }
+    ]
+  },
+  {
+    "Name": "Gryph Riders",
+    "ModelCount": 3,
+    "Cost": 165,
+    "Qual": 4,
+    "Def": 3,
+    "Tough": 3,
+    "Specs": [
+      "Fast",
+      "Hold the Line",
+      "Impact(2)",
+      "Tough(3)"
+    ],
+    "Weapons": [
+      {
+        "Count": 3,
+        "Attacks": 1,
+        "AP": 1,
+        "Specs": [],
+        "Name": "Heavy Claws"
+      },
+      {
+        "Count": 3,
+        "Attacks": 1,
+        "Specs": [
+          "Thrust"
+        ],
+        "Name": "Lances"
+      }
+    ]
+  },
+  {
+    "Name": "War Wagon of Earth",
+    "ModelCount": 1,
+    "Cost": 95,
+    "Qual": 4,
+    "Def": 3,
+    "Tough": 6,
+    "Specs": [
+      "Hold the Line",
+      "Tough(6)",
+      "Transport(11)"
+    ],
+    "Weapons": [
+      {
+        "Attacks": 2,
+        "Specs": [],
+        "Name": "Crew Attacks"
+      }
+    ]
+  },
+  {
+    "Name": "Altar Wagon of Aether",
+    "ModelCount": 1,
+    "Cost": 135,
+    "Qual": 4,
+    "Def": 3,
+    "Tough": 6,
+    "Specs": [
+      "Furious Buff",
+      "Hold the Line",
+      "Tough(6)"
+    ],
+    "Weapons": [
+      {
+        "Attacks": 6,
+        "range": 18,
+        "Specs": [
+          "Rending"
+        ],
+        "Name": "Banishing Aether"
+      },
+      {
+        "Attacks": 2,
+        "Specs": [],
+        "Name": "Hooves"
+      }
+    ]
+  },
+  {
+    "Name": "Steam Tank of Water",
+    "ModelCount": 1,
+    "Cost": 230,
+    "Qual": 4,
+    "Def": 2,
+    "Tough": 9,
+    "Specs": [
+      "Fear(2)",
+      "Hold the Line",
+      "Impact(6)",
+      "Tough(9)"
+    ],
+    "Weapons": [
+      {
+        "Attacks": 2,
+        "AP": 1,
+        "range": 18,
+        "Specs": [
+          "Blast(3)"
+        ],
+        "Name": "Tank Cannon"
+      },
+      {
+        "Attacks": 3,
+        "AP": 1,
+        "range": 12,
+        "Specs": [],
+        "Name": "Turret Gunner"
+      }
+    ]
+  },
+  {
+    "Name": "Empire Artillery",
+    "ModelCount": 1,
+    "Cost": 65,
+    "Qual": 5,
+    "Def": 5,
+    "Tough": 3,
+    "Specs": [
+      "Artillery",
+      "Hold the Line",
+      "Tough(3)"
+    ],
+    "Weapons": [
+      {
+        "Attacks": 6,
+        "range": 18,
+        "Specs": [
+          "Fracture"
+        ],
+        "Name": "Firepowder Volley Gun"
+      },
+      {
+        "Attacks": 3,
+        "Specs": [],
+        "Name": "Crew"
+      }
+    ]
+  },
+  {
+    "Name": "Elemental Titan",
+    "ModelCount": 1,
+    "Cost": 655,
+    "Qual": 3,
+    "Def": 2,
+    "Tough": 18,
+    "Specs": [
+      "Breath Attack",
+      "Caster(3)",
+      ""
+    ],
+    "Weapons": [
+      {
+        "Attacks": 6,
+        "AP": 2,
+        "Specs": [],
+        "Name": "Stomp"
+      },
+      {
+        "Attacks": 12,
+        "AP": 2,
+        "Specs": [],
+        "Name": "Titan Strike"
+      }
+    ]
+  }
+]
