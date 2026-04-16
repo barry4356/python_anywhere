@@ -1,6 +1,6 @@
 import json
 import traceback
-from constants import NEW_CAF_UNIT, NEW_CAF_WEAPON
+from CafConstants import NEW_CAF_UNIT, NEW_CAF_WEAPON
 
 #This file take an output from the Army Book Parser Scripts (RPG Helpers Project) and converts it into the Army builder format for the Web2py project
 

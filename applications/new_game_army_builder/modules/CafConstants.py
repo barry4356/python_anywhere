@@ -1,4 +1,6 @@
 NEW_CAF_UNIT={
+    'Unit Name': '',
+    'Faction Name': '',
     'Model Qty': -1,
     'Quality': -1,
     'Defense': -1,
@@ -8,8 +10,11 @@ NEW_CAF_UNIT={
 }
 
 NEW_CAF_WEAPON={
-    'Weapon Perks': [],
+    'Weapon Name': '',
+    'AP': 0,
+    'Rending': False,
     'Weapon Range': -1,
     'Weapon qty per model': -1,
     'Quantity': -1
 }
+

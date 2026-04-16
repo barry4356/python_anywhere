@@ -3,7 +3,7 @@
 # -------------------------------------------------------------------------
 import os
 import json
-
+from CafConstants import NEW_CAF_UNIT
 
 armyData = []
 armyDataFiltered = []
@@ -12,15 +12,21 @@ DefenseOptions = [2,3,4,5,6,7,8,9,10]
 Weapon = {'weaponName': '', 'qtyPer': 1, 'AP': 0, 'range': 0}
 
 def index():
+    #session.clear()
     #session.new_unit = {'weapons': []}
     dataFilePath = os.path.join(request.folder, 'private', 'AllArmyData.json')
     if not session.new_unit:
-        session.new_unit = {'weapons': []}
+        #TODO: Pull in the constants to auto-build new-unit struct
+        session.new_unit = NEW_CAF_UNIT.copy()
     elif request.vars.request_id and request.vars.request_id == 'weaponBuild':
-        session.new_unit['weapons'].append({'weaponName': request.vars.wepName, 'qtyPer': request.vars.qty, 'AP': request.vars.ap, 'range': request.vars.range})
+        session.new_unit['Weapons'].append({'Weapon Name': request.vars.wepName, 'Quantity': request.vars.qty, 'AP': request.vars.ap, 'Weapon Range': request.vars.range, 'Rending': bool(request.vars.rending)})
         #session.weapons = []
-    elif request.vars.request_id == 'removeWeapon' and 'weapons' in session.new_unit.keys() and session.new_unit['weapons']:
-        session.new_unit['weapons'].pop()
+    elif request.vars.request_id == 'removeWeapon' and 'Weapons' in session.new_unit.keys() and session.new_unit['Weapons']:
+        session.new_unit['Weapons'].pop()
+    #TODO add Finalization and point math
+    #TODO add ajax hooks to update point math any time a value changes
+    #TODO update point math when weapon is added to loadout
+    #TODO run point math live on a new weapon being constructed
     return dict()
 
 
@@ -53,8 +59,8 @@ def weapons_to_html(weapons):
 
 
 def remove_weapon():
-    if session.new_unit['weapons']:
-        session.new_unit['weapons'].pop()
+    if session.new_unit['Weapons']:
+        session.new_unit['Weapons'].pop()
     return "I TRIED"
 
 
