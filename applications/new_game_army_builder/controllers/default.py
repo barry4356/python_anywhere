@@ -19,7 +19,7 @@ def index():
         #TODO: Pull in the constants to auto-build new-unit struct
         session.new_unit = NEW_CAF_UNIT.copy()
     elif request.vars.request_id and request.vars.request_id == 'weaponBuild':
-        session.new_unit['Weapons'].append({'Weapon Name': request.vars.wepName, 'Quantity': request.vars.qty, 'AP': request.vars.ap, 'Weapon Range': request.vars.range, 'Rending': request.vars.rending})
+        session.new_unit['Weapons'].append({'Weapon Name': request.vars.wepName, 'Quantity': request.vars.qty, 'AP': request.vars.ap, 'Weapon Range': request.vars.range, 'Rending': bool(request.vars.rending)})
         #session.weapons = []
     elif request.vars.request_id == 'removeWeapon' and 'Weapons' in session.new_unit.keys() and session.new_unit['Weapons']:
         session.new_unit['Weapons'].pop()
