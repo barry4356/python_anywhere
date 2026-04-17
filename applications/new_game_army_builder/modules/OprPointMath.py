@@ -6,7 +6,20 @@ def CalculateUnitCost(OprUnit):
 
 def _calculateBaseCost(OprUnit):
     #Price of model Def/Qual x number of models
-    return 0
+    qua_pts = 7 - (OprUnit["Qual"]) #Convert Qual to a simple scalar
+    qua_pts = qua_pts / 6 # And then adjust it based on dice %
+    def_pts = 7 - (OprUnit["Def"])  #Convert Def to a simple scalar
+    def_pts = def_pts / 6 # And then adjust it based on dice %
+    combined_pts = (qua_pts+def_pts)/2 # Combined Defense and Quality to make math easier
+    #OPR Uses linear scaling for cost until >66.6(repeating, of course)%, and then switches to exponential scaling
+    if combined_pts <= .666:
+        pricePerModel = (11.1 * combined_pts) #Linear scale derived from OPR Armies (https://www.graphpad.com/quickcalcs/linear1/)
+    else:
+        pricePerModel = ((11.1 - (27.75*combined_pts) + (33.3*combined_pts*combined_pts))) #Quadratic formula derived from OPR Armies (https://www.omnicalculator.com/statistics/quadratic-regression)
+    return int(pricePerModel * OprUnit["ModelCount"])
+
+    
+    
 
 def _calculateModelPerksCost(OprUnit, base_cost):
     #Price of Perks associated with the models
