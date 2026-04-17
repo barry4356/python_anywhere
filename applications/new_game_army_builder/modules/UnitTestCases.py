@@ -25,6 +25,7 @@ Test_Cases = [
     "Qual": 6,
     "Def": 6,
   },
+  #==================
 #CAF BASE CASES
     {
     "ModelCount": 100,
@@ -71,5 +72,9 @@ Test_Cases = [
     "Qual": 10,
     "Def": 10,
   },
-
+    #==================
+    #OPR WEAPON TESTING
+      {
+        "Attacks": 1,
+      },
 ]
