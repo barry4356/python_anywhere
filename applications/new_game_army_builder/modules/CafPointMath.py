@@ -1,6 +1,6 @@
 def CalculateUnitCost(CafUnit):
     base_cost = _calculateBaseCost(CafUnit)
-    model_perk_cost = _calculateModelPerkCost(CafUnit, base_cost)
+    model_perk_cost = _calculateModelPerksCost(CafUnit, base_cost)
     weapons_cost = _calculateLoadoutCost(CafUnit)
     return 0
 
@@ -23,25 +23,25 @@ def _calculateBaseCost(CafUnit):
         pricePerModel += ((7.38 - (18.45*def_pts) + (22.14*def_pts*def_pts))) 
     if qua_pts > .666:
         pricePerModel += ((3.72 - (9.3*qua_pts) + (11.16*qua_pts*qua_pts))) 
-    return int(pricePerModel * CafUnit["ModelCount"])
+    return int(pricePerModel * CafUnit["Model Qty"])
 
 
 
 def _calculateModelPerksCost(CafUnit, base_cost):
     perk_cost = 0
     #Price of Perks associated with the models
-    if 'Specs' in OprUnit.keys() and 'Fast' in OprUnit['Specs']:
+    if 'Specs' in CafUnit.keys() and 'Fast' in CafUnit['Specs']:
         perk_cost += .333333 * base_cost
-    if 'Specs' in OprUnit.keys() and 'Regen' in OprUnit['Specs']:
-        perk_cost += 2.47 * OprUnit["ModelCount"]
+    if 'Specs' in CafUnit.keys() and 'Regen' in CafUnit['Specs']:
+        perk_cost += 2.47 * CafUnit["Model Qty"]
     return perk_cost
 
 def _calculateLoadoutCost(CafUnit):
     #Price of all weapons in unit
     loadoutCost = 0
-    for weapon in OprUnit['Weapons']:
+    for weapon in CafUnit['Weapons']:
         #Currently; all models in a unit must share the same weapon(s)
-        loadoutCost += (__caclulateWeaponCost(weapon) * OprUnit["ModelCount"])
+        loadoutCost += (__caclulateWeaponCost(weapon) * CafUnit["Model Qty"])
     return loadoutCost
 
 def __caclulateWeaponCost(CafWeapon, quality):

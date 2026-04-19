@@ -1,6 +1,6 @@
 def CalculateUnitCost(OprUnit):
     base_cost = _calculateBaseCost(OprUnit)
-    model_perk_cost = _calculateModelPerkCost(OprUnit, base_cost)
+    model_perk_cost = _calculateModelPerksCost(OprUnit, base_cost)
     weapons_cost = _calculateLoadoutCost(OprUnit)
     return base_cost + weapons_cost + model_perk_cost
 
