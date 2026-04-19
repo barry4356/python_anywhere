@@ -6,9 +6,9 @@ def CalculateUnitCost(CafUnit):
 
 def _calculateBaseCost(CafUnit):
     #Price of model Def/Qual x number of models
-    qua_pts = 11 - (CafUnit["Qual"]) #Convert Qual to a simple scalar
+    qua_pts = 11 - (CafUnit["Quality"]) #Convert Qual to a simple scalar
     qua_pts = qua_pts / 10 # And then adjust it based on dice %
-    def_pts = 11 - (CafUnit["Def"])  #Convert Def to a simple scalar
+    def_pts = 11 - (CafUnit["Defense"])  #Convert Def to a simple scalar
     def_pts = def_pts / 10 # And then adjust it based on dice %
     pricePerModel = 0
     #OPR Uses linear scaling for cost until >66.6(repeating, of course)%, and then switches to exponential scaling
@@ -38,6 +38,7 @@ def _calculateLoadoutCost(CafUnit):
     #    loadoutCost += __caclulateWeaponCost(CafWeapon)
     return loadoutCost
 
-def __caclulateWeaponCost(CafWeapon):
+def __caclulateWeaponCost(CafWeapon, quality):
     #Price of a single weapon for a single model in unit
+    
     return 0

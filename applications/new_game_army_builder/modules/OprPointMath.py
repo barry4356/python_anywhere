@@ -33,9 +33,39 @@ def _calculateLoadoutCost(OprUnit):
     #Price of all weapons in unit
     loadoutCost = 0
     for weapon in OprUnit['Weapons']:
-        loadoutCost += __caclulateWeaponCost(weapon)
+        loadoutCost += (__caclulateWeaponCost(weapon) * OprUnit["ModelCount"])
     return loadoutCost
 
-def __caclulateWeaponCost(OprWeapon):
+def __caclulateWeaponCost(OprWeapon, quality):
+    qua_pts = 7 - quality #Convert Qual to a simple scalar
+    qua_pts = qua_pts / 6 # And then adjust it based on dice %
+    #OPR Uses linear scaling for cost until >66.6(repeating, of course)%, and then switches to exponential scaling
+    if qua_pts <= .666:
+        price_per_attack = qua_pts * 7.8 #Derived from OPR Army Stats/Cost
+    else:
+        #Quadratic formula derived from OPR Armies (https://www.omnicalculator.com/statistics/quadratic-regression)
+        price_per_attack = 7.8-(19.5 * qua_pts)+(23.4*qua_pts*qua_pts)
+        price_per_attack_base = price_per_attack
+    rending = False
+    if 'Rending' in OprWeapon.keys() and OprWeapon['Rending']:
+        rending = True
+    if 'AP' in OprWeapon.keys():
+        #AP math is.... weird. Simplified by breaking into the 4 possible values
+        try:
+            ap_val = int(OprWeapon["AP"])
+            if ap_val == 1:
+                price_per_attack *= 1.5
+            elif ap_val == 2:
+                price_per_attack *= 2
+            elif ap_val == 3:
+                price_per_attack *= 2.4
+            elif ap_val == 4:
+                price_per_attack *= 2.7
+            elif rending:
+                pass
+        except:
+            pass
+
     #Price of a single weapon for a single model in unit
-    return 0
+    weapon_price = price_per_attack * OprWeapon["Attacks"]
+    return weapon_price

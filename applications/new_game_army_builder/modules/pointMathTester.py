@@ -32,7 +32,7 @@ def Caf_TestBaseCases():
     print("TESTING CAF BASE CASES")
     for defense in range(2, 11):
         for quality in range(2, 11):
-            CafUnit = {'Def': defense, 'Qual': quality, 'ModelCount': 100}
+            CafUnit = {'Defense': defense, 'Quality': quality, 'ModelCount': 100}
             print("==========")
             print("CAF MATH")
             print(CafUnit)
@@ -43,7 +43,7 @@ def Caf_TestBaseCases():
     print("==========")
 
 def Caf_Opr_Base_compare():
-    CafUnit = {'Def': 6, 'Qual': 6, 'ModelCount': 100}
+    CafUnit = {'Defense': 6, 'Quality': 6, 'ModelCount': 100}
     OprUnit = {'Def': 4, 'Qual': 4, 'ModelCount': 100}
     print("COMPARING BASE CASES")
     print("CAF MATH")
@@ -72,10 +72,27 @@ def Opr_TestWeaponCase(oprWeapon):
     print("==========")
     print()
 
+def Opr_TestWeaponCases():
+    print("TESTING OPR WEAPON CASES")
+    for attacks in range(1,20):
+        for quality in range(2, 7):
+            oprWeapon = {"Attacks": attacks, "AP": 0}
+            print("==========")
+            print("OPR WEAPON MATH")
+            print(oprWeapon)
+            print('quality: '+str(quality))
+            print("Cost: "+str(Opr__calculateWeaponCost(oprWeapon, quality)))
+            print("==========")
+            print()
+    print()
+    print("==========")
+    
+
 ## __MAIN__ ##
+Opr_TestWeaponCases()
 #Caf_Opr_Base_compare()
 #Opr_TestBaseCases()
-Caf_TestBaseCases()
+#Caf_TestBaseCases()
 #print("TESTING OPR BASE CASES")
 #for index in range(0,5):
 #    Opr_TestBaseCase(Test_Cases[index])
