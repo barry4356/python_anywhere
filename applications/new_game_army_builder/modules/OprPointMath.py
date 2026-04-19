@@ -96,6 +96,8 @@ def __caclulateWeaponCost(OprWeapon, quality):
             price_per_attack += 0.6505 + (2.2002 * qua_pts)
         else:
             2.861 - (5.532 * qua_pts) + (6.624 * qua_pts * qua_pts)
+    if 'Weapon Range' in OprWeapon.keys() and OprWeapon['Weapon_Range'] > 0:
+        price_per_attack = price_per_attack * (OprWeapon['Weapon_Range'] / 12)
     #Price of a single weapon for a single model in unit
     weapon_price = price_per_attack * OprWeapon["Attacks"]
     return weapon_price
