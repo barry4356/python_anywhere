@@ -16,11 +16,17 @@ def index():
     if not session.new_unit:
         #TODO: Pull in the constants to auto-build new-unit struct
         session.new_unit = NEW_CAF_UNIT.copy()
+        session.fastChecked = ''
+        session.regenChecked = ''
+
     elif request.vars.request_id and request.vars.request_id == 'weaponBuild':
         session.new_unit['Weapons'].append({'Weapon Name': str(request.vars.wepName), 'Weapon qty per model': int(request.vars.qty), 'AP': int(request.vars.ap), 'Weapon Range': int(request.vars.range), 'Rending': bool(request.vars.rending)})
         #session.weapons = []
     elif request.vars.request_id == 'removeWeapon' and 'Weapons' in session.new_unit.keys() and session.new_unit['Weapons']:
         session.new_unit['Weapons'].pop()
+    elif request.vars.request_id == 'unitBuild':
+        pass
+
     session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
     #TODO add Finalization and point math
     #TODO add ajax hooks to update point math any time a value changes
@@ -62,11 +68,55 @@ def remove_weapon():
         session.new_unit['Weapons'].pop()
     return "I TRIED"
 
+def update_quality():
+    if request.vars.quality:
+        session.new_unit['Quality'] = int(request.vars.quality)
+        session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
+    return CalculateUnitCost(session.new_unit)
 
+def update_defense():
+    if request.vars.defense:
+        session.new_unit['Defense'] = int(request.vars.defense)
+        session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
+    return CalculateUnitCost(session.new_unit)
 
+def update_numOfModels():
+    if request.vars.numOfModels:
+        session.new_unit['Model Qty'] = int(request.vars.numOfModels)
+        session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
+    return CalculateUnitCost(session.new_unit)
 
+def update_modelLength():
+    if request.vars.modelLength:
+        session.new_unit['modelLength'] = int(request.vars.modelLength)
+    return session.new_unit['modelLength']
 
+def update_modelWidth():
+    if request.vars.modelWidth:
+        session.new_unit['modelWidth'] = int(request.vars.modelWidth)
+    return session.new_unit['modelWidth']
 
+def update_modelHeight():
+    if request.vars.modelHeight:
+        session.new_unit['modelHeight'] = int(request.vars.modelHeight)
+    return session.new_unit['modelHeight']
 
+def update_Fast():
+    session.new_unit['Fast'] = bool(request.vars.Fast)
+    if session.new_unit['Fast']:
+        session.fastChecked = 'checked'
+    else:
+        session.fastChecked = ''
+    session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
+    return CalculateUnitCost(session.new_unit)
+
+def update_Regen():
+    session.new_unit['Regeneration'] = bool(request.vars.Regen)
+    if session.new_unit['Regeneration']:
+        session.regenChecked = 'checked'
+    else:
+        session.regenChecked = ''
+    session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
+    return CalculateUnitCost(session.new_unit)
 
 

@@ -17,18 +17,18 @@
         <p class="lead">{{=T('Unit and Model Options')}}</p>
         <input type="text" name="unitname" placeholder="Unit Name" required >
         <input type="text" name="factionname" placeholder="Faction Name" required ><br />
-        <label>Quality:&nbsp;</label><input type="number" name="quality" min="2" max="10" step="1" value="10"/>&emsp;
-        <label>Defense:&nbsp;</label><input type="number" name="defense" min="2" max="10" step="1" value="10"/>&emsp;
-        <label>Number of Models:&nbsp;</label><input type="number" name="numOfModels" min="1" max="20" step="1" value="1"/><br />
-        <label>Model Length:&nbsp;</label><input type="number" name="modelLength" min="1" max="10" step="1" value="1"/>&emsp;
-        <label>Model Width:&nbsp;</label><input type="number" name="modelWidth" min="1" max="10" step="1" value="1"/>&emsp;
-        <label>Model Height:&nbsp;</label><input type="number" name="modelHeight" min="1" max="10" step="1" value="2"/><br />
-        <label>Fast&nbsp;</label><input type="checkbox" name="Fast">&emsp;
-        <label>Regen&nbsp;</label><input type="checkbox" name="Regen">&emsp;
+        <label>Quality:&nbsp;</label><input type="number" name="quality" id="quality" min="2" max="10" step="1" value={{=session.new_unit["Quality"]}} onchange="ajax('{{=URL('default', 'update_quality')}}', ['quality'], 'price');" />&emsp;
+        <label>Defense:&nbsp;</label><input type="number" name="defense" min="2" max="10" step="1" value={{=session.new_unit["Defense"]}} onchange="ajax('{{=URL('default', 'update_defense')}}', ['defense'], 'price');" />&emsp;
+        <label>Number of Models:&nbsp;</label><input type="number" name="numOfModels" min="1" max="20" step="1" value={{=session.new_unit["Model Qty"]}} onchange="ajax('{{=URL('default', 'update_numOfModels')}}', ['numOfModels'], 'price');" /><br />
+        <label>Model Length:&nbsp;</label><input type="number" name="modelLength" min="1" max="10" step="1" value={{=session.new_unit["modelLength"]}} onchange="ajax('{{=URL('default', 'update_modelLength')}}', ['modelLength'], '');" />&emsp;
+        <label>Model Width:&nbsp;</label><input type="number" name="modelWidth" min="1" max="10" step="1" value={{=session.new_unit["modelWidth"]}} onchange="ajax('{{=URL('default', 'update_modelWidth')}}', ['modelWidth'], '');" />&emsp;
+        <label>Model Height:&nbsp;</label><input type="number" name="modelHeight" min="1" max="10" step="1" value={{=session.new_unit["modelHeight"]}} onchange="ajax('{{=URL('default', 'update_modelHeight')}}', ['modelHeight'], '');" /><br />
+        <label>Fast&nbsp;</label><input type="checkbox" name="Fast" {{=session.fastChecked}} onchange="ajax('{{=URL('default', 'update_Fast')}}', ['Fast'], 'price');">&emsp;
+        <label>Regen&nbsp;</label><input type="checkbox" name="Regen" {{=session.regenChecked}} onchange="ajax('{{=URL('default', 'update_Regen')}}', ['Regen'], 'price');">&emsp;
         <br />
-        <label>Tough:&nbsp;</label><input type="number" name="Tough" min="0" max="20" step="1" value="0"/>&emsp;
-        <label>Caster:&nbsp;</label><input type="number" name="Caster" min="0" max="9" step="1" value="0"/>&emsp;<br /><br />
-        <input type="submit" value="Finalize Unit" /><div>Price: [{{=session.new_unit["Cost"]}}]</div><br />
+        <!--<label>Tough:&nbsp;</label><input type="number" name="Tough" min="0" max="20" step="1" value="0"/>&emsp;
+        <label>Caster:&nbsp;</label><input type="number" name="Caster" min="0" max="9" step="1" value="0"/>&emsp;<br /><br />-->
+        <input type="submit" value="Finalize Unit" /><div>Price: </div><div id="price">{{=session.new_unit["Cost"]}}</div><br />
         <input type="hidden" name="request_id" value="unitBuild">
     </form>
     <hr>
@@ -78,10 +78,10 @@
 
 <script>
 jQuery(document).ready(function(){
-    jQuery('#qual').change(function(){
+    jQuery('#quality1').change(function(){
         // Get value and send via Ajax to 'select_handler'
         var val = jQuery(this).val();
-        ajax("{{=URL('default', 'select_handler')}}", ['qual'], 'target');
+        ajax("{{=URL('default', 'update_quality1')}}", ['val'], 'target');
     });
 });
 </script>

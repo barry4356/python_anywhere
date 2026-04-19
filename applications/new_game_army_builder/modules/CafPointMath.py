@@ -30,9 +30,9 @@ def _calculateBaseCost(CafUnit):
 def _calculateModelPerksCost(CafUnit, base_cost):
     perk_cost = 0
     #Price of Perks associated with the models
-    if 'Specs' in CafUnit.keys() and 'Fast' in CafUnit['Specs']:
+    if 'Fast' in CafUnit.keys() and CafUnit['Fast']:
         perk_cost += .333333 * base_cost
-    if 'Specs' in CafUnit.keys() and 'Regen' in CafUnit['Specs']:
+    if 'Regeneration' in CafUnit.keys() and CafUnit['Regeneration']:
         perk_cost += 2.47 * CafUnit["Model Qty"]
     return perk_cost
 

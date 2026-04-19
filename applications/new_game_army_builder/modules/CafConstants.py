@@ -7,6 +7,11 @@ NEW_CAF_UNIT={
     'Weapons': [],
     'Cost': 0,
     'Special Perks': [],
+    'Fast': False,
+    'Regeneration': False,
+    'modelLength': 1,
+    'modelWidth': 1,
+    'modelHeight': 2,
 }
 
 NEW_CAF_WEAPON={
