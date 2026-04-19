@@ -23,7 +23,7 @@ def _calculateBaseCost(CafUnit):
         pricePerModel += ((7.38 - (18.45*def_pts) + (22.14*def_pts*def_pts)))
     if qua_pts > .666:
         pricePerModel += ((3.72 - (9.3*qua_pts) + (11.16*qua_pts*qua_pts)))
-    return int(pricePerModel * CafUnit["Model Qty"])
+    return (pricePerModel * CafUnit["Model Qty"])
 
 
 
