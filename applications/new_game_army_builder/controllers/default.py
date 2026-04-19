@@ -4,12 +4,10 @@
 import os
 import json
 from CafConstants import NEW_CAF_UNIT
+from CafPointMath import CalculateUnitCost
 
 armyData = []
 armyDataFiltered = []
-QualityOptions = [2,3,4,5,6,7,8,9,10]
-DefenseOptions = [2,3,4,5,6,7,8,9,10]
-Weapon = {'weaponName': '', 'qtyPer': 1, 'AP': 0, 'range': 0}
 
 def index():
     #session.clear()
@@ -19,10 +17,11 @@ def index():
         #TODO: Pull in the constants to auto-build new-unit struct
         session.new_unit = NEW_CAF_UNIT.copy()
     elif request.vars.request_id and request.vars.request_id == 'weaponBuild':
-        session.new_unit['Weapons'].append({'Weapon Name': request.vars.wepName, 'Quantity': request.vars.qty, 'AP': request.vars.ap, 'Weapon Range': request.vars.range, 'Rending': bool(request.vars.rending)})
+        session.new_unit['Weapons'].append({'Weapon Name': str(request.vars.wepName), 'Weapon qty per model': int(request.vars.qty), 'AP': int(request.vars.ap), 'Weapon Range': int(request.vars.range), 'Rending': bool(request.vars.rending)})
         #session.weapons = []
     elif request.vars.request_id == 'removeWeapon' and 'Weapons' in session.new_unit.keys() and session.new_unit['Weapons']:
         session.new_unit['Weapons'].pop()
+    session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
     #TODO add Finalization and point math
     #TODO add ajax hooks to update point math any time a value changes
     #TODO update point math when weapon is added to loadout

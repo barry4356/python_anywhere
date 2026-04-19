@@ -28,7 +28,7 @@
         <br />
         <label>Tough:&nbsp;</label><input type="number" name="Tough" min="0" max="20" step="1" value="0"/>&emsp;
         <label>Caster:&nbsp;</label><input type="number" name="Caster" min="0" max="9" step="1" value="0"/>&emsp;<br /><br />
-        <input type="submit" value="Finalize Unit" /><br />
+        <input type="submit" value="Finalize Unit" /><div>Price: [{{=session.new_unit["Cost"]}}]</div><br />
         <input type="hidden" name="request_id" value="unitBuild">
     </form>
     <hr>
@@ -47,7 +47,7 @@
             </thead>
             <tbody>
                 {{for weapon in session.new_unit['Weapons']:}}
-                    <tr><td>{{=weapon['Weapon Name']}}</td> <td>{{=weapon['Quantity']}}</td> <td>{{=weapon['AP']}}</td> <td>{{=weapon['Weapon Range']}}</td> <td>{{=weapon['Rending']}}</td></tr>
+                    <tr><td>{{=weapon['Weapon Name']}}</td> <td>{{=weapon['Weapon qty per model']}}</td> <td>{{=weapon['AP']}}</td> <td>{{=weapon['Weapon Range']}}</td> <td>{{=weapon['Rending']}}</td></tr>
                 {{pass}}
               <tr>
                 <td><input type="text" name="wepName" placeholder="Enter name" required ></td>
