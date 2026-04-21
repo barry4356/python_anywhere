@@ -34,6 +34,12 @@ def _calculateModelPerksCost(CafUnit, base_cost):
         perk_cost += .333333 * base_cost
     if 'Regeneration' in CafUnit.keys() and CafUnit['Regeneration']:
         perk_cost += 2.47 * CafUnit["Model Qty"]
+    # Tough(1) = Nothing; Tough(2) = double cost; Tough(3+) = Copy OPR Math
+    if 'Tough' in CafUnit.keys() and int(CafUnit['Tough']) > 1:
+        if CafUnit['Tough'] == 2:
+            perk_cost += base_cost
+        else:
+            perk_cost += (1.522 * int(CafUnit['Tough']) - 3.647) * base_cost
     return perk_cost
 
 def _calculateLoadoutCost(CafUnit):

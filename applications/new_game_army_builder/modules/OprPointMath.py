@@ -32,6 +32,11 @@ def _calculateModelPerksCost(OprUnit, base_cost):
         perk_cost += .333333 * base_cost
     if 'Specs' in OprUnit.keys() and 'Regen' in OprUnit['Specs']:
         perk_cost += 2.47 * OprUnit["ModelCount"]
+    if 'Tough' in OprUnit.keys() and int(OprUnit['Tough']) > 1:
+        if OprUnit['Tough'] == 2:
+            perk_cost += base_cost
+        else:
+            perk_cost += (1.522 * int(OprUnit['Tough']) - 3.647) * base_cost
     return perk_cost
 
 def _calculateLoadoutCost(OprUnit):
