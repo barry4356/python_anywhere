@@ -58,38 +58,67 @@ def __caclulateWeaponCost(CafWeapon, quality):
     if 'Rending' in CafWeapon.keys() and CafWeapon['Rending']:
         rending = True
     if 'AP' in CafWeapon.keys():
-        #AP/Rending math is.... weird. Simplified by breaking into the 4 possible cases based on AP level
+        #AP/Rending math is.... weird. Simplified by breaking into the 8 possible cases based on AP level
         #AP Adjusts at a consistent ratio (regardless of quality); Rending follows the 'linear until 66% quality, and then exponential' paradigm
         try:
             ap_val = int(CafWeapon["AP"])
             if ap_val == 1:
+                price_per_attack *= 1.25
+                if rending:
+                    if qua_pts <= .666:
+                        price_per_attack += 0.65 + (2 * qua_pts)
+                    else:
+                        3 - (5.0415 * qua_pts) + (6.039 * qua_pts * qua_pts)
+            elif ap_val == 2:
                 price_per_attack *= 1.5
                 if rending:
                     if qua_pts <= .666:
                         price_per_attack += 0.65 + (1.812 * qua_pts)
                     else:
                         2.861 - (4.551 * qua_pts) + (5.454 * qua_pts * qua_pts)
-            elif ap_val == 2:
+            elif ap_val == 3:
+                price_per_attack *= 1.75
+                if rending:
+                    if qua_pts <= .666:
+                        price_per_attack += 0.65 + (1.4886 * qua_pts)
+                    else:
+                        2.3575 - (3.7305 * qua_pts) + (4.473 * qua_pts * qua_pts)
+            elif ap_val == 4:
                 price_per_attack *= 2
                 if rending:
                     if qua_pts <= .666:
                         price_per_attack += 0.6495 + (1.1664 * qua_pts)
                     else:
                         1.815 - (2.91 * qua_pts) + (3.492 * qua_pts * qua_pts)
-            elif ap_val == 3:
+            elif ap_val == 5:
+                price_per_attack *= 2.2
+                if rending:
+                    if qua_pts <= .666:
+                        price_per_attack += 0.65 + (0.971 * qua_pts)
+                    else:
+                        1.7165 - (2.4195 * qua_pts) + (2.907 * qua_pts * qua_pts)
+            elif ap_val == 6:
                 price_per_attack *= 2.4
                 if rending:
                     if qua_pts <= .666:
                         price_per_attack += 0.65 + (0.648 * qua_pts)
                     else:
                         1.292 - (1.599 * qua_pts) + (1.926 * qua_pts * qua_pts)
-            elif ap_val == 4:
+            elif ap_val == 7:
+                price_per_attack *= 2.55
+                if rending:
+                    if qua_pts <= .666:
+                        price_per_attack += 0.65 + (0.4534 * qua_pts)
+                    else:
+                        1.0755 - (1.1085 * qua_pts) + (1.341 * qua_pts * qua_pts)
+            elif ap_val == 8:
                 price_per_attack *= 2.7
                 if rending:
                     if qua_pts <= .666:
                         price_per_attack += 0.6495 + (0.2598 * qua_pts)
                     else:
                         0.899 - (0.618 * qua_pts) + (0.756 * qua_pts * qua_pts)
+
         except:
             print("ERROR: WTF?")
     else:
