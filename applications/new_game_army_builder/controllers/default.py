@@ -14,11 +14,10 @@ def index():
     #session.new_unit = {'weapons': []}
     dataFilePath = os.path.join(request.folder, 'private', 'AllArmyData.json')
     if not session.new_unit:
-        #TODO: Pull in the constants to auto-build new-unit struct
+        #This should only happen in a brand-new session
         session.new_unit = NEW_CAF_UNIT.copy()
         session.fastChecked = ''
         session.regenChecked = ''
-
     elif request.vars.request_id and request.vars.request_id == 'weaponBuild':
         session.new_unit['Weapons'].append({'Weapon Name': str(request.vars.wepName), 'Weapon qty per model': int(request.vars.qty), 'AP': int(request.vars.ap), 'Weapon Range': int(request.vars.range), 'Rending': bool(request.vars.rending)})
         #session.weapons = []
@@ -26,6 +25,11 @@ def index():
         session.new_unit['Weapons'].pop()
     elif request.vars.request_id == 'unitBuild':
         pass
+    elif request.vars.request_id == 'hardResetUnit':
+        session.new_unit = {}
+        session.new_unit = NEW_CAF_UNIT.copy()
+        session.fastChecked = ''
+        session.regenChecked = ''
 
     session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
     #TODO add Finalization and point math
@@ -100,6 +104,11 @@ def update_modelHeight():
     if request.vars.modelHeight:
         session.new_unit['modelHeight'] = int(request.vars.modelHeight)
     return session.new_unit['modelHeight']
+
+def update_modelTough():
+    if request.vars.Tough:
+        session.new_unit['Tough'] = int(request.vars.Tough)
+    return CalculateUnitCost(session.new_unit)
 
 def update_Fast():
     session.new_unit['Fast'] = bool(request.vars.Fast)

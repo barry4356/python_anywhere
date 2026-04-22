@@ -15,14 +15,14 @@ def _calculateBaseCost(OprUnit):
     #Defense is weighter higher than Quality. Cost was found for every combination, and the equations reverse engineered.
     #Linear scale derived from OPR Armies (https://www.graphpad.com/quickcalcs/linear1/)
     if def_pts <= .666:
-        pricePerModel += (7.38 * def_pts) 
+        pricePerModel += (7.38 * def_pts)
     if qua_pts <= .666:
         pricePerModel += (3.72 * qua_pts)
     #Quadratic formula derived from OPR Armies (https://www.omnicalculator.com/statistics/quadratic-regression)
     if def_pts > .666:
-        pricePerModel += ((7.38 - (18.45*def_pts) + (22.14*def_pts*def_pts))) 
+        pricePerModel += ((7.38 - (18.45*def_pts) + (22.14*def_pts*def_pts)))
     if qua_pts > .666:
-        pricePerModel += ((3.72 - (9.3*qua_pts) + (11.16*qua_pts*qua_pts))) 
+        pricePerModel += ((3.72 - (9.3*qua_pts) + (11.16*qua_pts*qua_pts)))
     return int(pricePerModel * OprUnit["ModelCount"])
 
 def _calculateModelPerksCost(OprUnit, base_cost):
@@ -34,7 +34,7 @@ def _calculateModelPerksCost(OprUnit, base_cost):
         perk_cost += 2.47 * OprUnit["ModelCount"]
     if 'Tough' in OprUnit.keys() and int(OprUnit['Tough']) > 1:
         if OprUnit['Tough'] == 2:
-            perk_cost += base_cost
+            perk_cost += (.75 * base_cost) #Just to keep things rational... Tough2 is a joke
         else:
             perk_cost += (1.522 * int(OprUnit['Tough']) - 3.647) * base_cost
     return perk_cost

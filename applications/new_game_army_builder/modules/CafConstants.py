@@ -9,6 +9,7 @@ NEW_CAF_UNIT={
     'Special Perks': [],
     'Fast': False,
     'Regeneration': False,
+    'Tough': 0,
     'modelLength': 1,
     'modelWidth': 1,
     'modelHeight': 2,

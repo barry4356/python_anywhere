@@ -37,7 +37,7 @@ def _calculateModelPerksCost(CafUnit, base_cost):
     # Tough(1) = Nothing; Tough(2) = double cost; Tough(3+) = Copy OPR Math
     if 'Tough' in CafUnit.keys() and int(CafUnit['Tough']) > 1:
         if CafUnit['Tough'] == 2:
-            perk_cost += base_cost
+            perk_cost += (.75 * base_cost) #Just to keep things rational... Tough2 is a joke
         else:
             perk_cost += (1.522 * int(CafUnit['Tough']) - 3.647) * base_cost
     return perk_cost
