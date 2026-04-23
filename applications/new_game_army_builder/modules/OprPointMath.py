@@ -31,12 +31,18 @@ def _calculateModelPerksCost(OprUnit, base_cost):
     if 'Specs' in OprUnit.keys() and 'Fast' in OprUnit['Specs']:
         perk_cost += .333333 * base_cost
     if 'Specs' in OprUnit.keys() and 'Regen' in OprUnit['Specs']:
-        perk_cost += 2.47 * OprUnit["ModelCount"]
+        hp_count = CafUnit["Model Qty"]
+        if 'Tough' in OprUnit.keys() and int(OprUnit['Tough']) > 1:
+            hp_count *= OprUnit['Tough']
+        perk_cost += 2.47 * hp_count
     if 'Tough' in OprUnit.keys() and int(OprUnit['Tough']) > 1:
         if OprUnit['Tough'] == 2:
             perk_cost += (.75 * base_cost) #Just to keep things rational... Tough2 is a joke
         else:
             perk_cost += (1.522 * int(OprUnit['Tough']) - 3.647) * base_cost
+    if 'Caster' in OprUnit.keys() and int(OprUnit['Caster']) > 0:
+        #Direct cost based on Caster Level
+        perk_cost += (16.03 * OprUnit['Caster'] - 1.325) * OprUnit["Model Qty"]
     return perk_cost
 
 def _calculateLoadoutCost(OprUnit):

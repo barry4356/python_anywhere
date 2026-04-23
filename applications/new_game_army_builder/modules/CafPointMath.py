@@ -33,13 +33,19 @@ def _calculateModelPerksCost(CafUnit, base_cost):
     if 'Fast' in CafUnit.keys() and CafUnit['Fast']:
         perk_cost += .333333 * base_cost
     if 'Regeneration' in CafUnit.keys() and CafUnit['Regeneration']:
-        perk_cost += 2.47 * CafUnit["Model Qty"]
+        hp_count = CafUnit["Model Qty"]
+        if 'Tough' in CafUnit.keys() and int(CafUnit['Tough']) > 1:
+            hp_count *= CafUnit['Tough']
+        perk_cost += 2.47 * hp_count
     # Tough(1) = Nothing; Tough(2) = double cost; Tough(3+) = Copy OPR Math
     if 'Tough' in CafUnit.keys() and int(CafUnit['Tough']) > 1:
         if CafUnit['Tough'] == 2:
             perk_cost += (.75 * base_cost) #Just to keep things rational... Tough2 is a joke
         else:
             perk_cost += (1.522 * int(CafUnit['Tough']) - 3.647) * base_cost
+    if 'Caster' in CafUnit.keys() and int(CafUnit['Caster']) > 0:
+        #Direct cost based on Caster Level (Taken Straight from OPR Rules)
+        perk_cost += (16.03 * CafUnit['Caster'] - 1.325) * CafUnit["Model Qty"]
     return perk_cost
 
 def _calculateLoadoutCost(CafUnit):

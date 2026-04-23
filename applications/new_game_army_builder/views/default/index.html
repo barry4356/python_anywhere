@@ -11,7 +11,7 @@
 <div class="split-container">
   <div class="left">
     <h1>Unit Creation</h1>
-    <div>Editor Version: V0.2&emsp;&emsp;Point Math Based on OPR Version: V3.5.1</div>
+    <div>Editor Version: V0.3&emsp;&emsp;Point Math Based on OPR Version: V3.5.1</div>
     <form>
         <hr>
         <p class="lead">{{=T('Unit and Model Options')}}</p>
@@ -27,7 +27,7 @@
         <label>Regen&nbsp;</label><input type="checkbox" name="Regen" {{=session.regenChecked}} onchange="ajax('{{=URL('default', 'update_Regen')}}', ['Regen'], 'price');">&emsp;
         <br />
         <label>Tough:&nbsp;</label><input type="number" name="Tough" min="0" max="20" step="1" value={{=session.new_unit["Tough"]}} onchange="ajax('{{=URL('default', 'update_modelTough')}}', ['Tough'], 'price');"/>&emsp;
-        <!--<label>Caster:&nbsp;</label><input type="number" name="Caster" min="0" max="9" step="1" value="0"/>&emsp;--><br /><br />
+        <label>Caster:&nbsp;</label><input type="number" name="Caster" min="0" max="9" step="1" value={{=session.new_unit["Caster"]}} onchange="ajax('{{=URL('default', 'update_modelCaster')}}', ['Caster'], 'price');"/>&emsp;<br /><br />
         <input type="submit" value="Finalize Unit" /><div>Price: </div><div id="price">{{=session.new_unit["Cost"]}}</div><br />
         <input type="hidden" name="request_id" value="unitBuild">
     </form>

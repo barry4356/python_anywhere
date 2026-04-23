@@ -110,6 +110,11 @@ def update_modelTough():
         session.new_unit['Tough'] = int(request.vars.Tough)
     return CalculateUnitCost(session.new_unit)
 
+def update_modelCaster():
+    if request.vars.Caster:
+        session.new_unit['Caster'] = int(request.vars.Caster)
+    return CalculateUnitCost(session.new_unit)
+
 def update_Fast():
     session.new_unit['Fast'] = bool(request.vars.Fast)
     if session.new_unit['Fast']:

@@ -10,6 +10,7 @@ NEW_CAF_UNIT={
     'Fast': False,
     'Regeneration': False,
     'Tough': 0,
+    'Caster': 0,
     'modelLength': 1,
     'modelWidth': 1,
     'modelHeight': 2,
