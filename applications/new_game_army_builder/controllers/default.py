@@ -24,7 +24,7 @@ def index():
     elif request.vars.request_id == 'removeWeapon' and 'Weapons' in session.new_unit.keys() and session.new_unit['Weapons']:
         session.new_unit['Weapons'].pop()
     elif request.vars.request_id == 'unitBuild':
-        pass
+        download_unit()
     elif request.vars.request_id == 'hardResetUnit':
         session.new_unit = {}
         session.new_unit = NEW_CAF_UNIT.copy()
@@ -90,6 +90,16 @@ def update_numOfModels():
         session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
     return CalculateUnitCost(session.new_unit)
 
+def update_unitName():
+    if request.vars.unitname:
+        session.new_unit['Unit Name'] = str(request.vars.unitname)
+    return session.new_unit['Unit Name']
+
+def update_factionName():
+    if request.vars.factionname:
+        session.new_unit['Faction Name'] = str(request.vars.unitname)
+    return session.new_unit['Faction Name']
+
 def update_modelLength():
     if request.vars.modelLength:
         session.new_unit['modelLength'] = int(request.vars.modelLength)
@@ -133,4 +143,12 @@ def update_Regen():
     session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
     return CalculateUnitCost(session.new_unit)
 
-
+def download_unit():
+    content = json.dumps(session.new_unit, indent=2)
+    filename = "NewUnit.json"
+    if 'Unit Name' in session.new_unit.keys() and session.new_unit['Unit Name']:
+        filename = session.new_unit['Unit Name']+'.json'
+    # Set headers to force download
+    response.headers['Content-Type'] = 'text/plain'
+    response.headers['Content-Disposition'] = f'attachment; filename={filename}'
+    return content

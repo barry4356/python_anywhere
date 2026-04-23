@@ -12,11 +12,12 @@
   <div class="left">
     <h1>Unit Creation</h1>
     <div>Editor Version: V0.3&emsp;&emsp;Point Math Based on OPR Version: V3.5.1</div>
+    <a href="{{=URL('default', 'download_unit', args='')}}" class="button">Download Unit</a>
     <form>
         <hr>
         <p class="lead">{{=T('Unit and Model Options')}}</p>
-        <input type="text" name="unitname" placeholder="Unit Name" required >
-        <input type="text" name="factionname" placeholder="Faction Name" required ><br />
+        <input type="text" name="unitname" placeholder="Unit Name" value="{{=session.new_unit['Unit Name']}}" required  onchange="ajax('{{=URL('default', 'update_unitName')}}', ['unitname'], '');">
+        <input type="text" name="factionname" placeholder="Faction Name" value="{{=session.new_unit['Faction Name']}}" required  onchange="ajax('{{=URL('default', 'update_factionName')}}', ['factionname'], '');"><br />
         <label>Quality:&nbsp;</label><input type="number" name="quality" id="quality" min="2" max="10" step="1" value={{=session.new_unit["Quality"]}} onchange="ajax('{{=URL('default', 'update_quality')}}', ['quality'], 'price');" />&emsp;
         <label>Defense:&nbsp;</label><input type="number" name="defense" min="2" max="10" step="1" value={{=session.new_unit["Defense"]}} onchange="ajax('{{=URL('default', 'update_defense')}}', ['defense'], 'price');" />&emsp;
         <label>Number of Models:&nbsp;</label><input type="number" name="numOfModels" min="1" max="20" step="1" value={{=session.new_unit["Model Qty"]}} onchange="ajax('{{=URL('default', 'update_numOfModels')}}', ['numOfModels'], 'price');" /><br />
@@ -28,7 +29,7 @@
         <br />
         <label>Tough:&nbsp;</label><input type="number" name="Tough" min="0" max="20" step="1" value={{=session.new_unit["Tough"]}} onchange="ajax('{{=URL('default', 'update_modelTough')}}', ['Tough'], 'price');"/>&emsp;
         <label>Caster:&nbsp;</label><input type="number" name="Caster" min="0" max="9" step="1" value={{=session.new_unit["Caster"]}} onchange="ajax('{{=URL('default', 'update_modelCaster')}}', ['Caster'], 'price');"/>&emsp;<br /><br />
-        <input type="submit" value="Finalize Unit" /><div>Price: </div><div id="price">{{=session.new_unit["Cost"]}}</div><br />
+        <!--<input type="submit" value="Download Unit" />--><div>Price: </div><div id="price">{{=session.new_unit["Cost"]}}</div><br />
         <input type="hidden" name="request_id" value="unitBuild">
     </form>
     <hr>
