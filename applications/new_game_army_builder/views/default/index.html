@@ -17,7 +17,7 @@
         <hr>
         <p class="lead">{{=T('Unit and Model Options')}}</p>
         <input type="text" name="unitname" placeholder="Unit Name" value="{{=session.new_unit['Unit Name']}}" required  onchange="ajax('{{=URL('default', 'update_unitName')}}', ['unitname'], '');">
-        <input type="text" name="factionname" placeholder="Faction Name" value="{{=session.new_unit['Faction Name']}}" required  onchange="ajax('{{=URL('default', 'update_factionName')}}', ['factionname'], '');"><br />
+        <input type="text" name="factionname" placeholder="Faction Name" value="{{=session.new_unit['Faction Name']}}" required  onchange="ajax('{{=URL('default', 'update_factionName')}}', ['factionname'], 'target');"><br />
         <label>Quality:&nbsp;</label><input type="number" name="quality" id="quality" min="2" max="10" step="1" value={{=session.new_unit["Quality"]}} onchange="ajax('{{=URL('default', 'update_quality')}}', ['quality'], 'price');" />&emsp;
         <label>Defense:&nbsp;</label><input type="number" name="defense" min="2" max="10" step="1" value={{=session.new_unit["Defense"]}} onchange="ajax('{{=URL('default', 'update_defense')}}', ['defense'], 'price');" />&emsp;
         <label>Number of Models:&nbsp;</label><input type="number" name="numOfModels" min="1" max="20" step="1" value={{=session.new_unit["Model Qty"]}} onchange="ajax('{{=URL('default', 'update_numOfModels')}}', ['numOfModels'], 'price');" /><br />

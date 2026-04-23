@@ -97,7 +97,7 @@ def update_unitName():
 
 def update_factionName():
     if request.vars.factionname:
-        session.new_unit['Faction Name'] = str(request.vars.unitname)
+        session.new_unit['Faction Name'] = str(request.vars.factionname)
     return session.new_unit['Faction Name']
 
 def update_modelLength():
