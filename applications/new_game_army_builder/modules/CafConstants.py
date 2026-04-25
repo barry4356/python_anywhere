@@ -22,5 +22,6 @@ NEW_CAF_WEAPON={
     'Rending': False,
     'Weapon Range': 0,
     'Weapon qty per model': 1,
+    'Cost': 0,
 }
 

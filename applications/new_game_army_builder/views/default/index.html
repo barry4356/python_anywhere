@@ -3,7 +3,7 @@
 {{block header}}
 <div class="jumbotron jumbotron-fluid background" style="background-color: #333; color:white; padding:30px;word-wrap:break-word;">
   <div class="container center">
-    <h1 class="display-5">Unit Creation Tool</h1>
+    <h1 class="display-5">Krigsreich Unit Creation Tool</h1>
   </div>
 </div>
 {{end}}
@@ -11,25 +11,25 @@
 <div class="split-container">
   <div class="left">
     <h1>Unit Creation</h1>
-    <div>Editor Version: V0.3&emsp;&emsp;Point Math Based on OPR Version: V3.5.1</div>
+    <div>Editor Version: V0.4&emsp;&emsp;Point Math Based on OPR Version: V3.5.1</div>
     <a href="{{=URL('default', 'download_unit', args='')}}" class="button">Download Unit</a>
     <form>
         <hr>
         <p class="lead">{{=T('Unit and Model Options')}}</p>
         <input type="text" name="unitname" placeholder="Unit Name" value="{{=session.new_unit['Unit Name']}}" required  onchange="ajax('{{=URL('default', 'update_unitName')}}', ['unitname'], '');">
         <input type="text" name="factionname" placeholder="Faction Name" value="{{=session.new_unit['Faction Name']}}" required  onchange="ajax('{{=URL('default', 'update_factionName')}}', ['factionname'], 'target');"><br />
-        <label>Quality:&nbsp;</label><input type="number" name="quality" id="quality" min="2" max="10" step="1" value={{=session.new_unit["Quality"]}} onchange="ajax('{{=URL('default', 'update_quality')}}', ['quality'], 'price');" />&emsp;
-        <label>Defense:&nbsp;</label><input type="number" name="defense" min="2" max="10" step="1" value={{=session.new_unit["Defense"]}} onchange="ajax('{{=URL('default', 'update_defense')}}', ['defense'], 'price');" />&emsp;
-        <label>Number of Models:&nbsp;</label><input type="number" name="numOfModels" min="1" max="20" step="1" value={{=session.new_unit["Model Qty"]}} onchange="ajax('{{=URL('default', 'update_numOfModels')}}', ['numOfModels'], 'price');" /><br />
-        <label>Model Length:&nbsp;</label><input type="number" name="modelLength" min="1" max="10" step="1" value={{=session.new_unit["modelLength"]}} onchange="ajax('{{=URL('default', 'update_modelLength')}}', ['modelLength'], '');" />&emsp;
-        <label>Model Width:&nbsp;</label><input type="number" name="modelWidth" min="1" max="10" step="1" value={{=session.new_unit["modelWidth"]}} onchange="ajax('{{=URL('default', 'update_modelWidth')}}', ['modelWidth'], '');" />&emsp;
-        <label>Model Height:&nbsp;</label><input type="number" name="modelHeight" min="1" max="10" step="1" value={{=session.new_unit["modelHeight"]}} onchange="ajax('{{=URL('default', 'update_modelHeight')}}', ['modelHeight'], '');" /><br />
+        <label>Quality:&nbsp;</label><input type="number" name="quality" id="quality" min="2" max="10" step="1" value={{=session.new_unit["Quality"]}} onchange="ajax('{{=URL('default', 'update_quality')}}', ['quality'], 'price');" style="width: 5ch;"/>&emsp;
+        <label>Defense:&nbsp;</label><input type="number" name="defense" min="2" max="10" step="1" value={{=session.new_unit["Defense"]}} onchange="ajax('{{=URL('default', 'update_defense')}}', ['defense'], 'price');" style="width: 5ch;"/><br />
+        <label>Number of Models:&nbsp;</label><input type="number" name="numOfModels" min="1" max="20" step="1" value={{=session.new_unit["Model Qty"]}} onchange="ajax('{{=URL('default', 'update_numOfModels')}}', ['numOfModels'], 'price');" style="width: 5ch;" /><br />
+        <label>Model Length:&nbsp;</label><input type="number" name="modelLength" min="1" max="10" step="1" value={{=session.new_unit["modelLength"]}} onchange="ajax('{{=URL('default', 'update_modelLength')}}', ['modelLength'], '');" style="width: 5ch;" /><br />
+        <label>Model Width:&nbsp;&nbsp;</label><input type="number" name="modelWidth" min="1" max="10" step="1" value={{=session.new_unit["modelWidth"]}} onchange="ajax('{{=URL('default', 'update_modelWidth')}}', ['modelWidth'], '');" style="width: 5ch;" /><br />
+        <label>Model Height:&nbsp;</label><input type="number" name="modelHeight" min="1" max="10" step="1" value={{=session.new_unit["modelHeight"]}} onchange="ajax('{{=URL('default', 'update_modelHeight')}}', ['modelHeight'], '');" style="width: 5ch;" /><br />
         <label>Fast&nbsp;</label><input type="checkbox" name="Fast" {{=session.fastChecked}} onchange="ajax('{{=URL('default', 'update_Fast')}}', ['Fast'], 'price');">&emsp;
         <label>Regen&nbsp;</label><input type="checkbox" name="Regen" {{=session.regenChecked}} onchange="ajax('{{=URL('default', 'update_Regen')}}', ['Regen'], 'price');">&emsp;
         <br />
-        <label>Tough:&nbsp;</label><input type="number" name="Tough" min="0" max="20" step="1" value={{=session.new_unit["Tough"]}} onchange="ajax('{{=URL('default', 'update_modelTough')}}', ['Tough'], 'price');"/>&emsp;
-        <label>Caster:&nbsp;</label><input type="number" name="Caster" min="0" max="9" step="1" value={{=session.new_unit["Caster"]}} onchange="ajax('{{=URL('default', 'update_modelCaster')}}', ['Caster'], 'price');"/>&emsp;<br /><br />
-        <!--<input type="submit" value="Download Unit" />--><div>Price: </div><div id="price">{{=session.new_unit["Cost"]}}</div><br />
+        <label>Tough:&nbsp;</label><input type="number" name="Tough" min="0" max="20" step="1" value={{=session.new_unit["Tough"]}} onchange="ajax('{{=URL('default', 'update_modelTough')}}', ['Tough'], 'price');" style="width: 5ch;" />&emsp;
+        <label>Caster:&nbsp;</label><input type="number" name="Caster" min="0" max="9" step="1" value={{=session.new_unit["Caster"]}} onchange="ajax('{{=URL('default', 'update_modelCaster')}}', ['Caster'], 'price');" style="width: 4ch;" />&emsp;<br /><br />
+        <!--<input type="submit" value="Download Unit" />--><br />
         <input type="hidden" name="request_id" value="unitBuild">
     </form>
     <hr>
@@ -40,9 +40,9 @@
             <thead>
               <tr>
                 <th>Weapon Name</th>
-                <th>Qty/Model&nbsp;</th>
+                <th>Qty&nbsp;</th>
                 <th>AP</th>
-                <th>Range</th>
+                <th>Range&nbsp;</th>
                 <th>Rending</th>
               </tr>
             </thead>
@@ -52,10 +52,10 @@
                 {{pass}}
               <tr>
                 <td><input type="text" name="wepName" placeholder="Enter name" required ></td>
-                <td><input type="number" name="qty" min="1" max="99" step="1" value="1"></td>
-                <td><input type="number" name="ap" min="0" max="8" step="1" value="0"></td>
-                <td><input type="number" name="range" min="0" max=48 step="1" value="0"></td>
-                <td><label>Rending&nbsp;</label><input type="checkbox" name="rending"></td>
+                <td><input type="number" name="qty" min="1" max="99" step="1" value="1" style="width: 5ch;"></td>
+                <td><input type="number" name="ap" min="0" max="8" step="1" value="0" style="width: 5ch;"></td>
+                <td><input type="number" name="range" min="0" max=48 step="1" value="0" style="width: 5ch;"></td>
+                <td><label>&nbsp;</label><input type="checkbox" name="rending"></td>
               </tr>
             </tbody>
       </table>
@@ -68,6 +68,8 @@
         <input type="hidden" name="request_id" value="removeWeapon">
     </form>
     <br />
+    <hr>
+        <p class="lead">{{=T('Unit Price: ')}}</p><div id="price">{{=session.new_unit["Cost"]}}</div>
     <hr>
     <form action="{{=URL()}}" method="post">
         <input type="submit" value="Reset Current Unit" style="background-color: red; color: white;"/>
