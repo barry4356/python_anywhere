@@ -51,6 +51,8 @@ def index():
         session.regenChecked = ''
 
     session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
+    if not session.current_tab:
+        session.current_tab = 1
     #TODO add Finalization and point math
     #TODO add ajax hooks to update point math any time a value changes
     #TODO update point math when weapon is added to loadout
@@ -161,6 +163,10 @@ def update_Regen():
         session.regenChecked = ''
     session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
     return CalculateUnitCost(session.new_unit)
+
+def switchTab():
+    session.current_tab = int(request.vars.myvar)
+    return session.current_tab
 
 def download_unit():
     content = json.dumps(session.new_unit, indent=2)
