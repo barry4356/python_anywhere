@@ -29,9 +29,18 @@ def user():
     return dict(form=auth())
 
 def index():
+    #session.army_book = ''
     #session.clear()
     #session.new_unit = {'weapons': []}
-    dataFilePath = os.path.join(request.folder, 'private', 'AllArmyData.json')
+    if not session.armyBooks:
+        ArmyBookRepo = os.path.join(request.folder, 'private', 'ArmyBooks')
+        armyBookFiles = os.listdir(ArmyBookRepo)
+        session.armyBooks = [armyBook.replace("_", " ").replace('.json','') for armyBook in armyBookFiles]
+    if request.vars.request_id and request.vars.request_id == 'selectArmyBook':
+        session.army_book_name = request.vars.bookSelection
+        session.army_book_json = request.vars.bookSelection.replace(' ','_') + '.json'
+        with open(os.path.join(request.folder, 'private', 'ArmyBooks', session.army_book_json), 'r') as file:
+            session.army_book = json.load(file)
     if not session.new_unit:
         #This should only happen in a brand-new session
         session.new_unit = NEW_CAF_UNIT.copy()

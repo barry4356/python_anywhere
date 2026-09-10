@@ -8,7 +8,6 @@
 </div>
 {{end}}
 
-<!-- <div id="result">{{=session.current_tab}}</div> -->
 
 <!-- Tab Navigation Buttons -->
 <div class="tab-container">
@@ -17,13 +16,27 @@
   <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=3', [], function(res) {location.reload(true);});">Edit List</button>
   <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=4', [], function(res) {location.reload(true);});">View List</button>
 </div>
+<hr>
 
+{{if session.army_book_json:}}
+ <div id="result" style="text-align: right;">Army Book: {{=session.army_book_name}}</div>
+ <br>
+ {{pass}}
 
 <!-- Tab Content Panels -->
 {{if session.current_tab == 1:}}
 <div id="tab1">
   <h3>Setup List</h3>
   <p>Choose your army book, list type, list name, save/load your lists, etc..</p>
+  <hr>
+  <form>
+      <label for="bookSelection">Choose an Army Book:</label>
+      {{=SELECT(*[OPTION(item, _value=item) for item in session.armyBooks], _name='bookSelection')}}<br />
+      <input type="submit" value="Select Army Book" />
+      <input type="hidden" name="request_id" value="selectArmyBook">
+
+  </form>
+  <hr>
 </div>
 {{pass}}
 

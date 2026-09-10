@@ -333,3 +333,46 @@ li.w2p_grid_breadcrumb_elem {
   border-left: 2px solid black;
   transform: translateX(-50%); /* Perfectly offsets the line's own width */
 }
+
+/* Container for the buttons */
+.tab-container {
+  display: flex;
+  border-bottom: 2px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Individual tab buttons */
+.tab-btn {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 20px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+/* Change background color on hover */
+.tab-btn:hover {
+  background-color: #ddd;
+}
+
+/* Style for the active/current tab button */
+.tab-btn.active {
+  background-color: #fff;
+  border-bottom: 2px solid #007BFF;
+  font-weight: bold;
+}
+
+/* Hide all tab contents by default */
+.tab-content {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/* Show the active tab content */
+.tab-content.active {
+  display: block;
+}
