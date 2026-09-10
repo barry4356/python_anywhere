@@ -11,9 +11,9 @@
 
 <!-- Tab Navigation Buttons -->
 <div class="tab-container">
-  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">Setup List</button>
+  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">Configure List</button>
   <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=2', [], function(res) {location.reload(true);});">Add Units</button>
-  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=3', [], function(res) {location.reload(true);});">Edit List</button>
+  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=3', [], function(res) {location.reload(true);});">Edit Units</button>
   <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=4', [], function(res) {location.reload(true);});">View List</button>
 </div>
 <hr>
@@ -23,7 +23,7 @@
  <br>
  {{pass}}
 
-<!-- Tab Content Panels -->
+<!-- Configure Lists -->
 {{if session.current_tab == 1:}}
 <div id="tab1">
   <h3>Setup List</h3>
@@ -40,11 +40,24 @@
 </div>
 {{pass}}
 
-
+<!-- Add Units -->
 {{if session.current_tab == 2:}}
 <div id="tab2">
   <h3>Add to List</h3>
-  <p>Add units from your selected army-book to your list.</p>
+  <p>Add units from your selected army-book(s) to your list.</p>
+  {{for unit in session.army_book['Units'].keys():}}
+    <form>
+      <b>{{=unit}}</b>
+      <div>Qual: {{=session.army_book['Units'][unit]['quality']}}+&ensp;Def: {{=session.army_book['Units'][unit]['defense']}}+&ensp;Price: {{=session.army_book['Units'][unit]['base_points']}}</div>
+      <div>Weapons:</div>
+      {{for weapon in session.army_book['Units'][unit]['weapons']:}}
+        <div>&emsp;{{=weapon}}</div>
+      {{pass}}
+      <div>Perks: {{=', '.join(session.army_book['Units'][unit]['perks'])}}</div>
+      <input type="submit" value="Add to List" />
+      <input type="hidden" name="request_id" value="AddUnitToList">
+    </form>
+  {{pass}}
 </div>
 {{pass}}
 

@@ -1,13 +1,15 @@
 {
-    "Peasant Levy": {
-        "base_points": 45,
-        "quality": 6,
-        "defense": 6,
-        "weapons": [
-           "10x Hand Weapon (A1)",
-           "10x Throw Stones (12\", A1)"
-       ],
-       "perks": [],
-       "upgrades": []
+    "Units": {
+        "Peasant Levy": {
+            "base_points": 45,
+            "quality": 6,
+            "defense": 6,
+            "weapons": [
+               "10x Hand Weapon (A1)",
+               "10x Throw Stones (12\", A1)"
+           ],
+           "perks": [],
+           "upgrades": []
+        }
     }
 }

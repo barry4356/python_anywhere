@@ -34,7 +34,8 @@ def index():
     #session.new_unit = {'weapons': []}
     if not session.armyBooks:
         ArmyBookRepo = os.path.join(request.folder, 'private', 'ArmyBooks')
-        armyBookFiles = os.listdir(ArmyBookRepo)
+        armyBookFiles = [f for f in os.listdir(ArmyBookRepo) if f.endswith('.json')]
+        armyBookFiles.sort()
         session.armyBooks = [armyBook.replace("_", " ").replace('.json','') for armyBook in armyBookFiles]
     if request.vars.request_id and request.vars.request_id == 'selectArmyBook':
         session.army_book_name = request.vars.bookSelection
