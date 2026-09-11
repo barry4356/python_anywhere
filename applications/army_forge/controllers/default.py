@@ -66,6 +66,13 @@ def index():
     if request.vars.request_id == 'updateListName':
         session.list_name = request.vars.listName
         redirect(URL('index'))
+    if request.vars.request_id == 'loadArmyList':
+        session.list_name = request.vars.armyFileSelection
+        session.army_list_json = request.vars.armyFileSelection.replace(' ','_') + '.json'
+        with open(os.path.join(request.folder, 'private', 'ArmyLists', session.username, session.army_list_json), 'r') as file:
+            session.army_list = json.load(file)
+        session.current_tab = 1
+        redirect(URL('index'))
 
 
 
