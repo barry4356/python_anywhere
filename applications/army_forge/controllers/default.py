@@ -3,6 +3,7 @@
 # -------------------------------------------------------------------------
 import os
 import json
+import uuid
 from CafConstants import NEW_CAF_UNIT
 from CafPointMath import CalculateUnitCost
 
@@ -35,9 +36,11 @@ def index():
     #session.new_unit = {'weapons': []}
     #response.flash = ""
     if not session.army_list:
-        session.army_list = []
+        session.army_list = {}
     if not session.current_tab:
         session.current_tab = 1
+    if not session.armyLists:
+        session.armyLists = []
     if not session.armyBooks:
         ArmyBookRepo = os.path.join(request.folder, 'private', 'ArmyBooks')
         armyBookFiles = [f for f in os.listdir(ArmyBookRepo) if f.endswith('.json')]
@@ -50,10 +53,15 @@ def index():
         session.army_book_json = request.vars.bookSelection.replace(' ','_') + '.json'
         with open(os.path.join(request.folder, 'private', 'ArmyBooks', session.army_book_json), 'r') as file:
             session.army_book = json.load(file)
-        session.army_list = []
+        session.army_list = {}
+        session.list_name = None
         redirect(URL('index'))
     if request.vars.request_id == 'AddUnitToList':
-        session.army_list.append(session.army_book['Units'][request.vars.unitName])
+        unit_uuid = str(uuid.uuid4())
+        new_unit = session.army_book['Units'][request.vars.unitName]
+        new_unit['unit_type'] = request.vars.unitName
+        new_unit['name'] = ''
+        session.army_list[unit_uuid] = new_unit
         redirect(URL('index'))
     if request.vars.request_id == 'updateListName':
         session.list_name = request.vars.listName
@@ -63,8 +71,22 @@ def index():
 
     return dict()
 
+def updateAvailableLists():
+    if not session.username:
+        username = auth.user.email
+        username = username.replace('.','_').replace('@','__')
+        session.username = username
+    ArmyListRepo = os.path.join(request.folder, 'private', 'ArmyLists', session.username)
+    armyListFiles = [f for f in os.listdir(ArmyListRepo) if f.endswith('.json')]
+    session.armyLists = [armyList.replace("_", " ").replace('.json','') for armyList in armyListFiles]
+
+
+
 def switchTab():
     session.current_tab = int(request.vars.myvar)
+    if session.current_tab == 5:
+        #Get all available Army List Files
+        updateAvailableLists()
     return session.current_tab
 
 def saveList():

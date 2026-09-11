@@ -65,7 +65,7 @@
       <button title="Nothing to Save" disabled>SaveCopy</button>
       <br>
       <br>
-      <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">Load</button>
+      <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=5', [], function(res) {location.reload(true);});">Load</button>
   {{else:}}
       <div>Save/Load List</div>
       <button onclick="ajax('{{=URL('default', 'saveList')}}', [], function(res) {location.reload(true);});">Save</button>
@@ -73,7 +73,7 @@
       <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">SaveCopy</button>
       <br>
       <br>
-      <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">Load</button>
+      <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=5', [], function(res) {location.reload(true);});">Load</button>
   {{pass}}
   <hr>
 </div>
@@ -106,8 +106,8 @@
 <div id="tab3">
   <h3>Edit List</h3>
   <p>Modify Units in your List.</p>
-  {{for unit in session.army_list:}}
-    <div>{{=unit}}</div>
+  {{for unit_key in session.army_list:}}
+    <div>{{=session.army_list[unit_key]}}</div>
   {{pass}}
 </div>
 {{pass}}
@@ -117,6 +117,20 @@
 <div id="tab4">
   <h3>View List</h3>
   <p>Print your list here.</p>
+</div>
+{{pass}}
+
+<!-- Load List From File Tab -->
+{{if session.current_tab == 5:}}
+<div id="tab5">
+  <h3>Load List</h3>
+    <form>
+      <label for="armyFileSelection">Choose List to Load:</label>
+      {{=SELECT(*[OPTION(item, _value=item) for item in session.armyLists], _name='armyFileSelection')}}<br />
+      <input type="submit" value="Load Army List" />
+      <input type="hidden" name="request_id" value="loadArmyList">
+      <button type="button" onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">Cancel</button>
+  </form>
 </div>
 {{pass}}
 
