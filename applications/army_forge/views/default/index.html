@@ -12,9 +12,18 @@
 <!-- Tab Navigation Buttons -->
 <div class="tab-container">
   <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">Configure</button>
-  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=2', [], function(res) {location.reload(true);});">Add Units</button>
-  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=3', [], function(res) {location.reload(true);});">Edit Units</button>
-  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=4', [], function(res) {location.reload(true);});">View List</button>
+  {{if session.army_book and session.list_name:}}
+    <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=2', [], function(res) {location.reload(true);});">Add Units</button>
+  {{else:}}
+    <button title="Must Select Army Book and Name the List" disabled>Add Units</button>
+  {{pass}}
+  {{if session.army_list:}}
+      <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=3', [], function(res) {location.reload(true);});">Edit Units</button>
+      <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=4', [], function(res) {location.reload(true);});">View List</button>
+  {{else:}}
+      <button title="Army List is Empty" disabled>Edit Units</button>
+      <button title="Army List is Empty" disabled>View List</button>
+  {{pass}}
 </div>
 <hr>
 
