@@ -27,6 +27,7 @@
 </div>
 <hr>
 
+<!-- List Information Header -->
 {{if session.army_book_json:}}
  <div id="result" style="text-align: right;">Army Book: {{=session.army_book_name}}</div>
  {{pass}}
@@ -36,7 +37,7 @@
  {{pass}}
 <br>
 
-<!-- Configure List -->
+<!-- Configure List Tab -->
 {{if session.current_tab == 1:}}
 <div id="tab1">
   <h3>Configure List</h3>
@@ -56,21 +57,29 @@
   </form>
   <hr>
   {{if not auth.user:}}
-  <a href="https://barry4356.pythonanywhere.com/army_forge/default/user/login">Login to Save/Load Lists</a>
+      <a href="https://barry4356.pythonanywhere.com/army_forge/default/user/login">Login to Save/Load Lists</a>
+  {{elif not session.army_list:}}
+      <div>Save/Load List:</div>
+      <button title="Nothing to Save" disabled>Save</button>
+      <button title="Nothing to Save" disabled>SaveAs</button>
+      <button title="Nothing to Save" disabled>SaveCopy</button>
+      <br>
+      <br>
+      <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">Load</button>
   {{else:}}
-  <div>Save/Load List</div>
-  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">Save</button>
-  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">SaveAs</button>
-  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">SaveCopy</button>
-  <br>
-  <br>
-  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">Load</button>
+      <div>Save/Load List</div>
+      <button onclick="ajax('{{=URL('default', 'saveList')}}', [], function(res) {location.reload(true);});">Save</button>
+      <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">SaveAs</button>
+      <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">SaveCopy</button>
+      <br>
+      <br>
+      <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">Load</button>
   {{pass}}
   <hr>
 </div>
 {{pass}}
 
-<!-- Add Units -->
+<!-- Add Units Tab -->
 {{if session.current_tab == 2:}}
 <div id="tab2">
   <h3>Add to List</h3>
@@ -92,7 +101,7 @@
 </div>
 {{pass}}
 
-<!-- Edit Units -->
+<!-- Edit Units Tab -->
 {{if session.current_tab == 3:}}
 <div id="tab3">
   <h3>Edit List</h3>
@@ -103,6 +112,7 @@
 </div>
 {{pass}}
 
+<!-- View Units Tab -->
 {{if session.current_tab == 4:}}
 <div id="tab4">
   <h3>View List</h3>

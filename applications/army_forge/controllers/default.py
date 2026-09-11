@@ -33,6 +33,7 @@ def index():
     #session.army_book = ''
     #session.clear()
     #session.new_unit = {'weapons': []}
+    #response.flash = ""
     if not session.army_list:
         session.army_list = []
     if not session.current_tab:
@@ -66,3 +67,15 @@ def switchTab():
     session.current_tab = int(request.vars.myvar)
     return session.current_tab
 
+def saveList():
+    if not session.username:
+        username = auth.user.email
+        username = username.replace('.','_').replace('@','__')
+        session.username = username
+    armyListRepo = os.path.join(request.folder, 'private', 'ArmyLists')
+    armyListRepo = os.path.join(armyListRepo, session.username)
+    os.makedirs(armyListRepo, exist_ok=True)
+    list_file_name = session.list_name.replace(' ','_') + '.json'
+    list_file = os.path.join(armyListRepo, list_file_name)
+    with open(list_file, "w") as file:
+        json.dump(session.army_list, file, indent=2)
