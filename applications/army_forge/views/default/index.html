@@ -11,7 +11,7 @@
 
 <!-- Tab Navigation Buttons -->
 <div class="tab-container">
-  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">Configure List</button>
+  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">Configure</button>
   <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=2', [], function(res) {location.reload(true);});">Add Units</button>
   <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=3', [], function(res) {location.reload(true);});">Edit Units</button>
   <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=4', [], function(res) {location.reload(true);});">View List</button>
@@ -56,15 +56,20 @@
       <div>Perks: {{=', '.join(session.army_book['Units'][unit]['perks'])}}</div>
       <input type="submit" value="Add to List" />
       <input type="hidden" name="request_id" value="AddUnitToList">
+      <input type="hidden" name="unitName" value="{{=unit}}">
     </form>
   {{pass}}
 </div>
 {{pass}}
 
+<!-- Edit Units -->
 {{if session.current_tab == 3:}}
 <div id="tab3">
   <h3>Edit List</h3>
   <p>Modify Units in your List.</p>
+  {{for unit in session.army_list:}}
+    <div>{{=unit}}</div>
+  {{pass}}
 </div>
 {{pass}}
 

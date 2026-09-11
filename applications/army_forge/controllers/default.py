@@ -29,161 +29,36 @@ def user():
     return dict(form=auth())
 
 def index():
+    #### Initializations ###
     #session.army_book = ''
     #session.clear()
     #session.new_unit = {'weapons': []}
+    if not session.army_list:
+        session.army_list = []
+    if not session.current_tab:
+        session.current_tab = 1
     if not session.armyBooks:
         ArmyBookRepo = os.path.join(request.folder, 'private', 'ArmyBooks')
         armyBookFiles = [f for f in os.listdir(ArmyBookRepo) if f.endswith('.json')]
         armyBookFiles.sort()
         session.armyBooks = [armyBook.replace("_", " ").replace('.json','') for armyBook in armyBookFiles]
+
+    ### Form Submissions ###
     if request.vars.request_id and request.vars.request_id == 'selectArmyBook':
         session.army_book_name = request.vars.bookSelection
         session.army_book_json = request.vars.bookSelection.replace(' ','_') + '.json'
         with open(os.path.join(request.folder, 'private', 'ArmyBooks', session.army_book_json), 'r') as file:
             session.army_book = json.load(file)
-    if not session.new_unit:
-        #This should only happen in a brand-new session
-        session.new_unit = NEW_CAF_UNIT.copy()
-        session.fastChecked = ''
-        session.regenChecked = ''
-    elif request.vars.request_id and request.vars.request_id == 'weaponBuild':
-        session.new_unit['Weapons'].append({'Weapon Name': str(request.vars.wepName), 'Weapon qty per model': int(request.vars.qty), 'AP': int(request.vars.ap), 'Weapon Range': int(request.vars.range), 'Rending': bool(request.vars.rending)})
-        #session.weapons = []
-    elif request.vars.request_id == 'removeWeapon' and 'Weapons' in session.new_unit.keys() and session.new_unit['Weapons']:
-        session.new_unit['Weapons'].pop()
-    elif request.vars.request_id == 'unitBuild':
-        download_unit()
-    elif request.vars.request_id == 'hardResetUnit':
-        session.new_unit = {}
-        session.new_unit = NEW_CAF_UNIT.copy()
-        session.fastChecked = ''
-        session.regenChecked = ''
+        session.army_list = []
+        redirect(URL('index'))
+    if request.vars.request_id and request.vars.request_id == 'AddUnitToList':
+        session.army_list.append(session.army_book['Units'][request.vars.unitName])
+        redirect(URL('index'))
+        request.vars.clear()
 
-    session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
-    if not session.current_tab:
-        session.current_tab = 1
-    #TODO add Finalization and point math
-    #TODO add ajax hooks to update point math any time a value changes
-    #TODO update point math when weapon is added to loadout
-    #TODO run point math live on a new weapon being constructed
     return dict()
-
-
-def add_weapon():
-    weapons = request.vars.myWeapons
-    new_weapon = Weapon.copy()
-    weapons.append(new_weapon)
-    #return 'HIYA'
-    return weapons_to_html(weapons)
-
-def select_handler():
-    # Get the selected value from request.vars
-    #selected_value = request.vars.value
-    # Perform backend logic
-    #result = "You selected: " + selected_value
-    DefenseOptions = [3,4]
-    return request.vars.qual # Or return a component/json
-
-
-def weapons_to_html(weapons):
-    html_string = ''
-    for weapon in weapons:
-        html_string += '<tr>\n'
-        html_string += '<td><input type="text" name="weaponame" size=10></td>\n'
-        html_string += '<td><input type="number" name="qtyPer" min="1" max="20" step="1" value="1"/></td>\n'
-        html_string += '<td><input type="number" name="AP" min="0" max="8" step="1" value="0"/></td>\n'
-        html_string += '<td><input type="number" name="Range" min="0" max="48" step="1" value="0"/></td>\n'
-        html_string += '</tr>\n'
-    return html_string
-
-
-def remove_weapon():
-    if session.new_unit['Weapons']:
-        session.new_unit['Weapons'].pop()
-    return "I TRIED"
-
-def update_quality():
-    if request.vars.quality:
-        session.new_unit['Quality'] = int(request.vars.quality)
-        session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
-    return CalculateUnitCost(session.new_unit)
-
-def update_defense():
-    if request.vars.defense:
-        session.new_unit['Defense'] = int(request.vars.defense)
-        session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
-    return CalculateUnitCost(session.new_unit)
-
-def update_numOfModels():
-    if request.vars.numOfModels:
-        session.new_unit['Model Qty'] = int(request.vars.numOfModels)
-        session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
-    return CalculateUnitCost(session.new_unit)
-
-def update_unitName():
-    if request.vars.unitname:
-        session.new_unit['Unit Name'] = str(request.vars.unitname)
-    return session.new_unit['Unit Name']
-
-def update_factionName():
-    if request.vars.factionname:
-        session.new_unit['Faction Name'] = str(request.vars.factionname)
-    return session.new_unit['Faction Name']
-
-def update_modelLength():
-    if request.vars.modelLength:
-        session.new_unit['modelLength'] = int(request.vars.modelLength)
-    return session.new_unit['modelLength']
-
-def update_modelWidth():
-    if request.vars.modelWidth:
-        session.new_unit['modelWidth'] = int(request.vars.modelWidth)
-    return session.new_unit['modelWidth']
-
-def update_modelHeight():
-    if request.vars.modelHeight:
-        session.new_unit['modelHeight'] = int(request.vars.modelHeight)
-    return session.new_unit['modelHeight']
-
-def update_modelTough():
-    if request.vars.Tough:
-        session.new_unit['Tough'] = int(request.vars.Tough)
-    return CalculateUnitCost(session.new_unit)
-
-def update_modelCaster():
-    if request.vars.Caster:
-        session.new_unit['Caster'] = int(request.vars.Caster)
-    return CalculateUnitCost(session.new_unit)
-
-def update_Fast():
-    session.new_unit['Fast'] = bool(request.vars.Fast)
-    if session.new_unit['Fast']:
-        session.fastChecked = 'checked'
-    else:
-        session.fastChecked = ''
-    session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
-    return CalculateUnitCost(session.new_unit)
-
-def update_Regen():
-    session.new_unit['Regeneration'] = bool(request.vars.Regen)
-    if session.new_unit['Regeneration']:
-        session.regenChecked = 'checked'
-    else:
-        session.regenChecked = ''
-    session.new_unit['Cost'] = CalculateUnitCost(session.new_unit)
-    return CalculateUnitCost(session.new_unit)
 
 def switchTab():
     session.current_tab = int(request.vars.myvar)
     return session.current_tab
 
-def download_unit():
-    content = json.dumps(session.new_unit, indent=2)
-    filename = "NewUnit.json"
-    if 'Unit Name' in session.new_unit.keys() and session.new_unit['Unit Name']:
-        filename = session.new_unit['Unit Name']+'.json'
-    # Set headers to force download
-    response.headers['Content-Type'] = 'text/plain'
-    response.headers['Content-Disposition'] = f'attachment; filename={filename}'
-    return content
