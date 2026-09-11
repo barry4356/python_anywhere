@@ -17,7 +17,7 @@
   {{else:}}
     <button title="Must Select Army Book and Name the List" disabled>Add Units</button>
   {{pass}}
-  {{if session.army_list:}}
+  {{if session.army_list and "Units" in session.army_list.keys() and session.army_list["Units"]:}}
       <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=3', [], function(res) {location.reload(true);});">Edit Units</button>
       <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=4', [], function(res) {location.reload(true);});">View List</button>
   {{else:}}
@@ -58,7 +58,7 @@
   <hr>
   {{if not auth.user:}}
       <a href="https://barry4356.pythonanywhere.com/army_forge/default/user/login">Login to Save/Load Lists</a>
-  {{elif not session.army_list:}}
+  {{elif not session.army_list or "Units" not in session.army_list.keys() or not session.army_list["Units"]:}}
       <div>Save/Load List:</div>
       <button title="Nothing to Save" disabled>Save</button>
       <button title="Nothing to Save" disabled>SaveAs</button>
@@ -106,8 +106,8 @@
 <div id="tab3">
   <h3>Edit List</h3>
   <p>Modify Units in your List.</p>
-  {{for unit_key in session.army_list:}}
-    <div>{{=session.army_list[unit_key]}}</div>
+  {{for unit_key in session.army_list["Units"]:}}
+    <div>{{=session.army_list["Units"][unit_key]}}</div>
   {{pass}}
 </div>
 {{pass}}

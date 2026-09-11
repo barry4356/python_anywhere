@@ -53,7 +53,7 @@ def index():
         session.army_book_json = request.vars.bookSelection.replace(' ','_') + '.json'
         with open(os.path.join(request.folder, 'private', 'ArmyBooks', session.army_book_json), 'r') as file:
             session.army_book = json.load(file)
-        session.army_list = {}
+        session.army_list = {"Units": {}, "ArmyBook": session.army_book_json}
         session.list_name = None
         redirect(URL('index'))
     if request.vars.request_id == 'AddUnitToList':
@@ -61,7 +61,7 @@ def index():
         new_unit = session.army_book['Units'][request.vars.unitName]
         new_unit['unit_type'] = request.vars.unitName
         new_unit['name'] = ''
-        session.army_list[unit_uuid] = new_unit
+        session.army_list["Units"][unit_uuid] = new_unit
         redirect(URL('index'))
     if request.vars.request_id == 'updateListName':
         session.list_name = request.vars.listName
@@ -71,6 +71,10 @@ def index():
         session.army_list_json = request.vars.armyFileSelection.replace(' ','_') + '.json'
         with open(os.path.join(request.folder, 'private', 'ArmyLists', session.username, session.army_list_json), 'r') as file:
             session.army_list = json.load(file)
+        session.army_book_json = session.army_list['ArmyBook']
+        session.army_book_name = session.army_book_json.replace('_',' ').replace('.json','')
+        with open(os.path.join(request.folder, 'private', 'ArmyBooks', session.army_book_json), 'r') as file:
+            session.army_book = json.load(file)
         session.current_tab = 1
         redirect(URL('index'))
 
@@ -103,6 +107,7 @@ def saveList():
         session.username = username
     armyListRepo = os.path.join(request.folder, 'private', 'ArmyLists')
     armyListRepo = os.path.join(armyListRepo, session.username)
+    session.army_list['ArmyBook'] = session.army_book_json
     os.makedirs(armyListRepo, exist_ok=True)
     list_file_name = session.list_name.replace(' ','_') + '.json'
     list_file = os.path.join(armyListRepo, list_file_name)
