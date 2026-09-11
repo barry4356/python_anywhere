@@ -20,14 +20,17 @@
 
 {{if session.army_book_json:}}
  <div id="result" style="text-align: right;">Army Book: {{=session.army_book_name}}</div>
+ {{pass}}
+ {{if session.list_name:}}
+ <div id="result" style="text-align: right;">List: {{=session.list_name}}</div>
  <br>
  {{pass}}
+<br>
 
-<!-- Configure Lists -->
+<!-- Configure List -->
 {{if session.current_tab == 1:}}
 <div id="tab1">
-  <h3>Setup List</h3>
-  <p>Choose your army book, list type, list name, save/load your lists, etc..</p>
+  <h3>Configure List</h3>
   <hr>
   <form>
       <label for="bookSelection">Choose an Army Book:</label>
@@ -36,6 +39,24 @@
       <input type="hidden" name="request_id" value="selectArmyBook">
 
   </form>
+  <hr>
+  <form>
+    <input type="text" name="listName" placeholder="List Name" required>
+    <input type="submit" value="Update List Name" />
+    <input type="hidden" name="request_id" value="updateListName">
+  </form>
+  <hr>
+  {{if not auth.user:}}
+  <a href="https://barry4356.pythonanywhere.com/army_forge/default/user/login">Login to Save/Load Lists</a>
+  {{else:}}
+  <div>Save/Load List</div>
+  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">Save</button>
+  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">SaveAs</button>
+  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">SaveCopy</button>
+  <br>
+  <br>
+  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">Load</button>
+  {{pass}}
   <hr>
 </div>
 {{pass}}

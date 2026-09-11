@@ -44,17 +44,21 @@ def index():
         session.armyBooks = [armyBook.replace("_", " ").replace('.json','') for armyBook in armyBookFiles]
 
     ### Form Submissions ###
-    if request.vars.request_id and request.vars.request_id == 'selectArmyBook':
+    if request.vars.request_id == 'selectArmyBook':
         session.army_book_name = request.vars.bookSelection
         session.army_book_json = request.vars.bookSelection.replace(' ','_') + '.json'
         with open(os.path.join(request.folder, 'private', 'ArmyBooks', session.army_book_json), 'r') as file:
             session.army_book = json.load(file)
         session.army_list = []
         redirect(URL('index'))
-    if request.vars.request_id and request.vars.request_id == 'AddUnitToList':
+    if request.vars.request_id == 'AddUnitToList':
         session.army_list.append(session.army_book['Units'][request.vars.unitName])
         redirect(URL('index'))
-        request.vars.clear()
+    if request.vars.request_id == 'updateListName':
+        session.list_name = request.vars.listName
+        redirect(URL('index'))
+
+
 
     return dict()
 
