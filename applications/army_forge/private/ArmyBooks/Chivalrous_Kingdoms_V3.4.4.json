@@ -1,15 +1,59 @@
 {
     "Units": {
-        "Peasant Levy": {
+        "Peasant Levy [10]": {
             "base_points": 45,
             "quality": 6,
             "defense": 6,
             "weapons": [
                "10x Hand Weapon (A1)",
                "10x Throw Stones (12\", A1)"
-           ],
-           "perks": [],
-           "upgrades": []
+			],
+			"perks": [],
+			"upgrades": []
+        }
+		"Men-at-Arms [10]": {
+            "base_points": 65,
+            "quality": 5,
+            "defense": 5,
+            "weapons": [
+               "10x Hand Weapon (A1)"
+            ],
+            "perks": [],
+            "upgrades": [
+			{
+				"section": "Upgrade up to three models with one:",
+				"type": "CHOOSE_MULTIPLE",
+				"choices": [
+					{
+						"name": "Sergeant",
+						"price": 5
+					},
+					{
+						"name": "Musician",
+						"price": 10
+					},
+					{
+						"name": "Banner",
+						"price": 15
+					}
+				]
+			},
+			{
+				"section": "Replace all Hand Weapons:",
+				"type": "CHOOSE_ONE_WEAPON_REPLACE",
+				"weapon_index": 0,
+				"choices": [
+				{
+					"name": "Halberd (A1, Rending)",
+					"price": 25
+				},
+				{
+					"name": "Spear (A1, Counter)",
+					"price": 35
+				}
+				]
+			}
+		   ]
         }
     }
 }
