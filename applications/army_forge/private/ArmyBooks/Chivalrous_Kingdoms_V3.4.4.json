@@ -44,11 +44,11 @@
 				"weapon_index": 0,
 				"choices": [
 				{
-					"name": "Halberd (A1, Rending)",
+					"name": "10x Halberd (A1, Rending)",
 					"price": 25
 				},
 				{
-					"name": "Spear (A1, Counter)",
+					"name": "10x Spear (A1, Counter)",
 					"price": 35
 				}
 				]

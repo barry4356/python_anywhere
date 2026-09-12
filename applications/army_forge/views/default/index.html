@@ -97,6 +97,7 @@
       <input type="hidden" name="request_id" value="AddUnitToList">
       <input type="hidden" name="unitName" value="{{=unit}}">
     </form>
+    <br>
   {{pass}}
 </div>
 {{pass}}
@@ -106,8 +107,19 @@
 <div id="tab3">
   <h3>Edit List</h3>
   <p>Modify Units in your List.</p>
-  {{for unit_key in session.army_list["Units"]:}}
-    <div>{{=session.army_list["Units"][unit_key]}}</div>
+  {{for unit_key in session.army_list_upgraded["Units"]:}}
+    {{if session.army_list_upgraded["Units"][unit_key]["name"]:}}
+        <b>{{=session.army_list_upgraded["Units"][unit_key]["name"]}}</b>
+    {{else:}}
+        <b>{{=session.army_list_upgraded["Units"][unit_key]["unit_type"]}}</b>
+    {{pass}}
+    <div>Qual: {{=session.army_list_upgraded['Units'][unit_key]['quality']}}+&ensp;Def: {{=session.army_list_upgraded['Units'][unit_key]['defense']}}+&ensp;Price: {{=session.army_list_upgraded['Units'][unit_key]['price']}}</div>
+    <div>Weapons:</div>
+    {{for weapon in session.army_list_upgraded['Units'][unit_key]['weapons']:}}
+        <div>&emsp;{{=weapon}}</div>
+     {{pass}}
+     <div>Perks: {{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}</div>
+  <br>
   {{pass}}
 </div>
 {{pass}}

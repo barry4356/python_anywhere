@@ -4,6 +4,7 @@
 import os
 import json
 import uuid
+import copy
 from CafConstants import NEW_CAF_UNIT
 from CafPointMath import CalculateUnitCost
 
@@ -61,6 +62,10 @@ def index():
         new_unit = session.army_book['Units'][request.vars.unitName]
         new_unit['unit_type'] = request.vars.unitName
         new_unit['name'] = ''
+        new_unit['price'] = new_unit['base_points']
+        for upgrade in new_unit['upgrades']:
+            for choice in upgrade['choices']:
+                choice['selected'] = False
         session.army_list["Units"][unit_uuid] = new_unit
         redirect(URL('index'))
     if request.vars.request_id == 'updateListName':
@@ -91,13 +96,31 @@ def updateAvailableLists():
     armyListFiles = [f for f in os.listdir(ArmyListRepo) if f.endswith('.json')]
     session.armyLists = [armyList.replace("_", " ").replace('.json','') for armyList in armyListFiles]
 
+def updateUpgradedViews():
+    #Creates a view of our army list that only accounts for selected upgrades
+    session.army_list_upgraded = copy.deepcopy(session.army_list)
+    for unit_key in session.army_list_upgraded["Units"]:
+        for upgrade in session.army_list_upgraded["Units"][unit_key]["upgrades"]:
+            for choice in upgrade['choices']:
+                if not choice['selected']:
+                    continue
+                if upgrade['type'] == "CHOOSE_MULTIPLE":
+                    session.army_list_upgraded["Units"][unit_key]["perks"].append(choice["name"])
+                if upgrade['type'] == "CHOOSE_ONE_WEAPON_REPLACE":
+                    session.army_list_upgraded["Units"][unit_key]['weapons'][upgrade['weapon_index']] = choice['name']
+        session.army_list_upgraded["Units"][unit_key]["upgrades"] = []
+
 
 
 def switchTab():
     session.current_tab = int(request.vars.myvar)
     if session.current_tab == 5:
-        #Get all available Army List Files
+        #Get all available Army List Files if opening the "Load List from File" tab
         updateAvailableLists()
+    if session.current_tab == 3 or session.current_tab == 4:
+        #Update our army list view if we're opening the edit/view army list tabs
+        #(Reads the upgrades and displays the current state of upgraded units)
+        updateUpgradedViews()
     return session.current_tab
 
 def saveList():
