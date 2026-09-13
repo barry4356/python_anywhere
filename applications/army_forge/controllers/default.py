@@ -83,8 +83,6 @@ def index():
         session.current_tab = 1
         redirect(URL('index'))
 
-
-
     return dict()
 
 def updateAvailableLists():
@@ -108,7 +106,6 @@ def updateUpgradedViews():
                     session.army_list_upgraded["Units"][unit_key]["perks"].append(choice["name"])
                 if upgrade['type'] == "CHOOSE_ONE_WEAPON_REPLACE":
                     session.army_list_upgraded["Units"][unit_key]['weapons'][upgrade['weapon_index']] = choice['name']
-        session.army_list_upgraded["Units"][unit_key]["upgrades"] = []
 
 
 
@@ -117,11 +114,22 @@ def switchTab():
     if session.current_tab == 5:
         #Get all available Army List Files if opening the "Load List from File" tab
         updateAvailableLists()
-    if session.current_tab == 3 or session.current_tab == 4:
+    if session.current_tab == 3 or session.current_tab == 4 or session.current_tab == 6:
         #Update our army list view if we're opening the edit/view army list tabs
         #(Reads the upgrades and displays the current state of upgraded units)
         updateUpgradedViews()
     return session.current_tab
+
+def removeUnit():
+    unit_key = request.vars.myvar
+    del_unit = session.army_list['Units'].pop(unit_key, None)
+    del_unit = session.army_list_upgraded["Units"].pop(unit_key, None)
+    redirect(URL('index'))
+
+def editUnit():
+    session.current_tab = 6
+    session.editUnit = copy.deepcopy(session.army_list["Units"][request.vars.myvar])
+    redirect(URL('index'))
 
 def saveList():
     if not session.username:

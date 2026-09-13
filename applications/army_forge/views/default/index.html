@@ -40,7 +40,6 @@
 <!-- Configure List Tab -->
 {{if session.current_tab == 1:}}
 <div id="tab1">
-  <h3>Configure List</h3>
   <hr>
   <form>
       <label for="bookSelection">Choose an Army Book:</label>
@@ -82,10 +81,8 @@
 <!-- Add Units Tab -->
 {{if session.current_tab == 2:}}
 <div id="tab2">
-  <h3>Add to List</h3>
-  <p>Add units from your selected army-book(s) to your list.</p>
   {{for unit in session.army_book['Units'].keys():}}
-    <form>
+    <form style="margin-bottom: 20px;">
       <b>{{=unit}}</b>
       <div>Qual: {{=session.army_book['Units'][unit]['quality']}}+&ensp;Def: {{=session.army_book['Units'][unit]['defense']}}+&ensp;Price: {{=session.army_book['Units'][unit]['base_points']}}</div>
       <div>Weapons:</div>
@@ -97,7 +94,6 @@
       <input type="hidden" name="request_id" value="AddUnitToList">
       <input type="hidden" name="unitName" value="{{=unit}}">
     </form>
-    <br>
   {{pass}}
 </div>
 {{pass}}
@@ -105,8 +101,6 @@
 <!-- Edit Units Tab -->
 {{if session.current_tab == 3:}}
 <div id="tab3">
-  <h3>Edit List</h3>
-  <p>Modify Units in your List.</p>
   {{for unit_key in session.army_list_upgraded["Units"]:}}
     {{if session.army_list_upgraded["Units"][unit_key]["name"]:}}
         <b>{{=session.army_list_upgraded["Units"][unit_key]["name"]}}</b>
@@ -117,9 +111,12 @@
     <div>Weapons:</div>
     {{for weapon in session.army_list_upgraded['Units'][unit_key]['weapons']:}}
         <div>&emsp;{{=weapon}}</div>
-     {{pass}}
-     <div>Perks: {{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}</div>
-  <br>
+    {{pass}}
+    <div>Perks: {{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}</div>
+    <button onclick="ajax('{{=URL('default', 'editUnit')}}?myvar={{=unit_key}}', [], function(res) {location.reload(true);});">Edit Unit</button>
+    <button onclick="ajax('{{=URL('default', 'removeUnit')}}?myvar={{=unit_key}}', [], function(res) {location.reload(true);});">Remove Unit</button>
+    <br>
+    <br>
   {{pass}}
 </div>
 {{pass}}
@@ -146,5 +143,57 @@
 </div>
 {{pass}}
 
+<!-- Edit Unit Tab -->
+{{if session.current_tab == 6:}}
+    <b>{{=str(session.editUnit["name"])}}</b>
+    <h3>{{=str(session.editUnit["unit_type"])}}</h3>
+    <div>Weapons:</div>
+    {{for weapon in session.editUnit["weapons"]:}}
+        <div>&emsp;{{=weapon}}</div>
+    {{pass}}
+    <div>Perks: {{=', '.join(session.editUnit['perks'])}}</div>
+    <br>
+    <h5>Upgrades Options:</h5>
+    {{for upgrade in session.editUnit["upgrades"]:}}
+        <form>
+            <i>&emsp;{{=upgrade['section']}}</i>
+            <br>
+            {{if upgrade['type'] == 'CHOOSE_MULTIPLE':}}
+                {{for option in upgrade['choices']:}}
+                    {{if option["selected"]:}}
+                        &emsp;&emsp;<input type="checkbox" id={{=option["name"]}} name={{=option["name"]}} value={{=option["name"]}} checked>
+                    {{else:}}
+                        &emsp;&emsp;<input type="checkbox" id={{=option["name"]}} name={{=option["name"]}} value={{=option["name"]}} unchecked>
+                    {{pass}}
+                    <label for={{=option["name"]}}><strong>{{=option["name"]}}</strong> &emsp; Points: {{=option["price"]}}</label>
+                    <br>
+                {{pass}}
+            {{elif upgrade['type'] == 'CHOOSE_ONE_WEAPON_REPLACE':}}
+                {{for option in upgrade['choices']:}}
+                    {{if option["selected"]:}}
+                        &emsp;&emsp;<input type="radio" id={{=option["name"]}} name={{=option["name"]}} value={{=option["name"]}} checked>
+                    {{else:}}
+                        &emsp;&emsp;<input type="radio" id={{=option["name"]}} name={{=option["name"]}} value={{=option["name"]}} unchecked>
+                    {{pass}}
+                    <label for={{=option["name"]}}><strong>{{=option["name"]}}</strong> &emsp; Points: {{=option["price"]}}</label>
+                    <br>
+                {{pass}}
+            {{pass}}
+        </form>
+    {{pass}}
+{{pass}}
+
+<!-- Unit Details Tab -->
+{{if session.current_tab == 7:}}
+    <b>{{=str(session.editUnit["name"])}}</b>
+    <b>{{=str(session.editUnit["unit_type"])}}</b>
+    <div>Weapons:</div>
+    {{for weapon in session.editUnit["weapons"]:}}
+        <div>&emsp;{{=weapon}}</div>
+    {{pass}}
+    <div>Perks: {{=', '.join(session.editUnit['perks'])}}</div>
+    <div>{{=session.editUnit}}</div>
+    <div>Upgrades:</div>
+    <div>{{=session.editUnit["upgrades"]}}</div>{{pass}}
 
 <!-- onchange="ajax('{{=URL('default', 'update_numOfModels')}}', ['numOfModels'], 'price');" -->
