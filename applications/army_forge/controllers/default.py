@@ -57,7 +57,7 @@ def index():
         session.army_list = {"Units": {}, "ArmyBook": session.army_book_json}
         session.list_name = None
         redirect(URL('index'))
-    if request.vars.request_id == 'AddUnitToList':
+    elif request.vars.request_id == 'AddUnitToList':
         unit_uuid = str(uuid.uuid4())
         new_unit = session.army_book['Units'][request.vars.unitName]
         new_unit['unit_type'] = request.vars.unitName
@@ -68,10 +68,10 @@ def index():
                 choice['selected'] = False
         session.army_list["Units"][unit_uuid] = new_unit
         redirect(URL('index'))
-    if request.vars.request_id == 'updateListName':
+    elif request.vars.request_id == 'updateListName':
         session.list_name = request.vars.listName
         redirect(URL('index'))
-    if request.vars.request_id == 'loadArmyList':
+    elif request.vars.request_id == 'loadArmyList':
         session.list_name = request.vars.armyFileSelection
         session.army_list_json = request.vars.armyFileSelection.replace(' ','_') + '.json'
         with open(os.path.join(request.folder, 'private', 'ArmyLists', session.username, session.army_list_json), 'r') as file:
@@ -81,6 +81,22 @@ def index():
         with open(os.path.join(request.folder, 'private', 'ArmyBooks', session.army_book_json), 'r') as file:
             session.army_book = json.load(file)
         session.current_tab = 1
+        redirect(URL('index'))
+    elif request.vars.request_id == 'updateUnit':
+        unit = session.army_list['Units'][request.vars.unitKey]
+        upgrade_section = {}
+        for upgrade in unit['upgrades']:
+            if upgrade['section'] in request.vars.keys():
+                upgrade_section = upgrade
+        for option in upgrade_section['choices']:
+            if option['name'] in request.vars[upgrade_section['section']]:
+                option['selected'] = True
+            else:
+                option['selected'] = False
+        session.flash = request.vars
+        #session.flash = str(upgrade_section['choices'])
+        session.editUnit = copy.deepcopy(unit)
+        session.editUnit['unit_key'] = request.vars.unitKey
         redirect(URL('index'))
 
     return dict()
@@ -106,6 +122,7 @@ def updateUpgradedViews():
                     session.army_list_upgraded["Units"][unit_key]["perks"].append(choice["name"])
                 if upgrade['type'] == "CHOOSE_ONE_WEAPON_REPLACE":
                     session.army_list_upgraded["Units"][unit_key]['weapons'][upgrade['weapon_index']] = choice['name']
+        session.army_list_upgraded["Units"][unit_key]["upgrades"] = []
 
 
 
@@ -129,6 +146,7 @@ def removeUnit():
 def editUnit():
     session.current_tab = 6
     session.editUnit = copy.deepcopy(session.army_list["Units"][request.vars.myvar])
+    session.editUnit['unit_key'] = request.vars.myvar
     redirect(URL('index'))
 
 def saveList():
