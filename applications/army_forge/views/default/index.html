@@ -179,6 +179,9 @@
                     <label for={{=option["name"]}}><strong>{{=option["name"]}}</strong> &emsp; Points: {{=option["price"]}}</label>
                     <br>
                 {{pass}}
+                &emsp;&emsp;<input type="radio" id=None name="{{=upgrade['section']}}" value=None unchecked>
+                <label for=None><strong>None</strong></label>
+                <br>
             {{pass}}
             <input type="submit" value="Update" />
             <input type="hidden" name="request_id" value="updateUnit">

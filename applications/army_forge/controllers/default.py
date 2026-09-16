@@ -62,7 +62,6 @@ def index():
         new_unit = session.army_book['Units'][request.vars.unitName]
         new_unit['unit_type'] = request.vars.unitName
         new_unit['name'] = ''
-        new_unit['price'] = new_unit['base_points']
         for upgrade in new_unit['upgrades']:
             for choice in upgrade['choices']:
                 choice['selected'] = False
@@ -86,17 +85,19 @@ def index():
         unit = session.army_list['Units'][request.vars.unitKey]
         upgrade_section = {}
         for upgrade in unit['upgrades']:
-            if upgrade['section'] in request.vars.keys():
+            if upgrade['section'] in request.vars.upgradeSection:
                 upgrade_section = upgrade
-        for option in upgrade_section['choices']:
-            if option['name'] in request.vars[upgrade_section['section']]:
-                option['selected'] = True
-            else:
-                option['selected'] = False
-        session.flash = request.vars
-        #session.flash = str(upgrade_section['choices'])
+        if upgrade_section:
+            for option in upgrade_section['choices']:
+                if request.vars[upgrade_section['section']] and option['name'] in request.vars[upgrade_section['section']]:
+                    option['selected'] = True
+                else:
+                    option['selected'] = False
+            #session.flash = str(upgrade_section['choices'])
+        updateUnitCost(request.vars.unitKey)
         session.editUnit = copy.deepcopy(unit)
         session.editUnit['unit_key'] = request.vars.unitKey
+        session.flash = request.vars
         redirect(URL('index'))
 
     return dict()
@@ -148,6 +149,14 @@ def editUnit():
     session.editUnit = copy.deepcopy(session.army_list["Units"][request.vars.myvar])
     session.editUnit['unit_key'] = request.vars.myvar
     redirect(URL('index'))
+
+def updateUnitCost(uuid):
+    unit = session.army_list['Units'][uuid]
+    unit['price'] = unit["base_points"]
+    for upgrade in unit['upgrades']:
+        for choice in upgrade['choices']:
+            if choice['selected']:
+                unit['price'] += choice['price']
 
 def saveList():
     if not session.username:
