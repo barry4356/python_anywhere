@@ -59,7 +59,7 @@ def index():
         redirect(URL('index'))
     elif request.vars.request_id == 'AddUnitToList':
         unit_uuid = str(uuid.uuid4())
-        new_unit = session.army_book['Units'][request.vars.unitName]
+        new_unit = copy.deepcopy(session.army_book['Units'][request.vars.unitName])
         new_unit['unit_type'] = request.vars.unitName
         new_unit['name'] = ''
         new_unit['price'] = session.army_book['Units'][request.vars.unitName]["base_points"]
