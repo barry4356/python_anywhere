@@ -11,15 +11,31 @@
 
 <!-- Tab Navigation Buttons -->
 <div class="tab-container">
-  <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">Configure</button>
+  {{if session.current_tab != 1:}}
+    <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">Configure</button>
+  {{else:}}
+    <button style="background-color: gray; color: white;">Configure</button>
+  {{pass}}
   {{if session.army_book and session.list_name:}}
-    <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=2', [], function(res) {location.reload(true);});">Add Units</button>
+    {{if session.current_tab != 2:}}
+      <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=2', [], function(res) {location.reload(true);});">Add Units</button>
+    {{else:}}
+      <button style="background-color: gray; color: white;">Add Units</button>
+    {{pass}}
   {{else:}}
     <button title="Must Select Army Book and Name the List" disabled>Add Units</button>
   {{pass}}
   {{if session.army_list and "Units" in session.army_list.keys() and session.army_list["Units"]:}}
+    {{if session.current_tab != 3:}}
       <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=3', [], function(res) {location.reload(true);});">Edit Units</button>
+    {{else:}}
+      <button style="background-color: gray; color: white;">Edit Units</button>
+    {{pass}}
+    {{if session.current_tab != 4:}}
       <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=4', [], function(res) {location.reload(true);});">View List</button>
+    {{else:}}
+      <button style="background-color: gray; color: white;">Edit Units</button>
+    {{pass}}
   {{else:}}
       <button title="Army List is Empty" disabled>Edit Units</button>
       <button title="Army List is Empty" disabled>View List</button>
@@ -29,18 +45,19 @@
 
 <!-- List Information Header -->
 {{if session.army_book_json:}}
- <div id="result" style="text-align: right;">Army Book: {{=session.army_book_name}}</div>
- {{pass}}
- {{if session.list_name:}}
- <div id="result" style="text-align: right;">List: {{=session.list_name}}</div>
- <br>
- {{pass}}
-<br>
+  <div id="result" style="text-align: right;">Army Book: {{=session.army_book_name}}</div>
+{{pass}}
+{{if session.list_name:}}
+  <div id="result" style="text-align: right;">List: {{=session.list_name}}</div>
+{{pass}}
+{{if session.army_list and session.list_name and 'Price' in session.army_list.keys():}}
+  <div id="result" style="text-align: right;">Price: {{=session.army_list['Price']}}</div>
+{{pass}}
+<hr>
 
 <!-- Configure List Tab -->
 {{if session.current_tab == 1:}}
 <div id="tab1">
-  <hr>
   <form>
       <label for="bookSelection">Choose an Army Book:</label>
       {{=SELECT(*[OPTION(item, _value=item) for item in session.armyBooks], _name='bookSelection')}}<br />
@@ -103,16 +120,17 @@
 <div id="tab3">
   {{for unit_key in session.army_list_upgraded["Units"]:}}
     {{if session.army_list_upgraded["Units"][unit_key]["name"]:}}
-        <b>{{=session.army_list_upgraded["Units"][unit_key]["name"]}}</b>
-    {{else:}}
-        <b>{{=session.army_list_upgraded["Units"][unit_key]["unit_type"]}}</b>
+        <strong>{{=session.army_list_upgraded["Units"][unit_key]["name"]}}</strong>
+        <br>
     {{pass}}
+    <b>{{=session.army_list_upgraded["Units"][unit_key]["unit_type"]}}</b>
     <div>Qual: {{=session.army_list_upgraded['Units'][unit_key]['quality']}}+&ensp;Def: {{=session.army_list_upgraded['Units'][unit_key]['defense']}}+&ensp;Price: {{=session.army_list_upgraded['Units'][unit_key]['price']}}</div>
     <div>Weapons:</div>
     {{for weapon in session.army_list_upgraded['Units'][unit_key]['weapons']:}}
         <div>&emsp;{{=weapon}}</div>
     {{pass}}
     <div>Perks: {{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}</div>
+    <div>Price: {{=session.army_list_upgraded["Units"][unit_key]["price"]}}</div>
     <button onclick="ajax('{{=URL('default', 'editUnit')}}?myvar={{=unit_key}}', [], function(res) {location.reload(true);});">Edit Unit</button>
     <button onclick="ajax('{{=URL('default', 'removeUnit')}}?myvar={{=unit_key}}', [], function(res) {location.reload(true);});">Remove Unit</button>
     <br>
@@ -145,7 +163,7 @@
 
 <!-- Edit Unit Tab -->
 {{if session.current_tab == 6:}}
-    <b>{{=str(session.editUnit["name"])}}</b>
+    <h2>{{=str(session.editUnit["name"])}}</h2>
     <h3>{{=str(session.editUnit["unit_type"])}}</h3>
     <div>Weapons:</div>
     {{for weapon in session.editUnit["weapons"]:}}
@@ -190,6 +208,14 @@
             <input type="hidden" name="unitKey" value="{{=session.editUnit['unit_key']}}">
         </form>
     {{pass}}
+    <br>
+    <form>
+        <label for="UnitName">Name Unit:</label>
+        <input type="text" id="unitName" name="unitName" placeholder="Unit Name">
+        <input type="submit" value="Update" />
+        <input type="hidden" name="request_id" value="updateUnitName">
+        <input type="hidden" name="unitKey" value="{{=session.editUnit['unit_key']}}">
+    </form>
 {{pass}}
 
 <!-- Unit Details Tab -->
