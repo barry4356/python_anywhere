@@ -34,7 +34,7 @@
     {{if session.current_tab != 4:}}
       <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=4', [], function(res) {location.reload(true);});">View List</button>
     {{else:}}
-      <button style="background-color: gray; color: white;">Edit Units</button>
+      <button style="background-color: gray; color: white;">View List</button>
     {{pass}}
   {{else:}}
       <button title="Army List is Empty" disabled>Edit Units</button>
@@ -139,12 +139,51 @@
 </div>
 {{pass}}
 
-<!-- View Units Tab -->
+
+<style>
+@media print {
+    /* Hide navigation, buttons, and sidebars when printing */
+    body * {
+        visibility: hidden;
+    }
+    #tab4, #tab4 * {
+        visibility: visible;
+    }
+    #tab4 {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+</style>
+<!-- View List Tab -->
 {{if session.current_tab == 4:}}
 <div id="tab4">
-  <h3>View List</h3>
-  <p>Print your list here.</p>
+    <h3>{{=session.list_name}}</h3>
+    <h4>Book: {{=session.army_book_name}}</h4>
+    <h5>Price: {{=session.army_list['Price']}}</h5>
+    <hr>
+  {{for unit_key in session.army_list_upgraded["Units"]:}}
+    {{if session.army_list_upgraded["Units"][unit_key]["name"]:}}
+        <strong>{{=session.army_list_upgraded["Units"][unit_key]["name"]}}</strong>
+        <br>
+    {{pass}}
+    <b>{{=session.army_list_upgraded["Units"][unit_key]["unit_type"]}}</b>
+    <div>Qual: {{=session.army_list_upgraded['Units'][unit_key]['quality']}}+&ensp;Def: {{=session.army_list_upgraded['Units'][unit_key]['defense']}}+&ensp;Price: {{=session.army_list_upgraded['Units'][unit_key]['price']}}</div>
+    <div>Weapons:</div>
+    {{for weapon in session.army_list_upgraded['Units'][unit_key]['weapons']:}}
+        <div>&emsp;{{=weapon}}</div>
+    {{pass}}
+    <div>Perks: {{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}</div>
+    <div>Price: {{=session.army_list_upgraded["Units"][unit_key]["price"]}}</div>
+    <br>
+    <br>
+    <br>
+  {{pass}}
 </div>
+<button onclick="window.print()" class="btn btn-default">
+  Print This Page
+</button>
 {{pass}}
 
 <!-- Load List From File Tab -->
