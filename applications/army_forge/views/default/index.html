@@ -57,62 +57,76 @@
 
 <!-- Configure List Tab -->
 {{if session.current_tab == 1:}}
-<div id="tab1">
-  <form>
-      <label for="bookSelection">Choose an Army Book:</label>
-      {{=SELECT(*[OPTION(item, _value=item) for item in session.armyBooks], _name='bookSelection')}}<br />
-      <input type="submit" value="Select Army Book" />
+  <div id="tab1">
+    <form>
+      <label for="bookSelection">Choose an Army Book:</label><br>
+      {{=SELECT(*[OPTION(item, _value=item) for item in session.armyBooks], _name='bookSelection')}}
+      <input type="submit" value="Load Army Book" />
       <input type="hidden" name="request_id" value="selectArmyBook">
-
-  </form>
-  <hr>
-  <form>
-    <input type="text" name="listName" placeholder="List Name" required>
-    <input type="submit" value="Update List Name" />
-    <input type="hidden" name="request_id" value="updateListName">
-  </form>
-  <hr>
-  {{if not auth.user:}}
-      <a href="https://barry4356.pythonanywhere.com/army_forge/default/user/login">Login to Save/Load Lists</a>
-  {{elif not session.army_list or "Units" not in session.army_list.keys() or not session.army_list["Units"]:}}
-      <div>Save/Load List:</div>
-      <button title="Nothing to Save" disabled>Save</button>
-      <button title="Nothing to Save" disabled>SaveAs</button>
-      <button title="Nothing to Save" disabled>SaveCopy</button>
-      <br>
-      <br>
-      <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=5', [], function(res) {location.reload(true);});">Load</button>
-  {{else:}}
-      <div>Save/Load List</div>
-      <button onclick="ajax('{{=URL('default', 'saveList')}}', [], function(res) {location.reload(true);});">Save</button>
-      <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">SaveAs</button>
-      <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">SaveCopy</button>
-      <br>
-      <br>
-      <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=5', [], function(res) {location.reload(true);});">Load</button>
-  {{pass}}
-  <hr>
-</div>
+    </form>
+    <hr>
+    <div>Update List Name:</div><br>
+    <form>
+      <input type="text" name="listName" placeholder="List Name" required>
+      <input type="submit" value="Update List Name" />
+      <input type="hidden" name="request_id" value="updateListName">
+    </form>
+    <hr>
+    {{if not auth.user:}}
+        <a href="https://barry4356.pythonanywhere.com/army_forge/default/user/login">Login to Save/Load Lists</a>
+    {{elif not session.army_list or "Units" not in session.army_list.keys() or not session.army_list["Units"]:}}
+        <div>Nothing to Save</div>
+        <button title="Nothing to Save" disabled>QuickSave</button>
+        <!--<button title="Nothing to Save" disabled>SaveAs</button>-->
+        <!--<button title="Nothing to Save" disabled>SaveCopy</button>-->
+        <br>
+        <br>
+        <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=5', [], function(res) {location.reload(true);});">Load</button>
+    {{else:}}
+        <div>Save/Load List:</div><br>
+        <button onclick="ajax('{{=URL('default', 'saveList')}}', [], function(res) {location.reload(true);});">QuickSave</button>
+        <!--<button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">SaveAs</button>-->
+        <!--<button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">SaveCopy</button>-->
+        <br>
+        <br>
+        <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=5', [], function(res) {location.reload(true);});">Load Saved List</button>
+    {{pass}}
+    <hr>
+    <div>Upload List File:</div><br>
+    <form method="POST" enctype="multipart/form-data">
+      <!-- accept=".txt" restricts selection to standard plain text files -->
+      <input type="file" id="text-file" name="textFile" accept=".json" required>
+      <input type="submit" value="Upload List">
+    </form>
+    <hr>
+    <div>Download List File:</div><br>
+    {{if not session.army_list or "Units" not in session.army_list.keys() or not session.army_list["Units"]:}}
+      <div>Nothing to Download</div>
+    {{else:}}
+      <a href="{{=URL('default', 'download_list', args='')}}" class="button">Download Army List File</a>
+    {{pass}}
+    <hr>
+  </div>
 {{pass}}
 
 <!-- Add Units Tab -->
 {{if session.current_tab == 2:}}
-<div id="tab2">
-  {{for unit in session.army_book['Units'].keys():}}
-    <form style="margin-bottom: 20px;">
-      <b>{{=unit}}</b>
-      <div>Qual: {{=session.army_book['Units'][unit]['quality']}}+&ensp;Def: {{=session.army_book['Units'][unit]['defense']}}+&ensp;Price: {{=session.army_book['Units'][unit]['base_points']}}</div>
-      <div>Weapons:</div>
-      {{for weapon in session.army_book['Units'][unit]['weapons']:}}
-        <div>&emsp;{{=weapon}}</div>
-      {{pass}}
-      <div>Perks: {{=', '.join(session.army_book['Units'][unit]['perks'])}}</div>
-      <input type="submit" value="Add to List" />
-      <input type="hidden" name="request_id" value="AddUnitToList">
-      <input type="hidden" name="unitName" value="{{=unit}}">
-    </form>
-  {{pass}}
-</div>
+  <div id="tab2">
+    {{for unit in session.army_book['Units'].keys():}}
+      <form style="margin-bottom: 20px;">
+        <b>{{=unit}}</b>
+        <div>Qual: {{=session.army_book['Units'][unit]['quality']}}+&ensp;Def: {{=session.army_book['Units'][unit]['defense']}}+&ensp;Price: {{=session.army_book['Units'][unit]['base_points']}}</div>
+        <div>Weapons:</div>
+        {{for weapon in session.army_book['Units'][unit]['weapons']:}}
+          <div>&emsp;{{=weapon}}</div>
+        {{pass}}
+        <div>Perks: {{=', '.join(session.army_book['Units'][unit]['perks'])}}</div>
+        <input type="submit" value="Add to List" />
+        <input type="hidden" name="request_id" value="AddUnitToList">
+        <input type="hidden" name="unitName" value="{{=unit}}">
+      </form>
+    {{pass}}
+  </div>
 {{pass}}
 
 <!-- Edit Units Tab -->
@@ -212,39 +226,39 @@
     <br>
     <h5>Upgrades Options:</h5>
     {{for upgrade in session.editUnit["upgrades"]:}}
-        <form>
-            <i>&emsp;{{=upgrade['section']}}</i>
-            <br>
-            {{if upgrade['type'] == 'CHOOSE_MULTIPLE':}}
-                {{for option in upgrade['choices']:}}
-                    {{if option["selected"]:}}
-                        &emsp;&emsp;<input type="checkbox" id="{{=option['name']}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" checked>
-                    {{else:}}
-                        &emsp;&emsp;<input type="checkbox" id="{{=option['name']}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" unchecked>
-                    {{pass}}
-                    <label for={{=option["name"]}}><strong>{{=option["name"]}}</strong> &emsp; Points: {{=option["price"]}}</label>
-                    <br>
-                {{pass}}
-            {{elif upgrade['type'] == 'CHOOSE_ONE_WEAPON_REPLACE':}}
-                {{for option in upgrade['choices']:}}
-                    {{if option["selected"]:}}
-                        &emsp;&emsp;<input type="radio" id="{{=option["name"]}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" checked>
-                    {{else:}}
-                        &emsp;&emsp;<input type="radio" id="{{=option["name"]}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" unchecked>
-                    {{pass}}
-                    <label for={{=option["name"]}}><strong>{{=option["name"]}}</strong> &emsp; Points: {{=option["price"]}}</label>
-                    <br>
-                {{pass}}
-                &emsp;&emsp;<input type="radio" id=None name="{{=upgrade['section']}}" value=None unchecked>
-                <label for=None><strong>None</strong></label>
-                <br>
+      <form>
+        <i>&emsp;{{=upgrade['section']}}</i>
+        <br>
+        {{if upgrade['type'] == 'CHOOSE_MULTIPLE':}}
+          {{for option in upgrade['choices']:}}
+            {{if option["selected"]:}}
+                &emsp;&emsp;<input type="checkbox" id="{{=option['name']}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" checked>
+            {{else:}}
+                &emsp;&emsp;<input type="checkbox" id="{{=option['name']}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" unchecked>
             {{pass}}
-            <input type="submit" value="Update" />
-            <input type="hidden" name="request_id" value="updateUnit">
-            <input type="hidden" name="upgradeType" value="{{=upgrade['type']}}">
-            <input type="hidden" name="upgradeSection" value="{{=upgrade['section']}}">
-            <input type="hidden" name="unitKey" value="{{=session.editUnit['unit_key']}}">
-        </form>
+            <label for={{=option["name"]}}><strong>{{=option["name"]}}</strong> &emsp; Points: {{=option["price"]}}</label>
+            <br>
+          {{pass}}
+        {{elif upgrade['type'] == 'CHOOSE_ONE_WEAPON_REPLACE':}}
+          {{for option in upgrade['choices']:}}
+            {{if option["selected"]:}}
+                &emsp;&emsp;<input type="radio" id="{{=option["name"]}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" checked>
+            {{else:}}
+                &emsp;&emsp;<input type="radio" id="{{=option["name"]}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" unchecked>
+            {{pass}}
+            <label for={{=option["name"]}}><strong>{{=option["name"]}}</strong> &emsp; Points: {{=option["price"]}}</label>
+            <br>
+          {{pass}}
+          &emsp;&emsp;<input type="radio" id=None name="{{=upgrade['section']}}" value=None unchecked>
+          <label for=None><strong>None</strong></label>
+          <br>
+        {{pass}}
+        <input type="submit" value="Update" />
+        <input type="hidden" name="request_id" value="updateUnit">
+        <input type="hidden" name="upgradeType" value="{{=upgrade['type']}}">
+        <input type="hidden" name="upgradeSection" value="{{=upgrade['section']}}">
+        <input type="hidden" name="unitKey" value="{{=session.editUnit['unit_key']}}">
+      </form>
     {{pass}}
     <br>
     <form>

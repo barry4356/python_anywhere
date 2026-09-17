@@ -187,3 +187,11 @@ def saveList():
     list_file = os.path.join(armyListRepo, list_file_name)
     with open(list_file, "w") as file:
         json.dump(session.army_list, file, indent=2)
+
+def download_list():
+    content = json.dumps(session.army_list, indent=2)
+    session.army_list_json = str(session.list_name).replace(' ','_') + '.json'
+    # Set headers to force download
+    response.headers['Content-Type'] = 'text/plain'
+    response.headers['Content-Disposition'] = f'attachment; filename={session.army_list_json}'
+    return content
