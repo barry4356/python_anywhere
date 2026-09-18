@@ -46,9 +46,13 @@
 <!-- List Information Header -->
 {{if session.army_book_json:}}
   <div id="result" style="text-align: right;">Army Book: {{=session.army_book_name}}</div>
+{{else:}}
+  <div id="result" style="text-align: right; color: red;">Army Book: None</div>
 {{pass}}
 {{if session.list_name:}}
   <div id="result" style="text-align: right;">List: {{=session.list_name}}</div>
+{{else:}}
+  <div id="result" style="text-align: right; color: red;">List: None</div>
 {{pass}}
 {{if session.army_list and session.list_name and 'Price' in session.army_list.keys():}}
   <div id="result" style="text-align: right;">Price: {{=session.army_list['Price']}}</div>
@@ -59,13 +63,13 @@
 {{if session.current_tab == 1:}}
   <div id="tab1">
     <form>
-      <label for="bookSelection">Choose an Army Book:</label><br>
+      <h5>Choose an Army Book:</h5>
       {{=SELECT(*[OPTION(item, _value=item) for item in session.armyBooks], _name='bookSelection')}}
       <input type="submit" value="Load Army Book" />
       <input type="hidden" name="request_id" value="selectArmyBook">
     </form>
     <hr>
-    <div>Update List Name:</div><br>
+    <h5>Update List Name:</h5>
     <form>
       <input type="text" name="listName" placeholder="List Name" required>
       <input type="submit" value="Update List Name" />
@@ -83,7 +87,7 @@
         <br>
         <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=5', [], function(res) {location.reload(true);});">Load</button>
     {{else:}}
-        <div>Save/Load List:</div><br>
+        <h5>Save/Load List:</h5>
         <button onclick="ajax('{{=URL('default', 'saveList')}}', [], function(res) {location.reload(true);});">QuickSave</button>
         <!--<button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">SaveAs</button>-->
         <!--<button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">SaveCopy</button>-->
@@ -92,14 +96,17 @@
         <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=5', [], function(res) {location.reload(true);});">Load Saved List</button>
     {{pass}}
     <hr>
-    <div>Upload List File:</div><br>
+    <h5>Upload List File:</h5>
     <form method="POST" enctype="multipart/form-data">
       <!-- accept=".txt" restricts selection to standard plain text files -->
       <input type="file" id="text-file" name="textFile" accept=".json" required>
+      <br>
+      <br>
+      <input type="hidden" name="request_id" value="uploadListFile">
       <input type="submit" value="Upload List">
     </form>
     <hr>
-    <div>Download List File:</div><br>
+    <h5>Download List File:</h5>
     {{if not session.army_list or "Units" not in session.army_list.keys() or not session.army_list["Units"]:}}
       <div>Nothing to Download</div>
     {{else:}}

@@ -107,6 +107,12 @@ def index():
         session.editUnit = copy.deepcopy(unit)
         session.editUnit['unit_key'] = request.vars.unitKey
         redirect(URL('index'))
+    elif request.vars.request_id == 'uploadListFile':
+        uploaded_file = request.vars.textFile.file
+        filename = request.vars.textFile.filename
+        session.army_list = json.load(uploaded_file)
+        session.list_name = filename.replace('_',' ').replace('.json','')
+        redirect(URL('index'))
 
     return dict()
 
