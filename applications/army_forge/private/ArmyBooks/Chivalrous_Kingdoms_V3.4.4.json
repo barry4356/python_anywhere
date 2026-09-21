@@ -26,30 +26,36 @@
 				"choices": [
 					{
 						"name": "Sergeant",
-						"price": 5
+						"price": 5,
+						"add_perks": ["Sergeant"]
 					},
 					{
 						"name": "Musician",
-						"price": 10
+						"price": 10,
+						"add_perks": ["Musician"]
 					},
 					{
 						"name": "Banner",
-						"price": 15
+						"price": 15,
+						"add_perks": ["Banner"]
 					}
 				]
 			},
 			{
 				"section": "Replace all Hand Weapons:",
-				"type": "CHOOSE_ONE_WEAPON_REPLACE",
-				"weapon_index": 0,
+				"type": "CHOOSE_ONE",
 				"choices": [
 				{
 					"name": "10x Halberd (A1, Rending)",
-					"price": 25
+					"price": 25,
+					"add_weapons": ["10x Halberd (A1, Rending)"],
+					"remove_weapons": ["10x Hand Weapon (A1)"]
 				},
 				{
 					"name": "10x Spear (A1, Counter)",
-					"price": 35
+					"price": 35,
+					"add_weapons": ["10x Spear (A1, Counter)"],
+					"remove_weapons": ["10x Hand Weapon (A1)"]
 				}
 				]
 			}

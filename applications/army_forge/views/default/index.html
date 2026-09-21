@@ -76,6 +76,7 @@
       <input type="hidden" name="request_id" value="updateListName">
     </form>
     <hr>
+    <h5>Save/Load List:</h5>
     {{if not auth.user:}}
         <a href="https://barry4356.pythonanywhere.com/army_forge/default/user/login">Login to Save/Load Lists</a>
     {{elif not session.army_list or "Units" not in session.army_list.keys() or not session.army_list["Units"]:}}
@@ -87,7 +88,6 @@
         <br>
         <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=5', [], function(res) {location.reload(true);});">Load</button>
     {{else:}}
-        <h5>Save/Load List:</h5>
         <button onclick="ajax('{{=URL('default', 'saveList')}}', [], function(res) {location.reload(true);});">QuickSave</button>
         <!--<button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">SaveAs</button>-->
         <!--<button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=1', [], function(res) {location.reload(true);});">SaveCopy</button>-->
@@ -246,7 +246,7 @@
             <label for={{=option["name"]}}><strong>{{=option["name"]}}</strong> &emsp; Points: {{=option["price"]}}</label>
             <br>
           {{pass}}
-        {{elif upgrade['type'] == 'CHOOSE_ONE_WEAPON_REPLACE':}}
+        {{elif upgrade['type'] == 'CHOOSE_ONE':}}
           {{for option in upgrade['choices']:}}
             {{if option["selected"]:}}
                 &emsp;&emsp;<input type="radio" id="{{=option["name"]}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" checked>

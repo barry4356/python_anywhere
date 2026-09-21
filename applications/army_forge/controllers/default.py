@@ -5,8 +5,7 @@ import os
 import json
 import uuid
 import copy
-from CafConstants import NEW_CAF_UNIT
-from CafPointMath import CalculateUnitCost
+
 
 armyData = []
 armyDataFiltered = []
@@ -133,10 +132,14 @@ def updateUpgradedViews():
             for choice in upgrade['choices']:
                 if not choice['selected']:
                     continue
-                if upgrade['type'] == "CHOOSE_MULTIPLE":
-                    session.army_list_upgraded["Units"][unit_key]["perks"].append(choice["name"])
-                if upgrade['type'] == "CHOOSE_ONE_WEAPON_REPLACE":
-                    session.army_list_upgraded["Units"][unit_key]['weapons'][upgrade['weapon_index']] = choice['name']
+                if 'add_perks' in choice.keys():
+                    session.army_list_upgraded["Units"][unit_key]["perks"].extend(choice["add_perks"])
+                if 'add_weapons' in choice.keys():
+                    session.army_list_upgraded["Units"][unit_key]['weapons'].extend(choice["add_weapons"])
+                if 'remove_weapons' in choice.keys():
+                    old_weapons = session.army_list_upgraded["Units"][unit_key]['weapons']
+                    new_weapons = [weapon for weapon in old_weapons if weapon not in choice['remove_weapons']]
+                    session.army_list_upgraded["Units"][unit_key]['weapons'] = new_weapons
         session.army_list_upgraded["Units"][unit_key]["upgrades"] = []
 
 
