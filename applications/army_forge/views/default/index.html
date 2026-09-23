@@ -121,7 +121,7 @@
   <div id="tab2">
     {{for unit in session.army_book['Units'].keys():}}
       <form style="margin-bottom: 20px;">
-        <b>{{=unit}}</b>
+        <b>{{=unit}} [{{=session.army_book['Units'][unit]['models']}}]</b>
         <div>Qual: {{=session.army_book['Units'][unit]['quality']}}+&ensp;Def: {{=session.army_book['Units'][unit]['defense']}}+&ensp;Price: {{=session.army_book['Units'][unit]['base_points']}}</div>
         <div>Weapons:</div>
         {{for weapon in session.army_book['Units'][unit]['weapons']:}}
@@ -143,7 +143,7 @@
     {{if session.army_list_upgraded["Units"][unit_key]["name"]:}}
         <h5>{{=session.army_list_upgraded["Units"][unit_key]["name"]}}</h5>
     {{pass}}
-    <b>{{=session.army_list_upgraded["Units"][unit_key]["unit_type"]}}</b>
+    <b>{{=session.army_list_upgraded["Units"][unit_key]["unit_type"]}} [{{=session.army_list_upgraded["Units"][unit_key]['models']}}]</b>
     <div>Qual: {{=session.army_list_upgraded['Units'][unit_key]['quality']}}+&ensp;Def: {{=session.army_list_upgraded['Units'][unit_key]['defense']}}+&ensp;Price: {{=session.army_list_upgraded['Units'][unit_key]['price']}}</div>
     <div>Weapons:</div>
     {{for weapon in session.army_list_upgraded['Units'][unit_key]['weapons']:}}
@@ -188,7 +188,7 @@
     {{if session.army_list_upgraded["Units"][unit_key]["name"]:}}
         <h4>{{=session.army_list_upgraded["Units"][unit_key]["name"]}}</h4>
     {{pass}}
-    <h5>{{=session.army_list_upgraded["Units"][unit_key]["unit_type"]}}</h5>
+    <h5>{{=session.army_list_upgraded["Units"][unit_key]["unit_type"]}} [{{=session.army_list_upgraded["Units"][unit_key]['models']}}]</h5>
     <div>Qual: {{=session.army_list_upgraded['Units'][unit_key]['quality']}}+&ensp;Def: {{=session.army_list_upgraded['Units'][unit_key]['defense']}}+&ensp;Price: {{=session.army_list_upgraded['Units'][unit_key]['price']}}</div>
     <div>Weapons:</div>
     {{for weapon in session.army_list_upgraded['Units'][unit_key]['weapons']:}}
@@ -223,13 +223,28 @@
 <!-- Edit Unit Tab -->
 {{if session.current_tab == 6:}}
     <h2>{{=str(session.editUnit["name"])}}</h2>
-    <h3>{{=str(session.editUnit["unit_type"])}}</h3>
+    <h3>{{=str(session.editUnit["unit_type"])}} [{{=session.editUnit['models']}}]</h3>
     <div>Weapons:</div>
     {{for weapon in session.editUnit["weapons"]:}}
         <div>&emsp;{{=weapon}}</div>
     {{pass}}
     <div>Perks: {{=', '.join(session.editUnit['perks'])}}</div>
     <div>Price: {{=session.editUnit['price']}}</div>
+    <hr>
+    <form>
+      <label for="UnitName">Name Unit:</label>
+      <input type="text" id="unitName" name="unitName" placeholder="Unit Name">
+      <input type="submit" value="Update" />
+      <input type="hidden" name="request_id" value="updateUnitName">
+      <input type="hidden" name="unitKey" value="{{=session.editUnit['unit_key']}}">
+    </form>
+    {{if session.editUnit['models'] > 1 and not session.editUnit['combined']:}}
+      <label for="combineUnit">Combine Unit: </label>
+      <input type="checkbox" id="combineUnit" name="combineUnit" value="combineUnit" onchange="ajax('{{=URL('default', 'combine_unit')}}?unitKey={{=session.editUnit['unit_key']}}&combine=True', [], function(res) {location.reload(true);});" unchecked>
+    {{elif session.editUnit['models'] > 1 and session.editUnit['combined']:}}
+      <label for="combineUnit">Combine Unit: </label>
+      <input type="checkbox" id="combineUnit" name="combineUnit" value="combineUnit" onchange="ajax('{{=URL('default', 'combine_unit')}}?unitKey={{=session.editUnit['unit_key']}}&combine=False', [], function(res) {location.reload(true);});" checked>
+    {{pass}}
     <br>
     <h5>Upgrades Options:</h5>
     {{for upgrade in session.editUnit["upgrades"]:}}
@@ -246,35 +261,30 @@
             <label for={{=option["name"]}}><strong>{{=option["name"]}}</strong> &emsp; Points: {{=option["price"]}}</label>
             <br>
           {{pass}}
+          &emsp;<input type="submit" value="Update" />
+          <input type="hidden" name="request_id" value="updateUnit">
+          <input type="hidden" name="upgradeType" value="{{=upgrade['type']}}">
+          <input type="hidden" name="upgradeSection" value="{{=upgrade['section']}}">
+          <input type="hidden" name="unitKey" value="{{=session.editUnit['unit_key']}}">
+
         {{elif upgrade['type'] == 'CHOOSE_ONE':}}
           {{for option in upgrade['choices']:}}
             {{if option["selected"]:}}
-                &emsp;&emsp;<input type="radio" id="{{=option["name"]}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" checked>
+                &emsp;&emsp;<input type="radio" id="{{=option["name"]}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" onchange="ajax('{{=URL('default', 'update_unit')}}?unitKey={{=session.editUnit['unit_key']}}&upgradeSection={{=upgrade['section']}}&optionName={{=option['name']}}', [], function(res) {location.reload(true);});" checked>
             {{else:}}
-                &emsp;&emsp;<input type="radio" id="{{=option["name"]}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" unchecked>
+                &emsp;&emsp;<input type="radio" id="{{=option["name"]}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" onchange="ajax('{{=URL('default', 'update_unit')}}?unitKey={{=session.editUnit['unit_key']}}&upgradeSection={{=upgrade['section']}}&optionName={{=option['name']}}', [], function(res) {location.reload(true);});" unchecked>
             {{pass}}
             <label for={{=option["name"]}}><strong>{{=option["name"]}}</strong> &emsp; Points: {{=option["price"]}}</label>
             <br>
           {{pass}}
-          &emsp;&emsp;<input type="radio" id=None name="{{=upgrade['section']}}" value=None unchecked>
+          &emsp;&emsp;<input type="radio" id=None name="{{=upgrade['section']}}" value=None onchange="ajax('{{=URL('default', 'update_unit')}}?unitKey={{=session.editUnit['unit_key']}}&upgradeSection={{=upgrade['section']}}&optionName=None', [], function(res) {location.reload(true);});" unchecked>
           <label for=None><strong>None</strong></label>
           <br>
         {{pass}}
-        <input type="submit" value="Update" />
-        <input type="hidden" name="request_id" value="updateUnit">
-        <input type="hidden" name="upgradeType" value="{{=upgrade['type']}}">
-        <input type="hidden" name="upgradeSection" value="{{=upgrade['section']}}">
-        <input type="hidden" name="unitKey" value="{{=session.editUnit['unit_key']}}">
       </form>
+      <br>
     {{pass}}
     <br>
-    <form>
-        <label for="UnitName">Name Unit:</label>
-        <input type="text" id="unitName" name="unitName" placeholder="Unit Name">
-        <input type="submit" value="Update" />
-        <input type="hidden" name="request_id" value="updateUnitName">
-        <input type="hidden" name="unitKey" value="{{=session.editUnit['unit_key']}}">
-    </form>
 {{pass}}
 
 <!-- Unit Details Tab -->

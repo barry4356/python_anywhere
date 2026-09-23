@@ -1,6 +1,6 @@
 {
     "Units": {
-        "Peasant Levy [10]": {
+        "Peasant Levy": {
             "base_points": 45,
             "quality": 6,
             "defense": 6,
@@ -9,9 +9,10 @@
                "10x Throw Stones (12\", A1)"
 			],
 			"perks": [],
-			"upgrades": []
+			"upgrades": [],
+			"models": 10
         },
-		"Men-at-Arms [10]": {
+		"Men-at-Arms": {
             "base_points": 65,
             "quality": 5,
             "defense": 5,
@@ -22,6 +23,7 @@
             "upgrades": [
 			{
 				"section": "Upgrade up to three models with one:",
+				"unit_level": false,
 				"type": "CHOOSE_MULTIPLE",
 				"choices": [
 					{
@@ -43,6 +45,7 @@
 			},
 			{
 				"section": "Replace all Hand Weapons:",
+				"unit_level": true,
 				"type": "CHOOSE_ONE",
 				"choices": [
 				{
@@ -59,7 +62,8 @@
 				}
 				]
 			}
-		   ]
+		   ],
+		   "models": 10
         }
     }
 }

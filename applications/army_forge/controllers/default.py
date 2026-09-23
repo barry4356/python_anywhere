@@ -62,6 +62,7 @@ def index():
         new_unit['unit_type'] = request.vars.unitName
         new_unit['name'] = ''
         new_unit['price'] = session.army_book['Units'][request.vars.unitName]["base_points"]
+        new_unit['combined'] = False
         for upgrade in new_unit['upgrades']:
             for choice in upgrade['choices']:
                 choice['selected'] = False
@@ -128,6 +129,8 @@ def updateUpgradedViews():
     #Creates a view of our army list that only accounts for selected upgrades
     session.army_list_upgraded = copy.deepcopy(session.army_list)
     for unit_key in session.army_list_upgraded["Units"]:
+        if session.army_list_upgraded["Units"][unit_key]["combined"]:
+            session.army_list_upgraded["Units"][unit_key]['models'] += session.army_list_upgraded["Units"][unit_key]['models']
         for upgrade in session.army_list_upgraded["Units"][unit_key]["upgrades"]:
             for choice in upgrade['choices']:
                 if not choice['selected']:
@@ -171,6 +174,8 @@ def editUnit():
 def updateUnitCost(unit_key):
     unit = session.army_list['Units'][unit_key]
     unit['price'] = unit["base_points"]
+    if unit['combined']:
+        unit['price'] += unit['base_points']
     for upgrade in unit['upgrades']:
         for choice in upgrade['choices']:
             if choice['selected']:
@@ -196,6 +201,34 @@ def saveList():
     list_file = os.path.join(armyListRepo, list_file_name)
     with open(list_file, "w") as file:
         json.dump(session.army_list, file, indent=2)
+
+def update_unit():
+    unit = session.army_list['Units'][request.vars.unitKey]
+    upgrade_section = {}
+    for upgrade in unit['upgrades']:
+        if upgrade['section'] in request.vars.upgradeSection:
+            upgrade_section = upgrade
+    if upgrade_section:
+        for option in upgrade_section['choices']:
+            if option['name'] == request.vars.optionName:
+                option['selected'] = True
+            else:
+                option['selected'] = False
+        #session.flash = str(upgrade_section['choices'])
+    updateListCost()
+    session.editUnit = copy.deepcopy(unit)
+    session.editUnit['unit_key'] = request.vars.unitKey
+    redirect(URL('index'))
+
+def combine_unit():
+    unit = session.army_list['Units'][request.vars.unitKey]
+    if request.vars.combine.lower().strip() == 'true':
+        unit['combined'] = True
+    else:
+        unit['combined'] = False
+    updateListCost()
+    session.editUnit = copy.deepcopy(unit)
+    session.editUnit['unit_key'] = request.vars.unitKey
 
 def download_list():
     content = json.dumps(session.army_list, indent=2)
