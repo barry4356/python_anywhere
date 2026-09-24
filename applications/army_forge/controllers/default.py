@@ -180,6 +180,9 @@ def updateUnitCost(unit_key):
         for choice in upgrade['choices']:
             if choice['selected']:
                 unit['price'] += choice['price']
+                if unit['combined'] and upgrade['unit_level']:
+                    #Double the price for combined units with unit-wide upgrades
+                    unit['price'] += choice['price']
 
 def updateListCost():
     session.army_list['Price'] = 0
@@ -202,7 +205,7 @@ def saveList():
     with open(list_file, "w") as file:
         json.dump(session.army_list, file, indent=2)
 
-def update_unit():
+def update_unit_chooseone():
     unit = session.army_list['Units'][request.vars.unitKey]
     upgrade_section = {}
     for upgrade in unit['upgrades']:
@@ -214,6 +217,25 @@ def update_unit():
                 option['selected'] = True
             else:
                 option['selected'] = False
+        #session.flash = str(upgrade_section['choices'])
+    updateListCost()
+    session.editUnit = copy.deepcopy(unit)
+    session.editUnit['unit_key'] = request.vars.unitKey
+    redirect(URL('index'))
+
+def update_unit_choosemult():
+    unit = session.army_list['Units'][request.vars.unitKey]
+    upgrade_section = {}
+    for upgrade in unit['upgrades']:
+        if upgrade['section'] in request.vars.upgradeSection:
+            upgrade_section = upgrade
+    if upgrade_section:
+        for option in upgrade_section['choices']:
+            if option['name'] == request.vars.optionName:
+                if request.vars.Selected.strip().lower() == "true":
+                    option['selected'] = True
+                else:
+                    option['selected'] = False
         #session.flash = str(upgrade_section['choices'])
     updateListCost()
     session.editUnit = copy.deepcopy(unit)

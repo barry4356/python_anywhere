@@ -254,36 +254,32 @@
         {{if upgrade['type'] == 'CHOOSE_MULTIPLE':}}
           {{for option in upgrade['choices']:}}
             {{if option["selected"]:}}
-                &emsp;&emsp;<input type="checkbox" id="{{=option['name']}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" checked>
+                &emsp;&emsp;<input type="checkbox" id="{{=option['name']}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" onchange="ajax('{{=URL('default', 'update_unit_choosemult')}}?unitKey={{=session.editUnit['unit_key']}}&upgradeSection={{=upgrade['section']}}&optionName={{=option['name']}}&Selected=False', [], function(res) {location.reload(true);});" checked>
             {{else:}}
-                &emsp;&emsp;<input type="checkbox" id="{{=option['name']}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" unchecked>
+                &emsp;&emsp;<input type="checkbox" id="{{=option['name']}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" onchange="ajax('{{=URL('default', 'update_unit_choosemult')}}?unitKey={{=session.editUnit['unit_key']}}&upgradeSection={{=upgrade['section']}}&optionName={{=option['name']}}&Selected=True', [], function(res) {location.reload(true);});" unchecked>
             {{pass}}
             <label for={{=option["name"]}}><strong>{{=option["name"]}}</strong> &emsp; Points: {{=option["price"]}}</label>
             <br>
           {{pass}}
-          &emsp;<input type="submit" value="Update" />
-          <input type="hidden" name="request_id" value="updateUnit">
-          <input type="hidden" name="upgradeType" value="{{=upgrade['type']}}">
-          <input type="hidden" name="upgradeSection" value="{{=upgrade['section']}}">
-          <input type="hidden" name="unitKey" value="{{=session.editUnit['unit_key']}}">
-
         {{elif upgrade['type'] == 'CHOOSE_ONE':}}
           {{for option in upgrade['choices']:}}
             {{if option["selected"]:}}
-                &emsp;&emsp;<input type="radio" id="{{=option["name"]}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" onchange="ajax('{{=URL('default', 'update_unit')}}?unitKey={{=session.editUnit['unit_key']}}&upgradeSection={{=upgrade['section']}}&optionName={{=option['name']}}', [], function(res) {location.reload(true);});" checked>
+                &emsp;&emsp;<input type="radio" id="{{=option["name"]}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" onchange="ajax('{{=URL('default', 'update_unit_chooseone')}}?unitKey={{=session.editUnit['unit_key']}}&upgradeSection={{=upgrade['section']}}&optionName={{=option['name']}}', [], function(res) {location.reload(true);});" checked>
             {{else:}}
-                &emsp;&emsp;<input type="radio" id="{{=option["name"]}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" onchange="ajax('{{=URL('default', 'update_unit')}}?unitKey={{=session.editUnit['unit_key']}}&upgradeSection={{=upgrade['section']}}&optionName={{=option['name']}}', [], function(res) {location.reload(true);});" unchecked>
+                &emsp;&emsp;<input type="radio" id="{{=option["name"]}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" onchange="ajax('{{=URL('default', 'update_unit_chooseone')}}?unitKey={{=session.editUnit['unit_key']}}&upgradeSection={{=upgrade['section']}}&optionName={{=option['name']}}', [], function(res) {location.reload(true);});" unchecked>
             {{pass}}
             <label for={{=option["name"]}}><strong>{{=option["name"]}}</strong> &emsp; Points: {{=option["price"]}}</label>
             <br>
           {{pass}}
-          &emsp;&emsp;<input type="radio" id=None name="{{=upgrade['section']}}" value=None onchange="ajax('{{=URL('default', 'update_unit')}}?unitKey={{=session.editUnit['unit_key']}}&upgradeSection={{=upgrade['section']}}&optionName=None', [], function(res) {location.reload(true);});" unchecked>
+          &emsp;&emsp;<input type="radio" id=None name="{{=upgrade['section']}}" value=None onchange="ajax('{{=URL('default', 'update_unit_chooseone')}}?unitKey={{=session.editUnit['unit_key']}}&upgradeSection={{=upgrade['section']}}&optionName=None', [], function(res) {location.reload(true);});" unchecked>
           <label for=None><strong>None</strong></label>
           <br>
         {{pass}}
       </form>
       <br>
     {{pass}}
+    <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=3', [], function(res) {location.reload(true);});">Done</button>
+    <br>
     <br>
 {{pass}}
 
