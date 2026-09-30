@@ -4,6 +4,7 @@
             "base_points": 70,
             "quality": 5,
             "defense": 5,
+            "models": 10,
             "weapons": [
                "5x Hand Weapon (A1)",
                "5x Bow (24\", A1)"

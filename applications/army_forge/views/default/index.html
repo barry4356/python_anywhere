@@ -238,6 +238,7 @@
       <input type="hidden" name="request_id" value="updateUnitName">
       <input type="hidden" name="unitKey" value="{{=session.editUnit['unit_key']}}">
     </form>
+    <hr>
     {{if session.editUnit['models'] > 1 and not session.editUnit['combined']:}}
       <label for="combineUnit">Combine Unit: </label>
       <input type="checkbox" id="combineUnit" name="combineUnit" value="combineUnit" onchange="ajax('{{=URL('default', 'combine_unit')}}?unitKey={{=session.editUnit['unit_key']}}&combine=True', [], function(res) {location.reload(true);});" unchecked>
@@ -245,8 +246,18 @@
       <label for="combineUnit">Combine Unit: </label>
       <input type="checkbox" id="combineUnit" name="combineUnit" value="combineUnit" onchange="ajax('{{=URL('default', 'combine_unit')}}?unitKey={{=session.editUnit['unit_key']}}&combine=False', [], function(res) {location.reload(true);});" checked>
     {{pass}}
+    {{if 'Hero' in session.editUnit["perks"]:}}
+      <form>
+      <div>Embed Hero in Unit: </div>
+        {{=SELECT(*[OPTION(item, _value=item) for item in session.embeddable_unit_names], _name='embedSelection')}}
+        <input type="submit" value="Embed Hero" />
+        <input type="hidden" name="request_id" value="embedHero">
+        <input type="hidden" name="heroKey" value="{{=session.editUnit['unit_key']}}">
+      </form>
+      <hr>
+    {{pass}}
     <br>
-    <h5>Upgrades Options:</h5>
+    <h5>Upgrade Options:</h5>
     {{for upgrade in session.editUnit["upgrades"]:}}
       <form>
         <i>&emsp;{{=upgrade['section']}}</i>

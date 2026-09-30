@@ -1,5 +1,20 @@
 {
     "Units": {
+        "High Champion": {
+            "base_points": 45,
+            "quality": 4,
+            "defense": 4,
+            "tough": 3,
+            "weapons": [
+                "Heavy Hand Weapon (A3, AP(1))"
+            ],
+            "perks":[
+                "Fearless",
+                "Hero"
+            ],
+            "upgrades": [],
+            "models": 1
+        },
         "Peasant Levy": {
             "base_points": 45,
             "quality": 6,

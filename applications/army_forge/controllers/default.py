@@ -84,23 +84,6 @@ def index():
         session.current_tab = 1
         updateListCost()
         redirect(URL('index'))
-    elif request.vars.request_id == 'updateUnit':
-        unit = session.army_list['Units'][request.vars.unitKey]
-        upgrade_section = {}
-        for upgrade in unit['upgrades']:
-            if upgrade['section'] in request.vars.upgradeSection:
-                upgrade_section = upgrade
-        if upgrade_section:
-            for option in upgrade_section['choices']:
-                if request.vars[upgrade_section['section']] and option['name'] in request.vars[upgrade_section['section']]:
-                    option['selected'] = True
-                else:
-                    option['selected'] = False
-            #session.flash = str(upgrade_section['choices'])
-        updateListCost()
-        session.editUnit = copy.deepcopy(unit)
-        session.editUnit['unit_key'] = request.vars.unitKey
-        redirect(URL('index'))
     elif request.vars.request_id == 'updateUnitName':
         unit = session.army_list["Units"][request.vars.unitKey]
         unit["name"] = request.vars.unitName
@@ -112,6 +95,22 @@ def index():
         filename = request.vars.textFile.filename
         session.army_list = json.load(uploaded_file)
         session.list_name = filename.replace('_',' ').replace('.json','')
+        redirect(URL('index'))
+    elif request.vars.request_id == 'embedHero':
+        hero = session.army_list["Units"][request.vars.heroKey]
+        unit_key = session.embeddable_unitLookup[request.vars.embedSelection]
+        unit = session.army_list["Units"][unit_key]
+        #if hero was previously embedded, break the connection first
+        if hero.get('embedded_in', None):
+            previous_unitkey = hero['embedded_in']
+            previous_unit = session.army_list['Units'][previous_unitkey]
+            previous_unit['embedded_by'] = None
+        #Embed hero in unit
+        hero['embedded_in'] = unit_key
+        unit['embedded_by'] = request.vars.heroKey
+        update_embeddable_unit_names()
+        session.editUnit = copy.deepcopy(hero)
+        session.editUnit['unit_key'] = request.vars.heroKey
         redirect(URL('index'))
 
     return dict()
@@ -162,6 +161,16 @@ def removeUnit():
     unit_key = request.vars.myvar
     del_unit = session.army_list['Units'].pop(unit_key, None)
     del_unit = session.army_list_upgraded["Units"].pop(unit_key, None)
+    #If unit had an embedded hero; break connection
+    if del_unit.get('embedded_by', None):
+        embedded_hero_key = del_unit['embedded_by']
+        if session.army_list['Units'].get(embedded_hero_key, None):
+            session.army_list['Units'][embedded_hero_key]['embedded_in'] = None
+    #If unit was an embedded hero; break connection
+    if del_unit.get('embedded_in', None):
+        embedded_unit_key = del_unit['embedded_in']
+        if session.army_list['Units'].get(embedded_unit_key, None):
+            session.army_list['Units'][embedded_unit_key]['embedded_by'] = None
     updateListCost()
     redirect(URL('index'))
 
@@ -169,6 +178,8 @@ def editUnit():
     session.current_tab = 6
     session.editUnit = copy.deepcopy(session.army_list["Units"][request.vars.myvar])
     session.editUnit['unit_key'] = request.vars.myvar
+    if 'Hero' in session.editUnit['perks']:
+        update_embeddable_unit_names()
     redirect(URL('index'))
 
 def updateUnitCost(unit_key):
@@ -242,17 +253,60 @@ def update_unit_choosemult():
     session.editUnit['unit_key'] = request.vars.unitKey
     redirect(URL('index'))
 
+def update_embeddable_unit_names():
+    '''
+    Create a list of unique-ified unit names for our list, and
+    a map tying each unique name to the unit's Key.
+    Used
+    '''
+    unitNames = []
+    unitLookup = {}
+    units = session.army_list["Units"]
+    for unit_key in units.keys():
+        if units[unit_key]['models'] < 2:
+            continue
+        if units[unit_key].get('embedded_by', None):
+            continue
+        unitName = ''
+        if units[unit_key]['name']:
+            unitName = units[unit_key]['name']
+        else:
+            unitName = units[unit_key]['unit_type']
+        if unitName not in unitNames:
+            unitNames.append(unitName)
+            unitLookup[unitName] = unit_key
+            continue
+        originalUnitName = unitName
+        index = 1
+        while True:
+            index += 1
+            unitName = originalUnitName + ' (' + str(index) + ')'
+            if unitName not in unitNames:
+                unitNames.append(unitName)
+                unitLookup[unitName] = unit_key
+                break
+    session.embeddable_unit_names = unitNames
+    session.embeddable_unitLookup = unitLookup
+
 def combine_unit():
+    '''
+    Function called from Edit Unit tab. Either combines a unit(doubles models)
+    or un-combines a unit that was previously combined
+    '''
     unit = session.army_list['Units'][request.vars.unitKey]
     if request.vars.combine.lower().strip() == 'true':
         unit['combined'] = True
     else:
         unit['combined'] = False
+    # Need to update our unit's cost, and then copy unit to active editting space
     updateListCost()
     session.editUnit = copy.deepcopy(unit)
     session.editUnit['unit_key'] = request.vars.unitKey
 
 def download_list():
+    '''
+    Download List as a file. Called from Configure List Tab
+    '''
     content = json.dumps(session.army_list, indent=2)
     session.army_list_json = str(session.list_name).replace(' ','_') + '.json'
     # Set headers to force download
