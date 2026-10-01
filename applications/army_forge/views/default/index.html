@@ -150,6 +150,20 @@
         <div>&emsp;{{=weapon}}</div>
     {{pass}}
     <div>Perks: {{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}</div>
+    {{if session.army_list_upgraded["Units"][unit_key].get('embedded_in'):}}
+        {{if session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_in']].get('name'):}}
+            <div>Embedded With: {{=session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_in']]["name"]}}</div>
+        {{else:}}
+            <div>Embedded With: {{=session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_in']]["unit_type"]}}</div>
+        {{pass}}
+    {{pass}}
+    {{if session.army_list_upgraded["Units"][unit_key].get('embedded_by'):}}
+        {{if session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_by']].get('name'):}}
+            <div>Embedded With: {{=session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_by']]["name"]}}</div>
+        {{else:}}
+            <div>Embedded With: {{=session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_by']]["unit_type"]}}</div>
+        {{pass}}
+    {{pass}}
     <div>Price: {{=session.army_list_upgraded["Units"][unit_key]["price"]}}</div>
     <button onclick="ajax('{{=URL('default', 'editUnit')}}?myvar={{=unit_key}}', [], function(res) {location.reload(true);});">Edit Unit</button>
     <button onclick="ajax('{{=URL('default', 'removeUnit')}}?myvar={{=unit_key}}', [], function(res) {location.reload(true);});">Remove Unit</button>

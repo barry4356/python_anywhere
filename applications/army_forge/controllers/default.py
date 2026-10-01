@@ -109,6 +109,7 @@ def index():
         hero['embedded_in'] = unit_key
         unit['embedded_by'] = request.vars.heroKey
         update_embeddable_unit_names()
+        reorder_units()
         session.editUnit = copy.deepcopy(hero)
         session.editUnit['unit_key'] = request.vars.heroKey
         redirect(URL('index'))
@@ -313,3 +314,18 @@ def download_list():
     response.headers['Content-Type'] = 'text/plain'
     response.headers['Content-Disposition'] = f'attachment; filename={session.army_list_json}'
     return content
+
+def reorder_units():
+    sortedUnits = {}
+    unsortedUnits = session.army_list['Units']
+    #Pull in heros and their embedded units first
+    for unit_key in unsortedUnits.keys():
+        if unsortedUnits[unit_key].get('embedded_in'):
+            sortedUnits[unit_key] = unsortedUnits[unit_key]
+            embeddedUnitKey = unsortedUnits[unit_key].get('embedded_in')
+            sortedUnits[embeddedUnitKey] = unsortedUnits[embeddedUnitKey]
+    #Now pull in everything else
+    for unit_key in unsortedUnits.keys():
+        if not unit_key in sortedUnits.keys():
+            sortedUnits[unit_key] = unsortedUnits[unit_key]
+    session.army_list['Units'] = sortedUnits
