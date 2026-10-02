@@ -1,0 +1,23 @@
+{
+    "name": "Army Forged",
+    "short_name": "Army Forged",
+    "icons": [
+        {
+        "src": "/army_forge/static/images/favicon.png",
+        "sizes": "16x16",
+        "type": "image/png"
+        },
+        {
+        "src": "/army_forge/static/images/MCAnvil_192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+        },
+        {
+        "src": "/army_forge/static/images/MCAnvil_512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+        }
+    ],
+    "start_url": "/army_forge",
+    "display": "standalone"
+}
