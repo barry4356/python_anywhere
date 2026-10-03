@@ -57,6 +57,9 @@
 {{if session.army_list and session.list_name and 'Price' in session.army_list.keys():}}
   <div id="result" style="text-align: right;">Price: {{=session.army_list['Price']}}</div>
 {{pass}}
+{{if session.list_name:}}
+<div>Unit Count: {{=len(session.army_list.get("Units",[]))}}</div>
+{{pass}}
 <hr>
 
 <!-- Configure List Tab -->

@@ -161,7 +161,6 @@ def switchTab():
 def removeUnit():
     unit_key = request.vars.myvar
     del_unit = session.army_list['Units'].pop(unit_key, None)
-    del_unit = session.army_list_upgraded["Units"].pop(unit_key, None)
     #If unit had an embedded hero; break connection
     if del_unit.get('embedded_by', None):
         embedded_hero_key = del_unit['embedded_by']
@@ -173,7 +172,7 @@ def removeUnit():
         if session.army_list['Units'].get(embedded_unit_key, None):
             session.army_list['Units'][embedded_unit_key]['embedded_by'] = None
     updateListCost()
-    redirect(URL('index'))
+    updateUpgradedViews()
 
 def editUnit():
     session.current_tab = 6
@@ -314,6 +313,18 @@ def download_list():
     response.headers['Content-Type'] = 'text/plain'
     response.headers['Content-Disposition'] = f'attachment; filename={session.army_list_json}'
     return content
+
+def force_org_check():
+    '''
+    Check Army List against force org and update its status
+    '''
+    pass
+
+def force_org_message():
+    '''
+    Build and display force org message, describing status of list in terms of force-org
+    '''
+    pass
 
 def reorder_units():
     sortedUnits = {}
