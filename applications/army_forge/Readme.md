@@ -1,5 +1,6 @@
 ```json
 {
-test: "TEST"
+test: "TEST",
+test2: ["test", "test"]
 }
 ```
