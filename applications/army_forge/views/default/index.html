@@ -302,7 +302,7 @@
       <label for="combineUnit">Combine Unit: </label>
       <input type="checkbox" id="combineUnit" name="combineUnit" value="combineUnit" onchange="ajax('{{=URL('default', 'combine_unit')}}?unitKey={{=session.editUnit['unit_key']}}&combine=False', [], function(res) {location.reload(true);});" checked>
     {{pass}}
-    {{if 'Hero' in session.editUnit["perks"]:}}
+    {{if 'Hero' in session.editUnit["perks"] and session.embeddable_unit_names:}}
       <form>
       <div>Embed Hero in Unit: </div>
         {{=SELECT(*[OPTION(item, _value=item) for item in session.embeddable_unit_names], _name='embedSelection')}}

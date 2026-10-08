@@ -104,16 +104,19 @@ def index():
         redirect(URL('index'))
     elif request.vars.request_id == 'embedHero':
         hero = session.army_list["Units"][request.vars.heroKey]
-        unit_key = session.embeddable_unitLookup[request.vars.embedSelection]
-        unit = session.army_list["Units"][unit_key]
         #if hero was previously embedded, break the connection first
         if hero.get('embedded_in', None):
             previous_unitkey = hero['embedded_in']
             previous_unit = session.army_list['Units'][previous_unitkey]
             previous_unit['embedded_by'] = None
-        #Embed hero in unit
-        hero['embedded_in'] = unit_key
-        unit['embedded_by'] = request.vars.heroKey
+        if request.vars.embedSelection == "None":
+            hero['embedded_in'] = None
+        else:
+            unit_key = session.embeddable_unitLookup[request.vars.embedSelection]
+            unit = session.army_list["Units"][unit_key]
+            #Embed hero in unit
+            hero['embedded_in'] = unit_key
+            unit['embedded_by'] = request.vars.heroKey
         update_embeddable_unit_names()
         reorder_units()
         session.editUnit = copy.deepcopy(hero)
@@ -294,6 +297,8 @@ def update_embeddable_unit_names():
                 unitNames.append(unitName)
                 unitLookup[unitName] = unit_key
                 break
+    #if any embeddable units; add a "None" option as well
+    unitNames.append("None")
     session.embeddable_unit_names = unitNames
     session.embeddable_unitLookup = unitLookup
 
