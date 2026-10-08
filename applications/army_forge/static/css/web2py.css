@@ -92,10 +92,12 @@ div.w2p_flash {
     font-weight:bold;
     display:none;
     position:fixed;
-    padding:10px;
+    padding:5px;
     top:48px;
     right:250px;
-    min-width:280px;
+    width: auto;
+    min-width:350px;
+    max-width: 400px;
     opacity:0.95;
     margin:0px 0px 10px 10px;
     vertical-align:middle;
@@ -115,6 +117,7 @@ div.w2p_flash {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     z-index:2000;
+    white-space: pre-wrap;
 }
 
 div.w2p_flash #closeflash{color:inherit; float:right; margin-left:15px;}

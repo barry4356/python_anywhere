@@ -58,7 +58,7 @@ def index():
         with open(os.path.join(request.folder, 'private', 'ArmyBooks', session.army_book_json), 'r') as file:
             session.army_book = json.load(file)
         session.army_list = {"Units": {}, "ArmyBook": session.army_book_json, "Price": 0}
-        session.list_name = None
+        session.list_name = "None"
         redirect(URL('index'))
     elif request.vars.request_id == 'AddUnitToList':
         unit_uuid = str(uuid.uuid4())

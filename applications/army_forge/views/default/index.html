@@ -44,21 +44,23 @@
 <hr>
 
 <!-- List Information Header -->
-{{if session.forceOrgPass:}}
+{{if session.army_list:}}
+  {{if session.forceOrgPass:}}
     <button type="button" onclick="ajax('{{=URL('default', 'force_org_message')}}', []);" style="all: unset; cursor: pointer;">
         <img src="{{=URL('static','images/shield_Green.png')}}" alt="Force Org" title="Force Org" width="35" height="35">
     </button>
-{{else:}}
+  {{else:}}
     <button type="button" onclick="ajax('{{=URL('default', 'force_org_message')}}', []);" style="all: unset; cursor: pointer;">
         <img src="{{=URL('static','images/shield_Yellow.png')}}" alt="Force Org" title="Force Org" width="35" height="35">
     </button>
+  {{pass}}
 {{pass}}
 {{if session.army_book_json:}}
   <div id="result" style="text-align: right;">Army Book: {{=session.army_book_name}}</div>
 {{else:}}
   <div id="result" style="text-align: right; color: red;">Army Book: None</div>
 {{pass}}
-{{if session.list_name:}}
+{{if session.list_name and session.list_name != "None":}}
   <div id="result" style="text-align: right;">List: {{=session.list_name}}</div>
 {{else:}}
   <div id="result" style="text-align: right; color: red;">List: None</div>
@@ -91,7 +93,7 @@
     <h5>Save/Load List:</h5>
     {{if not auth.user:}}
         <a href="https://barry4356.pythonanywhere.com/army_forge/default/user/login">Login to Save/Load Lists</a>
-    {{elif not session.army_list or "Units" not in session.army_list.keys() or not session.army_list["Units"]:}}
+    {{elif not session.army_list or "Units" not in session.army_list.keys() or not session.army_list["Units"] or session.list_name == "None":}}
         <div>Nothing to Save</div>
         <button title="Nothing to Save" disabled>QuickSave</button>
         <!--<button title="Nothing to Save" disabled>SaveAs</button>-->
@@ -119,7 +121,7 @@
     </form>
     <hr>
     <h5>Download List File:</h5>
-    {{if not session.army_list or "Units" not in session.army_list.keys() or not session.army_list["Units"]:}}
+    {{if not session.army_list or "Units" not in session.army_list.keys() or not session.army_list["Units"] or session.list_name == "None":}}
       <div>Nothing to Download</div>
     {{else:}}
       <a href="{{=URL('default', 'download_list', args='')}}" class="button">Download Army List File</a>
@@ -221,6 +223,20 @@
         <div>&emsp;{{=weapon}}</div>
     {{pass}}
     <div>Perks: {{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}</div>
+    {{if session.army_list_upgraded["Units"][unit_key].get('embedded_in'):}}
+        {{if session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_in']].get('name'):}}
+            <div>Embedded With: {{=session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_in']]["name"]}}</div>
+        {{else:}}
+            <div>Embedded With: {{=session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_in']]["unit_type"]}}</div>
+        {{pass}}
+    {{pass}}
+    {{if session.army_list_upgraded["Units"][unit_key].get('embedded_by'):}}
+        {{if session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_by']].get('name'):}}
+            <div>Embedded With: {{=session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_by']]["name"]}}</div>
+        {{else:}}
+            <div>Embedded With: {{=session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_by']]["unit_type"]}}</div>
+        {{pass}}
+    {{pass}}
     <div>Price: {{=session.army_list_upgraded["Units"][unit_key]["price"]}}</div>
     <br>
     <br>
@@ -255,6 +271,20 @@
         <div>&emsp;{{=weapon}}</div>
     {{pass}}
     <div>Perks: {{=', '.join(session.editUnit['perks'])}}</div>
+    {{if session.editUnit.get('embedded_in'):}}
+        {{if session.army_list_upgraded["Units"][session.editUnit.get('embedded_in')].get('name'):}}
+            <div>Embedded With: {{=session.army_list_upgraded["Units"][session.editUnit.get('embedded_in')].get('name')}}</div>
+        {{else:}}
+            <div>Embedded With: {{=session.army_list_upgraded["Units"][session.editUnit.get('embedded_in')].get('unit_type')}}</div>
+        {{pass}}
+    {{pass}}
+    {{if session.editUnit.get('embedded_by'):}}
+        {{if session.army_list["Units"][session.editUnit.get('embedded_by')].get('name'):}}
+            <div>Embedded With: {{=session.army_list["Units"][session.editUnit.get('embedded_by')].get('name')}}</div>
+        {{else:}}
+            <div>Embedded With: {{=session.army_list["Units"][session.editUnit.get('embedded_by')]['unit_type']}}</div>
+        {{pass}}
+    {{pass}}
     <div>Price: {{=session.editUnit['price']}}</div>
     <hr>
     <form>
