@@ -100,6 +100,10 @@ def index():
         uploaded_file = request.vars.textFile.file
         filename = request.vars.textFile.filename
         session.army_list = json.load(uploaded_file)
+        session.army_book_json = session.army_list['ArmyBook']
+        session.army_book_name = session.army_book_json.replace('_', ' ').replace('.json','')
+        with open(os.path.join(request.folder, 'private', 'ArmyBooks', session.army_book_json), 'r') as file:
+            session.army_book = json.load(file)
         session.list_name = filename.replace('_',' ').replace('.json','')
         redirect(URL('index'))
     elif request.vars.request_id == 'embedHero':
