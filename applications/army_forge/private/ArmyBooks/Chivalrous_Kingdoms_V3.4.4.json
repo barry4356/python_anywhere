@@ -13,7 +13,9 @@
                 "Hero"
             ],
             "upgrades": [],
-            "models": 1
+            "models": 1,
+            "height": 3,
+            "class": "Heroes"
         },
         "Peasant Levy": {
             "base_points": 45,
@@ -25,7 +27,8 @@
 			],
 			"perks": [],
 			"upgrades": [],
-			"models": 10
+			"models": 10,
+			"height": 2
         },
 		"Men-at-Arms": {
             "base_points": 65,
@@ -78,7 +81,9 @@
 				]
 			}
 		   ],
-		   "models": 10
+		   "models": 10,
+		   "height": 2,
+		   "class": "Core Units"
         }
     }
 }
