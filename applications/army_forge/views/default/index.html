@@ -44,6 +44,15 @@
 <hr>
 
 <!-- List Information Header -->
+{{if session.forceOrgPass:}}
+    <button type="button" onclick="ajax('{{=URL('default', 'force_org_message')}}', []);" style="all: unset; cursor: pointer;">
+        <img src="{{=URL('static','images/shield_Green.png')}}" alt="Force Org" title="Force Org" width="35" height="35">
+    </button>
+{{else:}}
+    <button type="button" onclick="ajax('{{=URL('default', 'force_org_message')}}', []);" style="all: unset; cursor: pointer;">
+        <img src="{{=URL('static','images/shield_Yellow.png')}}" alt="Force Org" title="Force Org" width="35" height="35">
+    </button>
+{{pass}}
 {{if session.army_book_json:}}
   <div id="result" style="text-align: right;">Army Book: {{=session.army_book_name}}</div>
 {{else:}}
@@ -55,7 +64,7 @@
   <div id="result" style="text-align: right; color: red;">List: None</div>
 {{pass}}
 {{if session.army_list and session.list_name and 'Price' in session.army_list.keys():}}
-  <div id="result" style="text-align: right;">Price: {{=session.army_list['Price']}}</div>
+  <div id="result" style="text-align: right;">Points: {{=session.army_list['Price']}}</div>
 {{pass}}
 {{if session.list_name:}}
 <div>Unit Count: {{=len(session.army_list.get("Units",[]))}}</div>
