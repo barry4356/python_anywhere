@@ -1,6 +1,4 @@
 import json
-import signal
-import sys
 
 
 emptyUpgradeSection = {
@@ -37,7 +35,7 @@ def interactiveBookBuilder():
             unitName = input(f"What is a unique name for unit {i+1}? ")
             if unitName in unitNames:
                 print(f"ERROR: Name [{unitName}] already used in this army list")
-                return
+                raise ("End and Save Early")
             unitNames.append(unitName)
             armyBookUnit['base_points'] = int(input(f"What is the base price (in points) of {unitName}? "))
             armyBookUnit['quality'] = int(input(f"What is the Qual rating of {unitName}? "))
