@@ -1,0 +1,340 @@
+{
+  "Units": {
+    "High Champion": {
+      "base_points": 45,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "Heavy Hand Weapon (A3, AP(1))"
+      ],
+      "perks": [
+        "Fearless",
+        "Hero"
+      ],
+      "upgrades": [
+        {
+          "section": "Replace Heavy Hand Weapon",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Dual Heavy Hand Weapons (A4, AP(1))",
+              "price": 5,
+              "add_weapons": ["Dual Heavy Hand Weapons (A4, AP(1))"],
+              "remove_weapons": ["Heavy Hand Weapon (A3, AP(1))"]
+            },
+            {
+              "name": "Heavy Lance (A3, AP(1), Lance)",
+              "price": 5,
+              "add_weapons": ["Heavy Lance (A3, AP(1), Lance)"],
+              "remove_weapons": ["Heavy Hand Weapon (A3, AP(1))"]
+            },
+            {
+              "name": "Heavy Great Weapon (A3, AP(3))",
+              "price": 10,
+              "add_weapons": ["Heavy Great Weapon (A3, AP(3))"],
+              "remove_weapons": ["Heavy Hand Weapon (A3, AP(1))"]
+            },
+            {
+              "name": "Heavy Spear (A3, AP(1), Counter)",
+              "price": 15,
+              "add_weapons": ["Heavy Spear (A3, AP(1), Counter)"],
+              "remove_weapons": ["Heavy Hand Weapon (A3, AP(1))"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one:",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Paladin (Great Crusade)",
+              "price": 10,
+              "add_perks": ["Great Crusade"]
+            },
+            {
+              "name": "Realm Lord (Private Guard(Men-at-Arms))",
+              "price": 25,
+              "add_perks": ["Private Guard(Men-at-Arms)"]
+            },
+            {
+              "name": "Army Standard Bearer (Fear(3))",
+              "price": 30,
+              "add_perks": ["Fear(3)"]
+            },
+            {
+              "name": "Captain (War Duty)",
+              "price": 45,
+              "add_perks": ["War Duty"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one:",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Horse (Fast, Impact(1), Joust)",
+              "price": 15,
+              "add_perks": ["Fast","Impact(1)","Joust"]
+            },
+            {
+              "name": "Barded Horse (Defense(1), Fast, Impact(1), Joust)",
+              "price": 20,
+              "add_perks": ["Defense(1)", "Fast", "Impact(1)", "Joust"]
+            },
+            {
+              "name": "Pegasus (Heavy Hooves (A1, AP(1)), Fast, Flying, Impact(2), Joust, Tough(3))",
+              "price": 75,
+              "add_perks": ["Fast", "Flying", "Impact(2)", "Joust"],
+              "add_tough": 3
+            },
+            {
+              "name": "Hippogryph (Rending Claws (A6, Rending), Defense(1), Fast, Fear(1), Flying, Tough(6))",
+              "price": 170,
+              "add_perks": ["Defense(1)", "Fast", "Fear(1)", "Flying"],
+              "add_tough": 6,
+              "add_weapons": ["Rending Claws (A6, Rending)"]
+            }
+          ]
+        }
+      ],
+      "models": 1,
+      "height": "3",
+      "class": "Heroes"
+    },
+    "Vale Defender": {
+      "base_points": 25,
+      "quality": 5,
+      "defense": 5,
+      "tough": 3,
+      "weapons": [
+        "Hand Weapon (A3)"
+      ],
+      "perks": [
+        "Hero",
+        "Vale Formation"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "0",
+      "class": ""
+    },
+    "Peasant Levy": {
+      "base_points": 40,
+      "quality": 6,
+      "defense": 6,
+      "weapons": [
+        "10X Throw Stones (6\" , A1)",
+        "10X Hand Weapons (A1)"
+      ],
+      "perks": [
+        "Vale Formation"
+      ],
+      "upgrades": [],
+      "models": 10,
+      "height": "0",
+      "class": ""
+    },
+    "Men-at-Arms": {
+      "base_points": 70,
+      "quality": 5,
+      "defense": 5,
+      "weapons": [
+        "10X Hand Weapons (A1)"
+      ],
+      "perks": [
+        "Vale Formation"
+      ],
+      "upgrades": [],
+      "models": 10,
+      "height": "0",
+      "class": ""
+    },
+    "Foot Knights": {
+      "base_points": 70,
+      "quality": 4,
+      "defense": 4,
+      "weapons": [
+        "5X Heavy Hand Weapons (A1, AP(1))"
+      ],
+      "perks": [
+        "Fearless",
+        "Vale Formation"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "0",
+      "class": ""
+    },
+    "Peasant Longbowmen": {
+      "base_points": 65,
+      "quality": 5,
+      "defense": 5,
+      "weapons": [
+        "5X Longbows (30\" , A1)",
+        "5X Hand Weapons (A1)"
+      ],
+      "perks": [
+        "Vale Formation"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "0",
+      "class": ""
+    },
+    "Mounted Bowmen": {
+      "base_points": 65,
+      "quality": 5,
+      "defense": 5,
+      "weapons": [
+        "5X Bows (24\" , A1)",
+        "5X Hand Weapons (A1)"
+      ],
+      "perks": [
+        "Fast",
+        "Vale Formation"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "0",
+      "class": ""
+    },
+    "Errant Knights": {
+      "base_points": 85,
+      "quality": 5,
+      "defense": 5,
+      "weapons": [
+        "5X Lances (A1, Thrust)"
+      ],
+      "perks": [
+        "Fast",
+        "Impact(1)",
+        "Scout",
+        "Vale Formation"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "0",
+      "class": ""
+    },
+    "Pledge Knights": {
+      "base_points": 125,
+      "quality": 4,
+      "defense": 4,
+      "weapons": [
+        "5X Holy Swords, (A1, Bane, Shred)"
+      ],
+      "perks": [
+        "Fast",
+        "Fearless",
+        "Impact(1)",
+        "Vale Formation",
+        "Versatile Attack"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "0",
+      "class": ""
+    },
+    "Vale Knights": {
+      "base_points": 120,
+      "quality": 4,
+      "defense": 4,
+      "weapons": [
+        "5X Heavy Lances (A1, AP(1), Thrust)"
+      ],
+      "perks": [
+        "Fast",
+        "Fearless",
+        "Impact(1)",
+        "Vale Formation"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "0",
+      "class": ""
+    },
+    "Quest Knights": {
+      "base_points": 130,
+      "quality": 4,
+      "defense": 3,
+      "weapons": [
+        "5X Great Weapons (A1, AP(2))"
+      ],
+      "perks": [
+        "Fast",
+        "Fearless",
+        "Impact(1)",
+        "Melee Slayer",
+        "Vale Formation"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "0",
+      "class": ""
+    },
+    "Grail Knights": {
+      "base_points": 125,
+      "quality": 4,
+      "defense": 3,
+      "weapons": [
+        "5X Heavy Lances (A1, AP(1), Thrust)"
+      ],
+      "perks": [
+        "Fast",
+        "Fearless",
+        "Impact(1)",
+        "Vale Formation"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "0",
+      "class": ""
+    },
+    "Pegasus Knights": {
+      "base_points": 210,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "3X Heavy Hooves (A1, AP(1))",
+        "3X Heavy Lances (A1, AP(1), Thrust)"
+      ],
+      "perks": [
+        "Fast",
+        "Fearless",
+        "Flying",
+        "Heavy Impact(2)",
+        "Vale Formation"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "0",
+      "class": ""
+    },
+    "Grail Relic": {
+      "base_points": 85,
+      "quality": 6,
+      "defense": 6,
+      "tough": 6,
+      "weapons": [
+        "Pilgrim Crew (A6, Rending)"
+      ],
+      "perks": [
+        "Courage Buff",
+        "Fear(1)",
+        "Furious",
+        "Furious Buff",
+        "ValeFormation"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "0",
+      "class": ""
+    }
+  }
+}
