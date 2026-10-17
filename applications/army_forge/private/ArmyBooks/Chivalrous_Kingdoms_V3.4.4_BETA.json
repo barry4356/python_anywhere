@@ -45,7 +45,7 @@
           ]
         },
         {
-          "section": "Upgrade with one:",
+          "section": "Upgrade with one (class):",
           "unit_level": true,
           "type": "CHOOSE_ONE",
           "choices": [
@@ -72,7 +72,7 @@
           ]
         },
         {
-          "section": "Upgrade with one:",
+          "section": "Upgrade with one (mount):",
           "unit_level": true,
           "type": "CHOOSE_ONE",
           "choices": [

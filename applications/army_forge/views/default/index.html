@@ -46,30 +46,30 @@
 <!-- List Information Header -->
 {{if session.army_list:}}
   {{if session.forceOrgPass:}}
-    <button type="button" onclick="ajax('{{=URL('default', 'force_org_message')}}', []);" style="all: unset; cursor: pointer;">
+    <button type="button" onclick="ajax('{{=URL('default', 'force_org_message')}}', []);" style="all: unset; cursor: pointer; text-align: right; float: right">
         <img src="{{=URL('static','images/shield_Green.png')}}" alt="Force Org" title="Force Org" width="35" height="35">
     </button>
   {{else:}}
-    <button type="button" onclick="ajax('{{=URL('default', 'force_org_message')}}', []);" style="all: unset; cursor: pointer;">
+    <button type="button" onclick="ajax('{{=URL('default', 'force_org_message')}}', []);" style="all: unset; cursor: pointer; text-align: right; float: right">
         <img src="{{=URL('static','images/shield_Yellow.png')}}" alt="Force Org" title="Force Org" width="35" height="35">
     </button>
   {{pass}}
 {{pass}}
 {{if session.army_book_json:}}
-  <div id="result" style="text-align: right;">Army Book: {{=session.army_book_name}}</div>
+  <div id="result" style="">Army Book: {{=session.army_book_name}}</div>
 {{else:}}
-  <div id="result" style="text-align: right; color: red;">Army Book: None</div>
+  <div id="result" style="color: red;">Army Book: None</div>
 {{pass}}
 {{if session.list_name and session.list_name != "None":}}
-  <div id="result" style="text-align: right;">List: {{=session.list_name}}</div>
+  <div id="result" style="">List: {{=session.list_name}}</div>
 {{else:}}
-  <div id="result" style="text-align: right; color: red;">List: None</div>
+  <div id="result" style="color: red;">List: None</div>
 {{pass}}
 {{if session.army_list and session.list_name and 'Price' in session.army_list.keys():}}
-  <div id="result" style="text-align: right;">Points: {{=session.army_list['Price']}}</div>
+  <div id="result" style="text-align: right; float: right;">Points: {{=session.army_list['Price']}}</div>
 {{pass}}
 {{if session.list_name:}}
-<div>Unit Count: {{=len(session.army_list.get("Units",[]))}}</div>
+  <div>Unit Count: {{=len(session.army_list.get("Units",[]))}}</div>
 {{pass}}
 <hr>
 
@@ -141,11 +141,13 @@
         {{for weapon in session.army_book['Units'][unit]['weapons']:}}
           <div>&emsp;{{=weapon}}</div>
         {{pass}}
-        <div>Perks: {{=', '.join(session.army_book['Units'][unit]['perks'])}}</div>
+        <div>Perks:</div>
+        <div>&emsp;{{=', '.join(session.army_book['Units'][unit]['perks'])}}</div>
         <input type="submit" value="Add to List" />
         <input type="hidden" name="request_id" value="AddUnitToList">
         <input type="hidden" name="unitName" value="{{=unit}}">
       </form>
+      <br>
     {{pass}}
   </div>
 {{pass}}
@@ -158,12 +160,13 @@
         <h5>{{=session.army_list_upgraded["Units"][unit_key]["name"]}}</h5>
     {{pass}}
     <b>{{=session.army_list_upgraded["Units"][unit_key]["unit_type"]}} [{{=session.army_list_upgraded["Units"][unit_key]['models']}}]</b>
-    <div>Qual: {{=session.army_list_upgraded['Units'][unit_key]['quality']}}+&ensp;Def: {{=session.army_list_upgraded['Units'][unit_key]['defense']}}+&ensp;Price: {{=session.army_list_upgraded['Units'][unit_key]['price']}}</div>
+    <div>Qual: {{=session.army_list_upgraded['Units'][unit_key]['quality']}}+&ensp;Def: {{=session.army_list_upgraded['Units'][unit_key]['defense']}}+&ensp;{{if session.army_list_upgraded['Units'][unit_key].get('tough'):}}Tough: {{=session.army_list_upgraded['Units'][unit_key]['tough']}}&ensp;{{pass}}Price: {{=session.army_list_upgraded['Units'][unit_key]['price']}}</div>
     <div>Weapons:</div>
     {{for weapon in session.army_list_upgraded['Units'][unit_key]['weapons']:}}
         <div>&emsp;{{=weapon}}</div>
     {{pass}}
-    <div>Perks: {{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}</div>
+    <div>Perks:</div>
+    <div>&emsp;{{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}</div>
     {{if session.army_list_upgraded["Units"][unit_key].get('embedded_in'):}}
         {{if session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_in']].get('name'):}}
             <div>Embedded With: {{=session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_in']]["name"]}}</div>
@@ -178,7 +181,6 @@
             <div>Embedded With: {{=session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_by']]["unit_type"]}}</div>
         {{pass}}
     {{pass}}
-    <div>Price: {{=session.army_list_upgraded["Units"][unit_key]["price"]}}</div>
     <button onclick="ajax('{{=URL('default', 'editUnit')}}?myvar={{=unit_key}}', [], function(res) {location.reload(true);});">Edit Unit</button>
     <button onclick="ajax('{{=URL('default', 'removeUnit')}}?myvar={{=unit_key}}', [], function(res) {location.reload(true);});">Remove Unit</button>
     <br>
@@ -217,7 +219,7 @@
         <h4>{{=session.army_list_upgraded["Units"][unit_key]["name"]}}</h4>
     {{pass}}
     <h5>{{=session.army_list_upgraded["Units"][unit_key]["unit_type"]}} [{{=session.army_list_upgraded["Units"][unit_key]['models']}}]</h5>
-    <div>Qual: {{=session.army_list_upgraded['Units'][unit_key]['quality']}}+&ensp;Def: {{=session.army_list_upgraded['Units'][unit_key]['defense']}}+&ensp;Price: {{=session.army_list_upgraded['Units'][unit_key]['price']}}</div>
+    <div>Qual: {{=session.army_list_upgraded['Units'][unit_key]['quality']}}+&ensp;Def: {{=session.army_list_upgraded['Units'][unit_key]['defense']}}+&ensp;{{if session.army_list_upgraded['Units'][unit_key].get('tough'):}}Tough: {{=session.army_list_upgraded['Units'][unit_key]['tough']}}&ensp;{{pass}}Price: {{=session.army_list_upgraded['Units'][unit_key]['price']}}</div>
     <div>Weapons:</div>
     {{for weapon in session.army_list_upgraded['Units'][unit_key]['weapons']:}}
         <div>&emsp;{{=weapon}}</div>
@@ -237,7 +239,6 @@
             <div>Embedded With: {{=session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_by']]["unit_type"]}}</div>
         {{pass}}
     {{pass}}
-    <div>Price: {{=session.army_list_upgraded["Units"][unit_key]["price"]}}</div>
     <br>
     <br>
     <br>
@@ -266,6 +267,7 @@
 {{if session.current_tab == 6:}}
     <h2>{{=str(session.editUnit["name"])}}</h2>
     <h3>{{=str(session.editUnit["unit_type"])}} [{{=session.editUnit['models']}}]</h3>
+    <div>Qual: {{=session.editUnit['quality']}}+&ensp;Def: {{=session.editUnit['defense']}}+&ensp;{{if session.editUnit.get('tough'):}}Tough: {{=session.editUnit['tough']}}&ensp;{{pass}}</div>
     <div>Weapons:</div>
     {{for weapon in session.editUnit["weapons"]:}}
         <div>&emsp;{{=weapon}}</div>
@@ -325,21 +327,23 @@
             {{else:}}
                 &emsp;&emsp;<input type="checkbox" id="{{=option['name']}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" onchange="ajax('{{=URL('default', 'update_unit_choosemult')}}?unitKey={{=session.editUnit['unit_key']}}&upgradeSection={{=upgrade['section']}}&optionName={{=option['name']}}&Selected=True', [], function(res) {location.reload(true);});" unchecked>
             {{pass}}
-            <label for={{=option["name"]}}><strong>{{=option["name"]}}</strong> &emsp; Points: {{=option["price"]}}</label>
+            <label for="{{=option["name"]}}"><strong>{{=option["name"]}}</strong> &emsp; Points: {{=option["price"]}}</label>
             <br>
           {{pass}}
         {{elif upgrade['type'] == 'CHOOSE_ONE':}}
           {{for option in upgrade['choices']:}}
+            <div>
             {{if option["selected"]:}}
                 &emsp;&emsp;<input type="radio" id="{{=option["name"]}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" onchange="ajax('{{=URL('default', 'update_unit_chooseone')}}?unitKey={{=session.editUnit['unit_key']}}&upgradeSection={{=upgrade['section']}}&optionName={{=option['name']}}', [], function(res) {location.reload(true);});" checked>
             {{else:}}
                 &emsp;&emsp;<input type="radio" id="{{=option["name"]}}" name="{{=upgrade['section']}}" value="{{=option['name']}}" onchange="ajax('{{=URL('default', 'update_unit_chooseone')}}?unitKey={{=session.editUnit['unit_key']}}&upgradeSection={{=upgrade['section']}}&optionName={{=option['name']}}', [], function(res) {location.reload(true);});" unchecked>
             {{pass}}
-            <label for={{=option["name"]}}><strong>{{=option["name"]}}</strong> &emsp; Points: {{=option["price"]}}</label>
+            <label style="white-space: normal; display: inline-block; padding-bottom: 5px; max-width:80%;" for="{{=option["name"]}}"><strong>{{=option["name"]}}</strong> <br> Points: {{=option["price"]}}</label>
             <br>
           {{pass}}
           &emsp;&emsp;<input type="radio" id=None name="{{=upgrade['section']}}" value=None onchange="ajax('{{=URL('default', 'update_unit_chooseone')}}?unitKey={{=session.editUnit['unit_key']}}&upgradeSection={{=upgrade['section']}}&optionName=None', [], function(res) {location.reload(true);});" unchecked>
           <label for=None><strong>None</strong></label>
+          </div>
           <br>
         {{pass}}
       </form>

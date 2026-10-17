@@ -59,6 +59,7 @@ def index():
             session.army_book = json.load(file)
         session.army_list = {"Units": {}, "ArmyBook": session.army_book_json, "Price": 0}
         session.list_name = "None"
+        session.forceOrgPass=True
         redirect(URL('index'))
     elif request.vars.request_id == 'AddUnitToList':
         unit_uuid = str(uuid.uuid4())
@@ -156,6 +157,10 @@ def updateUpgradedViews():
                     old_weapons = session.army_list_upgraded["Units"][unit_key]['weapons']
                     new_weapons = [weapon for weapon in old_weapons if weapon not in choice['remove_weapons']]
                     session.army_list_upgraded["Units"][unit_key]['weapons'] = new_weapons
+                if 'add_tough' in choice.keys():
+                    tough = session.army_list_upgraded["Units"][unit_key].get('tough',0)
+                    tough += int(choice['add_tough'])
+                    session.army_list_upgraded["Units"][unit_key]['tough'] = tough
         session.army_list_upgraded["Units"][unit_key]["upgrades"] = []
 
 
@@ -387,7 +392,7 @@ def force_org_message():
     tabspace = '-    '
     message = ''
     message += f"Force Organization:{nextline}"
-    message += f"* 1 unit per 150pts {nextline}"
+    message += f"* One unit per 150pts {nextline}"
     message += f"{tabspace}{unit_count}/{max_units} units {nextline}"
     message += f"* One Hero Per 375pts {nextline}"
     message += f"{tabspace}{hero_count}/{maxHeroes} heroes {nextline}"
