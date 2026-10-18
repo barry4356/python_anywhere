@@ -37,6 +37,8 @@ def index():
     #session.clear()
     #session.new_unit = {'weapons': []}
     #response.flash = ""
+    if not session.unit_count:
+        session.unit_count = 0
     if not session.army_list:
         session.army_list = {}
     if not session.current_tab:
@@ -73,6 +75,7 @@ def index():
                 choice['selected'] = False
         session.army_list["Units"][unit_uuid] = new_unit
         updateListCost()
+        update_unit_count()
         force_org_check()
         redirect(URL('index'))
     elif request.vars.request_id == 'updateListName':
@@ -89,6 +92,7 @@ def index():
             session.army_book = json.load(file)
         session.current_tab = 1
         updateListCost()
+        update_unit_count()
         force_org_check()
         redirect(URL('index'))
     elif request.vars.request_id == 'updateUnitName':
@@ -124,6 +128,7 @@ def index():
             unit['embedded_by'] = request.vars.heroKey
         update_embeddable_unit_names()
         reorder_units()
+        update_unit_count()
         session.editUnit = copy.deepcopy(hero)
         session.editUnit['unit_key'] = request.vars.heroKey
         redirect(URL('index'))
@@ -190,6 +195,7 @@ def removeUnit():
         if session.army_list['Units'].get(embedded_unit_key, None):
             session.army_list['Units'][embedded_unit_key]['embedded_by'] = None
     updateListCost()
+    update_unit_count()
     force_org_check()
     updateUpgradedViews()
 
@@ -324,6 +330,7 @@ def combine_unit():
     # Need to update our unit's cost, and then copy unit to active editting space
     updateListCost()
     force_org_check()
+    update_unit_count()
     session.editUnit = copy.deepcopy(unit)
     session.editUnit['unit_key'] = request.vars.unitKey
 
@@ -349,9 +356,8 @@ def force_org_check():
     if hero_count > maxHeroes:
         force_org_ok = False
     total_points = session.army_list['Price']
-    unit_count = len(session.army_list["Units"])
     max_units = int(total_points / 150)
-    if unit_count > max_units:
+    if session.unit_count > max_units:
         force_org_ok = False
     unit_counts = get_unit_type_count_map()
     max_unit_copies = 1 + int(total_points / 750)
@@ -374,7 +380,6 @@ def force_org_message():
     hero_count = get_hero_count()
     total_points = session.army_list['Price']
     maxHeroes = int(total_points/375)
-    unit_count = len(session.army_list["Units"])
     max_units = int(total_points / 150)
     unit_counts = get_unit_type_count_map()
     max_unit_copies = 1 + int(total_points / 750)
@@ -393,7 +398,7 @@ def force_org_message():
     message = ''
     message += f"Force Organization:{nextline}"
     message += f"* One unit per 150pts {nextline}"
-    message += f"{tabspace}{unit_count}/{max_units} units {nextline}"
+    message += f"{tabspace}{session.unit_count}/{max_units} units {nextline}"
     message += f"* One Hero Per 375pts {nextline}"
     message += f"{tabspace}{hero_count}/{maxHeroes} heroes {nextline}"
     message += f"* One unit copy per 750pts {nextline}"
@@ -461,7 +466,13 @@ def get_unit_cost_list():
         unit_cost_list.append(unit_cost)
     return unit_cost_list
 
-
+def update_unit_count():
+    unit_count = 0
+    for unit_key in session.army_list.get('Units',[]):
+        if session.army_list['Units'][unit_key].get('embedded_in',False):
+            continue
+        unit_count += 1
+    session.unit_count = unit_count
 
 def reorder_units():
     sortedUnits = {}
