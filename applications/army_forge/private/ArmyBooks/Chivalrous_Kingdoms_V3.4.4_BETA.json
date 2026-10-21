@@ -115,84 +115,153 @@
         "Hand Weapon (A3)"
       ],
       "perks": [
-        "Hero",
-        "Vale Formation"
+        "Hero"
       ],
-      "upgrades": [],
+      "upgrades": [
+        {
+          "section": "Replace Hand Weapon",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Dual Hand Weapons (A4)",
+              "price": 5,
+              "add_weapons": ["Dual Hand Weapons (A4, AP(1))"],
+              "remove_weapons": ["Hand Weapon (A3)"]
+            },
+            {
+              "name": "Lance (A3, Lance)",
+              "price": 5,
+              "add_weapons": ["Lance (A3, AP(1), Lance)"],
+              "remove_weapons": ["Hand Weapon (A3)"]
+            },
+            {
+              "name": "Spear (A3, Counter)",
+              "price": 5,
+              "add_weapons": ["Spear (A3, Counter)"],
+              "remove_weapons": ["Hand Weapon (A3)"]
+            },
+            {
+              "name": "Halberd (A3, Rending)",
+              "price": 10,
+              "add_weapons": ["Halberd (A3, Rending)"],
+              "remove_weapons": ["Hand Weapon (A3)"]
+            },
+            {
+              "name": "Great Weapon (A3, AP(2))",
+              "price": 10,
+              "add_weapons": ["Great Weapon (A3, AP(2))"],
+              "remove_weapons": ["Hand Weapon (A3)"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (class):",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Prophet (Lady's Blessing)",
+              "price": 30,
+              "add_perks": ["Lady's Blessing"]
+            },
+            {
+              "name": "Enchanter (Caster(2))",
+              "price": 35,
+              "add_perks": ["Caster(2)"]
+            },
+            {
+              "name": "Captain (War Duty)",
+              "price": 30,
+              "add_perks": ["War Duty"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (mount):",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Horse (Fast, Impact(1))",
+              "price": 10,
+              "add_perks": ["Fast","Impact(1)"]
+            }
+          ]
+        }
+      ],
       "models": 1,
-      "height": "0",
-      "class": ""
+      "height": "3",
+      "class": "Heroes"
     },
     "Peasant Levy": {
-      "base_points": 40,
+      "base_points": 45,
       "quality": 6,
       "defense": 6,
       "weapons": [
-        "10X Throw Stones (6\" , A1)",
+        "10X Throw Stones (12\" , A1)",
         "10X Hand Weapons (A1)"
       ],
-      "perks": [
-        "Vale Formation"
-      ],
+      "perks": [],
       "upgrades": [],
       "models": 10,
-      "height": "0",
-      "class": ""
+      "height": "2",
+      "class": "Core Units"
     },
-    "Men-at-Arms": {
+	"Men-at-Arms": {
         "base_points": 65,
         "quality": 5,
         "defense": 5,
         "weapons": [
-            "10x Hand Weapon (A1)"
+           "10x Hand Weapon (A1)"
         ],
         "perks": [],
         "upgrades": [
-          {
-            "section": "Upgrade up to three models with one:",
-            "unit_level": false,
-            "type": "CHOOSE_MULTIPLE",
-            "choices": [
-              {
-                "name": "Sergeant",
-                "price": 5,
-                "add_perks": ["Sergeant"]
-              },
-              {
-                "name": "Musician",
-                "price": 10,
-                "add_perks": ["Musician"]
-              },
-              {
-                "name": "Banner",
-                "price": 15,
-                "add_perks": ["Banner"]
-              }
-            ]
-          },
-          {
-            "section": "Replace all Hand Weapons:",
-            "unit_level": true,
-            "type": "CHOOSE_ONE",
-            "choices": [
-            {
-              "name": "10x Halberd (A1, Rending)",
-              "price": 25,
-              "add_weapons": ["10x Halberd (A1, Rending)"],
-              "remove_weapons": ["10x Hand Weapon (A1)"]
-            },
-            {
-              "name": "10x Spear (A1, Counter)",
-              "price": 35,
-              "add_weapons": ["10x Spear (A1, Counter)"],
-              "remove_weapons": ["10x Hand Weapon (A1)"]
-            }
-            ]
-          }
-        ],
-      "models": 10,
-      "height": 2,
-      "class": "Core Units"
+		{
+			"section": "Upgrade up to three models with one:",
+			"unit_level": false,
+			"type": "CHOOSE_MULTIPLE",
+			"choices": [
+				{
+					"name": "Sergeant",
+					"price": 5,
+					"add_perks": ["Sergeant"]
+				},
+				{
+					"name": "Musician",
+					"price": 10,
+					"add_perks": ["Musician"]
+				},
+				{
+					"name": "Banner",
+					"price": 15,
+					"add_perks": ["Banner"]
+				}
+			]
+		},
+		{
+			"section": "Replace all Hand Weapons:",
+			"unit_level": true,
+			"type": "CHOOSE_ONE",
+			"choices": [
+			{
+				"name": "10x Halberd (A1, Rending)",
+				"price": 25,
+				"add_weapons": ["10x Halberd (A1, Rending)"],
+				"remove_weapons": ["10x Hand Weapon (A1)"]
+			},
+			{
+				"name": "10x Spear (A1, Counter)",
+				"price": 35,
+				"add_weapons": ["10x Spear (A1, Counter)"],
+				"remove_weapons": ["10x Hand Weapon (A1)"]
+			}
+			]
+		}
+	   ],
+	   "models": 10,
+	   "height": 2,
+	   "class": "Core Units"
     },
     "Foot Knights": {
       "base_points": 70,
@@ -202,8 +271,7 @@
         "5X Heavy Hand Weapons (A1, AP(1))"
       ],
       "perks": [
-        "Fearless",
-        "Vale Formation"
+        "Fearless"
       ],
       "upgrades": [],
       "models": 5,
