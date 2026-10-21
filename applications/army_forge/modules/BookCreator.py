@@ -22,6 +22,17 @@ emptyUpgradeChoice = {
 }
 
 
+def displayArmyBook(filename):
+    army_book = {}
+    with open (filename, 'r') as jsonFile:
+        army_book = json.load(jsonFile)
+    print("Name[size] \t\t\t Qua \tDef \t Equipment \t\t\t\t\t\t\t\t Special Rules \t\t\t\t\t\t\t Cost")
+    units = army_book['Units']
+    for unit_name in army_book['Units']:
+        unit = army_book['Units'][unit_name]
+        unit_name_count = str(f"{unit_name} [{unit['models']}]")
+        print(f"{unit_name_count:<24}\t {unit['quality']}+ \t{unit['defense']}+ \t {str(unit['weapons']):<64} \t {str(unit['perks']):<56} \t {unit['base_points']}")
+
 def interactiveBookBuilder():
     bookName = input(f"What is a unique name for this army book? ")
     numberOfUnits = int(input(f"How many units does this army book have? "))
@@ -71,4 +82,56 @@ def interactiveBookBuilder():
             json.dump(armyBook, f, indent=2)
 
 
-interactiveBookBuilder()
+def ArmyBookChecker(filename):
+    try:
+        army_book = {}
+        valid = True
+        with open (filename, 'r') as jsonFile:
+            army_book = json.load(jsonFile)
+        if "Units" not in army_book.keys():
+            print(f"ERROR: {filename} Missing 'Units' section")
+            valid = False
+        for unit_key in army_book.get("Units",[]):
+            unit = army_book["Units"].get(unit_key)
+            base_points = int(unit.get('base_points'))
+            if not base_points:
+                print(f"ERROR: {filename}: {unit_key} includes invalid Point Cost")
+                valid = False
+            #Check for perks strings in keywords lists TODO
+            upgrades = unit.get('upgrades')
+            for upgrade in upgrades:
+                if 'section' not in upgrade.keys():
+                    print(f"ERROR: {filename}: {unit_key}: Missing Upgrade Section Field")
+                    print(json.dumps(upgrade, indent=2))
+                    valid = False
+                type = upgrade.get('type')
+                if type != "CHOOSE_ONE" and type != "CHOOSE_MULTIPLE":
+                    print(f"ERROR: {filename}: {unit_key}: Invalid Upgrade Type")
+                    print(json.dumps(upgrade, indent=2))
+                    valid = False
+                for choice in upgrade.get('choices'):
+                    if 'remove_weapons' in choice.keys():
+                        for rmweapon in choice.get('remove_weapons',[]):
+                            validWeapon = False
+                            for unitWeapon in unit.get('weapons', []):
+                                if unitWeapon in rmweapon:
+                                    validWeapon = True
+                                    continue
+                            if not validWeapon:
+                                print(f"ERROR: {filename}: {unit_key}: Invalid Weapon Replacement: {rmweapon}")
+                                print(f"Valid weapons: {unit.get("weapons")}")
+                                valid = False
+            #Check weapon replace upgrades replace real waepon
+            pass
+    except Exception as e:
+        print(f"ERROR: {filename} failed validation for unknown reason!")
+        print(e)
+        valid = False
+    finally:
+        if valid:
+            print(f"{filename} PASSED Validation")
+        else:
+            print(f"{filename} FAILED Validation")
+
+ArmyBookChecker('../private/ArmyBooks/Chivalrous_Kingdoms_V3.4.4_BETA.json')
+displayArmyBook('../private/ArmyBooks/Chivalrous_Kingdoms_V3.4.4_BETA.json')
