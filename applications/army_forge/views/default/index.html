@@ -142,7 +142,10 @@
           <div>&emsp;{{=weapon}}</div>
         {{pass}}
         <div>Perks:</div>
-        <div>&emsp;{{=', '.join(session.army_book['Units'][unit]['perks'])}}</div>
+        <span style="text-decoration: underline;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_book['Units'][unit]['perks'])}}', [], null);">
+            &emsp;{{=', '.join(session.army_book['Units'][unit]['perks'])}}
+        </span>
+        <br>
         <input type="submit" value="Add to List" />
         <input type="hidden" name="request_id" value="AddUnitToList">
         <input type="hidden" name="unitName" value="{{=unit}}">

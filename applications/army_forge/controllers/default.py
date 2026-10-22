@@ -474,6 +474,17 @@ def update_unit_count():
         unit_count += 1
     session.unit_count = unit_count
 
+def display_keywords():
+    response_message = ''
+    nextline = '                                                      '
+    separator = '--------'
+    #response.flash = request.vars.myvar
+    for keyword in session.army_book['Keywords'].keys():
+        keyword_stripped = keyword.replace('X)','')
+        if keyword_stripped.lower() in request.vars.myvar.lower():
+            response_message += f"{keyword}: {session.army_book['Keywords'][keyword]} {nextline}{separator}{nextline}"
+    response.flash = XML(response_message)
+
 def reorder_units():
     sortedUnits = {}
     unsortedUnits = session.army_list['Units']
