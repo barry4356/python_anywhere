@@ -1,0 +1,289 @@
+
+{
+  "Units": {
+    "Troll Boss": {
+      "base_points": 105,
+      "quality": 4,
+      "defense": 4,
+      "tough": 6,
+      "weapons": [
+        "Heavy Hand Weapon (A4, AP(2))"
+      ],
+      "perks": [
+        "Furious",
+        "Hero",
+        "Mischievous",
+        "Regeneration",
+        "Shred in Melee",
+        "Tough(6)"
+      ],
+      "upgrades": [
+        "Trailmaster",
+        "Instigator",
+        "Brewer",
+        "Big Boss",
+        "Shaman",
+        "Stone Tribe",
+        "Forest Tribe"
+      ],
+      "models": 1,
+      "height": "",
+      "class": "Hero"
+    },
+    "Goblin Leader": {
+      "base_points": 25,
+      "quality": 5,
+      "defense": 5,
+      "tough": 3,
+      "weapons": [
+        "Hand Weapon (A3)"
+      ],
+      "perks": [
+        "Hero",
+        "Mischievous",
+        "Strider",
+        "Tough(3)"
+      ],
+      "upgrades": [
+        "Trailmaster",
+        "Army Standard Bearer",
+        "Brewer",
+        "Big Boss",
+        "Skirmisher",
+        "Shaman"
+      ],
+      "models": 1,
+      "height": "",
+      "class": "Hero"
+    },
+    "Shaman Circle": {
+      "base_points": 175,
+      "quality": 5,
+      "defense": 6,
+      "tough": 1,
+      "weapons": [
+        "5x Magic Staffs (12\", A2, Rending)",
+        "5x Hand Weapons (A1)"
+      ],
+      "perks": [
+        "Caster Group",
+        "Mischievous",
+        "Strider"
+      ],
+      "upgrades": [
+        "Spider Clan"
+      ],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Warriors": {
+      "base_points": 60,
+      "quality": 5,
+      "defense": 6,
+      "tough": 1,
+      "weapons": [
+        "10x Hand Weapons (A1)"
+      ],
+      "perks": [
+        "Furious",
+        "Mischievous"
+      ],
+      "upgrades": [
+        "Spear",
+        "Halberd",
+        "Mob Madness"
+      ],
+      "models": 10,
+      "height": "",
+      "class": ""
+    },
+    "Cave-Beast Herd": {
+      "base_points": 105,
+      "quality": 5,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Vicious Jaws (A2, Rending)"
+      ],
+      "perks": [
+        "Bounding",
+        "Furious",
+        "Mischievous"
+      ],
+      "upgrades": [
+        "Goblin Herder"
+      ],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Shroom-Sniffers": {
+      "base_points": 45,
+      "quality": 5,
+      "defense": 6,
+      "tough": 1,
+      "weapons": [
+        "5x Acid Weapons (A1, Shred)"
+      ],
+      "perks": [
+        "Furious",
+        "Mischievous",
+        "Unpredictable Fighter"
+      ],
+      "upgrades": [
+        "Power Shrooms"
+      ],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Nasty Assassins": {
+      "base_points": 55,
+      "quality": 5,
+      "defense": 6,
+      "tough": 1,
+      "weapons": [
+        "3x Acid Daggers (A2, Shred)"
+      ],
+      "perks": [
+        "Good Fighter",
+        "Mischievous",
+        "Stealth",
+        "Strider"
+      ],
+      "upgrades": [
+        "Nasty Ambush",
+        "Headhunter"
+      ],
+      "models": 3,
+      "height": "",
+      "class": ""
+    },
+    "Fanatics": {
+      "base_points": 85,
+      "quality": 5,
+      "defense": 6,
+      "tough": 1,
+      "weapons": [
+        "3x Ball & Chains (A1, AP(1))",
+        "3x Whirlwind Strikes (A1, AP(1), Blast(3), Strafing)"
+      ],
+      "perks": [
+        "Bounding",
+        "Furious",
+        "Mischievous",
+        "Traversal"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "",
+      "class": ""
+    },
+    "Pester Swarms": {
+      "base_points": 75,
+      "quality": 5,
+      "defense": 6,
+      "tough": 3,
+      "weapons": [
+        "3x Swarm Attacks (A3)"
+      ],
+      "perks": [
+        "Mischievous",
+        "Strider",
+        "Tough(3)",
+        "Unpredictable Fighter"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "",
+      "class": ""
+    },
+    "Trolls": {
+      "base_points": 170,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "3x Heavy Hand Weapons (A3, AP(1))"
+      ],
+      "perks": [
+        "Furious",
+        "Mischievous",
+        "Regeneration",
+        "Shred in Melee",
+        "Tough(3)"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "",
+      "class": ""
+    },
+    "Shooters": {
+      "base_points": 50,
+      "quality": 5,
+      "defense": 6,
+      "tough": 1,
+      "weapons": [
+        "5x Shortbows (18\", A1)",
+        "5x Hand Weapons (A1)"
+      ],
+      "perks": [
+        "Furious",
+        "Mischievous"
+      ],
+      "upgrades": [
+        "Crossbow",
+        "Skewer-Bolt Crossbow"
+      ],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Giant Cave-Beast": {
+      "base_points": 275,
+      "quality": 4,
+      "defense": 3,
+      "tough": 12,
+      "weapons": [
+        "1x Giant Jaws (A8, Rending)",
+        "1x Stomp (A4, AP(1))"
+      ],
+      "perks": [
+        "Bounding",
+        "Fear(2)",
+        "Furious",
+        "Mischievous",
+        "Tough(12)"
+      ],
+      "upgrades": [
+        "Sniff Out Threats",
+        "Skewer-Bolt Thrower"
+      ],
+      "models": 1,
+      "height": "",
+      "class": ""
+    }
+  },
+  "Keywords": {
+    "Mischievous": "When attacking, targets must re-roll unmodified Defense results of 6 when blocking hits from this model's weapons.",
+    "Bounding": "When this unit is activated, you may place all models with this rule in it anywhere fully within D3+1\" of their position.",
+    "Regeneration": "When this model takes a wound, roll one die. On a 5+ the wound is ignored.",
+    "Shred": "On unmodified results of 1 to block hits, this weapon deals 1 extra wound.",
+    "Strider": "This model may ignore the effects of difficult terrain when moving.",
+    "Caster Group": "Pick one model with this rule in this unit to have Caster(X), where X is the total number of models with this rule in this unit.",
+    "Unpredictable Fighter": "When in melee, roll one die: on a 1-3 they get AP(+1), and on a 4-6 they get +1 to hit rolls instead.",
+    "Good Fighter": "This model gets +1 to hit rolls in melee.",
+    "Stealth": "Enemies get -1 to hit rolls when shooting at units where all models have this rule."
+  },
+  "SpellBooks": {
+    "Army Spells": {
+      "Spider Might (1)": "Pick one friendly unit within 12\", which gets Mischievous Boost once (next time the effect would apply).",
+      "Stinging Spider (1)": "Pick one enemy unit within 6\", which takes 3 hits with Bane.",
+      "Bat Thirst (2)": "Pick up to two enemy units within 18\", which friendly units gets Piercing Fighter against once.",
+      "Pouncing Wolf (2)": "Pick one enemy unit within 12\", which takes 4 hits with AP(2).",
+      "Wolf Resilience (3)": "Pick up to three friendly units within 12\", which get +1 to defense rolls once.",
+      "Biting Bat (3)": "Pick one enemy unit within 6\", which takes 3 hits with Deadly(3) and Tear."
+    }
+  }
+}

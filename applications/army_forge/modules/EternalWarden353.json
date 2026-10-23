@@ -1,0 +1,274 @@
+
+{
+  "Units": {
+    "Eternal Lord": {
+      "base_points": 125,
+      "quality": 3,
+      "defense": 3,
+      "tough": 6,
+      "weapons": [
+        "Heavy Hand Weapon (A4, AP(2))"
+      ],
+      "perks": [
+        "Fearless",
+        "Hero",
+        "Tough(6)",
+        "Warden"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Warden Knight": {
+      "base_points": 95,
+      "quality": 3,
+      "defense": 4,
+      "tough": 6,
+      "weapons": [
+        "Sword & Staff (A3, AP(1), Bane)"
+      ],
+      "perks": [
+        "Fearless",
+        "Furious",
+        "Hero",
+        "Tough(6)",
+        "Warden"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Guardian Elite": {
+      "base_points": 45,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "Heavy Hand Weapon (A3, AP(1))"
+      ],
+      "perks": [
+        "Fearless",
+        "Hero",
+        "Tough(3)",
+        "Warden"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Guardians": {
+      "base_points": 80,
+      "quality": 4,
+      "defense": 4,
+      "tough": 1,
+      "weapons": [
+        "Heavy Halberds (A1, AP(1), Rending)"
+      ],
+      "perks": [
+        "Fearless",
+        "Warden"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Wardens": {
+      "base_points": 145,
+      "quality": 3,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "Heavy Hand Weapons (A2, AP(1))"
+      ],
+      "perks": [
+        "Fearless",
+        "Furious",
+        "Tough(3)",
+        "Warden"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "",
+      "class": ""
+    },
+    "Paladins": {
+      "base_points": 155,
+      "quality": 3,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "Sword & Staffs (A2, Bane)"
+      ],
+      "perks": [
+        "Fearless",
+        "Tough(3)",
+        "Unpredictable Fighter",
+        "Warden"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "",
+      "class": ""
+    },
+    "Winged Wardens": {
+      "base_points": 180,
+      "quality": 3,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "Heavy Hand Weapons (A2, AP(1))"
+      ],
+      "perks": [
+        "Fearless",
+        "Flying",
+        "Furious",
+        "Tough(3)",
+        "Warden"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "",
+      "class": ""
+    },
+    "Praetorians": {
+      "base_points": 240,
+      "quality": 3,
+      "defense": 3,
+      "tough": 3,
+      "weapons": [
+        "Axe-Halberds (A3, Reliable, Rending)"
+      ],
+      "perks": [
+        "Fearless",
+        "Melee Slayer",
+        "Tough(3)",
+        "Warden"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "",
+      "class": ""
+    },
+    "Eternals": {
+      "base_points": 205,
+      "quality": 3,
+      "defense": 3,
+      "tough": 3,
+      "weapons": [
+        "Great Glaives (A3, AP(1), Rending)"
+      ],
+      "perks": [
+        "Fearless",
+        "Tough(3)",
+        "Warden"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "",
+      "class": ""
+    },
+    "Destroyers": {
+      "base_points": 290,
+      "quality": 3,
+      "defense": 2,
+      "tough": 3,
+      "weapons": [
+        "Meteor Hammers (A4, AP(2))"
+      ],
+      "perks": [
+        "Fearless",
+        "Infiltrate",
+        "Slow",
+        "Tough(3)",
+        "Warden"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "",
+      "class": ""
+    },
+    "Guardian Archers": {
+      "base_points": 95,
+      "quality": 4,
+      "defense": 4,
+      "tough": 1,
+      "weapons": [
+        "Bows (24\", A1)",
+        "Hand Weapons (A1)"
+      ],
+      "perks": [
+        "Fearless",
+        "Warden"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Drake Eternal": {
+      "base_points": 155,
+      "quality": 3,
+      "defense": 3,
+      "tough": 6,
+      "weapons": [
+        "Rending Claws (A1, Rending)",
+        "Thunder Mace (A1, AP(2), Blast(3), Lacerate)"
+      ],
+      "perks": [
+        "Breath Attack",
+        "Fast",
+        "Fearless",
+        "Tough(6)",
+        "Warden"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Eternal Artillery": {
+      "base_points": 125,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "Celestial Bolt Ballista (30\", A2, AP(1), Deadly(3))",
+        "Crew (A3)"
+      ],
+      "perks": [
+        "Artillery",
+        "Fearless",
+        "Tough(3)",
+        "Warden"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": ""
+    }
+  },
+  "Keywords": {
+    "Warden": "When units where all models have this rule are shot or charged from over 9\" away and take hits, those hits count as having AP(-1), to a min. of AP(0).",
+    "Breath Attack": "Once per activation, before attacking, roll one die. On a 2+ one enemy unit within 6\" in line of sight takes 1 hit with Blast(3) and AP(1).",
+    "Infiltrate": "Counts as having Ambush, but may be deployed anywhere over 3” away from enemy unit.",
+    "Lacerate": "When attacking the target must re-roll unmodified Defense results of 6.",
+    "Melee Slayer": "When this model charges, its weapons get AP(+2) if most models in the target have Tough(3) or higher.",
+    "Piercing Target": "Once per game, during this model's activation, pick one enemy unit within 18\" and in line of sight of it, and place X markers on it. Friendly units get +AP(X) on their weapons when attacking it.",
+    "Unpredictable Fighter": "When in melee, roll one die and apply one effect to all models with this rule: on a 1-3 they get AP(+1), and on a 4-6 they get +1 to hit rolls instead.",
+    "Warden Boost": "If all models in this unit have Warden, enemy hits always count as having AP(-1) from Warden (instead of only when being shot/charged from over 9\" away)."
+  },
+  "SpellBooks": {
+    "Eternal Wardens Spells": {
+      "Shock Attack (1)": "Pick one enemy unit within 18\", which friendly units gets Unstoppable when shooting against once (next time the effect would apply).",
+      "Thunder Clap (1)": "Pick one enemy unit within 18\", which takes 1 hit with Lacerate.",
+      "Star Strike (2)": "Pick up to two friendly units within 12\", which get Unpredictable Fighter once (next time the effect would apply).",
+      "Heavy Storm (2)": "Pick up to two enemy units within 9\", which take 4 hits each.",
+      "Warding Cloud (3)": "Pick up to three friendly units within 12\", which get Warden Boost once (next time the effect would apply).",
+      "Lightning Bolt (3)": "Pick one enemy unit within 12\", which takes 3 hits with Blast(3) and Lacerate."
+    }
+  }
+}

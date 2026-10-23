@@ -1,0 +1,479 @@
+
+{
+  "Units": {
+    "Dwarf Champion": {
+      "base_points": 45,
+      "quality": 3,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "Heavy Hand Weapon (A3, AP(1))"
+      ],
+      "perks": [
+        "Fearless",
+        "Hero",
+        "Slow"
+      ],
+      "upgrades": [
+        "Replace Heavy Hand Weapon",
+        "Upgrade with one weapon",
+        "Upgrade with one skill/item",
+        "Upgrade with one mount/platform"
+      ],
+      "models": 1,
+      "height": "",
+      "class": "Hero"
+    },
+    "Berserker Lord": {
+      "base_points": 45,
+      "quality": 4,
+      "defense": 5,
+      "tough": 3,
+      "weapons": [
+        "Great Hammer (A1, AP(2), Deadly(3))"
+      ],
+      "perks": [
+        "Fearless",
+        "Furious",
+        "Hero",
+        "Slayer",
+        "Slow"
+      ],
+      "upgrades": [
+        "Replace Great Hammer",
+        "Upgrade with Veteran Slayer",
+        "Upgrade with Coal Beast"
+      ],
+      "models": 1,
+      "height": "",
+      "class": "Hero"
+    },
+    "Mountain Warriors": {
+      "base_points": 75,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "10x Hand Weapon (A1)"
+      ],
+      "perks": [
+        "Shield Wall",
+        "Slow"
+      ],
+      "upgrades": [
+        "Musician",
+        "Sergeant",
+        "Banner",
+        "Replace all Hand Weapons"
+      ],
+      "models": 10,
+      "height": "",
+      "class": "Infantry"
+    },
+    "Bearded Veterans": {
+      "base_points": 65,
+      "quality": 3,
+      "defense": 4,
+      "tough": 1,
+      "weapons": [
+        "5x Heavy Hand Weapon (A1, AP(1))"
+      ],
+      "perks": [
+        "Fearless",
+        "Slow"
+      ],
+      "upgrades": [
+        "Musician",
+        "Sergeant",
+        "Banner",
+        "Replace all Heavy Hand Weapons"
+      ],
+      "models": 5,
+      "height": "",
+      "class": "Infantry"
+    },
+    "Berserkers": {
+      "base_points": 90,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Dual Hand Weapons (A2)"
+      ],
+      "perks": [
+        "Fearless",
+        "Furious",
+        "Slayer",
+        "Slow"
+      ],
+      "upgrades": [
+        "Musician",
+        "Sergeant",
+        "Banner"
+      ],
+      "models": 5,
+      "height": "",
+      "class": "Infantry"
+    },
+    "Coal Miners": {
+      "base_points": 60,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Pick (A1, AP(1))",
+        "Mining Rigs (Tunneller)"
+      ],
+      "perks": [
+        "Slow",
+        "Tunneller"
+      ],
+      "upgrades": [
+        "Musician",
+        "Sergeant",
+        "Banner",
+        "Replace all Mining Rigs",
+        "Replace one Pick"
+      ],
+      "models": 5,
+      "height": "",
+      "class": "Infantry"
+    },
+    "Iron Warriors": {
+      "base_points": 75,
+      "quality": 3,
+      "defense": 3,
+      "tough": 1,
+      "weapons": [
+        "5x Rune Weapon (A1, Rending)"
+      ],
+      "perks": [
+        "Shield Wall",
+        "Slow"
+      ],
+      "upgrades": [
+        "Musician",
+        "Sergeant",
+        "Banner",
+        "Upgrade one model with Fire Pistol or Shrapnel Bombs"
+      ],
+      "models": 5,
+      "height": "",
+      "class": "Infantry"
+    },
+    "Hammer Elites": {
+      "base_points": 125,
+      "quality": 3,
+      "defense": 4,
+      "tough": 1,
+      "weapons": [
+        "5x Great Weapon (A2, AP(2))"
+      ],
+      "perks": [
+        "Slow"
+      ],
+      "upgrades": [
+        "Musician",
+        "Sergeant",
+        "Banner"
+      ],
+      "models": 5,
+      "height": "",
+      "class": "Infantry"
+    },
+    "Coal Golems": {
+      "base_points": 135,
+      "quality": 4,
+      "defense": 3,
+      "tough": 3,
+      "weapons": [
+        "3x Great Mace (A1, AP(2), Blast(3))"
+      ],
+      "perks": [
+        "Slow",
+        "Strider"
+      ],
+      "upgrades": [
+        "Replace all Great Maces"
+      ],
+      "models": 3,
+      "height": "",
+      "class": "Construct"
+    },
+    "Steam-Suits": {
+      "base_points": 185,
+      "quality": 3,
+      "defense": 3,
+      "tough": 3,
+      "weapons": [
+        "3x Great Weapon (A3, AP(2))",
+        "Heavy Shield (Shield Wall)"
+      ],
+      "perks": [
+        "Slow",
+        "Shield Wall"
+      ],
+      "upgrades": [
+        "Replace all Great Weapons and Heavy Shields"
+      ],
+      "models": 3,
+      "height": "",
+      "class": "Construct"
+    },
+    "Marksmen": {
+      "base_points": 75,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Rifle (18\", A1, AP(1))",
+        "5x Hand Weapon (A1)"
+      ],
+      "perks": [
+        "Slow"
+      ],
+      "upgrades": [
+        "Musician",
+        "Sergeant",
+        "Banner",
+        "Replace all Rifles",
+        "Replace one Rifle"
+      ],
+      "models": 5,
+      "height": "",
+      "class": "Infantry"
+    },
+    "Rangers": {
+      "base_points": 80,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Throwing Picks (12\", A2)",
+        "5x Hand Weapon (A1)"
+      ],
+      "perks": [
+        "Scout",
+        "Slow"
+      ],
+      "upgrades": [
+        "Musician",
+        "Sergeant",
+        "Banner",
+        "Replace all Throwing Picks",
+        "Replace one Throwing Pick"
+      ],
+      "models": 5,
+      "height": "",
+      "class": "Infantry"
+    },
+    "Iron Marksmen": {
+      "base_points": 175,
+      "quality": 3,
+      "defense": 3,
+      "tough": 1,
+      "weapons": [
+        "5x Fire Rifle (18\", A2, Rending)",
+        "5x Hand Weapon (A1)"
+      ],
+      "perks": [
+        "Slow"
+      ],
+      "upgrades": [
+        "Musician",
+        "Sergeant",
+        "Banner",
+        "Replace one Fire Rifle"
+      ],
+      "models": 5,
+      "height": "",
+      "class": "Infantry"
+    },
+    "Berserker Coal Beast Riders": {
+      "base_points": 120,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Dual Hand Weapons (A2)"
+      ],
+      "perks": [
+        "Devour",
+        "Fearless",
+        "Furious",
+        "Slayer"
+      ],
+      "upgrades": [
+        "Musician",
+        "Sergeant",
+        "Banner"
+      ],
+      "models": 5,
+      "height": "",
+      "class": "Cavalry"
+    },
+    "Beast-Construct Riders": {
+      "base_points": 170,
+      "quality": 3,
+      "defense": 3,
+      "tough": 3,
+      "weapons": [
+        "3x Hand Weapon (A1)",
+        "3x Heavy Claws (A1, AP(2))"
+      ],
+      "perks": [
+        "Impact(2)"
+      ],
+      "upgrades": [
+        "Musician",
+        "Sergeant",
+        "Banner",
+        "Replace all Hand Weapons"
+      ],
+      "models": 3,
+      "height": "",
+      "class": "Cavalry"
+    },
+    "Attack Helicopter": {
+      "base_points": 155,
+      "quality": 4,
+      "defense": 2,
+      "tough": 6,
+      "weapons": [
+        "Rapid Flamethrower (12\", A2, Blast(3), Reliable)",
+        "Crew Attacks (A2)"
+      ],
+      "perks": [
+        "Fast",
+        "Flying"
+      ],
+      "upgrades": [
+        "Replace Rapid Flamethrower",
+        "Upgrade with First to Battle"
+      ],
+      "models": 1,
+      "height": "",
+      "class": "Vehicle"
+    },
+    "Bomber Helicopter": {
+      "base_points": 220,
+      "quality": 4,
+      "defense": 2,
+      "tough": 6,
+      "weapons": [
+        "Burst Gun (24\", A2, AP(1))",
+        "Crew Attacks (A2)"
+      ],
+      "perks": [
+        "Bombing Run(2)",
+        "Fast",
+        "Flying"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": "Vehicle"
+    },
+    "Giant Construct": {
+      "base_points": 275,
+      "quality": 3,
+      "defense": 2,
+      "tough": 12,
+      "weapons": [
+        "Great Weapon (A6, AP(2))",
+        "Stomp (A4, AP(1))"
+      ],
+      "perks": [
+        "Fear(2)",
+        "Slow"
+      ],
+      "upgrades": [
+        "Replace Great Weapon"
+      ],
+      "models": 1,
+      "height": "",
+      "class": "Titan"
+    },
+    "Coal Golem Titan": {
+      "base_points": 595,
+      "quality": 3,
+      "defense": 2,
+      "tough": 18,
+      "weapons": [
+        "Stomp (A6, AP(2))",
+        "Titan Fists (A12, AP(4))"
+      ],
+      "perks": [
+        "Fear(3)",
+        "Fearless",
+        "Slow",
+        "Strider"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": "Titan"
+    },
+    "Dwarf Artillery": {
+      "base_points": 80,
+      "quality": 4,
+      "defense": 5,
+      "tough": 3,
+      "weapons": [
+        "Burst Cannon (18\", A6, AP(1))",
+        "Crew (A3)"
+      ],
+      "perks": [
+        "Entrenched",
+        "Immobile"
+      ],
+      "upgrades": [
+        "Replace Burst Cannon"
+      ],
+      "models": 1,
+      "height": "",
+      "class": "Artillery"
+    },
+    "Gamharl": {
+      "base_points": 75,
+      "quality": 3,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "Hammer of Konaghald (A3, AP(2), Poison)"
+      ],
+      "perks": [
+        "Fearless",
+        "Hero",
+        "Loyalist Guard",
+        "Slow",
+        "Unique"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": "Narrative Hero"
+    }
+  },
+  "Keywords": {
+    "Artillerist": "Once per this unit's activation, pick one friendly unit with Entrenched within 6\", which may either immediately shoot or move by up to 6\".",
+    "Battle Eager": "This model and its unit may ignore the Slow rule.",
+    "Bombing Run(X)": "Once per activation, when this model moves over enemy units, pick one of them and roll X dice. For each 2+ it takes 3 hits with AP(1).",
+    "Devour": "Whenever this model attacks in melee, roll one die. On a roll of 6+ the target takes 1 wound.",
+    "Shield Wall": "This model gets +1 to defense rolls against hits that are not from spells.",
+    "Slayer": "This model's melee weapons get AP(+2) against units where most models have Tough(3) or higher.",
+    "Swift": "This model may ignore the Slow rule.",
+    "Tunneller": "This model counts as having Ambush, and may be deployed up to 1\" away from enemy units.",
+    "Unique": "This unit may only be taken once per army."
+  },
+  "SpellBooks": {
+    "Dwarves Army Spells": {
+      "Spite Rune (1)": "Target enemy unit within 18\" gets -1 to hit rolls next time it fights in melee.",
+      "Smiting Rune (1)": "Target enemy unit within 12” takes 4 hits.",
+      "Battle Rune (2)": "Target 2 friendly units within 12\" move +2\" next time they Advance, or +4\" next time they Rush/Charge.",
+      "Breaking Rune (2)": "Target enemy model within 12\" takes 2 hits with AP(4).",
+      "Drill Rune (3)": "Target 3 friendly units within 12\" get Flying next time they move.",
+      "Cleaving Rune (3)": "Target 2 enemy units within 12\" take 6 hits each."
+    }
+  }
+}
