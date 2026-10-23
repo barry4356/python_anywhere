@@ -717,5 +717,15 @@
     "Monster Hunter": "This model's melee weapons get AP(+2) against units where most models have Tough(3) or higher.",
     "Private Guard(X)": " If this model is part of a unit of X, they count as having Quality 4+.",
     "War Duty": "Once per this unit's activation, before attacking, pick one other friendly unit within 12\", which may move by up to 6\"."
+  },
+  "SpellBooks": {
+      "Chivalrous Kingdoms Army Spells": {
+          "Wild Form (1)": "Target friendly unit within 12\" gets +1 to hit rolls next time it fights in melee.",
+          "Fireball (1)": "Target enemy unit within 12\" takes 2 hits with AP(2).",
+          "Protection (2)": "Target 2 friendly units within 12\" get +1 to defense rolls next time they take hits.",
+          "Leech (2)": "Target enemy unit within 12\" takes 1 hit with AP(4) and Deadly(3).",
+          "Magic Wind (3)": "Target 2 friendly units within 12\" move +3\" next time they Advance, or +6\" next time they Rush/Charge.",
+          "Blood Hex (3)": " Target enemy unit within 18\" takes 1 hit with Blast(12)."
+      }
   }
 }
