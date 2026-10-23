@@ -249,9 +249,21 @@
             <div>Embedded With: {{=session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_by']]["unit_type"]}}</div>
         {{pass}}
     {{pass}}
-    <br>
-    <br>
-    <br>
+    <hr>
+  {{pass}}
+  <div style="break-after: page;"></div>
+  <h5>Spellbooks</h5>
+  {{for spellbook in session.army_book.get('SpellBooks',[]):}}
+    <h6>{{=spellbook}}</h6>
+    {{for spell in session.army_book['SpellBooks'][spellbook]:}}
+      <div><strong>{{=spell}}:</strong> {{=session.army_book['SpellBooks'][spellbook][spell]}}</div>
+    {{pass}}
+  {{pass}}
+  <hr>
+  <div style="break-after: page;"></div>
+  <h5>Keywords</h5>
+  {{for keyword in sorted(session.army_book.get('Keywords',[])):}}
+      <div><strong>{{=keyword}}:</strong> {{=session.army_book['Keywords'][keyword]}}</div>
   {{pass}}
 </div>
 <button onclick="window.print()" class="btn btn-default">
