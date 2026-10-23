@@ -1,0 +1,167 @@
+
+{
+  "Units": {
+    "Battle Master": {
+      "base_points": 40,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "Heavy Hand Weapon (A3, AP(1))"
+      ],
+      "perks": [
+        "Hero",
+        "Hold the Line",
+        "Tough(3)"
+      ],
+      "upgrades": [
+        "Great Empire Icon Bearer",
+        "Cleric",
+        "Army Standard Bearer",
+        "Bounty Hunter",
+        "Captain",
+        "Logistics Officer",
+        "General"
+      ],
+      "models": 1,
+      "height": "Standard",
+      "class": "Hero"
+    },
+    "Champion": {
+      "base_points": 25,
+      "quality": 5,
+      "defense": 5,
+      "tough": 3,
+      "weapons": [
+        "Hand Weapon (A3)"
+      ],
+      "perks": [
+        "Hero",
+        "Hold the Line",
+        "Tough(3)"
+      ],
+      "upgrades": [
+        "Cleric",
+        "Engineer",
+        "Captain",
+        "Surgeon",
+        "Logistics Officer",
+        "Battle Mage",
+        "Master Battle Mage"
+      ],
+      "models": 1,
+      "height": "Standard",
+      "class": "Hero"
+    },
+    "Mage Council": {
+      "base_points": 170,
+      "quality": 5,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Magic Staffs (12\", A2, Rending)",
+        "5x Hand Weapons (A1)"
+      ],
+      "perks": [
+        "Caster Group",
+        "Hold the Line"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Infantrymen": {
+      "base_points": 70,
+      "quality": 5,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "10x Hand Weapons (A1)"
+      ],
+      "perks": [
+        "Hold the Line"
+      ],
+      "upgrades": [
+        "Halberd",
+        "Spear",
+        "Message Runner",
+        "Sergeant",
+        "Banner",
+        "Musician"
+      ],
+      "models": 10,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Steam Tank of Water": {
+      "base_points": 235,
+      "quality": 4,
+      "defense": 2,
+      "tough": 9,
+      "weapons": [
+        "Tank Cannon (18\", A2, AP(1), Blast(3))",
+        "Turret Gunner (12\", A3, AP(1))"
+      ],
+      "perks": [
+        "Fear(2)",
+        "Hold the Line",
+        "Impact(6)",
+        "Tough(9)"
+      ],
+      "upgrades": [
+        "Heavy Tank Cannon"
+      ],
+      "models": 1,
+      "height": "Large",
+      "class": "Vehicle"
+    },
+    "Elemental Titan": {
+      "base_points": 640,
+      "quality": 3,
+      "defense": 2,
+      "tough": 18,
+      "weapons": [
+        "Stomp (A6, AP(2))",
+        "Titan Strike (A12, AP(2))"
+      ],
+      "perks": [
+        "Caster(3)",
+        "Fear(3)",
+        "Fearless",
+        "Furious",
+        "Furious Buff",
+        "Hold the Line",
+        "Tough(18)"
+      ],
+      "upgrades": [
+        "Fire Elemental",
+        "Earth Elemental",
+        "Air Elemental",
+        "Water Elemental",
+        "Elemental Chimera"
+      ],
+      "models": 1,
+      "height": "Gigantic",
+      "class": "Monster"
+    }
+  },
+  "Keywords": {
+    "Hold the Line": "Units where all models have this rule get +1 to morale test rolls triggered by shooting/melee.",
+    "Agile": "Moves +1\" when using Advance, and +2\" when using Rush/Charge.",
+    "Caster Group": "Pick one model with this rule in this unit to have Caster(X), where X is the total number of models with this rule in this unit.",
+    "Crack": "On unmodified results of 6 to hit, those hits get AP(+2).",
+    "Furious": "Whenever this unit charges, it gets +1 to hit in melee.",
+    "Tough(X)": "This model must take X wounds before being killed."
+  },
+  "SpellBooks": {
+    "Human Empire Spells": {
+      "Aura of Heroism (1)": "Pick one friendly unit within 12\", which gets Hold the Line Boost once (next time the effect would apply).",
+      "Fire Ball (1)": "Pick one enemy unit within 12\", which takes 2 hits with AP(1) and Crack.",
+      "Magic Targeting (2)": "Pick up to two enemy units within 18\", which friendly units get +1 to hit rolls in melee against once.",
+      "Blood Hex (2)": "Pick one enemy unit within 12\", which takes 6 hits.",
+      "Elemental Form (3)": "Pick up to three friendly units within 12\", which get AP(+1) in melee once.",
+      "Spirit Leech (3)": "Pick one enemy model within 18\", which takes 6 hits with AP(1). Resolved as if target was a unit of [1]."
+    }
+  }
+}
