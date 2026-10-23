@@ -118,14 +118,14 @@
           "type": "CHOOSE_ONE",
           "choices": [
             {
-              "name": "Horse (Fast, Impact(1), Joust)",
+              "name": "Horse (Fast, Impact(1))",
               "price": 15,
-              "add_perks": ["Fast","Impact(1)","Joust"]
+              "add_perks": ["Fast","Impact(1)"]
             },
             {
               "name": "Pegasus (Hooves (A1), Fast, Flying, Impact(2), Tough(3))",
               "price": 70,
-              "add_perks": ["Fast", "Flying", "Impact(2)", "Joust"],
+              "add_perks": ["Fast", "Flying", "Impact(2)"],
               "add_tough": 3,
               "add_weapons": ["Hooves (A1)"]
             },
@@ -161,7 +161,144 @@
       "perks": [
         "Hero"
       ],
-      "upgrades": [],
+      "upgrades": [
+        {
+          "section": "Replace Hand Weapon",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Dual Hand Weapons (A4)",
+              "price": 5,
+              "add_weapons": ["Dual Hand Weapons (A4)"],
+              "remove_weapons": ["Hand Weapon (A3)"]
+            },
+            {
+              "name": "Lance (A3, Lance)",
+              "price": 5,
+              "add_weapons": ["Lance (A3, Lance)"],
+              "remove_weapons": ["Hand Weapon (A3)"]
+            },
+            {
+              "name": "Spear (A3, Counter)",
+              "price": 5,
+              "add_weapons": ["Spear (A3, Counter)"],
+              "remove_weapons": ["Hand Weapon (A3)"]
+            },
+            {
+              "name": "Halberd (A3, Rending)",
+              "price": 10,
+              "add_weapons": ["Halberd (A3, Rending)"],
+              "remove_weapons": ["Hand Weapon (A3)"]
+            },
+            {
+              "name": "Great Weapon (A3, AP(2))",
+              "price": 10,
+              "add_weapons": ["Great Weapon (A3, AP(2))"],
+              "remove_weapons": ["Hand Weapon (A3)"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (ranged):",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Twin Gatling Pistol (9\", A4, AP(1))",
+              "price": 10,
+              "add_weapons": ["Twin Gatling Pistol (9\", A4, AP(1))"]
+            },
+            {
+              "name": "Bow (24\", A2)",
+              "price": 10,
+              "add_weapons": ["Bow (24\", A2)"]
+            },
+            {
+              "name": "Grenade Launcher(24\", A1, Blast(3))",
+              "price": 15,
+              "add_weapons": ["Grenade Launcher(24\", A1, Blast(3))"]
+            },
+            {
+              "name": "Gatling Rifle(18\", A4, AP(1))",
+              "price": 25,
+              "add_weapons": ["Gatling Rifle(18\", A4, AP(1))"]
+            },
+            {
+              "name": "Sniper Rifle (30\", A1, AP(1), Sniper)",
+              "price": 25,
+              "add_weapons": ["Sniper Rifle (30\", A1, AP(1), Sniper)"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with:",
+          "unit_level": true,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Pet Companion(Warning Cry)",
+              "price": 10,
+              "add_perks": ["Warning Cry"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (class):",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Cleric (Battle Chant)",
+              "price": 15,
+              "add_perks": ["Battle Chant"]
+            },
+            {
+              "name": "Surgeon (Medic)",
+              "price": 30,
+              "add_perks": ["Medic"]
+            },
+            {
+              "name": "Battle Mage (Caster(2))",
+              "price": 30,
+              "add_perks": ["Caster(2)"]
+            },
+            {
+              "name": "Master Battle Mage (Caster(3))",
+              "price": 55,
+              "add_perks": ["Caster(3)"]
+            },
+            {
+              "name": "Engineer (Artillerist)",
+              "price": 75,
+              "add_perks": ["Artillerist"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (mount):",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Horse (Fast, Impact(1))",
+              "price": 10,
+              "add_perks": ["Fast","Impact(1)"]
+            },
+            {
+              "name": "Robo-Skeleton Horse (Boing, Impact(1))",
+              "price": 10,
+              "add_perks": ["Boing", "Impact(1)"]
+            },
+            {
+              "name": "Robot Hulk (Great Weapon(A3, AP(2)),Tough(3))",
+              "price": 35,
+              "add_tough": 3,
+              "add_weapons": ["Great Weapon(A3, AP(2)", "Stomp(A4, AP(1)"]
+            }
+          ]
+        }
+      ],
       "models": 1,
       "height": "3",
       "class": "Heroes"
@@ -190,7 +327,49 @@
         "10x Hand Weapon (A1)"
       ],
       "perks": [],
-      "upgrades": [],
+      "upgrades": [
+        {
+			"section": "Upgrade up to three models with one:",
+			"unit_level": false,
+			"type": "CHOOSE_MULTIPLE",
+			"choices": [
+				{
+					"name": "Sergeant",
+					"price": 5,
+					"add_perks": ["Sergeant"]
+				},
+				{
+					"name": "Musician",
+					"price": 10,
+					"add_perks": ["Musician"]
+				},
+				{
+					"name": "Banner",
+					"price": 15,
+					"add_perks": ["Banner"]
+				}
+			]
+		},
+		{
+			"section": "Replace all Hand Weapons:",
+			"unit_level": true,
+			"type": "CHOOSE_ONE",
+			"choices": [
+			{
+				"name": "10x Halberd (A1, Rending)",
+				"price": 25,
+				"add_weapons": ["10x Halberd (A1, Rending)"],
+				"remove_weapons": ["10x Hand Weapon (A1)"]
+			},
+			{
+				"name": "10x Spear (A1, Counter)",
+				"price": 35,
+				"add_weapons": ["10x Spear (A1, Counter)"],
+				"remove_weapons": ["10x Hand Weapon (A1)"]
+			}
+			]
+		}
+        ],
       "models": 10,
       "height": "",
       "class": ""
@@ -206,7 +385,30 @@
         "Fearless",
         "Furious"
       ],
-      "upgrades": [],
+      "upgrades": [
+        {
+			"section": "Upgrade up to three models with one:",
+			"unit_level": false,
+			"type": "CHOOSE_MULTIPLE",
+			"choices": [
+				{
+					"name": "Sergeant",
+					"price": 5,
+					"add_perks": ["Sergeant"]
+				},
+				{
+					"name": "Musician",
+					"price": 10,
+					"add_perks": ["Musician"]
+				},
+				{
+					"name": "Banner",
+					"price": 15,
+					"add_perks": ["Banner"]
+				}
+			]
+		}
+      ],
       "models": 10,
       "height": "",
       "class": ""
