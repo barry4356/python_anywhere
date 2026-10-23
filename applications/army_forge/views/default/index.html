@@ -142,7 +142,7 @@
           <div>&emsp;{{=weapon}}</div>
         {{pass}}
         <div>Perks:</div>
-        <span style="text-decoration: underline;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_book['Units'][unit]['perks'])}}', [], null);">
+        <span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_book['Units'][unit]['perks'])}}', [], null);">
             &emsp;{{=', '.join(session.army_book['Units'][unit]['perks'])}}
         </span>
         <br>
@@ -169,7 +169,10 @@
         <div>&emsp;{{=weapon}}</div>
     {{pass}}
     <div>Perks:</div>
-    <div>&emsp;{{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}</div>
+    <span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}', [], null);">
+      &emsp;{{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}
+      <br>
+    </span>
     {{if session.army_list_upgraded["Units"][unit_key].get('embedded_in'):}}
         {{if session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_in']].get('name'):}}
             <div>Embedded With: {{=session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_in']]["name"]}}</div>
@@ -227,7 +230,11 @@
     {{for weapon in session.army_list_upgraded['Units'][unit_key]['weapons']:}}
         <div>&emsp;{{=weapon}}</div>
     {{pass}}
-    <div>Perks: {{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}</div>
+    <div>Perks:</div>
+    <span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}', [], null);">
+      &emsp;{{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}
+      <br>
+    </span>
     {{if session.army_list_upgraded["Units"][unit_key].get('embedded_in'):}}
         {{if session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_in']].get('name'):}}
             <div>Embedded With: {{=session.army_list_upgraded["Units"][session.army_list_upgraded["Units"][unit_key]['embedded_in']]["name"]}}</div>
@@ -275,7 +282,11 @@
     {{for weapon in session.editUnit["weapons"]:}}
         <div>&emsp;{{=weapon}}</div>
     {{pass}}
-    <div>Perks: {{=', '.join(session.editUnit['perks'])}}</div>
+    <div>Perks:</div>
+    <span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.editUnit['perks'])}}', [], null);">
+      &emsp;{{=', '.join(session.editUnit['perks'])}}
+      <br>
+    </span>
     {{if session.editUnit.get('embedded_in'):}}
         {{if session.army_list_upgraded["Units"][session.editUnit.get('embedded_in')].get('name'):}}
             <div>Embedded With: {{=session.army_list_upgraded["Units"][session.editUnit.get('embedded_in')].get('name')}}</div>
