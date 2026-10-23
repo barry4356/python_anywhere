@@ -1,0 +1,502 @@
+
+{
+  "Units": {
+    "Eternal Lord": {
+      "base_points": 120,
+      "quality": 3,
+      "defense": 3,
+      "tough": 6,
+      "weapons": [
+        "Heavy Hand Weapon (A4, AP(2))"
+      ],
+      "perks": [
+        "Fearless",
+        "Hero"
+      ],
+      "upgrades": [
+        "Heavy Great Weapon (+15pts)",
+        "Heavy Lance (+20pts)",
+        "Meteor Great Hammer (+30pts)",
+        "Dual Heavy Hand Weapons (+40pts)",
+        "Destroyer Armor (+5pts)",
+        "Beast-Hound Companion (+10pts)",
+        "Relic Warden (+20pts)",
+        "Herald (+25pts)",
+        "Army Standard Bearer (+30pts)",
+        "Heirloom Bearer (+45pts)",
+        "Drake (+95pts)",
+        "Dragon (+110pts)",
+        "Great Dragon (+365pts)"
+      ],
+      "models": 1,
+      "height": "Large",
+      "class": "Hero"
+    },
+    "Warden Knight": {
+      "base_points": 90,
+      "quality": 4,
+      "defense": 4,
+      "tough": 6,
+      "weapons": [
+        "Sword & Staff (A3, AP(1), Poison)"
+      ],
+      "perks": [
+        "Fearless",
+        "Furious",
+        "Hero"
+      ],
+      "upgrades": [
+        "Heavy Hand Weapon (+5pts)",
+        "Great Staff (+10pts)",
+        "Heavy Great Weapon (+15pts)",
+        "Dual Heavy Hand Weapons (+30pts)",
+        "Knight Bow (+45pts)",
+        "Great Bow (+55pts)",
+        "Paladin (+5pts)",
+        "Beast-Hound Companion (+10pts)",
+        "Wings (+25pts)",
+        "Herald (+25pts)",
+        "Exorcist (+40pts)",
+        "Master Exorcist (+65pts)",
+        "Engineer (+75pts)",
+        "Drake-Lion (+20pts)",
+        "Horned Pegasus (+85pts)",
+        "Great Gryph (+90pts)"
+      ],
+      "models": 1,
+      "height": "Standard",
+      "class": "Hero"
+    },
+    "Guardian Elite": {
+      "base_points": 45,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "Heavy Hand Weapon (A3, AP(1))"
+      ],
+      "perks": [
+        "Fearless",
+        "Hero"
+      ],
+      "upgrades": [
+        "Dual Heavy Hand Weapons (+5pts)",
+        "Heavy Halberd (+5pts)",
+        "Heavy Great Weapon (+10pts)",
+        "Elite Bow (+25pts)",
+        "Relic Warden (+20pts)",
+        "Heirloom Bearer (+45pts)"
+      ],
+      "models": 1,
+      "height": "Standard",
+      "class": "Hero"
+    },
+    "Guardians": {
+      "base_points": 75,
+      "quality": 4,
+      "defense": 4,
+      "tough": 1,
+      "weapons": [
+        "5x Heavy Halberd (A1, AP(1), Rending)"
+      ],
+      "perks": [
+        "Fearless"
+      ],
+      "upgrades": [
+        "Sergeant (+5pts)",
+        "Musician (+10pts)",
+        "Banner (+15pts)",
+        "Heavy Great Weapons (+5pts)",
+        "Heavy Spears (+15pts)"
+      ],
+      "models": 5,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Wardens": {
+      "base_points": 130,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "3x Heavy Hand Weapon (A2, AP(1))"
+      ],
+      "perks": [
+        "Fearless",
+        "Furious"
+      ],
+      "upgrades": [
+        "Dual Heavy Hand Weapons (+45pts)",
+        "Heavy Great Weapon (+20pts)"
+      ],
+      "models": 3,
+      "height": "Large",
+      "class": "Infantry"
+    },
+    "Paladins": {
+      "base_points": 130,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "3x Sword & Staff (A2, Poison)"
+      ],
+      "perks": [
+        "Empower",
+        "Fearless"
+      ],
+      "upgrades": [
+        "Hand Weapons (+10pts)",
+        "Great Staffs (+10pts)",
+        "Great Weapon (+10pts)",
+        "Evocator (+20pts)"
+      ],
+      "models": 3,
+      "height": "Large",
+      "class": "Infantry"
+    },
+    "Winged Wardens": {
+      "base_points": 145,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "3x Heavy Hand Weapon (A2, AP(1))"
+      ],
+      "perks": [
+        "Fearless",
+        "Flying",
+        "Furious"
+      ],
+      "upgrades": [
+        "Javelins & Daggers (+5pts)",
+        "Dual Heavy Hand Weapons (+45pts)",
+        "Heavy Great Weapon (+10pts)",
+        "Storm Trident (+10pts)",
+        "Celestial Descent (+20pts)"
+      ],
+      "models": 3,
+      "height": "Large",
+      "class": "Infantry"
+    },
+    "Praetorians": {
+      "base_points": 240,
+      "quality": 3,
+      "defense": 3,
+      "tough": 3,
+      "weapons": [
+        "3x Axe-Halberd (A3, Reliable, Rending)"
+      ],
+      "perks": [
+        "Fearless",
+        "Headtaker"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "Large",
+      "class": "Infantry"
+    },
+    "Eternals": {
+      "base_points": 200,
+      "quality": 3,
+      "defense": 3,
+      "tough": 3,
+      "weapons": [
+        "3x Great Glaive (A3, AP(1), Rending)"
+      ],
+      "perks": [
+        "Fearless"
+      ],
+      "upgrades": [
+        "Great Axes (+15pts)",
+        "Great Hammers (+20pts)",
+        "Dual Axes (+5pts)",
+        "Great Mace (+10pts)"
+      ],
+      "models": 3,
+      "height": "Large",
+      "class": "Infantry"
+    },
+    "Destroyers": {
+      "base_points": 240,
+      "quality": 3,
+      "defense": 2,
+      "tough": 3,
+      "weapons": [
+        "3x Meteor Hammer (A4, AP(2))"
+      ],
+      "perks": [
+        "Fearless",
+        "Slow"
+      ],
+      "upgrades": [
+        "Meteor Great Hammer (+30pts)"
+      ],
+      "models": 3,
+      "height": "Large",
+      "class": "Infantry"
+    },
+    "Guardian Archers": {
+      "base_points": 95,
+      "quality": 4,
+      "defense": 4,
+      "tough": 1,
+      "weapons": [
+        "5x Bow (24\", A1)",
+        "5x Hand Weapon (A1)"
+      ],
+      "perks": [
+        "Fearless"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Warden Shooters": {
+      "base_points": 180,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "3x Bow (24\", A2, AP(1))",
+        "3x Hand Weapon (A2)"
+      ],
+      "perks": [
+        "Fearless"
+      ],
+      "upgrades": [
+        "Thunder Crossbow (free)",
+        "Rapid Heavy Crossbow (+30pts)",
+        "Volley Crossbow (+30pts)"
+      ],
+      "models": 3,
+      "height": "Large",
+      "class": "Infantry"
+    },
+    "Warden Hunters": {
+      "base_points": 175,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "3x Bolt Pistol (12\", A2, Rending)",
+        "3x Hand Weapon (A2)"
+      ],
+      "perks": [
+        "Fearless",
+        "Scout",
+        "Strider"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "Large",
+      "class": "Infantry"
+    },
+    "Warden Marksmen": {
+      "base_points": 220,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "3x Cyclone Crossbow (18\", A3, AP(1), Rending)",
+        "3x Hand Weapon (A2)"
+      ],
+      "perks": [
+        "Fearless"
+      ],
+      "upgrades": [
+        "Precision Crossbow (+190pts)"
+      ],
+      "models": 3,
+      "height": "Large",
+      "class": "Infantry"
+    },
+    "Hunting Hawks": {
+      "base_points": 120,
+      "quality": 5,
+      "defense": 5,
+      "tough": 3,
+      "weapons": [
+        "3x Rending Claws (A3, Rending)"
+      ],
+      "perks": [
+        "Fast",
+        "Flying"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "Standard",
+      "class": "Cavalry"
+    },
+    "Beast-Hounds": {
+      "base_points": 145,
+      "quality": 4,
+      "defense": 5,
+      "tough": 3,
+      "weapons": [
+        "3x Vicious Bites (A3, AP(1))"
+      ],
+      "perks": [
+        "Fast",
+        "Strider",
+        "Warning Cry"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "Standard",
+      "class": "Cavalry"
+    },
+    "Gryph Hunters": {
+      "base_points": 175,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "3x Hand Weapon (A2)"
+      ],
+      "perks": [
+        "Fast",
+        "Fearless",
+        "Impact(2)",
+        "Scout"
+      ],
+      "upgrades": [
+        "Javelins & Daggers (+25pts)",
+        "Bolt Pistols & Daggers (+30pts)"
+      ],
+      "models": 3,
+      "height": "Standard",
+      "class": "Cavalry"
+    },
+    "Drake-Lion Paladins": {
+      "base_points": 205,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "3x Heavy Claws (A2, AP(1))",
+        "3x Sword & Staff (A2, Poison)"
+      ],
+      "perks": [
+        "Empower",
+        "Fast",
+        "Fearless",
+        "Strider"
+      ],
+      "upgrades": [
+        "Great Staffs (+5pts)",
+        "Evocator (+20pts)"
+      ],
+      "models": 3,
+      "height": "Large",
+      "class": "Cavalry"
+    },
+    "Drake Eternal": {
+      "base_points": 150,
+      "quality": 3,
+      "defense": 3,
+      "tough": 6,
+      "weapons": [
+        "Great Glaive (A3, AP(1), Rending)",
+        "Rending Claws (A1, Rending)"
+      ],
+      "perks": [
+        "Breath Attack",
+        "Fast",
+        "Fearless"
+      ],
+      "upgrades": [
+        "Great Hammer (+5pts)",
+        "Great Axe (+5pts)",
+        "Volley Crossbow & Dagger (+15pts)"
+      ],
+      "models": 1,
+      "height": "Large",
+      "class": "Monster"
+    },
+    "Dragon Eternal": {
+      "base_points": 175,
+      "quality": 3,
+      "defense": 3,
+      "tough": 6,
+      "weapons": [
+        "Heavy Claws (A2, AP(1))",
+        "Heavy Great Weapon (A3, AP(3))"
+      ],
+      "perks": [
+        "Breath Attack",
+        "Fear(1)",
+        "Fearless",
+        "Flying"
+      ],
+      "upgrades": [
+        "Heavy Lance (free)"
+      ],
+      "models": 1,
+      "height": "Large",
+      "class": "Monster"
+    },
+    "Storm Chariot": {
+      "base_points": 195,
+      "quality": 4,
+      "defense": 3,
+      "tough": 9,
+      "weapons": [
+        "Heavy Claws (A2, AP(1))",
+        "Spear Crew (A4, Lance)"
+      ],
+      "perks": [
+        "Fast",
+        "Fearless",
+        "Impact(6)"
+      ],
+      "upgrades": [
+        "Bow Crew (+55pts)"
+      ],
+      "models": 1,
+      "height": "Large",
+      "class": "Chariot"
+    },
+    "Wardens Artillery": {
+      "base_points": 105,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "Celestial Bolt Ballista (30\", A2, AP(1), Deadly(3))",
+        "Crew (A3)"
+      ],
+      "perks": [
+        "Entrenched",
+        "Fearless",
+        "Immobile"
+      ],
+      "upgrades": [
+        "Shock Bolt Ballista (+5pts)"
+      ],
+      "models": 1,
+      "height": "Standard",
+      "class": "Artillery"
+    }
+  },
+  "Keywords": {
+    "Artillerist": "Once per this unit's activation, pick one friendly unit with Entrenched within 6\", which may either immediately shoot or move by up to 6\".",
+    "Breath Attack": "Once per this model's activation, before attacking, roll one die. On a 2+ one enemy unit within 6\" in line of sight takes 1 hit with Blast(3) and AP(1).",
+    "Empower": "When in melee, roll one die and apply one bonus to all models with this rule. On a 1-3 attacks get Rending, on a 4-6 attacks get AP(+1).",
+    "Headtaker": "This model's melee weapons get AP(+2) against units where most models have Tough(3) or higher.",
+    "Inspire": "Once per this unit's activation, before attacking, pick one other friendly unit within 12\", which may move by up to 6\".",
+    "Smite": "Once per this model's activation, before attacking, pick one enemy unit within 18\". That unit must take a morale test, and if failed it takes 3 hits.",
+    "Warning Cry": "Enemy units using Ambush must be set up over 12\" away from this model."
+  },
+  "SpellBooks": {
+    "Eternal Wardens Army Spells": {
+      "Terrify (1)": "Target enemy unit within 18\" gets -1 to hit rolls next time it shoots.",
+      "Thunder (1)": "Target enemy unit within 12\" takes 2 hits with AP(2).",
+      "Star Chains (2)": "Target 2 enemy units within 18\" move -2\" next time they Advance, or -4\" next time they Charge/Rush.",
+      "Lightning (2)": "Target enemy model within 12\" takes 2 hits with AP(4).",
+      "Shock Speed (3)": "Target 2 friendly units within 12\" get AP(+3) next time they charge.",
+      "Storm (3)": "Target 2 enemy units within 12\" take 6 hits each."
+    }
+  }
+}
