@@ -38,7 +38,6 @@
       "base_points": 165,
       "quality": 5,
       "defense": 5,
-      "tough": 1,
       "weapons": [
         "5x Magic Staff (12\", A2, Rending)",
         "5x Hand Weapon (A1)"
@@ -55,7 +54,6 @@
       "base_points": 65,
       "quality": 5,
       "defense": 5,
-      "tough": 1,
       "weapons": [
         "10x Hand Weapon (A1)"
       ],
@@ -69,7 +67,6 @@
       "base_points": 90,
       "quality": 5,
       "defense": 6,
-      "tough": 1,
       "weapons": [
         "10x Sharp Weapon (A1, AP(1))"
       ],
@@ -86,7 +83,6 @@
       "base_points": 55,
       "quality": 5,
       "defense": 5,
-      "tough": 1,
       "weapons": [
         "5x Pistol (9\", A1, AP(1))",
         "5x Hand Weapon (A1)"
@@ -103,7 +99,6 @@
       "base_points": 75,
       "quality": 4,
       "defense": 4,
-      "tough": 1,
       "weapons": [
         "5x Great Weapon (A1, AP(2))"
       ],
@@ -119,7 +114,6 @@
       "base_points": 60,
       "quality": 5,
       "defense": 5,
-      "tough": 1,
       "weapons": [
         "5x Rifle (18\", A1, AP(1))",
         "5x Hand Weapon (A1)"
@@ -134,7 +128,6 @@
       "base_points": 70,
       "quality": 5,
       "defense": 5,
-      "tough": 1,
       "weapons": [
         "5x Bow (24\", A1)",
         "5x Hand Weapon (A1)"
@@ -152,7 +145,6 @@
       "base_points": 75,
       "quality": 5,
       "defense": 5,
-      "tough": 1,
       "weapons": [
         "5x Rifle (18\", A1, AP(1))",
         "5x Hand Weapon (A1)"
@@ -170,7 +162,6 @@
       "base_points": 85,
       "quality": 4,
       "defense": 4,
-      "tough": 1,
       "weapons": [
         "5x Hand Weapon (A1)"
       ],
@@ -187,7 +178,6 @@
       "base_points": 105,
       "quality": 4,
       "defense": 3,
-      "tough": 1,
       "weapons": [
         "5x Lance (A1, Lance)"
       ],
@@ -343,6 +333,36 @@
     }
   },
   "Keywords": {
+    "Ambush": "May be set aside before deployment. At the start of any round after the first, may be deployed anywhere over 9\" away from enemy units. Players alternate in placing Ambushers, starting with the player that activates next. Units that deploy via Ambush can't seize or contest objective markers on the round they deploy.",
+    "AP(X)": "Targets get -X to Defense rolls when blocking hits from weapons with this special rule.",
+    "Blast(X)": "Ignores cover, and after resolving other special rules, each hit is multiplied by X, where X is up to as many hits as models in the target unit. ",
+    "Caster(X)": "Gets X spell tokens at the start of each round, but can't hold more than 6 tokens at once. At any point before attacking, spend as many tokens as the spell's value to try casting one or more spells (only one try per spell). Roll one die, on 4+ resolve the effect on a target in line of sight. Models within 18\" in line of sight of the caster's unit may spend any number of spell tokens at the same time before rolling, to give the caster +1/-1 to the roll per token. ",
+    "Counter": "Strikes first with this weapon when charged, and the charging unit gets -1 total Impact rolls per model with Counter.",
+    "Deadly(X)": "Assign each wound to one model, and multiply it by X. Hits from Deadly must be resolved first, and these wounds don't carry over to other models if the original target is killed. ",
+    "Entrenched": "Enemies get -2 to hit when shooting at models with this special rule from over 9\" away, as long as the Entrenched model hasn't moved since the beginning of its last activation. ",
+    "Fast": "Models with this special rule move +2\" when using Advance and +4\" when using Rush/Charge. ",
+    "Fear(X)": "This model counts as having dealt +X wounds when checking who won melee.",
+    "Fearless": "Whenever a unit where most models have this rule fails a morale test, roll one die. On a 4+ it counts as passed instead. ",
+    "Flying": "Models with this special rule may move through units and terrain, and ignore terrain effects whilst moving. ",
+    "Furious": "When charging, unmodified rolls of 6 to hit in melee deal one extra hit (only the original hit counts as a 6 for special rules). ",
+    "Hero": "Heroes with up to Tough(6) may deploy as part of one multi model unit without another Hero. The hero may take morale tests on behalf of the unit, but must use the unit's Defense until all other models have been killed. ",
+    "Immobile": "Models with this special rule may only use Hold actions. ",
+    "Impact(X)": "Roll X dice when attacking after charging, unless fatigued. For each 2+ the target takes one hit.",
+    "Indirect": "Gets -1 to hit rolls when shooting after moving. May target enemies that are not in line of sight as if in line of sight, and ignores cover from sight obstructions. ",
+    "Lance": "When charging, gets +1 to hit rolls and AP(+1) in melee. ",
+    "Limited": "Weapons with this rule may only be used once per game.",
+    "Poison": "This weapon ignores Regeneration, and the target must re-roll unmodified Defense rolls of 6 when blocking hits.",
+    "Regeneration": "When taking a wound, roll one die. On a 5+ it is ignored.",
+    "Relentless": "When using Hold actions and shooting, unmodified rolls of 6 to hit deal one extra hit (only the original hit counts as a 6 for special rules).",
+    "Reliable": "Models attacks at Quality 2+ with this weapon.",
+    "Rending": "This weapon ignores Regeneration, and unmodified rolls of 6 to hit get AP(4). ",
+    "Scout": "May be set aside before deployment. After all other units are deployed, must be deployed and may then be placed anywhere within 12\" of their position. Players alternate in placing Scout units, starting with the player that activates next. ",
+    "Slow": "Models with this special rule move -2\" when using Advance, and -4\" when using Rush/Charge. ",
+    "Sniper": "Shoots at Quality 2+, and each model with Sniper may pick any model in the target unit as its individual target, which is resolved as if it was a unit of 1. Sniper weapon shooting must be resolved before other weapons.",
+    "Stealth": "Enemies get -1 to hit rolls when shooting at units where all models have this rule from over 9\" away.",
+    "Strider": "May ignore the effects of difficult terrain when moving. ",
+    "Tough(X)": "This model must take X wounds before being killed. If a model with tough joins a unit without it, then it is removed last when the unit takes wounds. Note that you must continue to put wounds on the tough model with most wounds in the unit until it is killed, before starting to put them on the next tough model (heroes must be assigned wounds last).",
+    "Transport(X)": "May transport up to X models or Heroes with up to Tough(6), and non-Heroes with up to Tough(3) which occupy 3 spaces each. Transports may deploy with units inside, and units may enter/exit by using any move action, but must stay fully within 6\" of it when exiting. When a transport is destroyed, units inside must take a dangerous terrain test, are Shaken, and must be placed fully within 6\" of the transport before removal. ",
     "Artillerist": "Once per this unit's activation, pick one friendly unit with Entrenched within 6\", which may either immediately shoot or move by up to 6\".",
     "Boing": "When this unit is activated, you may place all models with this rule in it anywhere within D3+1\" of their position.",
     "Breath Attack": "Once per this model's activation, before attacking, roll one die. On a 2+ one enemy unit within 6\" in line of sight takes 1 hit with Blast(3) and AP(1).",
@@ -358,5 +378,9 @@
     "Storm Blessing": "Once per this unit's activation, pick 2 friendly units within 12\", which get +1 to hit next time they fight in melee.",
     "Takedown": "Once per game, when this model attacks in melee, you may pick one model in the unit as its target, and make 1 attack at Quality 2+ with AP(1) and Deadly(3), which is resolved as if it's a unit of 1.",
     "Warning Cry": "Enemy units using Ambush must be set up over 12\" away from this model."
+  },
+  "SpellBooks": {
+      "Human Empire Army Spells": {
+      }
   }
 }

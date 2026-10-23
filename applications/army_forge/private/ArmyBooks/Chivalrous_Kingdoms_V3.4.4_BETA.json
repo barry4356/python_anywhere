@@ -358,14 +358,14 @@
             "type": "CHOOSE_MULTIPLE",
             "choices": [
             {
-              "name": "Fire Braziers (AP(+1) when Shooting)",
+              "name": "Fire Braziers (AP(1) when Shooting)",
               "price": 15,
-              "add_perks": ["AP(+1) when Shooting"]
+              "add_perks": ["AP(1) when Shooting"]
             },
             {
               "name": "Defensive Stakes (Counter in Melee)",
               "price": 15,
-              "add_perks": ["Counter in Melee"]
+              "add_perks": ["Counter"]
             }
             ]
           }
