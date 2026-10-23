@@ -1,0 +1,24 @@
+{
+  "Units": {
+    "{Unit Name}": {
+      "base_points": 45,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "{List of equipment}"
+      ],
+      "perks": [
+        "{List of special rules}"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": ""
+    }
+  },
+  "Keywords": {
+    "{special rule}": "description"
+  }
+}
+

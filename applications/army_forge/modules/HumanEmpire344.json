@@ -1,0 +1,362 @@
+
+{
+  "Units": {
+    "Battle Master": {
+      "base_points": 45,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "Heavy Hand Weapon (A3, AP(1))"
+      ],
+      "perks": [
+        "Fearless",
+        "Hero"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Champion": {
+      "base_points": 25,
+      "quality": 5,
+      "defense": 5,
+      "tough": 3,
+      "weapons": [
+        "Hand Weapon (A3)"
+      ],
+      "perks": [
+        "Hero"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Mage Council": {
+      "base_points": 165,
+      "quality": 5,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Magic Staff (12\", A2, Rending)",
+        "5x Hand Weapon (A1)"
+      ],
+      "perks": [
+        "Mage Council"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Infantrymen": {
+      "base_points": 65,
+      "quality": 5,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "10x Hand Weapon (A1)"
+      ],
+      "perks": [],
+      "upgrades": [],
+      "models": 10,
+      "height": "",
+      "class": ""
+    },
+    "Fanatics": {
+      "base_points": 90,
+      "quality": 5,
+      "defense": 6,
+      "tough": 1,
+      "weapons": [
+        "10x Sharp Weapon (A1, AP(1))"
+      ],
+      "perks": [
+        "Fearless",
+        "Furious"
+      ],
+      "upgrades": [],
+      "models": 10,
+      "height": "",
+      "class": ""
+    },
+    "Mercenaries": {
+      "base_points": 55,
+      "quality": 5,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Pistol (9\", A1, AP(1))",
+        "5x Hand Weapon (A1)"
+      ],
+      "perks": [
+        "Scout"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Elite Weapon Masters": {
+      "base_points": 75,
+      "quality": 4,
+      "defense": 4,
+      "tough": 1,
+      "weapons": [
+        "5x Great Weapon (A1, AP(2))"
+      ],
+      "perks": [
+        "Fearless"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Marksmen": {
+      "base_points": 60,
+      "quality": 5,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Rifle (18\", A1, AP(1))",
+        "5x Hand Weapon (A1)"
+      ],
+      "perks": [],
+      "upgrades": [],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Mercenary Hunters": {
+      "base_points": 70,
+      "quality": 5,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Bow (24\", A1)",
+        "5x Hand Weapon (A1)"
+      ],
+      "perks": [
+        "Scout",
+        "Stealth"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Horse Marksmen": {
+      "base_points": 75,
+      "quality": 5,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Rifle (18\", A1, AP(1))",
+        "5x Hand Weapon (A1)"
+      ],
+      "perks": [
+        "Fast",
+        "Scout"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Knights": {
+      "base_points": 85,
+      "quality": 4,
+      "defense": 4,
+      "tough": 1,
+      "weapons": [
+        "5x Hand Weapon (A1)"
+      ],
+      "perks": [
+        "Fast",
+        "Impact(1)"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Guard Knights": {
+      "base_points": 105,
+      "quality": 4,
+      "defense": 3,
+      "tough": 1,
+      "weapons": [
+        "5x Lance (A1, Lance)"
+      ],
+      "perks": [
+        "Fast",
+        "Fearless",
+        "Impact(1)"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Gryph Riders": {
+      "base_points": 185,
+      "quality": 4,
+      "defense": 3,
+      "tough": 3,
+      "weapons": [
+        "3x Heavy Claws (A1, AP(1))",
+        "3x Lance (A1, Lance)"
+      ],
+      "perks": [
+        "Fast",
+        "Fearless",
+        "Impact(2)"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "",
+      "class": ""
+    },
+    "War Wagon of Earth": {
+      "base_points": 100,
+      "quality": 4,
+      "defense": 3,
+      "tough": 6,
+      "weapons": [
+        "Crew Attacks (A2)"
+      ],
+      "perks": [
+        "Transport(11)"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Hurricane Wagon of Air": {
+      "base_points": 145,
+      "quality": 4,
+      "defense": 3,
+      "tough": 6,
+      "weapons": [
+        "Summon Storm (18\", A2, Blast(3))",
+        "Hooves (A2)"
+      ],
+      "perks": [
+        "Storm Blessing"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Beamer Wagon of Fire": {
+      "base_points": 205,
+      "quality": 4,
+      "defense": 3,
+      "tough": 6,
+      "weapons": [
+        "Searing Beam (18\", A2, AP(2), Deadly(3))",
+        "Hooves (A2)"
+      ],
+      "perks": [
+        "Fiery Protection"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Altar Wagon of Aether": {
+      "base_points": 160,
+      "quality": 4,
+      "defense": 3,
+      "tough": 6,
+      "weapons": [
+        "Banishing Aether (18\", A6, Rending)",
+        "Hooves (A2)"
+      ],
+      "perks": [
+        "Celestial Fury"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Steam Tank of Water": {
+      "base_points": 245,
+      "quality": 4,
+      "defense": 2,
+      "tough": 9,
+      "weapons": [
+        "Tank Cannon (18\", A2, AP(1), Blast(3))",
+        "Turret Gunner (12\", A3, AP(1))"
+      ],
+      "perks": [
+        "Fear(2)",
+        "Impact(6)"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Empire Artillery": {
+      "base_points": 60,
+      "quality": 5,
+      "defense": 5,
+      "tough": 3,
+      "weapons": [
+        "Volley Gun (18\", A6, AP(1))",
+        "Crew (A3)"
+      ],
+      "perks": [
+        "Entrenched",
+        "Immobile"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Elemental Titan": {
+      "base_points": 725,
+      "quality": 2,
+      "defense": 2,
+      "tough": 18,
+      "weapons": [
+        "Stomp (A6, AP(2))",
+        "Titan Strike (A12, AP(2))"
+      ],
+      "perks": [
+        "Caster(3)",
+        "Fear(3)"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "",
+      "class": ""
+    }
+  },
+  "Keywords": {
+    "Artillerist": "Once per this unit's activation, pick one friendly unit with Entrenched within 6\", which may either immediately shoot or move by up to 6\".",
+    "Boing": "When this unit is activated, you may place all models with this rule in it anywhere within D3+1\" of their position.",
+    "Breath Attack": "Once per this model's activation, before attacking, roll one die. On a 2+ one enemy unit within 6\" in line of sight takes 1 hit with Blast(3) and AP(1).",
+    "Celestial Fury": "Once per this unit's activation, pick 2 friendly units within 12\", which get Furious next time they charge. If they already had Furious, they get extra hits from Furious on unmodified rolls of 5-6 to hit instead.",
+    "Fiery Protection": "Once per this unit's activation, pick 2 friendly units within 12\", which get +1 to defense rolls next time they take hits.",
+    "Fire Storm": "Once per this model's activation, before attacking, roll 2 dice. For each 4+ one enemy unit within 18\" takes one hit with Blast(3).",
+    "Heal": "Once per this model's activation, before attacking, if within 2\" of a model with Tough, roll one die. On a 2+ you may remove D3 wounds from that model.",
+    "Mage Council": "Pick one model in this unit to have Caster(X), where X is the total number of models with this rule in this unit. If the model is killed, pick another to be the new caster, and transfer all spell tokens to it. The caster loses all unspent spell tokens at the end of the round.",
+    "March Order": "Once per this unit's activation, before attacking, pick one other friendly unit within 12\", which may move by up to 6\".",
+    "Private Guard(X)": "If this model is part of a unit of X, they count as having Quality 4+.",
+    "Protected": "When units where all models have this rule take hits, those hits count as having AP(-1), to a min. of AP(0).",
+    "Resistance": "When taking a wound, roll one die, and on a 6+ it is ignored. If the wound was from a spell, then it is ignored on a 2+ instead.",
+    "Storm Blessing": "Once per this unit's activation, pick 2 friendly units within 12\", which get +1 to hit next time they fight in melee.",
+    "Takedown": "Once per game, when this model attacks in melee, you may pick one model in the unit as its target, and make 1 attack at Quality 2+ with AP(1) and Deadly(3), which is resolved as if it's a unit of 1.",
+    "Warning Cry": "Enemy units using Ambush must be set up over 12\" away from this model."
+  }
+}
