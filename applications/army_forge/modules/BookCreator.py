@@ -32,6 +32,34 @@ def displayArmyBook(filename):
         unit = army_book['Units'][unit_name]
         unit_name_count = str(f"{unit_name} [{unit['models']}]")
         print(f"{unit_name_count:<24}\t {unit['quality']}+ \t{unit['defense']}+ \t {str(unit['weapons']):<64} \t {str(unit['perks']):<56} \t {unit['base_points']}")
+    while(True):
+        selection = input("\nN - View Next Section (Upgrades); Q - Quit\n")
+        if selection.lower().strip() == 'q':
+            return
+        elif selection.lower().strip() == 'n':
+            break
+    for unit_name in army_book['Units']:
+        unit = army_book['Units'][unit_name]
+        print(f"\n\n\n\t{unit_name} [{str(unit['models'])}] - {unit['base_points']} pts")
+        print(f"\t{unit['quality']}+ \t{unit['defense']}+\n")
+        for weapon in unit['weapons']:
+            print(f"{weapon}")
+        print()
+        perks = ''
+        for perk in unit['perks']:
+            perks += perk + ','
+        perks = perks.strip(',')
+        print(perks+'\n')
+        for section in unit['upgrades']:
+            print('\t'+section['section'])
+            for choice in section['choices']:
+                print(f"+{choice['price']}pts {choice['name']}")
+        while(True):
+            selection = input("\nN - View Next Unit; Q - Quit\n")
+            if selection.lower().strip() == 'q':
+                return
+            elif selection.lower().strip() == 'n':
+                break
 
 def interactiveBookBuilder():
     bookName = input(f"What is a unique name for this army book? ")
@@ -121,6 +149,10 @@ def ArmyBookChecker(filename):
                                 print(f"ERROR: {filename}: {unit_key}: Invalid Weapon Replacement: {rmweapon}")
                                 print(f"Valid weapons: {unit.get("weapons")}")
                                 valid = False
+                    if 'add_weapons' in choice.keys():
+                        for addweapon in choice.get('add_weapons', []):
+                            if addweapon not in choice['name']:
+                                print(f"WARNING: {filename}: {unit_key}: Add weapon is suspicious: {addweapon}")
             #Check weapon replace upgrades replace real waepon
             pass
     except Exception as e:

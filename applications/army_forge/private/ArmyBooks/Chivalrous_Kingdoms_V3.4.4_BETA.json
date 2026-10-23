@@ -31,6 +31,12 @@
               "remove_weapons": ["Heavy Hand Weapon (A3, AP(1))"]
             },
             {
+              "name": "Heavy Halberd (A3, AP(1), Rending)",
+              "price": 5,
+              "add_weapons": ["Heavy Halberd (A3, AP(1), Rending)"],
+              "remove_weapons": ["Heavy Hand Weapon (A3, AP(1))"]
+            },
+            {
               "name": "Heavy Great Weapon (A3, AP(3))",
               "price": 10,
               "add_weapons": ["Heavy Great Weapon (A3, AP(3))"],
@@ -126,13 +132,13 @@
             {
               "name": "Dual Hand Weapons (A4)",
               "price": 5,
-              "add_weapons": ["Dual Hand Weapons (A4, AP(1))"],
+              "add_weapons": ["Dual Hand Weapons (A4)"],
               "remove_weapons": ["Hand Weapon (A3)"]
             },
             {
               "name": "Lance (A3, Lance)",
               "price": 5,
-              "add_weapons": ["Lance (A3, AP(1), Lance)"],
+              "add_weapons": ["Lance (A3, Lance)"],
               "remove_weapons": ["Hand Weapon (A3)"]
             },
             {
@@ -172,7 +178,7 @@
             },
             {
               "name": "Captain (War Duty)",
-              "price": 30,
+              "price": 45,
               "add_perks": ["War Duty"]
             }
           ]
@@ -302,7 +308,7 @@
             "type": "CHOOSE_ONE",
             "choices": [
             {
-              "name": "10x Halberd (A1, Rending)",
+              "name": "5x Heavy Great Weapon (A1, AP(3))",
               "price": 20,
               "add_weapons": ["5x Heavy Great Weapon (A1, AP(3))"],
               "remove_weapons": ["5X Heavy Hand Weapons (A1, AP(1))"]
@@ -347,9 +353,9 @@
             ]
           },
           {
-            "section": "Replace all Hand Weapons:",
+            "section": "Upgrade all Models with any:",
             "unit_level": true,
-            "type": "CHOOSE_ONE",
+            "type": "CHOOSE_MULTIPLE",
             "choices": [
             {
               "name": "Fire Braziers (AP(+1) when Shooting)",

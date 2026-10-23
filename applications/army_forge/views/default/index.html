@@ -256,14 +256,14 @@
   {{for spellbook in session.army_book.get('SpellBooks',[]):}}
     <h6>{{=spellbook}}</h6>
     {{for spell in session.army_book['SpellBooks'][spellbook]:}}
-      <div><strong>{{=spell}}:</strong> {{=session.army_book['SpellBooks'][spellbook][spell]}}</div>
+      <div style="margin-bottom: 8px;"><strong>{{=spell}}:</strong> {{=session.army_book['SpellBooks'][spellbook][spell]}}</div>
     {{pass}}
   {{pass}}
   <hr>
   <div style="break-after: page;"></div>
   <h5>Keywords</h5>
   {{for keyword in sorted(session.army_book.get('Keywords',[])):}}
-      <div><strong>{{=keyword}}:</strong> {{=session.army_book['Keywords'][keyword]}}</div>
+      <div style="margin-bottom: 2px;"><strong>{{=keyword}}:</strong> {{=session.army_book['Keywords'][keyword]}}</div>
   {{pass}}
 </div>
 <button onclick="window.print()" class="btn btn-default">
