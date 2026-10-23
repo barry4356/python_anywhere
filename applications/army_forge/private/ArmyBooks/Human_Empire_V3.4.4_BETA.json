@@ -13,10 +13,142 @@
         "Fearless",
         "Hero"
       ],
-      "upgrades": [],
+      "upgrades": [
+        {
+          "section": "Replace Heavy Hand Weapon",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Dual Heavy Hand Weapons (A4, AP(1))",
+              "price": 5,
+              "add_weapons": ["Dual Heavy Hand Weapons (A4, AP(1))"],
+              "remove_weapons": ["Heavy Hand Weapon (A3, AP(1))"]
+            },
+            {
+              "name": "Heavy Lance (A3, AP(1), Lance)",
+              "price": 5,
+              "add_weapons": ["Heavy Lance (A3, AP(1), Lance)"],
+              "remove_weapons": ["Heavy Hand Weapon (A3, AP(1))"]
+            },
+            {
+              "name": "Heavy Halberd (A3, AP(1), Rending)",
+              "price": 5,
+              "add_weapons": ["Heavy Halberd (A3, AP(1), Rending)"],
+              "remove_weapons": ["Heavy Hand Weapon (A3, AP(1))"]
+            },
+            {
+              "name": "Heavy Great Weapon (A3, AP(3))",
+              "price": 10,
+              "add_weapons": ["Heavy Great Weapon (A3, AP(3))"],
+              "remove_weapons": ["Heavy Hand Weapon (A3, AP(1))"]
+            },
+            {
+              "name": "Heavy Spear (A3, AP(1), Counter)",
+              "price": 15,
+              "add_weapons": ["Heavy Spear (A3, AP(1), Counter)"],
+              "remove_weapons": ["Heavy Hand Weapon (A3, AP(1))"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (ranged):",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Twin Pistol (9\", A2, AP(1))",
+              "price": 10,
+              "add_weapons": ["Twin Pistol (9\", A2, AP(1))"]
+            },
+            {
+              "name": "Twin Handbow (12\", A2, Rending)",
+              "price": 25,
+              "add_weapons": ["Twin Handbow (12\", A2, Rending)"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with:",
+          "unit_level": true,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Pet Companion(Warning Cry)",
+              "price": 10,
+              "add_perks": ["Warning Cry"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (class):",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Bounty Hunter (Takedown)",
+              "price": 10,
+              "add_perks": ["Takedown"]
+            },
+            {
+              "name": "Cleric (Battle Chant)",
+              "price": 15,
+              "add_perks": ["Battle Chant"]
+            },
+            {
+              "name": "Captain (Private Guard(Infantrymen))",
+              "price": 25,
+              "add_perks": ["Private Guard(Infantrymen)"]
+            },
+            {
+              "name": "Army Standard Bearer (Fear(3))",
+              "price": 30,
+              "add_perks": ["Fear(3)"]
+            },
+            {
+              "name": "General (March Order)",
+              "price": 45,
+              "add_perks": ["March Order"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (mount):",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Horse (Fast, Impact(1), Joust)",
+              "price": 15,
+              "add_perks": ["Fast","Impact(1)","Joust"]
+            },
+            {
+              "name": "Pegasus (Hooves (A1), Fast, Flying, Impact(2), Tough(3))",
+              "price": 70,
+              "add_perks": ["Fast", "Flying", "Impact(2)", "Joust"],
+              "add_tough": 3,
+              "add_weapons": ["Hooves (A1)"]
+            },
+            {
+              "name": "Griffon (Rending Claws(A6, Rending),Stomp(A4, AP(1)),Defense(1),Fear(2),Flying,Tough(12))",
+              "price": 290,
+              "add_perks": ["Defense(1)", "Fear(2)", "Flying"],
+              "add_tough": 12,
+              "add_weapons": ["Rending Claws(A6, Rending)", "Stomp(A4, AP(1)"]
+            },
+            {
+              "name": "Dragon(Heavy Claws(A6, AP(1)),Stomp(A4, AP(1)),Breath Attack,Defense(1),Fear(2),Flying,Tough(12))",
+              "price": 305,
+              "add_perks": ["Defense(1)", "Fear(2)", "Flying", "Breath Attack"],
+              "add_tough": 12,
+              "add_weapons": ["Heavy Claws(A6, AP(1))", "Stomp(A4, AP(1)"]
+            }
+          ]
+        }
+      ],
       "models": 1,
-      "height": "",
-      "class": ""
+      "height": "3",
+      "class": "Heroes"
     },
     "Champion": {
       "base_points": 25,
@@ -31,8 +163,8 @@
       ],
       "upgrades": [],
       "models": 1,
-      "height": "",
-      "class": ""
+      "height": "3",
+      "class": "Heroes"
     },
     "Mage Council": {
       "base_points": 165,
@@ -381,6 +513,12 @@
   },
   "SpellBooks": {
       "Human Empire Army Spells": {
+          "Wild Form (1)": "Target friendly unit within 12\" gets +1 to hit rolls next time it fights in melee.",
+          "Fireball (1)": "Target enemy unit within 12\" takes 2 hits with AP(2).",
+          "Protection (2)": "Target 2 friendly units within 12\" get +1 to defense rolls next time they take hits.",
+          "Leech (2)": "Target enemy unit within 12\" takes 1 hit with AP(4) and Deadly(3).",
+          "Magic Wind (3)": "Target 2 friendly units within 12\" move +3\" next time they Advance, or +6\" next time they Rush/Charge.",
+          "Blood Hex (3)": " Target enemy unit within 18\" takes 1 hit with Blast(12)."
       }
   }
 }

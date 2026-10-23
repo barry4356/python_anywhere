@@ -96,7 +96,8 @@
               "name": "Pegasus (Heavy Hooves (A1, AP(1)), Fast, Flying, Impact(2), Joust, Tough(3))",
               "price": 75,
               "add_perks": ["Fast", "Flying", "Impact(2)", "Joust"],
-              "add_tough": 3
+              "add_tough": 3,
+              "add_weapons": ["Heavy Hooves (A1, AP(1)"]
             },
             {
               "name": "Hippogryph (Rending Claws (A6, Rending), Defense(1), Fast, Fear(1), Flying, Tough(6))",
