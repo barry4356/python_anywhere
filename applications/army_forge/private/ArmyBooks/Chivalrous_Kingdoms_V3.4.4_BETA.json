@@ -734,5 +734,63 @@
           "Magic Wind (3)": "Target 2 friendly units within 12\" move +3\" next time they Advance, or +6\" next time they Rush/Charge.",
           "Blood Hex (3)": " Target enemy unit within 18\" takes 1 hit with Blast(12)."
       }
+  },
+  "CampaignSkills": {
+        "Traits": [
+          "Fast Learner",
+          "Agile",
+          "Resilient",
+          "Specialist",
+          "Headstrong",
+          "Elite"
+          ],
+        "SkillSets": {
+            "Shooter": [
+                "Suppressor",
+                "Hunter",
+                "Destroyer"
+                ],
+            "Fighter": [
+                "Berserker",
+                "Fanatic",
+                "Duelist"
+                ],
+            "Captain": [
+                "Tactician",
+                "Leader",
+                "Instigator"
+                ],
+            "Pathfinder": [
+                "Climber",
+                "Runner",
+                "Prowler"
+                ],
+            "Support": [
+                "Mastermind",
+                "Vanguard",
+                "Scavenger"
+                ],
+            "Healer": [
+                "Herbalist",
+                "Warden",
+                "Chemist"
+                ]
+        },
+        "Injuries": [
+            "Blinded Eye",
+            "Arm Injury",
+            "Dead",
+            "Smashed Leg",
+            "Traumatized",
+            "Chest Wound"
+            ],
+        "Talents": [
+            "Natural Talent",
+            "Bitter Rivalry",
+            "Motivated",
+            "Crazed",
+            "Toughened",
+            "Horrible Scars"
+            ]
   }
 }

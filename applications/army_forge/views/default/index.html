@@ -127,26 +127,37 @@
       <a href="{{=URL('default', 'download_list', args='')}}" class="button">Download Army List File</a>
     {{pass}}
     <hr>
+    <h5>Configure List Settings</h5>
+    {{if not session.army_list or session.list_name == "None" or 'campaign_filter' not in session.army_list:}}
+      <div>Nothing to Configure</div>
+    {{else:}}
+      <label for="campaignFilter">Campaign Leveling: </label>
+      {{if session.army_list['campaign_filter']:}}
+        <input type="checkbox" id="campaignFilter" name="campaignFilter" value="campaignFilter" onchange="ajax('{{=URL('default', 'disable_campaign_filter')}}', [], function(res) {location.reload(true);});" checked>
+      {{else:}}
+        <input type="checkbox" id="campaignFilter" name="campaignFilter" value="campaignFilter" onchange="ajax('{{=URL('default', 'enable_campaign_filter')}}', [], function(res) {location.reload(true);});" unchecked>
+      {{pass}}
+    {{pass}}
   </div>
 {{pass}}
 
 <!-- Add Units Tab -->
 {{if session.current_tab == 2:}}
   <div id="tab2">
-    {{for unit in session.army_book['Units'].keys():}}
-      <form style="margin-bottom: 20px;">
+    {{for i, unit in enumerate(session.army_book['Units'].keys()):}}
+      <form style="margin-bottom: 20px; background-color: #F5F5F5;">
         <b>{{=unit}} [{{=session.army_book['Units'][unit]['models']}}]</b>
         <div>Qual: {{=session.army_book['Units'][unit]['quality']}}+&ensp;Def: {{=session.army_book['Units'][unit]['defense']}}+&ensp;Price: {{=session.army_book['Units'][unit]['base_points']}}</div>
         <div>Weapons:</div>
-        <span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_book['Units'][unit]['weapons'])}}', [], null);">
-            &emsp;{{=', '.join(session.army_book['Units'][unit]['weapons'])}}
+        <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_book['Units'][unit]['weapons'])}}', [], null);">
+          {{=', '.join(session.army_book['Units'][unit]['weapons'])}}
         </span>
         <div>Perks:</div>
-        <span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_book['Units'][unit]['perks'])}}', [], null);">
-            &emsp;{{=', '.join(session.army_book['Units'][unit]['perks'])}}
+        <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_book['Units'][unit]['perks'])}}', [], null);">
+          {{=', '.join(session.army_book['Units'][unit]['perks'])}}
         </span>
         <br>
-        <input type="submit" value="Add to List" />
+        <input type="submit" value="Add to List" style="background-color: #DCDCDC;"/>
         <input type="hidden" name="request_id" value="AddUnitToList">
         <input type="hidden" name="unitName" value="{{=unit}}">
       </form>
@@ -165,12 +176,12 @@
     <b>{{=session.army_list_upgraded["Units"][unit_key]["unit_type"]}} [{{=session.army_list_upgraded["Units"][unit_key]['models']}}]</b>
     <div>Qual: {{=session.army_list_upgraded['Units'][unit_key]['quality']}}+&ensp;Def: {{=session.army_list_upgraded['Units'][unit_key]['defense']}}+&ensp;{{if session.army_list_upgraded['Units'][unit_key].get('tough'):}}Tough: {{=session.army_list_upgraded['Units'][unit_key]['tough']}}&ensp;{{pass}}Price: {{=session.army_list_upgraded['Units'][unit_key]['price']}}</div>
     <div>Weapons:</div>
-    <span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['weapons'])}}', [], null);">
-      &emsp;{{=', '.join(session.army_list_upgraded['Units'][unit_key]['weapons'])}}
+    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['weapons'])}}', [], null);">
+      {{=', '.join(session.army_list_upgraded['Units'][unit_key]['weapons'])}}
     </span>
     <div>Perks:</div>
-    <span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}', [], null);">
-      &emsp;{{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}
+    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}', [], null);">
+      {{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}
       <br>
     </span>
     {{if session.army_list_upgraded["Units"][unit_key].get('embedded_in'):}}
@@ -227,12 +238,12 @@
     <h5>{{=session.army_list_upgraded["Units"][unit_key]["unit_type"]}} [{{=session.army_list_upgraded["Units"][unit_key]['models']}}]</h5>
     <div>Qual: {{=session.army_list_upgraded['Units'][unit_key]['quality']}}+&ensp;Def: {{=session.army_list_upgraded['Units'][unit_key]['defense']}}+&ensp;{{if session.army_list_upgraded['Units'][unit_key].get('tough'):}}Tough: {{=session.army_list_upgraded['Units'][unit_key]['tough']}}&ensp;{{pass}}Price: {{=session.army_list_upgraded['Units'][unit_key]['price']}}</div>
     <div>Weapons:</div>
-    <span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['weapons'])}}', [], null);">
-      &emsp;{{=', '.join(session.army_list_upgraded['Units'][unit_key]['weapons'])}}
+    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['weapons'])}}', [], null);">
+      {{=', '.join(session.army_list_upgraded['Units'][unit_key]['weapons'])}}
     </span>
     <div>Perks:</div>
-    <span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}', [], null);">
-      &emsp;{{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}
+    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}', [], null);">
+      {{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}
       <br>
     </span>
     {{if session.army_list_upgraded["Units"][unit_key].get('embedded_in'):}}
@@ -291,12 +302,12 @@
     <h3>{{=str(session.editUnit["unit_type"])}} [{{=session.editUnit['models']}}]</h3>
     <div>Qual: {{=session.editUnit['quality']}}+&ensp;Def: {{=session.editUnit['defense']}}+&ensp;{{if session.editUnit.get('tough'):}}Tough: {{=session.editUnit['tough']}}&ensp;{{pass}}</div>
     <div>Weapons:</div>
-    <span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.editUnit['weapons'])}}', [], null);">
-      &emsp;{{=', '.join(session.editUnit['weapons'])}}
+    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.editUnit['weapons'])}}', [], null);">
+      {{=', '.join(session.editUnit['weapons'])}}
     </span>
     <div>Perks:</div>
-    <span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.editUnit['perks'])}}', [], null);">
-      &emsp;{{=', '.join(session.editUnit['perks'])}}
+    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.editUnit['perks'])}}', [], null);">
+      {{=', '.join(session.editUnit['perks'])}}
       <br>
     </span>
     {{if session.editUnit.get('embedded_in'):}}
@@ -374,6 +385,19 @@
         {{pass}}
       </form>
       <br>
+    {{pass}}
+    {{if session.editUnit['campaign_filter']:}}
+        <h5>Campaign Level</h5>
+        <h6>Traits:</h6>
+        {{for trait in session.editUnit.get('campaign_traits',[]):}}
+          {{if session.editUnit['campaign_traits'][trait]:}}
+            <input type="checkbox" id="{{=trait}}" name="{{=trait}}" value="{{=trait}}" onchange="ajax('{{=URL('default', 'disable_campaign_trait')}}?unitKey={{=session.editUnit['unit_key']}}&trait={{=trait}}', [], function(res) {location.reload(true);});" checked>
+          {{else:}}
+            <input type="checkbox" id="{{=trait}}" name="{{=trait}}" value="{{=trait}}" onchange="ajax('{{=URL('default', 'enable_campaign_trait')}}?unitKey={{=session.editUnit['unit_key']}}&trait={{=trait}}', [], function(res) {location.reload(true);});" unchecked>
+          {{pass}}
+          <label for="{{=trait}}"> {{=trait}} </label>
+          <br>
+        {{pass}}
     {{pass}}
     <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=3', [], function(res) {location.reload(true);});">Done</button>
     <br>

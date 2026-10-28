@@ -268,5 +268,63 @@
   "SpellBooks": {
       "Goblin Army Spells": {
       }
+  },
+    "CampaignSkills": {
+        "Traits": [
+          "Fast Learner",
+          "Agile",
+          "Resilient",
+          "Specialist",
+          "Headstrong",
+          "Elite"
+          ],
+        "SkillSets": {
+            "Shooter": [
+                "Suppressor",
+                "Hunter",
+                "Destroyer"
+                ],
+            "Fighter": [
+                "Berserker",
+                "Fanatic",
+                "Duelist"
+                ],
+            "Captain": [
+                "Tactician",
+                "Leader",
+                "Instigator"
+                ],
+            "Pathfinder": [
+                "Climber",
+                "Runner",
+                "Prowler"
+                ],
+            "Support": [
+                "Mastermind",
+                "Vanguard",
+                "Scavenger"
+                ],
+            "Healer": [
+                "Herbalist",
+                "Warden",
+                "Chemist"
+                ]
+        },
+        "Injuries": [
+            "Blinded Eye",
+            "Arm Injury",
+            "Dead",
+            "Smashed Leg",
+            "Traumatized",
+            "Chest Wound"
+            ],
+        "Talents": [
+            "Natural Talent",
+            "Bitter Rivalry",
+            "Motivated",
+            "Crazed",
+            "Toughened",
+            "Horrible Scars"
+            ]
   }
 }

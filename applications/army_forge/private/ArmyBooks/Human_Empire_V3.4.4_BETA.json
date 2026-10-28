@@ -294,7 +294,7 @@
               "name": "Robot Hulk (Great Weapon(A3, AP(2)),Tough(3))",
               "price": 35,
               "add_tough": 3,
-              "add_weapons": ["Great Weapon(A3, AP(2)", "Stomp(A4, AP(1)"]
+              "add_weapons": ["Great Weapon(A3, AP(2)"]
             }
           ]
         }
@@ -371,8 +371,8 @@
 		}
         ],
       "models": 10,
-      "height": "",
-      "class": ""
+      "height": "2",
+      "class": "Core Units"
     },
     "Fanatics": {
       "base_points": 90,
@@ -424,10 +424,39 @@
       "perks": [
         "Scout"
       ],
-      "upgrades": [],
+      "upgrades": [
+          {
+			"section": "Replace all Pistols and Hand Weapons:",
+			"unit_level": true,
+			"type": "CHOOSE_ONE",
+			"choices": [
+			{
+				"name": "5x Dual Hand Weapons (A2)",
+				"price": 0,
+				"add_weapons": ["5x Dual Hand Weapons (A2)"],
+				"remove_weapons": [
+				    "5x Pistol (9\", A1, AP(1))",
+				    "5x Hand Weapon (A1)"
+				]
+			},
+			{
+				"name": "5x Twin Pistol (9\", A2, AP(1)), 5x Hand Weapon (A1)",
+				"price": 15,
+				"add_weapons": [
+				    "5x Twin Pistol (9\", A2, AP(1))",
+				    "5x Hand Weapon (A1)"
+				],
+				"remove_weapons": [
+				    "5x Pistol (9\", A1, AP(1))",
+				    "5x Hand Weapon (A1)"
+				]
+			}
+			]
+		}
+          ],
       "models": 5,
-      "height": "",
-      "class": ""
+      "height": "2",
+      "class": "Core Units"
     },
     "Elite Weapon Masters": {
       "base_points": 75,
@@ -439,10 +468,33 @@
       "perks": [
         "Fearless"
       ],
-      "upgrades": [],
+      "upgrades": [
+          {
+			"section": "Upgrade up to three models with one:",
+			"unit_level": false,
+			"type": "CHOOSE_MULTIPLE",
+			"choices": [
+				{
+					"name": "Sergeant",
+					"price": 5,
+					"add_perks": ["Sergeant"]
+				},
+				{
+					"name": "Musician",
+					"price": 10,
+					"add_perks": ["Musician"]
+				},
+				{
+					"name": "Banner",
+					"price": 15,
+					"add_perks": ["Banner"]
+				}
+			]
+		}
+       ],
       "models": 5,
-      "height": "",
-      "class": ""
+      "height": "2",
+      "class": "Core Units"
     },
     "Marksmen": {
       "base_points": 60,
@@ -453,10 +505,80 @@
         "5x Hand Weapon (A1)"
       ],
       "perks": [],
-      "upgrades": [],
+      "upgrades": [
+        {
+			"section": "Upgrade up to three models with one:",
+			"unit_level": false,
+			"type": "CHOOSE_MULTIPLE",
+			"choices": [
+				{
+					"name": "Sergeant",
+					"price": 5,
+					"add_perks": ["Sergeant"]
+				},
+				{
+					"name": "Musician",
+					"price": 10,
+					"add_perks": ["Musician"]
+				},
+				{
+					"name": "Banner",
+					"price": 15,
+					"add_perks": ["Banner"]
+				}
+			]
+		},
+		{
+			"section": "Replace all Rifles:",
+			"unit_level": true,
+			"type": "CHOOSE_MULTIPLE",
+			"choices": [
+    			{
+    				"name": "5x Crossbow (24\", A1, Rending)",
+    				"price": 25,
+    				"add_weapons": ["5x Crossbow (24\", A1, Rending)"],
+    				"remove_weapons": ["5x Rifle (18\", A1, AP(1))"]
+    			}
+            ]
+		},
+		{
+			"section": "Replace one Rifle:",
+			"unit_level": true,
+			"type": "CHOOSE_ONE",
+			"choices": [
+    			{
+    				"name": "Twin Pistol (9\", A2, AP(1))",
+    				"price": 0,
+    				"add_weapons": [
+    				    "4x Rifle (18\", A1, AP(1))",
+    				    "1x Twin Pistol (9\", A2, AP(1))"
+    				    ],
+    				"remove_weapons": ["5x Rifle (18\", A1, AP(1))"]
+    			},
+    			{
+    				"name": "Gatling Rifle (18\", A4, AP(1))",
+    				"price": 20,
+    				"add_weapons": [
+    				    "4x Rifle (18\", A1, AP(1))",
+    				    "1x Gatling Rifle (18\", A4, AP(1))"
+    				    ],
+    				"remove_weapons": ["5x Rifle (18\", A1, AP(1))"]
+    			},
+    			{
+    				"name": "Sniper Rifle (30\", A1, AP(1), Sniper)",
+    				"price": 25,
+    				"add_weapons": [
+    				    "4x Rifle (18\", A1, AP(1))",
+    				    "1x Sniper Rifle (30\", A1, AP(1), Sniper)"
+    				    ],
+    				"remove_weapons": ["5x Rifle (18\", A1, AP(1))"]
+    			}
+            ]
+		}
+      ],
       "models": 5,
-      "height": "",
-      "class": ""
+      "height": "2",
+      "class": "Core Units"
     },
     "Mercenary Hunters": {
       "base_points": 70,
@@ -472,8 +594,8 @@
       ],
       "upgrades": [],
       "models": 5,
-      "height": "",
-      "class": ""
+      "height": "2",
+      "class": "Core Units"
     },
     "Horse Marksmen": {
       "base_points": 75,
@@ -487,7 +609,68 @@
         "Fast",
         "Scout"
       ],
-      "upgrades": [],
+      "upgrades": [
+        {
+			"section": "Upgrade up to three models with one:",
+			"unit_level": false,
+			"type": "CHOOSE_MULTIPLE",
+			"choices": [
+				{
+					"name": "Sergeant",
+					"price": 5,
+					"add_perks": ["Sergeant"]
+				},
+				{
+					"name": "Musician",
+					"price": 10,
+					"add_perks": ["Musician"]
+				},
+				{
+					"name": "Banner",
+					"price": 15,
+					"add_perks": ["Banner"]
+				}
+			]
+		},
+				{
+			"section": "Replace all Rifles:",
+			"unit_level": true,
+			"type": "CHOOSE_MULTIPLE",
+			"choices": [
+    			{
+    				"name": "5x Twin Pistol (9\", A2, AP(1))",
+    				"price": 0,
+    				"add_weapons": ["5x Twin Pistol (9\", A2, AP(1))"],
+    				"remove_weapons": ["5x Rifle (18\", A1, AP(1))"]
+    			}
+            ]
+		},
+		{
+			"section": "Replace one Rifle:",
+			"unit_level": true,
+			"type": "CHOOSE_ONE",
+			"choices": [
+    			{
+    				"name": "1x Twin Gatling Pistol (9\", A4, AP(1))",
+    				"price": 5,
+    				"add_weapons": [
+    				    "4x Rifle (18\", A1, AP(1))",
+    				    "1x Twin Gatling Pistol (9\", A4, AP(1))"
+    				    ],
+    				"remove_weapons": ["5x Rifle (18\", A1, AP(1))"]
+    			},
+    			{
+    				"name": "Gatling Rifle (18\", A4, AP(1))",
+    				"price": 20,
+    				"add_weapons": [
+    				    "4x Rifle (18\", A1, AP(1))",
+    				    "1x Gatling Rifle (18\", A4, AP(1))"
+    				    ],
+    				"remove_weapons": ["5x Rifle (18\", A1, AP(1))"]
+    			}
+            ]
+		}
+      ],
       "models": 5,
       "height": "",
       "class": ""
@@ -503,10 +686,46 @@
         "Fast",
         "Impact(1)"
       ],
-      "upgrades": [],
+      "upgrades": [
+        {
+			"section": "Upgrade up to three models with one:",
+			"unit_level": false,
+			"type": "CHOOSE_MULTIPLE",
+			"choices": [
+				{
+					"name": "Sergeant",
+					"price": 5,
+					"add_perks": ["Sergeant"]
+				},
+				{
+					"name": "Musician",
+					"price": 10,
+					"add_perks": ["Musician"]
+				},
+				{
+					"name": "Banner",
+					"price": 15,
+					"add_perks": ["Banner"]
+				}
+			]
+		},
+				{
+			"section": "Replace all Hand Weapons:",
+			"unit_level": true,
+			"type": "CHOOSE_MULTIPLE",
+			"choices": [
+    			{
+    				"name": "5x Lance (A1, Lance)",
+    				"price": 10,
+    				"add_weapons": ["5x Lance (A1, Lance)"],
+    				"remove_weapons": ["5x Hand Weapon (A1)"]
+    			}
+            ]
+		}
+      ],
       "models": 5,
-      "height": "",
-      "class": ""
+      "height": "3",
+      "class": "Core Units"
     },
     "Guard Knights": {
       "base_points": 105,
@@ -520,10 +739,46 @@
         "Fearless",
         "Impact(1)"
       ],
-      "upgrades": [],
+      "upgrades": [
+        {
+			"section": "Upgrade up to three models with one:",
+			"unit_level": false,
+			"type": "CHOOSE_MULTIPLE",
+			"choices": [
+				{
+					"name": "Sergeant",
+					"price": 5,
+					"add_perks": ["Sergeant"]
+				},
+				{
+					"name": "Musician",
+					"price": 10,
+					"add_perks": ["Musician"]
+				},
+				{
+					"name": "Banner",
+					"price": 15,
+					"add_perks": ["Banner"]
+				}
+			]
+		},
+		{
+			"section": "Replace all Lances:",
+			"unit_level": true,
+			"type": "CHOOSE_MULTIPLE",
+			"choices": [
+    			{
+    				"name": "5x Great Weapon (A1, AP(2))",
+    				"price": 10,
+    				"add_weapons": ["5x Great Weapon (A1, AP(2))"],
+    				"remove_weapons": ["5x Lance (A1, Lance)"]
+    			}
+            ]
+		}
+      ],
       "models": 5,
-      "height": "",
-      "class": ""
+      "height": "3",
+      "class": "Core Units"
     },
     "Gryph Riders": {
       "base_points": 185,
@@ -539,10 +794,46 @@
         "Fearless",
         "Impact(2)"
       ],
-      "upgrades": [],
+      "upgrades": [
+        {
+			"section": "Upgrade up to three models with one:",
+			"unit_level": false,
+			"type": "CHOOSE_MULTIPLE",
+			"choices": [
+				{
+					"name": "Sergeant",
+					"price": 5,
+					"add_perks": ["Sergeant"]
+				},
+				{
+					"name": "Musician",
+					"price": 10,
+					"add_perks": ["Musician"]
+				},
+				{
+					"name": "Banner",
+					"price": 15,
+					"add_perks": ["Banner"]
+				}
+			]
+		},
+		{
+			"section": "Replace all Lances:",
+			"unit_level": true,
+			"type": "CHOOSE_MULTIPLE",
+			"choices": [
+    			{
+    				"name": "3x Halberd (A1, Rending)",
+    				"price": 10,
+    				"add_weapons": ["3x Halberd (A1, Rending)"],
+    				"remove_weapons": ["3x Lance (A1, Lance)"]
+    			}
+            ]
+		}
+      ],
       "models": 3,
-      "height": "",
-      "class": ""
+      "height": "4",
+      "class": "Core Units"
     },
     "War Wagon of Earth": {
       "base_points": 100,
@@ -555,7 +846,32 @@
       "perks": [
         "Transport(11)"
       ],
-      "upgrades": [],
+      "upgrades": [
+        {
+			"section": "Replace Crew Attacks and Transport Space:",
+			"unit_level": true,
+			"type": "CHOOSE_ONE",
+			"choices": [
+    			{
+    				"name": "Spear Crew (A6, AP(1), Rending)",
+    				"price": 10,
+    				"add_weapons": ["Spear Crew (A6, AP(1), Rending)"],
+    				"remove_weapons": ["Crew Attacks (A2)"],
+    				"remove_perks": ["Transport(11)"]
+    			},
+    			{
+    				"name": "Crossbow Crew (24\", A6, Rending), Crew Attacks (A2)",
+    				"price": 10,
+    				"add_weapons": [
+    				    "Crossbow Crew (24\", A6, Rending)",
+    				    "Crew Attacks (A2)"
+    				    ],
+    				"remove_weapons": ["Crew Attacks (A2)"],
+    				"remove_perks": ["Transport(11)"]
+    			}
+            ]
+		}
+      ],
       "models": 1,
       "height": "",
       "class": ""
@@ -624,10 +940,24 @@
         "Fear(2)",
         "Impact(6)"
       ],
-      "upgrades": [],
+      "upgrades": [
+        {
+			"section": "Replace Tank Cannon:",
+			"unit_level": true,
+			"type": "CHOOSE_MULTIPLE",
+			"choices": [
+    			{
+    				"name": "Heavy Tank Cannon (18\", A2, AP(2), Deadly(3))",
+    				"price": 10,
+    				"add_weapons": ["Heavy Tank Cannon (18\", A2, AP(2), Deadly(3))"],
+    				"remove_weapons": ["Tank Cannon (18\", A2, AP(1), Blast(3))"]
+    			}
+            ]
+		}
+      ],
       "models": 1,
-      "height": "",
-      "class": ""
+      "height": "4",
+      "class": "Artillery"
     },
     "Empire Artillery": {
       "base_points": 60,
@@ -642,10 +972,42 @@
         "Entrenched",
         "Immobile"
       ],
-      "upgrades": [],
+      "upgrades": [
+        {
+			"section": "Replace Volley Gun:",
+			"unit_level": true,
+			"type": "CHOOSE_ONE",
+			"choices": [
+    			{
+    				"name": "Cannon (30\", A2, AP(1), Blast(3))",
+    				"price": 10,
+    				"add_weapons": ["Cannon (30\", A2, AP(1), Blast(3))"],
+    				"remove_weapons": ["Volley Gun (18\", A6, AP(1))"]
+    			},
+    			{
+    				"name": "Heavy Cannon (30\", A2, AP(2), Deadly(3))",
+    				"price": 25,
+    				"add_weapons": ["Heavy Cannon (30\", A2, AP(2), Deadly(3))"],
+    				"remove_weapons": ["Volley Gun (18\", A6, AP(1))"]
+    			},
+    			{
+    				"name": "Rocket Battery (24\", A2, AP(1), Blast(3), Indirect)",
+    				"price": 25,
+    				"add_weapons": ["Rocket Battery (24\", A2, AP(1), Blast(3), Indirect)"],
+    				"remove_weapons": ["Volley Gun (18\", A6, AP(1))"]
+    			},
+    			{
+    				"name": "Heavy Mortar (36\", A2, AP(1), Blast(3), Indirect)",
+    				"price": 50,
+    				"add_weapons": ["Heavy Mortar (36\", A2, AP(1), Blast(3), Indirect)"],
+    				"remove_weapons": ["Volley Gun (18\", A6, AP(1))"]
+    			}
+            ]
+		}
+      ],
       "models": 1,
-      "height": "",
-      "class": ""
+      "height": "2",
+      "class": "Artillery"
     },
     "Elemental Titan": {
       "base_points": 725,
@@ -660,10 +1022,75 @@
         "Caster(3)",
         "Fear(3)"
       ],
-      "upgrades": [],
+      "upgrades": [
+          {
+			"section": "Upgrade with one:",
+			"unit_level": true,
+			"type": "CHOOSE_ONE",
+			"choices": [
+    			{
+    				"name": "Aether Elemental (Celestial Fury, Furious)",
+    				"price": 60,
+    				"add_perks": [
+    				    "Celestial Fury",
+    				    "Furious"
+    				  ]
+    			},
+    			{
+    				"name": "Air Elemental (Flying, Storm Blessing)",
+    				"price": 115,
+    				"add_perks": [
+    				    "Flying",
+    				    "Storm Blessing"
+    				  ]
+
+    			},
+    			{
+    				"name": "Earth Elemental (Heavy Claws (A4, AP(4)), Protected)",
+    				"price": 145,
+    				"add_perks": [
+    				    "Protected"
+    				  ],
+    				  "add_weapons":["Heavy Claws (A4, AP(4))"]
+
+    			},
+    			{
+    				"name": "Water Elemental (Heal, Resistance, Strider)",
+    				"price": 155,
+    				"add_perks": [
+    				    "Heal",
+    				    "Resistance",
+    				    "Strider"
+    				  ]
+
+    			},
+    			{
+    				"name": "Fire Elemental (Fiery Protection, Fire Storm, Strider)",
+    				"price": 155,
+    				"add_perks": [
+    				    "Fiery Protection",
+    				    "Fire Storm",
+    				    "Strider"
+    				  ]
+    			},
+    			{
+    				"name": "Chimera (Celestial Fury, Fiery Protection, Flying, Protected, Resistance, Storm Blessing)",
+    				"price": 370,
+    				"add_perks": [
+    				    "Celestial Fury",
+    				    "Fiery Protection",
+    				    "Flying",
+    				    "Protected",
+    				    "Resistance",
+    				    "Storm Blessing"
+    				  ]
+    			}
+            ]
+		}
+      ],
       "models": 1,
-      "height": "",
-      "class": ""
+      "height": "5",
+      "class": "Titan"
     }
   },
   "Keywords": {
@@ -722,5 +1149,63 @@
           "Magic Wind (3)": "Target 2 friendly units within 12\" move +3\" next time they Advance, or +6\" next time they Rush/Charge.",
           "Blood Hex (3)": " Target enemy unit within 18\" takes 1 hit with Blast(12)."
       }
+  },
+    "CampaignSkills": {
+        "Traits": [
+          "Fast Learner",
+          "Agile",
+          "Resilient",
+          "Specialist",
+          "Headstrong",
+          "Elite"
+          ],
+        "SkillSets": {
+            "Shooter": [
+                "Suppressor",
+                "Hunter",
+                "Destroyer"
+                ],
+            "Fighter": [
+                "Berserker",
+                "Fanatic",
+                "Duelist"
+                ],
+            "Captain": [
+                "Tactician",
+                "Leader",
+                "Instigator"
+                ],
+            "Pathfinder": [
+                "Climber",
+                "Runner",
+                "Prowler"
+                ],
+            "Support": [
+                "Mastermind",
+                "Vanguard",
+                "Scavenger"
+                ],
+            "Healer": [
+                "Herbalist",
+                "Warden",
+                "Chemist"
+                ]
+        },
+        "Injuries": [
+            "Blinded Eye",
+            "Arm Injury",
+            "Dead",
+            "Smashed Leg",
+            "Traumatized",
+            "Chest Wound"
+            ],
+        "Talents": [
+            "Natural Talent",
+            "Bitter Rivalry",
+            "Motivated",
+            "Crazed",
+            "Toughened",
+            "Horrible Scars"
+            ]
   }
 }

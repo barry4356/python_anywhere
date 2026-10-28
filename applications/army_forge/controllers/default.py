@@ -59,7 +59,7 @@ def index():
         session.army_book_json = request.vars.bookSelection.replace(' ','_') + '.json'
         with open(os.path.join(request.folder, 'private', 'ArmyBooks', session.army_book_json), 'r') as file:
             session.army_book = json.load(file)
-        session.army_list = {"Units": {}, "ArmyBook": session.army_book_json, "Price": 0}
+        session.army_list = {"Units": {}, "ArmyBook": session.army_book_json, "Price": 0, "campaign_filter": False}
         session.list_name = "None"
         session.forceOrgPass=True
         redirect(URL('index'))
@@ -73,6 +73,28 @@ def index():
         for upgrade in new_unit['upgrades']:
             for choice in upgrade['choices']:
                 choice['selected'] = False
+        campaign_skills = session.army_book.get('CampaignSkills',[])
+        unit_campaign_traits = {}
+        for trait in campaign_skills['Traits']:
+            unit_campaign_traits[trait] = False
+        new_unit['campaign_xp'] = 0
+        new_unit['campaign_traits'] = unit_campaign_traits
+        if 'Hero' in new_unit['perks']:
+            campaign_skillsets = {}
+            unit_campaign_injuries = {}
+            unit_campaign_talents = {}
+            for skillset in campaign_skills['SkillSets']:
+                campaign_skillset = {}
+                for skill in campaign_skills['SkillSets'][skillset]:
+                    campaign_skillset[skill] = False
+                campaign_skillsets[skillset] = campaign_skillset
+            new_unit['campaign_skillsets'] = campaign_skillsets
+            for injury in campaign_skills['Injuries']:
+                unit_campaign_injuries[injury] = False
+            new_unit['campaign_injuries'] = unit_campaign_injuries
+            for talent in campaign_skills['Talents']:
+                unit_campaign_talents[talent] = False
+            new_unit['campaign_talents'] = unit_campaign_talents
         session.army_list["Units"][unit_uuid] = new_unit
         updateListCost()
         update_unit_count()
@@ -100,6 +122,7 @@ def index():
         unit["name"] = request.vars.unitName
         session.editUnit = copy.deepcopy(unit)
         session.editUnit['unit_key'] = request.vars.unitKey
+        session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
         redirect(URL('index'))
     elif request.vars.request_id == 'uploadListFile':
         uploaded_file = request.vars.textFile.file
@@ -131,6 +154,7 @@ def index():
         update_unit_count()
         session.editUnit = copy.deepcopy(hero)
         session.editUnit['unit_key'] = request.vars.heroKey
+        session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
         redirect(URL('index'))
 
     return dict()
@@ -181,6 +205,23 @@ def switchTab():
         updateUpgradedViews()
     return session.current_tab
 
+def enable_campaign_trait():
+    unit = session.army_list['Units'][request.vars.unitKey]
+    trait = request.vars.trait
+    unit['campaign_traits'][trait] = True
+    session.editUnit = copy.deepcopy(unit)
+    session.editUnit['unit_key'] = request.vars.unitKey
+    session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
+
+def disable_campaign_trait():
+    unit = session.army_list['Units'][request.vars.unitKey]
+    trait = request.vars.trait
+    unit['campaign_traits'][trait] = False
+    session.editUnit = copy.deepcopy(unit)
+    session.editUnit['unit_key'] = request.vars.unitKey
+    session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
+
+
 def removeUnit():
     unit_key = request.vars.myvar
     del_unit = session.army_list['Units'].pop(unit_key, None)
@@ -203,6 +244,7 @@ def editUnit():
     session.current_tab = 6
     session.editUnit = copy.deepcopy(session.army_list["Units"][request.vars.myvar])
     session.editUnit['unit_key'] = request.vars.myvar
+    session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
     if 'Hero' in session.editUnit['perks']:
         update_embeddable_unit_names()
     redirect(URL('index'))
@@ -258,6 +300,7 @@ def update_unit_chooseone():
     force_org_check()
     session.editUnit = copy.deepcopy(unit)
     session.editUnit['unit_key'] = request.vars.unitKey
+    session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
     redirect(URL('index'))
 
 def update_unit_choosemult():
@@ -278,7 +321,14 @@ def update_unit_choosemult():
     force_org_check()
     session.editUnit = copy.deepcopy(unit)
     session.editUnit['unit_key'] = request.vars.unitKey
+    session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
     redirect(URL('index'))
+
+def enable_campaign_filter():
+    session.army_list['campaign_filter'] = True
+
+def disable_campaign_filter():
+    session.army_list['campaign_filter'] = False
 
 def update_embeddable_unit_names():
     '''
@@ -333,6 +383,7 @@ def combine_unit():
     update_unit_count()
     session.editUnit = copy.deepcopy(unit)
     session.editUnit['unit_key'] = request.vars.unitKey
+    session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
 
 def download_list():
     '''
