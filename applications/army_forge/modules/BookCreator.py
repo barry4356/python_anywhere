@@ -26,12 +26,12 @@ def displayArmyBook(filename):
     army_book = {}
     with open (filename, 'r') as jsonFile:
         army_book = json.load(jsonFile)
-    print("Name[size] \t\t\t Qua \tDef \t Equipment \t\t\t\t\t\t\t\t Special Rules \t\t\t\t\t\t\t Cost")
+    print("Name[size] \t\t\t Qua \tDef \t Equipment \t\t\t\t\t\t\t\t\t Special Rules \t\t\t\t\t\t\t Cost")
     units = army_book['Units']
     for unit_name in army_book['Units']:
         unit = army_book['Units'][unit_name]
         unit_name_count = str(f"{unit_name} [{unit['models']}]")
-        print(f"{unit_name_count:<24}\t {unit['quality']}+ \t{unit['defense']}+ \t {str(unit['weapons']):<64} \t {str(unit['perks']):<56} \t {unit['base_points']}")
+        print(f"{unit_name_count:<24}\t {unit['quality']}+ \t{unit['defense']}+ \t {str(unit['weapons']):<72} \t {str(unit['perks']):<56} \t {unit['base_points']}")
     while(True):
         selection = input("\nN - View Next Section (Upgrades); Q - Quit\n")
         if selection.lower().strip() == 'q':
@@ -153,6 +153,10 @@ def ArmyBookChecker(filename):
                         for addweapon in choice.get('add_weapons', []):
                             if addweapon not in choice['name']:
                                 print(f"WARNING: {filename}: {unit_key}: Add weapon is suspicious: {addweapon}")
+                    if 'add_perks' in choice.keys():
+                        for perk in choice.get('add_perks', []):
+                            if perk not in choice['name']:
+                                print(f"WARNING: {filename}: {unit_key}: Add perk is suspicious: {perk}")
             #Check weapon replace upgrades replace real waepon
             pass
     except Exception as e:
@@ -165,5 +169,5 @@ def ArmyBookChecker(filename):
         else:
             print(f"{filename} FAILED Validation")
 
-ArmyBookChecker('../private/ArmyBooks/Chivalrous_Kingdoms_V3.4.4_BETA.json')
-displayArmyBook('../private/ArmyBooks/Chivalrous_Kingdoms_V3.4.4_BETA.json')
+ArmyBookChecker('../private/ArmyBooks/Human_Empire_V3.4.4_BETA.json')
+displayArmyBook('../private/ArmyBooks/Human_Empire_V3.4.4_BETA.json')

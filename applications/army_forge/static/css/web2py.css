@@ -261,6 +261,20 @@ div.error {
     text-align:right;
 }
 
+.checkbox-wrapper {
+  display: block;
+  padding-left: 24px;
+  text-indent: -24px;
+}
+
+.checkbox-wrapper input {
+  margin-right: 8px;
+  vertical-align: middle; /* Adjust alignment as needed */
+}
+
+.checkbox-wrapper span {
+  vertical-align: middle;
+}
 /*Fix firefox problem*/
 .web2py_table {clear:both; display:block}
 
@@ -379,3 +393,5 @@ li.w2p_grid_breadcrumb_elem {
 .tab-content.active {
   display: block;
 }
+
+

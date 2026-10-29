@@ -61,6 +61,7 @@ def index():
             session.army_book = json.load(file)
         session.army_list = {"Units": {}, "ArmyBook": session.army_book_json, "Price": 0, "campaign_filter": False}
         session.list_name = "None"
+        update_unit_count()
         session.forceOrgPass=True
         redirect(URL('index'))
     elif request.vars.request_id == 'AddUnitToList':
@@ -190,9 +191,26 @@ def updateUpgradedViews():
                     tough = session.army_list_upgraded["Units"][unit_key].get('tough',0)
                     tough += int(choice['add_tough'])
                     session.army_list_upgraded["Units"][unit_key]['tough'] = tough
+        if session.army_list.get('campaign_filter'):
+            for trait in session.army_list_upgraded["Units"][unit_key].get("campaign_traits", []):
+                if session.army_list_upgraded["Units"][unit_key]["campaign_traits"][trait]:
+                    session.army_list_upgraded["Units"][unit_key]["perks"].append(trait)
+            for talent in session.army_list_upgraded["Units"][unit_key].get("campaign_talents", []):
+                if session.army_list_upgraded["Units"][unit_key]["campaign_talents"][talent]:
+                    session.army_list_upgraded["Units"][unit_key]["perks"].append(talent)
+            for injury in session.army_list_upgraded["Units"][unit_key].get("campaign_injuries", []):
+                if session.army_list_upgraded["Units"][unit_key]["campaign_injuries"][injury]:
+                    session.army_list_upgraded["Units"][unit_key]["perks"].append(injury)
+            for skillset in session.army_list_upgraded["Units"][unit_key].get("campaign_skillsets", []):
+                for subskill in session.army_list_upgraded["Units"][unit_key]['campaign_skillsets'][skillset]:
+                    if session.army_list_upgraded["Units"][unit_key]['campaign_skillsets'][skillset][subskill]:
+                        session.army_list_upgraded["Units"][unit_key]["perks"].append(subskill)
         session.army_list_upgraded["Units"][unit_key]["upgrades"] = []
 
-
+def update_unit_xp():
+    #response.flash = request.vars.unitKey
+    session.army_list['Units'][request.vars.unitKey]['campaign_xp'] = request.vars.xp
+    response.flash = request.vars.xp
 
 def switchTab():
     session.current_tab = int(request.vars.myvar)
@@ -221,6 +239,75 @@ def disable_campaign_trait():
     session.editUnit['unit_key'] = request.vars.unitKey
     session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
 
+def enable_campaign_skill():
+    unit = session.army_list['Units'][request.vars.unitKey]
+    skill = request.vars.skill
+    for skillset in unit.get('campaign_skillsets', []):
+        for subskill in unit['campaign_skillsets'][skillset]:
+            if subskill == skill:
+                unit['campaign_skillsets'][skillset][skill] = True
+    session.editUnit = copy.deepcopy(unit)
+    session.editUnit['unit_key'] = request.vars.unitKey
+    session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
+
+def disable_campaign_skill():
+    unit = session.army_list['Units'][request.vars.unitKey]
+    skill = request.vars.skill
+    for skillset in unit.get('campaign_skillsets', []):
+        for subskill in unit['campaign_skillsets'][skillset]:
+            if subskill == skill:
+                unit['campaign_skillsets'][skillset][skill] = False
+    session.editUnit = copy.deepcopy(unit)
+    session.editUnit['unit_key'] = request.vars.unitKey
+    session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
+
+def enable_campaign_injury():
+    unit = session.army_list['Units'][request.vars.unitKey]
+    injury = request.vars.injury
+    unit['campaign_injuries'][injury] = True
+    session.editUnit = copy.deepcopy(unit)
+    session.editUnit['unit_key'] = request.vars.unitKey
+    session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
+
+def disable_campaign_injury():
+    unit = session.army_list['Units'][request.vars.unitKey]
+    injury = request.vars.injury
+    unit['campaign_injuries'][injury] = False
+    session.editUnit = copy.deepcopy(unit)
+    session.editUnit['unit_key'] = request.vars.unitKey
+    session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
+
+def enable_campaign_injury():
+    unit = session.army_list['Units'][request.vars.unitKey]
+    injury = request.vars.injury
+    unit['campaign_injuries'][injury] = True
+    session.editUnit = copy.deepcopy(unit)
+    session.editUnit['unit_key'] = request.vars.unitKey
+    session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
+
+def disable_campaign_injury():
+    unit = session.army_list['Units'][request.vars.unitKey]
+    injury = request.vars.injury
+    unit['campaign_injuries'][injury] = False
+    session.editUnit = copy.deepcopy(unit)
+    session.editUnit['unit_key'] = request.vars.unitKey
+    session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
+
+def enable_campaign_talent():
+    unit = session.army_list['Units'][request.vars.unitKey]
+    talent = request.vars.talent
+    unit['campaign_talents'][talent] = True
+    session.editUnit = copy.deepcopy(unit)
+    session.editUnit['unit_key'] = request.vars.unitKey
+    session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
+
+def disable_campaign_talent():
+    unit = session.army_list['Units'][request.vars.unitKey]
+    talent = request.vars.talent
+    unit['campaign_talents'][talent] = False
+    session.editUnit = copy.deepcopy(unit)
+    session.editUnit['unit_key'] = request.vars.unitKey
+    session.editUnit['campaign_filter'] = session.army_list.get('campaign_filter')
 
 def removeUnit():
     unit_key = request.vars.myvar

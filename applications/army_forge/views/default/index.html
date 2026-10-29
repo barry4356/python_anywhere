@@ -387,17 +387,57 @@
       <br>
     {{pass}}
     {{if session.editUnit['campaign_filter']:}}
-        <h5>Campaign Level</h5>
-        <h6>Traits:</h6>
-        {{for trait in session.editUnit.get('campaign_traits',[]):}}
-          {{if session.editUnit['campaign_traits'][trait]:}}
-            <input type="checkbox" id="{{=trait}}" name="{{=trait}}" value="{{=trait}}" onchange="ajax('{{=URL('default', 'disable_campaign_trait')}}?unitKey={{=session.editUnit['unit_key']}}&trait={{=trait}}', [], function(res) {location.reload(true);});" checked>
-          {{else:}}
-            <input type="checkbox" id="{{=trait}}" name="{{=trait}}" value="{{=trait}}" onchange="ajax('{{=URL('default', 'enable_campaign_trait')}}?unitKey={{=session.editUnit['unit_key']}}&trait={{=trait}}', [], function(res) {location.reload(true);});" unchecked>
+      <h5>Campaign Level</h5>
+      <label for="xp">XP: </label>
+      <input type="number" id="xp" name="xp" min="0" max="100" step="1" value="0" onchange="ajax('{{=URL('default', 'update_unit_xp')}}?unitKey={{=session.editUnit['unit_key']}}', ['xp'], null);">
+      <h6>Traits:</h6>
+      {{for trait in session.editUnit.get('campaign_traits',[]):}}
+        {{if session.editUnit['campaign_traits'][trait]:}}
+          <input type="checkbox" id="{{=trait}}" name="{{=trait}}" value="{{=trait}}" onchange="ajax('{{=URL('default', 'disable_campaign_trait')}}?unitKey={{=session.editUnit['unit_key']}}&trait={{=trait}}', [], function(res) {location.reload(true);});" checked>
+        {{else:}}
+          <input type="checkbox" id="{{=trait}}" name="{{=trait}}" value="{{=trait}}" onchange="ajax('{{=URL('default', 'enable_campaign_trait')}}?unitKey={{=session.editUnit['unit_key']}}&trait={{=trait}}', [], function(res) {location.reload(true);});" unchecked>
+        {{pass}}
+        <label for="{{=trait}}"> {{=trait}} </label>
+        <br>
+      {{pass}}
+      {{if session.editUnit.get('campaign_skillsets'):}}
+        <h6>SkillSets</h6>
+        {{for skillset in session.editUnit['campaign_skillsets']:}}
+          <div>{{=skillset}}:</div>
+          {{for skill in session.editUnit['campaign_skillsets'][skillset]:}}
+            {{if session.editUnit['campaign_skillsets'][skillset][skill]:}}
+              &emsp;<input type="checkbox" id="{{=skill}}" name="{{=skill}}" value="{{=skill}}" onchange="ajax('{{=URL('default', 'disable_campaign_skill')}}?unitKey={{=session.editUnit['unit_key']}}&skill={{=skill}}', [], function(res) {location.reload(true);});" checked>
+            {{else:}}
+              &emsp;<input type="checkbox" id="{{=skill}}" name="{{=skill}}" value="{{=skill}}" onchange="ajax('{{=URL('default', 'enable_campaign_skill')}}?unitKey={{=session.editUnit['unit_key']}}&skill={{=skill}}', [], function(res) {location.reload(true);});" unchecked>
+            {{pass}}
+              <label for="{{=skill}}">{{=skill}} </label><br>
           {{pass}}
-          <label for="{{=trait}}"> {{=trait}} </label>
+        {{pass}}
+      {{pass}}
+      {{if session.editUnit.get('campaign_injuries'):}}
+        <h6>Injuries:</h6>
+        {{for injury in session.editUnit.get('campaign_injuries',[]):}}
+          {{if session.editUnit['campaign_injuries'][injury]:}}
+            <input type="checkbox" id="{{=injury}}" name="{{=injury}}" value="{{=injury}}" onchange="ajax('{{=URL('default', 'disable_campaign_injury')}}?unitKey={{=session.editUnit['unit_key']}}&injury={{=injury}}', [], function(res) {location.reload(true);});" checked>
+          {{else:}}
+            <input type="checkbox" id="{{=injury}}" name="{{=injury}}" value="{{=injury}}" onchange="ajax('{{=URL('default', 'enable_campaign_injury')}}?unitKey={{=session.editUnit['unit_key']}}&injury={{=injury}}', [], function(res) {location.reload(true);});" unchecked>
+          {{pass}}
+          <label for="{{=injury}}"> {{=injury}} </label>
           <br>
         {{pass}}
+      {{pass}}
+      {{if session.editUnit.get('campaign_talents'):}}
+        <h6>Talents:</h6>
+        {{for talent in session.editUnit.get('campaign_talents',[]):}}
+          {{if session.editUnit['campaign_talents'][talent]:}}
+            <input type="checkbox" id="{{=talent}}" name="{{=talent}}" value="{{=talent}}" onchange="ajax('{{=URL('default', 'disable_campaign_talent')}}?unitKey={{=session.editUnit['unit_key']}}&talent={{=talent}}', [], function(res) {location.reload(true);});" checked>
+          {{else:}}
+            <input type="checkbox" id="{{=talent}}" name="{{=talent}}" value="{{=talent}}" onchange="ajax('{{=URL('default', 'enable_campaign_talent')}}?unitKey={{=session.editUnit['unit_key']}}&talent={{=talent}}', [], function(res) {location.reload(true);});" unchecked>
+          {{pass}}
+          <label for="{{=talent}}"> {{=talent}} </label>
+          <br>
+        {{pass}}
+      {{pass}}
     {{pass}}
     <button onclick="ajax('{{=URL('default', 'switchTab')}}?myvar=3', [], function(res) {location.reload(true);});">Done</button>
     <br>
