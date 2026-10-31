@@ -267,6 +267,12 @@
   },
   "SpellBooks": {
       "Goblin Army Spells": {
+        "Spider’s Might (1)": "Target 2 friendly units within 12\" get Poison next time they fight in melee.",
+        "Glare (1)": "Target enemy unit within 12\" takes 1 hit with AP(2) and Deadly(3).",
+        "Nuisance (2)": "Target 2 friendly units within 12\" get +1 to defense rolls next time they take hits.",
+        "Death Shroud (2)": "Target enemy unit within 12\" takes 4 hits with AP(2).",
+        "Sneaky (3)": "Target 2 friendly units within 12\" move +3\" next time they Advance, or +6\" next time they Rush/Charge.",
+        "Curse (3)": "Target enemy unit within 18\" takes 1 hit with Blast(12)."
       }
   },
     "CampaignSkills": {
