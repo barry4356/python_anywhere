@@ -11,7 +11,73 @@
       "perks": [
         "{List of special rules}"
       ],
-      "upgrades": [],
+      "upgrades": [
+        {
+          "section": "Replace a Weapon",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Dual Heavy Hand Weapons (A4, AP(1))",
+              "price": 5,
+              "add_weapons": ["Dual Heavy Hand Weapons (A4, AP(1))"],
+              "remove_weapons": ["Heavy Hand Weapon (A3, AP(1))"]
+            },
+            {
+              "name": "Heavy Lance (A3, AP(1), Lance)",
+              "price": 5,
+              "add_weapons": ["Heavy Lance (A3, AP(1), Lance)"],
+              "remove_weapons": ["Heavy Hand Weapon (A3, AP(1))"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (ranged):",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Twin Pistol (9\", A2, AP(1))",
+              "price": 10,
+              "add_weapons": ["Twin Pistol (9\", A2, AP(1))"]
+            },
+            {
+              "name": "Twin Handbow (12\", A2, Rending)",
+              "price": 25,
+              "add_weapons": ["Twin Handbow (12\", A2, Rending)"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with:",
+          "unit_level": true,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Pet Companion(Warning Cry)",
+              "price": 10,
+              "add_perks": ["Warning Cry"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (class):",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Bounty Hunter (Takedown)",
+              "price": 10,
+              "add_perks": ["Takedown"]
+            },
+            {
+              "name": "Cleric (Battle Chant)",
+              "price": 15,
+              "add_perks": ["Battle Chant"]
+            }
+          ]
+        }
+      ],
       "models": 1,
       "height": "",
       "class": ""
