@@ -8,7 +8,226 @@
       "tough": 3,
       "weapons": ["Hand Weapon (A3)"],
       "perks": ["Hero"],
-      "upgrades": [],
+      "upgrades": [
+        {
+          "section": "Replace Hand Weapon:",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Dual Hand Weapons (A4)",
+              "price": 5,
+              "add_weapons": [
+                "Dual Hand Weapons (A4)"
+              ],
+              "remove_weapons": [
+                "Hand Weapon (A3)"
+              ]
+            },
+            {
+              "name": "Lance (A3, Lance)",
+              "price": 5,
+              "add_weapons": [
+                "Lance (A3, Lance)"
+              ],
+              "remove_weapons": [
+                "Hand Weapon (A3)"
+              ]
+            },
+            {
+              "name": "Spear (A3, Counter)",
+              "price": 5,
+              "add_weapons": [
+                "Spear (A3, Counter)"
+              ],
+              "remove_weapons": [
+                "Hand Weapon (A3)"
+              ]
+            },
+            {
+              "name": "Halberd (A3, Rending)",
+              "price": 10,
+              "add_weapons": [
+                "Halberd (A3, Rending)"
+              ],
+              "remove_weapons": [
+                "Hand Weapon (A3)"
+              ]
+            },
+            {
+              "name": "Great Weapon (A3, AP(2))",
+              "price": 10,
+              "add_weapons": [
+                "Great Weapon (A3, AP(2))"
+              ],
+              "remove_weapons": [
+                "Hand Weapon (A3)"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with:",
+          "unit_level": true,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Leader Shortbow (18\", A2)",
+              "price": 10,
+              "add_weapons": [
+                "Leader Shortbow (18\", A2)"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with:",
+          "unit_level": true,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Pet Cave-Beast (Warning Cry)",
+              "price": 10,
+              "add_perks": [
+                "Warning Cry"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (clan):",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Cave-Clan (Furious)",
+              "price": 5,
+              "add_perks": [
+                "Furious"
+              ]
+            },
+            {
+              "name": "Forest-Clan (Strider)",
+              "price": 5,
+              "add_perks": [
+                "Strider"
+              ]
+            },
+            {
+              "name": "Wolf-Clan (Fearless)",
+              "price": 5,
+              "add_perks": [
+                "Fearless"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one:",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Pathfinder (Camouflage)",
+              "price": 25,
+              "add_perks": [
+                "Camouflage"
+              ]
+            },
+            {
+              "name": "Army Standard Bearer (Fear(3))",
+              "price": 30,
+              "add_perks": [
+                "Fear(3)"
+              ]
+            },
+            {
+              "name": "Brewer (Magic Potions)",
+              "price": 35,
+              "add_perks": [
+                "Magic Potions"
+              ]
+            },
+            {
+              "name": "Big Boss (Instigator)",
+              "price": 45,
+              "add_perks": [
+                "Instigator"
+              ]
+            },
+            {
+              "name": "Shaman (Caster(2))",
+              "price": 45,
+              "add_perks": [
+                "Caster(2)"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (mount):",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Wolf (Heavy Bite (A1, AP(1)), Fast)",
+              "price": 10,
+              "add_weapons": [
+                "Heavy Bite (A1, AP(1))"
+              ],
+              "add_perks": [
+                "Fast"
+              ]
+            },
+            {
+              "name": "Spider (Toxic Fangs (A1, Poison), Fast, Strider)",
+              "price": 10,
+              "add_weapons": [
+                "Toxic Fangs (A1, Poison)"
+              ],
+              "add_perks": [
+                "Fast",
+                "Strider"
+              ]
+            },
+            {
+              "name": "Cave-Beast (Vicious Bites (A1, Rending), Boing, Fast)",
+              "price": 15,
+              "add_weapons": [
+                "Vicious Bites (A1, Rending)"
+              ],
+              "add_perks": [
+                "Boing",
+                "Fast"
+              ]
+            },
+            {
+              "name": "Great Spider (Toxic Fangs (A4, Poison), Fast, Strider, Tough(3))",
+              "price": 45,
+              "add_weapons": [
+                "Toxic Fangs (A4, Poison)"
+              ],
+              "add_perks": [
+                "Fast",
+                "Strider",
+                "Tough(3)"
+              ]
+            },
+            {
+              "name": "Great Cave-Beast (Vicious Bites (A3, Rending), Boing, Fast, Tough(3))",
+              "price": 55,
+              "add_weapons": [
+                "Vicious Bites (A3, Rending)"
+              ],
+              "add_perks": [
+                "Boing",
+                "Fast",
+                "Tough(3)"
+              ]
+            }
+          ]
+        }
+      ],
       "models": 1,
       "height": "",
       "class": "Hero"
