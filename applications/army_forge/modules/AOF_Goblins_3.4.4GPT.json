@@ -1,0 +1,1209 @@
+{
+  "Units": {
+    "Goblin Leader": {
+      "base_points": 25,
+      "quality": 5,
+      "defense": 5,
+      "tough": [
+        {
+          "section": "Replace Hand Weapon:",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Dual Hand Weapons (A4)",
+              "price": 5,
+              "add_weapons": [
+                "Dual Hand Weapons (A4)"
+              ],
+              "remove_weapons": [
+                "Hand Weapon (A3)"
+              ]
+            },
+            {
+              "name": "Lance (A3, Lance)",
+              "price": 5,
+              "add_weapons": [
+                "Lance (A3, Lance)"
+              ],
+              "remove_weapons": [
+                "Hand Weapon (A3)"
+              ]
+            },
+            {
+              "name": "Spear (A3, Counter)",
+              "price": 5,
+              "add_weapons": [
+                "Spear (A3, Counter)"
+              ],
+              "remove_weapons": [
+                "Hand Weapon (A3)"
+              ]
+            },
+            {
+              "name": "Halberd (A3, Rending)",
+              "price": 10,
+              "add_weapons": [
+                "Halberd (A3, Rending)"
+              ],
+              "remove_weapons": [
+                "Hand Weapon (A3)"
+              ]
+            },
+            {
+              "name": "Great Weapon (A3, AP(2))",
+              "price": 10,
+              "add_weapons": [
+                "Great Weapon (A3, AP(2))"
+              ],
+              "remove_weapons": [
+                "Hand Weapon (A3)"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with:",
+          "unit_level": true,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Leader Shortbow (18\", A2)",
+              "price": 10,
+              "add_weapons": [
+                "Leader Shortbow (18\", A2)"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with:",
+          "unit_level": true,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Pet Cave-Beast (Warning Cry)",
+              "price": 10,
+              "add_perks": [
+                "Warning Cry"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (clan):",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Cave-Clan (Furious)",
+              "price": 5,
+              "add_perks": [
+                "Furious"
+              ]
+            },
+            {
+              "name": "Forest-Clan (Strider)",
+              "price": 5,
+              "add_perks": [
+                "Strider"
+              ]
+            },
+            {
+              "name": "Wolf-Clan (Fearless)",
+              "price": 5,
+              "add_perks": [
+                "Fearless"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one:",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Pathfinder (Camouflage)",
+              "price": 25,
+              "add_perks": [
+                "Camouflage"
+              ]
+            },
+            {
+              "name": "Army Standard Bearer (Fear(3))",
+              "price": 30,
+              "add_perks": [
+                "Fear(3)"
+              ]
+            },
+            {
+              "name": "Brewer (Magic Potions)",
+              "price": 35,
+              "add_perks": [
+                "Magic Potions"
+              ]
+            },
+            {
+              "name": "Big Boss (Instigator)",
+              "price": 45,
+              "add_perks": [
+                "Instigator"
+              ]
+            },
+            {
+              "name": "Shaman (Caster(2))",
+              "price": 45,
+              "add_perks": [
+                "Caster(2)"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (mount):",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Wolf (Heavy Bite (A1, AP(1)), Fast)",
+              "price": 10,
+              "add_weapons": [
+                "Heavy Bite (A1, AP(1))"
+              ],
+              "add_perks": [
+                "Fast"
+              ]
+            },
+            {
+              "name": "Spider (Toxic Fangs (A1, Poison), Fast, Strider)",
+              "price": 10,
+              "add_weapons": [
+                "Toxic Fangs (A1, Poison)"
+              ],
+              "add_perks": [
+                "Fast",
+                "Strider"
+              ]
+            },
+            {
+              "name": "Cave-Beast (Vicious Bites (A1, Rending), Boing, Fast)",
+              "price": 15,
+              "add_weapons": [
+                "Vicious Bites (A1, Rending)"
+              ],
+              "add_perks": [
+                "Boing",
+                "Fast"
+              ]
+            },
+            {
+              "name": "Great Spider (Toxic Fangs (A4, Poison), Fast, Strider, Tough(3))",
+              "price": 45,
+              "add_weapons": [
+                "Toxic Fangs (A4, Poison)"
+              ],
+              "add_perks": [
+                "Fast",
+                "Strider",
+                "Tough(3)"
+              ]
+            },
+            {
+              "name": "Great Cave-Beast (Vicious Bites (A3, Rending), Boing, Fast, Tough(3))",
+              "price": 55,
+              "add_weapons": [
+                "Vicious Bites (A3, Rending)"
+              ],
+              "add_perks": [
+                "Boing",
+                "Fast",
+                "Tough(3)"
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        "Hand Weapon (A3)"
+      ],
+      "perks": [
+        "Hero",
+        "Tough([{'section': 'Replace Hand Weapon:', 'unit_level': True, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Dual Hand Weapons (A4)', 'price': 5, 'add_weapons': ['Dual Hand Weapons (A4)'], 'remove_weapons': ['Hand Weapon (A3)']}, {'name': 'Lance (A3, Lance)', 'price': 5, 'add_weapons': ['Lance (A3, Lance)'], 'remove_weapons': ['Hand Weapon (A3)']}, {'name': 'Spear (A3, Counter)', 'price': 5, 'add_weapons': ['Spear (A3, Counter)'], 'remove_weapons': ['Hand Weapon (A3)']}, {'name': 'Halberd (A3, Rending)', 'price': 10, 'add_weapons': ['Halberd (A3, Rending)'], 'remove_weapons': ['Hand Weapon (A3)']}, {'name': 'Great Weapon (A3, AP(2))', 'price': 10, 'add_weapons': ['Great Weapon (A3, AP(2))'], 'remove_weapons': ['Hand Weapon (A3)']}]}, {'section': 'Upgrade with:', 'unit_level': True, 'type': 'CHOOSE_MULTIPLE', 'choices': [{'name': 'Leader Shortbow (18\", A2)', 'price': 10, 'add_weapons': ['Leader Shortbow (18\", A2)']}]}, {'section': 'Upgrade with:', 'unit_level': True, 'type': 'CHOOSE_MULTIPLE', 'choices': [{'name': 'Pet Cave-Beast (Warning Cry)', 'price': 10, 'add_perks': ['Warning Cry']}]}, {'section': 'Upgrade with one (clan):', 'unit_level': True, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Cave-Clan (Furious)', 'price': 5, 'add_perks': ['Furious']}, {'name': 'Forest-Clan (Strider)', 'price': 5, 'add_perks': ['Strider']}, {'name': 'Wolf-Clan (Fearless)', 'price': 5, 'add_perks': ['Fearless']}]}, {'section': 'Upgrade with one:', 'unit_level': True, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Pathfinder (Camouflage)', 'price': 25, 'add_perks': ['Camouflage']}, {'name': 'Army Standard Bearer (Fear(3))', 'price': 30, 'add_perks': ['Fear(3)']}, {'name': 'Brewer (Magic Potions)', 'price': 35, 'add_perks': ['Magic Potions']}, {'name': 'Big Boss (Instigator)', 'price': 45, 'add_perks': ['Instigator']}, {'name': 'Shaman (Caster(2))', 'price': 45, 'add_perks': ['Caster(2)']}]}, {'section': 'Upgrade with one (mount):', 'unit_level': True, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Wolf (Heavy Bite (A1, AP(1)), Fast)', 'price': 10, 'add_weapons': ['Heavy Bite (A1, AP(1))'], 'add_perks': ['Fast']}, {'name': 'Spider (Toxic Fangs (A1, Poison), Fast, Strider)', 'price': 10, 'add_weapons': ['Toxic Fangs (A1, Poison)'], 'add_perks': ['Fast', 'Strider']}, {'name': 'Cave-Beast (Vicious Bites (A1, Rending), Boing, Fast)', 'price': 15, 'add_weapons': ['Vicious Bites (A1, Rending)'], 'add_perks': ['Boing', 'Fast']}, {'name': 'Great Spider (Toxic Fangs (A4, Poison), Fast, Strider, Tough(3))', 'price': 45, 'add_weapons': ['Toxic Fangs (A4, Poison)'], 'add_perks': ['Fast', 'Strider', 'Tough(3)']}, {'name': 'Great Cave-Beast (Vicious Bites (A3, Rending), Boing, Fast, Tough(3))', 'price': 55, 'add_weapons': ['Vicious Bites (A3, Rending)'], 'add_perks': ['Boing', 'Fast', 'Tough(3)']}]}])"
+      ],
+      "upgrades": 3,
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Troll Boss": {
+      "base_points": 100,
+      "quality": 4,
+      "defense": 4,
+      "tough": [
+        {
+          "section": "Replace Heavy Hand Weapon:",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Heavy Great Weapon (A4, AP(4))",
+              "price": 10,
+              "add_weapons": [
+                "Heavy Great Weapon (A4, AP(4))"
+              ],
+              "remove_weapons": [
+                "Heavy Hand Weapon (A4, AP(2))"
+              ]
+            },
+            {
+              "name": "Throw Stones (12\", A6, AP(1)), Bash (A4)",
+              "price": 20,
+              "add_weapons": [
+                "Throw Stones (12\", A6, AP(1))",
+                "Bash (A4)"
+              ],
+              "remove_weapons": [
+                "Heavy Hand Weapon (A4, AP(2))"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (breed):",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Cave Breed (Furious, Poison in Melee)",
+              "price": 10,
+              "add_perks": [
+                "Furious",
+                "Poison in Melee"
+              ]
+            },
+            {
+              "name": "Forest Breed (Scout, Strider)",
+              "price": 20,
+              "add_perks": [
+                "Scout",
+                "Strider"
+              ]
+            },
+            {
+              "name": "Stone Breed (Defense(1), Fearless)",
+              "price": 20,
+              "add_perks": [
+                "Defense(1)",
+                "Fearless"
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        "Heavy Hand Weapon (A4, AP(2))"
+      ],
+      "perks": [
+        "Hero",
+        "Regeneration",
+        "Tough([{'section': 'Replace Heavy Hand Weapon:', 'unit_level': True, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Heavy Great Weapon (A4, AP(4))', 'price': 10, 'add_weapons': ['Heavy Great Weapon (A4, AP(4))'], 'remove_weapons': ['Heavy Hand Weapon (A4, AP(2))']}, {'name': 'Throw Stones (12\", A6, AP(1)), Bash (A4)', 'price': 20, 'add_weapons': ['Throw Stones (12\", A6, AP(1))', 'Bash (A4)'], 'remove_weapons': ['Heavy Hand Weapon (A4, AP(2))']}]}, {'section': 'Upgrade with one (breed):', 'unit_level': True, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Cave Breed (Furious, Poison in Melee)', 'price': 10, 'add_perks': ['Furious', 'Poison in Melee']}, {'name': 'Forest Breed (Scout, Strider)', 'price': 20, 'add_perks': ['Scout', 'Strider']}, {'name': 'Stone Breed (Defense(1), Fearless)', 'price': 20, 'add_perks': ['Defense(1)', 'Fearless']}]}])"
+      ],
+      "upgrades": 6,
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Shaman Circle": {
+      "base_points": 175,
+      "quality": 5,
+      "defense": 6,
+      "tough": [
+        {
+          "section": "Upgrade all models with one (clan):",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Forest-Clan (Strider)",
+              "price": 5,
+              "add_perks": [
+                "Strider"
+              ]
+            },
+            {
+              "name": "Cave-Clan (Furious)",
+              "price": 5,
+              "add_perks": [
+                "Furious"
+              ]
+            },
+            {
+              "name": "Wolf-Clan (Fearless)",
+              "price": 5,
+              "add_perks": [
+                "Fearless"
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        "5x Hand Weapon (A1)",
+        "5x Magic Staff (12\", A2, Rending)"
+      ],
+      "perks": [
+        "Shaman Circle",
+        "Tough([{'section': 'Upgrade all models with one (clan):', 'unit_level': False, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Forest-Clan (Strider)', 'price': 5, 'add_perks': ['Strider']}, {'name': 'Cave-Clan (Furious)', 'price': 5, 'add_perks': ['Furious']}, {'name': 'Wolf-Clan (Fearless)', 'price': 5, 'add_perks': ['Fearless']}]}])"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Warriors": {
+      "base_points": 50,
+      "quality": 5,
+      "defense": 6,
+      "tough": [
+        {
+          "section": "Upgrade all models with one (clan):",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Forest-Clan (Strider)",
+              "price": 5,
+              "add_perks": [
+                "Strider"
+              ]
+            },
+            {
+              "name": "Cave-Clan (Furious)",
+              "price": 10,
+              "add_perks": [
+                "Furious"
+              ]
+            },
+            {
+              "name": "Wolf-Clan (Fearless)",
+              "price": 15,
+              "add_perks": [
+                "Fearless"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade up to three models with one:",
+          "unit_level": false,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Sergeant",
+              "price": 5,
+              "add_perks": [
+                "Sergeant"
+              ]
+            },
+            {
+              "name": "Musician",
+              "price": 10,
+              "add_perks": [
+                "Musician"
+              ]
+            },
+            {
+              "name": "Banner",
+              "price": 15,
+              "add_perks": [
+                "Banner"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Replace all Hand Weapons:",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Halberd (A1, Rending)",
+              "price": 25,
+              "add_weapons": [
+                "Halberd (A1, Rending)"
+              ],
+              "remove_weapons": [
+                "Hand Weapon (A1)"
+              ]
+            },
+            {
+              "name": "Spear (A1, Counter)",
+              "price": 35,
+              "add_weapons": [
+                "Spear (A1, Counter)"
+              ],
+              "remove_weapons": [
+                "Hand Weapon (A1)"
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        "10x Hand Weapon (A1)"
+      ],
+      "perks": [
+        "Tough([{'section': 'Upgrade all models with one (clan):', 'unit_level': False, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Forest-Clan (Strider)', 'price': 5, 'add_perks': ['Strider']}, {'name': 'Cave-Clan (Furious)', 'price': 10, 'add_perks': ['Furious']}, {'name': 'Wolf-Clan (Fearless)', 'price': 15, 'add_perks': ['Fearless']}]}, {'section': 'Upgrade up to three models with one:', 'unit_level': False, 'type': 'CHOOSE_MULTIPLE', 'choices': [{'name': 'Sergeant', 'price': 5, 'add_perks': ['Sergeant']}, {'name': 'Musician', 'price': 10, 'add_perks': ['Musician']}, {'name': 'Banner', 'price': 15, 'add_perks': ['Banner']}]}, {'section': 'Replace all Hand Weapons:', 'unit_level': False, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Halberd (A1, Rending)', 'price': 25, 'add_weapons': ['Halberd (A1, Rending)'], 'remove_weapons': ['Hand Weapon (A1)']}, {'name': 'Spear (A1, Counter)', 'price': 35, 'add_weapons': ['Spear (A1, Counter)'], 'remove_weapons': ['Hand Weapon (A1)']}]}])"
+      ],
+      "upgrades": [],
+      "models": 10,
+      "height": "",
+      "class": ""
+    },
+    "Cave-Beast Herd": {
+      "base_points": 80,
+      "quality": 5,
+      "defense": 5,
+      "tough": [
+        {
+          "section": "Upgrade all models with:",
+          "unit_level": false,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Goblin Herder (Fearless, Furious)",
+              "price": 15,
+              "add_perks": [
+                "Fearless",
+                "Furious"
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        "5x Vicious Jaws (A2, Rending)"
+      ],
+      "perks": [
+        "Boing",
+        "Tough([{'section': 'Upgrade all models with:', 'unit_level': False, 'type': 'CHOOSE_MULTIPLE', 'choices': [{'name': 'Goblin Herder (Fearless, Furious)', 'price': 15, 'add_perks': ['Fearless', 'Furious']}]}])"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Shroom-Sniffers": {
+      "base_points": 60,
+      "quality": 5,
+      "defense": 6,
+      "tough": 0,
+      "weapons": [
+        "5x Hand Weapon (A1, Poison)"
+      ],
+      "perks": [
+        "Furious",
+        "Power Shrooms"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Nasty Assassins": {
+      "base_points": 45,
+      "quality": 5,
+      "defense": 6,
+      "tough": [
+        {
+          "section": "Upgrade all models with one:",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Takedown",
+              "price": 35,
+              "add_perks": [
+                "Takedown"
+              ]
+            },
+            {
+              "name": "Surprise Attack(1)",
+              "price": 45,
+              "add_perks": [
+                "Surprise Attack(1)"
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        "3x Toxin Daggers (A2, Poison)"
+      ],
+      "perks": [
+        "Nasty",
+        "Stealth",
+        "Strider",
+        "Tough([{'section': 'Upgrade all models with one:', 'unit_level': False, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Takedown', 'price': 35, 'add_perks': ['Takedown']}, {'name': 'Surprise Attack(1)', 'price': 45, 'add_perks': ['Surprise Attack(1)']}]}])"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "",
+      "class": ""
+    },
+    "Fanatics": {
+      "base_points": 80,
+      "quality": 5,
+      "defense": 6,
+      "tough": 0,
+      "weapons": [
+        "3x Ball & Chain (A1, AP(1))"
+      ],
+      "perks": [
+        "Boing",
+        "Destructive"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "",
+      "class": ""
+    },
+    "Pester Swarms": {
+      "base_points": 45,
+      "quality": 6,
+      "defense": 6,
+      "tough": 0,
+      "weapons": [
+        "3x Swarm Attacks (A3)"
+      ],
+      "perks": [
+        "Scout",
+        "Strider"
+      ],
+      "upgrades": 3,
+      "models": 3,
+      "height": "",
+      "class": ""
+    },
+    "Trolls": {
+      "base_points": 155,
+      "quality": 4,
+      "defense": 4,
+      "tough": [
+        {
+          "section": "Replace any Heavy Hand Weapon:",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Heavy Great Weapon (A3, AP(3))",
+              "price": 10,
+              "add_weapons": [
+                "Heavy Great Weapon (A3, AP(3))"
+              ],
+              "remove_weapons": [
+                "Heavy Hand Weapon (A3, AP(1))"
+              ]
+            },
+            {
+              "name": "Throw Rocks (12\", A3, AP(1)), Bash (A2)",
+              "price": 10,
+              "add_weapons": [
+                "Throw Rocks (12\", A3, AP(1))",
+                "Bash (A2)"
+              ],
+              "remove_weapons": [
+                "Heavy Hand Weapon (A3, AP(1))"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade all models with one (breed):",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Cave Breed (Furious, Poison in Melee)",
+              "price": 25,
+              "add_perks": [
+                "Furious",
+                "Poison in Melee"
+              ]
+            },
+            {
+              "name": "Forest Breed (Scout, Strider)",
+              "price": 25,
+              "add_perks": [
+                "Scout",
+                "Strider"
+              ]
+            },
+            {
+              "name": "Stone Breed (Defense(1), Fearless)",
+              "price": 30,
+              "add_perks": [
+                "Defense(1)",
+                "Fearless"
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        "3x Heavy Hand Weapon (A3, AP(1))"
+      ],
+      "perks": [
+        "Regeneration",
+        "Tough([{'section': 'Replace any Heavy Hand Weapon:', 'unit_level': False, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Heavy Great Weapon (A3, AP(3))', 'price': 10, 'add_weapons': ['Heavy Great Weapon (A3, AP(3))'], 'remove_weapons': ['Heavy Hand Weapon (A3, AP(1))']}, {'name': 'Throw Rocks (12\", A3, AP(1)), Bash (A2)', 'price': 10, 'add_weapons': ['Throw Rocks (12\", A3, AP(1))', 'Bash (A2)'], 'remove_weapons': ['Heavy Hand Weapon (A3, AP(1))']}]}, {'section': 'Upgrade all models with one (breed):', 'unit_level': False, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Cave Breed (Furious, Poison in Melee)', 'price': 25, 'add_perks': ['Furious', 'Poison in Melee']}, {'name': 'Forest Breed (Scout, Strider)', 'price': 25, 'add_perks': ['Scout', 'Strider']}, {'name': 'Stone Breed (Defense(1), Fearless)', 'price': 30, 'add_perks': ['Defense(1)', 'Fearless']}]}])"
+      ],
+      "upgrades": 3,
+      "models": 3,
+      "height": "",
+      "class": ""
+    },
+    "Shooters": {
+      "base_points": 45,
+      "quality": 5,
+      "defense": 6,
+      "tough": [
+        {
+          "section": "Upgrade all models with one (clan):",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Forest-Clan (Strider)",
+              "price": 5,
+              "add_perks": [
+                "Strider"
+              ]
+            },
+            {
+              "name": "Cave-Clan (Furious)",
+              "price": 5,
+              "add_perks": [
+                "Furious"
+              ]
+            },
+            {
+              "name": "Wolf-Clan (Fearless)",
+              "price": 5,
+              "add_perks": [
+                "Fearless"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade up to three models with one:",
+          "unit_level": false,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Sergeant",
+              "price": 5,
+              "add_perks": [
+                "Sergeant"
+              ]
+            },
+            {
+              "name": "Musician",
+              "price": 10,
+              "add_perks": [
+                "Musician"
+              ]
+            },
+            {
+              "name": "Banner",
+              "price": 15,
+              "add_perks": [
+                "Banner"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Replace all Shortbows:",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Crossbow (24\", A1, Rending)",
+              "price": 35,
+              "add_weapons": [
+                "Crossbow (24\", A1, Rending)"
+              ],
+              "remove_weapons": [
+                "Shortbow (18\", A1)"
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        "5x Hand Weapon (A1)",
+        "5x Shortbow (18\", A1)"
+      ],
+      "perks": [
+        "Tough([{'section': 'Upgrade all models with one (clan):', 'unit_level': False, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Forest-Clan (Strider)', 'price': 5, 'add_perks': ['Strider']}, {'name': 'Cave-Clan (Furious)', 'price': 5, 'add_perks': ['Furious']}, {'name': 'Wolf-Clan (Fearless)', 'price': 5, 'add_perks': ['Fearless']}]}, {'section': 'Upgrade up to three models with one:', 'unit_level': False, 'type': 'CHOOSE_MULTIPLE', 'choices': [{'name': 'Sergeant', 'price': 5, 'add_perks': ['Sergeant']}, {'name': 'Musician', 'price': 10, 'add_perks': ['Musician']}, {'name': 'Banner', 'price': 15, 'add_perks': ['Banner']}]}, {'section': 'Replace all Shortbows:', 'unit_level': False, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Crossbow (24\", A1, Rending)', 'price': 35, 'add_weapons': ['Crossbow (24\", A1, Rending)'], 'remove_weapons': ['Shortbow (18\", A1)']}]}])"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Beast Riders": {
+      "base_points": 40,
+      "quality": 5,
+      "defense": 5,
+      "tough": [
+        {
+          "section": "Upgrade up to three models with one:",
+          "unit_level": false,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Sergeant",
+              "price": 5,
+              "add_perks": [
+                "Sergeant"
+              ]
+            },
+            {
+              "name": "Musician",
+              "price": 10,
+              "add_perks": [
+                "Musician"
+              ]
+            },
+            {
+              "name": "Banner",
+              "price": 15,
+              "add_perks": [
+                "Banner"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Replace all Hand Weapons:",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Lance (A1, Lance)",
+              "price": 10,
+              "add_weapons": [
+                "Lance (A1, Lance)"
+              ],
+              "remove_weapons": [
+                "Hand Weapon (A1)"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade all models with:",
+          "unit_level": false,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Shortbow (18\", A1)",
+              "price": 20,
+              "add_weapons": [
+                "Shortbow (18\", A1)"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade all models with one (rider type):",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Spider Riders (Toxic Fangs (A1, Poison), Strider)",
+              "price": 20,
+              "add_weapons": [
+                "Toxic Fangs (A1, Poison)"
+              ],
+              "add_perks": [
+                "Strider"
+              ]
+            },
+            {
+              "name": "Wolf Riders (Heavy Bite (A1, AP(1)), Fearless)",
+              "price": 25,
+              "add_weapons": [
+                "Heavy Bite (A1, AP(1))"
+              ],
+              "add_perks": [
+                "Fearless"
+              ]
+            },
+            {
+              "name": "Cave-Beast Riders (Vicious Jaws (A1, Rending), Boing, Furious)",
+              "price": 45,
+              "add_weapons": [
+                "Vicious Jaws (A1, Rending)"
+              ],
+              "add_perks": [
+                "Boing",
+                "Furious"
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        "5x Hand Weapon (A1)"
+      ],
+      "perks": [
+        "Fast",
+        "Tough([{'section': 'Upgrade up to three models with one:', 'unit_level': False, 'type': 'CHOOSE_MULTIPLE', 'choices': [{'name': 'Sergeant', 'price': 5, 'add_perks': ['Sergeant']}, {'name': 'Musician', 'price': 10, 'add_perks': ['Musician']}, {'name': 'Banner', 'price': 15, 'add_perks': ['Banner']}]}, {'section': 'Replace all Hand Weapons:', 'unit_level': False, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Lance (A1, Lance)', 'price': 10, 'add_weapons': ['Lance (A1, Lance)'], 'remove_weapons': ['Hand Weapon (A1)']}]}, {'section': 'Upgrade all models with:', 'unit_level': False, 'type': 'CHOOSE_MULTIPLE', 'choices': [{'name': 'Shortbow (18\", A1)', 'price': 20, 'add_weapons': ['Shortbow (18\", A1)']}]}, {'section': 'Upgrade all models with one (rider type):', 'unit_level': False, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Spider Riders (Toxic Fangs (A1, Poison), Strider)', 'price': 20, 'add_weapons': ['Toxic Fangs (A1, Poison)'], 'add_perks': ['Strider']}, {'name': 'Wolf Riders (Heavy Bite (A1, AP(1)), Fearless)', 'price': 25, 'add_weapons': ['Heavy Bite (A1, AP(1))'], 'add_perks': ['Fearless']}, {'name': 'Cave-Beast Riders (Vicious Jaws (A1, Rending), Boing, Furious)', 'price': 45, 'add_weapons': ['Vicious Jaws (A1, Rending)'], 'add_perks': ['Boing', 'Furious']}]}])"
+      ],
+      "upgrades": [],
+      "models": 5,
+      "height": "",
+      "class": ""
+    },
+    "Giant Cave-Beast": {
+      "base_points": 265,
+      "quality": 4,
+      "defense": 3,
+      "tough": 0,
+      "weapons": [
+        "Giant Jaws (A8, Rending)",
+        "Stomp (A4, AP(1))"
+      ],
+      "perks": [
+        "Boing",
+        "Fear(2)"
+      ],
+      "upgrades": 12,
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Giant Spider": {
+      "base_points": 255,
+      "quality": 4,
+      "defense": 3,
+      "tough": [
+        {
+          "section": "Replace Shortbow Crew:",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Spider Shrine (Caster(2))",
+              "price": 10,
+              "remove_weapons": [
+                "Shortbow Crew (18\", A6)"
+              ],
+              "add_perks": [
+                "Caster(2)"
+              ]
+            },
+            {
+              "name": "Web Catapult (24\", A2, Blast(3), Indirect)",
+              "price": 25,
+              "add_weapons": [
+                "Web Catapult (24\", A2, Blast(3), Indirect)"
+              ],
+              "remove_weapons": [
+                "Shortbow Crew (18\", A6)"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Replace Toxic Fangs:",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Giant Stinger (A1, AP(2), Deadly(3)), Fangs (A4, Poison)",
+              "price": 10,
+              "add_weapons": [
+                "Giant Stinger (A1, AP(2), Deadly(3))",
+                "Fangs (A4, Poison)"
+              ],
+              "remove_weapons": [
+                "Toxic Fangs (A6, Poison)"
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        "Shortbow Crew (18\", A6)",
+        "Toxic Fangs (A6, Poison)",
+        "Stomp (A4, AP(1))"
+      ],
+      "perks": [
+        "Fear(2)",
+        "Strider",
+        "Tough([{'section': 'Replace Shortbow Crew:', 'unit_level': True, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Spider Shrine (Caster(2))', 'price': 10, 'remove_weapons': ['Shortbow Crew (18\", A6)'], 'add_perks': ['Caster(2)']}, {'name': 'Web Catapult (24\", A2, Blast(3), Indirect)', 'price': 25, 'add_weapons': ['Web Catapult (24\", A2, Blast(3), Indirect)'], 'remove_weapons': ['Shortbow Crew (18\", A6)']}]}, {'section': 'Replace Toxic Fangs:', 'unit_level': True, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Giant Stinger (A1, AP(2), Deadly(3)), Fangs (A4, Poison)', 'price': 10, 'add_weapons': ['Giant Stinger (A1, AP(2), Deadly(3))', 'Fangs (A4, Poison)'], 'remove_weapons': ['Toxic Fangs (A6, Poison)']}]}])"
+      ],
+      "upgrades": 12,
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Troll Giant": {
+      "base_points": 270,
+      "quality": 4,
+      "defense": 3,
+      "tough": [
+        {
+          "section": "Replace Giant Club:",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Giant Hammer (A2, AP(4), Deadly(3))",
+              "price": 5,
+              "add_weapons": [
+                "Giant Hammer (A2, AP(4), Deadly(3))"
+              ],
+              "remove_weapons": [
+                "Giant Club (A6, AP(2))"
+              ]
+            },
+            {
+              "name": "Throw Boulders (18\", A2, AP(1), Blast(3)), Bash (A4)",
+              "price": 15,
+              "add_weapons": [
+                "Throw Boulders (18\", A2, AP(1), Blast(3))",
+                "Bash (A4)"
+              ],
+              "remove_weapons": [
+                "Giant Club (A6, AP(2))"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (breed):",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Cave Breed (Furious, Poison in Melee)",
+              "price": 30,
+              "add_perks": [
+                "Furious",
+                "Poison in Melee"
+              ]
+            },
+            {
+              "name": "Forest Breed (Scout, Strider)",
+              "price": 35,
+              "add_perks": [
+                "Scout",
+                "Strider"
+              ]
+            },
+            {
+              "name": "Stone Breed (Defense(1), Fearless)",
+              "price": 75,
+              "add_perks": [
+                "Defense(1)",
+                "Fearless"
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        "Giant Club (A6, AP(2))",
+        "Stomp (A4, AP(1))"
+      ],
+      "perks": [
+        "Fear(2)",
+        "Regeneration",
+        "Tough([{'section': 'Replace Giant Club:', 'unit_level': True, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Giant Hammer (A2, AP(4), Deadly(3))', 'price': 5, 'add_weapons': ['Giant Hammer (A2, AP(4), Deadly(3))'], 'remove_weapons': ['Giant Club (A6, AP(2))']}, {'name': 'Throw Boulders (18\", A2, AP(1), Blast(3)), Bash (A4)', 'price': 15, 'add_weapons': ['Throw Boulders (18\", A2, AP(1), Blast(3))', 'Bash (A4)'], 'remove_weapons': ['Giant Club (A6, AP(2))']}]}, {'section': 'Upgrade with one (breed):', 'unit_level': True, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Cave Breed (Furious, Poison in Melee)', 'price': 30, 'add_perks': ['Furious', 'Poison in Melee']}, {'name': 'Forest Breed (Scout, Strider)', 'price': 35, 'add_perks': ['Scout', 'Strider']}, {'name': 'Stone Breed (Defense(1), Fearless)', 'price': 75, 'add_perks': ['Defense(1)', 'Fearless']}]}])"
+      ],
+      "upgrades": 12,
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Wolf Chariot": {
+      "base_points": 110,
+      "quality": 5,
+      "defense": 3,
+      "tough": [
+        {
+          "section": "Replace Spear Crew:",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Shortbow Crew (18\", A6)",
+              "price": 15,
+              "add_weapons": [
+                "Shortbow Crew (18\", A6)"
+              ],
+              "remove_weapons": [
+                "Spear Crew (A2, Lance)"
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        "Spear Crew (A2, Lance)",
+        "Bites (A2, AP(1))"
+      ],
+      "perks": [
+        "Fast",
+        "Fearless",
+        "Impact(4)",
+        "Tough([{'section': 'Replace Spear Crew:', 'unit_level': True, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Shortbow Crew (18\", A6)', 'price': 15, 'add_weapons': ['Shortbow Crew (18\", A6)'], 'remove_weapons': ['Spear Crew (A2, Lance)']}]}])"
+      ],
+      "upgrades": 6,
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Pump Wagon": {
+      "base_points": 110,
+      "quality": 5,
+      "defense": 3,
+      "tough": [
+        {
+          "section": "Replace Crew Attacks:",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Throwing Weapons Crew (12\", A6)",
+              "price": 10,
+              "add_weapons": [
+                "Throwing Weapons Crew (12\", A6)"
+              ],
+              "remove_weapons": [
+                "Crew Attacks (A2)"
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        "Crew Attacks (A2)",
+        "Roller (A2, AP(1))"
+      ],
+      "perks": [
+        "Boing",
+        "Fear(1)",
+        "Impact(4)",
+        "Tough([{'section': 'Replace Crew Attacks:', 'unit_level': True, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Throwing Weapons Crew (12\", A6)', 'price': 10, 'add_weapons': ['Throwing Weapons Crew (12\", A6)'], 'remove_weapons': ['Crew Attacks (A2)']}]}])"
+      ],
+      "upgrades": 6,
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Pump Plane": {
+      "base_points": 120,
+      "quality": 5,
+      "defense": 3,
+      "tough": 0,
+      "weapons": [
+        "Crew Attacks (A3)"
+      ],
+      "perks": [
+        "Bombing Run(1)",
+        "Fast",
+        "Flying"
+      ],
+      "upgrades": 6,
+      "models": 1,
+      "height": "",
+      "class": ""
+    },
+    "Goblin Artillery": {
+      "base_points": 60,
+      "quality": 5,
+      "defense": 5,
+      "tough": [
+        {
+          "section": "Replace Scrap-Shooter:",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Bolt Thrower (30\", A1, AP(3), Deadly(6))",
+              "price": 30,
+              "add_weapons": [
+                "Bolt Thrower (30\", A1, AP(3), Deadly(6))"
+              ],
+              "remove_weapons": [
+                "Scrap-Shooter (18\", A6, AP(1))"
+              ]
+            },
+            {
+              "name": "Light Stone Thrower (30\", A1, AP(2), Blast(6), Indirect)",
+              "price": 45,
+              "add_weapons": [
+                "Light Stone Thrower (30\", A1, AP(2), Blast(6), Indirect)"
+              ],
+              "remove_weapons": [
+                "Scrap-Shooter (18\", A6, AP(1))"
+              ]
+            },
+            {
+              "name": "Goblin Slingshot (24\", A1, AP(1), Deadly(3), Indirect, Sniper)",
+              "price": 65,
+              "add_weapons": [
+                "Goblin Slingshot (24\", A1, AP(1), Deadly(3), Indirect, Sniper)"
+              ],
+              "remove_weapons": [
+                "Scrap-Shooter (18\", A6, AP(1))"
+              ]
+            }
+          ]
+        }
+      ],
+      "weapons": [
+        "Scrap-Shooter (18\", A6, AP(1))",
+        "Crew (A3)"
+      ],
+      "perks": [
+        "Entrenched",
+        "Immobile",
+        "Tough([{'section': 'Replace Scrap-Shooter:', 'unit_level': True, 'type': 'CHOOSE_ONE', 'choices': [{'name': 'Bolt Thrower (30\", A1, AP(3), Deadly(6))', 'price': 30, 'add_weapons': ['Bolt Thrower (30\", A1, AP(3), Deadly(6))'], 'remove_weapons': ['Scrap-Shooter (18\", A6, AP(1))']}, {'name': 'Light Stone Thrower (30\", A1, AP(2), Blast(6), Indirect)', 'price': 45, 'add_weapons': ['Light Stone Thrower (30\", A1, AP(2), Blast(6), Indirect)'], 'remove_weapons': ['Scrap-Shooter (18\", A6, AP(1))']}, {'name': 'Goblin Slingshot (24\", A1, AP(1), Deadly(3), Indirect, Sniper)', 'price': 65, 'add_weapons': ['Goblin Slingshot (24\", A1, AP(1), Deadly(3), Indirect, Sniper)'], 'remove_weapons': ['Scrap-Shooter (18\", A6, AP(1))']}]}])"
+      ],
+      "upgrades": 3,
+      "models": 1,
+      "height": "",
+      "class": ""
+    }
+  },
+  "Keywords": {
+    "Boing": "When this unit is activated, you may place all models with this rule in it anywhere within D3+1\" of their position.",
+    "Bombing Run(X)": "Once per activation, when this model moves over enemy units, pick one of them and roll X dice. For each 2+ it takes 3 hits with AP(1).",
+    "Destructive": "This model may move through enemy units. Whenever it does, pick one of them and roll one die. On a 4+ it takes 3 hits with AP(1).",
+    "Instigator": "Once per this unit's activation, before attacking, pick one other friendly unit within 12\", which may move by up to 6\".",
+    "Nasty": "Gets +1 to hit in melee.",
+    "Power Shrooms": "Once per this unit's activation, pick one friendly unit within 12\", which gets +1 to hit next time it fights in melee.",
+    "Shaman Circle": "Pick one model in this unit to have Caster(X), where X is the total number of models with this rule in this unit. If the model is killed, pick another to be the new caster, and transfer all spell tokens to it. The caster loses all unspent spell tokens at the end of the round.",
+    "Surprise Attack(X)": "This model counts as having Ambush, and may be deployed up to 1\" away from enemy units. Once deployed, roll X dice. For each 4+ one enemy unit within 3\" takes 2 hits with AP(1).",
+    "Takedown": "Once per game, when this model attacks in melee, you may pick one model in the unit as its target, and make 1 attack at Quality 2+ with AP(1) and Deadly(3), which is resolved as if it's a unit of 1.",
+    "Warning Cry": "Enemy units using Ambush must be set up over 12\" away from this model."
+  },
+  "SpellBooks": {
+    "Goblins Army Spells": {
+      "Spider’s Might (1)": "Target 2 friendly units within 12\" get Poison next time they fight in melee.",
+      "Glare (1)": "Target enemy unit within 12\" takes 1 hit with AP(2) and Deadly(3).",
+      "Nuisance (2)": "Target 2 friendly units within 12\" get +1 to defense rolls next time they take hits.",
+      "Death Shroud (2)": "Target enemy unit within 12\" takes 4 hits with AP(2).",
+      "Sneaky (3)": "Target 2 friendly units within 12\" move +3\" next time they Advance, or +6\" next time they Rush/Charge.",
+      "Curse (3)": "Target enemy unit within 18\" takes 1 hit with Blast(12)."
+    }
+  }
+}
