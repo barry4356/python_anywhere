@@ -1,0 +1,200 @@
+{
+  "Units": {
+    "High Champion": {
+      "base_points": 50,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "Dual Hand Weapons (A4)"
+      ],
+      "perks": [
+        "Hero",
+        "Tough(3)",
+        "Vale Oath"
+      ],
+      "upgrades": [
+        {
+          "section": "Upgrade with one",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Captain (Melee Shrouding Aura)",
+              "price": 5,
+              "add_perks": ["Melee Shrouding Aura"]
+            },
+            {
+              "name": "Crusader (Enhanced Vale Oath Aura)",
+              "price": 15,
+              "add_perks": ["Enhanced Vale Oath Aura"]
+            },
+            {
+              "name": "Vanguard Master (Rapid Rush Aura)",
+              "price": 20,
+              "add_perks": ["Rapid Rush Aura"]
+            },
+            {
+              "name": "Army Standard Bearer (Fear(2))",
+              "price": 20,
+              "add_perks": ["Fear(2)"]
+            },
+            {
+              "name": "Paladin (Furious Aura)",
+              "price": 25,
+              "add_perks": ["Furious Aura"]
+            }
+          ]
+        },
+        {
+          "section": "Replace Dual Hand Weapons",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Master Hand Weapon (A3, AP(1), Parry(3))",
+              "price": 5,
+              "add_weapons": ["Master Hand Weapon (A3, AP(1), Parry(3))"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Holy Sword (A3, AP(1), Bane)",
+              "price": 5,
+              "add_weapons": ["Master Holy Sword (A3, AP(1), Bane)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Halberd (A3, AP(1), Rending)",
+              "price": 10,
+              "add_weapons": ["Master Halberd (A3, AP(1), Rending)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Lance (A3, AP(1), Thrust)",
+              "price": 10,
+              "add_weapons": ["Master Lance (A3, AP(1), Thrust)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Spear (A3, AP(1), Counter, Brace(1))",
+              "price": 10,
+              "add_weapons": ["Master Spear (A3, AP(1), Counter, Brace(1))"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Monster Hunting Spear (A3, AP(2), Obliterate)",
+              "price": 15,
+              "add_weapons": ["Master Monster Hunting Spear (A3, AP(2), Obliterate)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Great Weapon (A3, AP(4))",
+              "price": 15,
+              "add_weapons": ["Master Great Weapon (A3, AP(4))"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (Mount)",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Foot Knight (Melee Slayer)",
+              "price": 5,
+              "add_perks": ["Melee Slayer"]
+            },
+            {
+              "name": "Vale Knight (Fast, Impact(1))",
+              "price": 10,
+              "add_perks": ["Fast", "Impact(1)"]
+            },
+            {
+              "name": "Pledge Knight (Fast, Impact(1), Spell Resistance)",
+              "price": 20,
+              "add_perks": ["Fast", "Impact(1)", "Spell Resistance"]
+            },
+            {
+              "name": "Grail Knight (Armor(3), Fast, Impact(1), Versatile Warrior)",
+              "price": 25,
+              "add_perks": ["Armor(3)", "Fast", "Impact(1)", "Versatile Warrior"]
+            },
+            {
+              "name": "Mythical Beast Knight (Fast, Heavy Impact(3), Tough(3))",
+              "price": 65,
+              "add_perks": ["Fast", "Heavy Impact(3)", "Tough(3)"]
+            },
+            {
+              "name": "Pegasus Knight (Fast, Flying, Impact(3), Tough(3))",
+              "price": 90,
+              "add_perks": ["Fast", "Flying", "Impact(3)", "Tough(3)"]
+            }
+          ]
+        }
+      ],
+      "models": 1,
+      "height": "Standard",
+      "class": "Hero"
+    },
+    "Peasant Levy": {
+      "base_points": 100,
+      "quality": 5,
+      "defense": 6,
+      "tough": 1,
+      "weapons": [
+        "10x Spears (A1, Counter, Brace(1))"
+      ],
+      "perks": [
+        "Vale Oath"
+      ],
+      "upgrades": [
+        {
+          "section": "Replace all Spears",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Sling (12\", A1, Assault)",
+              "price": 5,
+              "add_weapons": ["10x Sling (12\", A1, Assault)"],
+              "remove_weapons": ["10x Spears (A1, Counter, Brace(1))"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade all models with",
+          "unit_level": true,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Peasant's Oath (Precision Growth)",
+              "price": 20,
+              "add_perks": ["Precision Growth"]
+            }
+          ]
+        }
+      ],
+      "models": 10,
+      "height": "Standard",
+      "class": "Infantry"
+    }
+  },
+  "Keywords": {
+    "Vale Oath": "If a unit where most models have this rule is Shaken at the beginning of the round, roll one die. On a 4+, it stops being Shaken.",
+    "Bravery Buff": "Once per activation, before attacking, pick one friendly unit within 12\", which gets +1 to Morale Test rolls once.",
+    "Melee Slayer": "When charging, this model's weapons get AP(+2) if most models in the target have Tough(3) or higher.",
+    "Spell Resistance": "When a unit where most models have this rule takes wounds, roll one die. If the wound was from a spell, it is ignored on a 2+. If not from a spell, ignored on a 6+.",
+    "Versatile Warrior": "When activated, pick one: until the end of activation, when shooting/charging enemies over 9\"/6\" away, models get AP(+1) or +1 to hit rolls."
+  },
+  "SpellBooks": {
+    "Army Spells": {
+      "Protection of the Huntress (1)": "Pick one friendly unit within 12\", which gets Fortified once.",
+      "Searing Gaze (1)": "Pick one enemy unit within 6\", which takes 3 hits with Bane.",
+      "Curse of the Huntress (2)": "Pick up to two enemy units within 18\" in line of sight, which friendly units get Surge against once.",
+      "Wrath of the Huntress (2)": "Pick one enemy unit within 12\" in line of sight, which takes 4 hits with AP(2).",
+      "Great Hunt (3)": "Pick up to three friendly units within 18\", which get Enhanced Vale Oath once.",
+      "Cleansing Light (3)": "Pick one enemy model within 24\" in line of sight, which takes 3 hits with AP(3) and Obliterate."
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "Units": {
+    "Troll Boss": {
+      "base_points": 115,
+      "quality": 4,
+      "defense": 4,
+      "tough": 6,
+      "weapons": [
+        "Strike (A2)",
+        "Throw Rocks (12\", A2, Blast(3), Indirect)"
+      ],
+      "perks": [
+        "Furious",
+        "Hero",
+        "Mischievous",
+        "Regeneration"
+      ],
+      "upgrades": [
+        "Cave Tribe",
+        "Trailmaster",
+        "Instigator",
+        "Brewer",
+        "Shaman",
+        "Big Boss"
+      ],
+      "models": 1,
+      "height": "Large",
+      "class": "Hero"
+    },
+    "Goblin Leader": {
+      "base_points": 35,
+      "quality": 5,
+      "defense": 5,
+      "tough": 3,
+      "weapons": [
+        "Dual Hand Weapons (A4)"
+      ],
+      "perks": [
+        "Hero",
+        "Mischievous",
+        "Strider"
+      ],
+      "upgrades": [
+        "Spider Clan",
+        "Skirmisher",
+        "Army Standard Bearer",
+        "Mounts"
+      ],
+      "models": 1,
+      "height": "Small",
+      "class": "Hero"
+    },
+    "Warriors": {
+      "base_points": 95,
+      "quality": 5,
+      "defense": 6,
+      "tough": 1,
+      "weapons": [
+        "10x Hand Weapons (A1, Parry(1))"
+      ],
+      "perks": [
+        "Mischievous",
+        "Strider"
+      ],
+      "upgrades": [
+        "Halberd",
+        "Spear",
+        "Musician",
+        "Banner",
+        "Sergeant"
+      ],
+      "models": 10,
+      "height": "Small",
+      "class": "Infantry"
+    },
+    "Shooters": {
+      "base_points": 80,
+      "quality": 5,
+      "defense": 6,
+      "tough": 1,
+      "weapons": [
+        "5x Strikes (A1)",
+        "5x Shortbows (18\", A2)"
+      ],
+      "perks": [
+        "Mischievous",
+        "Strider"
+      ],
+      "upgrades": [
+        "Crossbow",
+        "Skewer-Bolt Crossbow",
+        "Hand-Held Bolt Thrower"
+      ],
+      "models": 5,
+      "height": "Small",
+      "class": "Infantry"
+    },
+    "Trolls": {
+      "base_points": 155,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "3x Strikes (A1)",
+        "3x Throw Rocks (12\", A1, Blast(3), Indirect)"
+      ],
+      "perks": [
+        "Furious",
+        "Mischievous",
+        "Regeneration"
+      ],
+      "upgrades": [
+        "Cave Tribe",
+        "Forest Tribe",
+        "Stone Tribe"
+      ],
+      "models": 3,
+      "height": "Large",
+      "class": "Monstrous Infantry"
+    },
+    "Giant Spider": {
+      "base_points": 280,
+      "quality": 4,
+      "defense": 3,
+      "tough": 12,
+      "weapons": [
+        "Stomp (A4, AP(1))",
+        "Great Spider Fangs (A8, Shred)"
+      ],
+      "perks": [
+        "Caster(2)",
+        "Fear(2)",
+        "Mischievous",
+        "Strider"
+      ],
+      "upgrades": [
+        "Sniff Out Threats",
+        "Web Catapult",
+        "Giant Stinger"
+      ],
+      "models": 1,
+      "height": "Extra Large",
+      "class": "Monster"
+    }
+  },
+  "Keywords": {
+    "Mischievous": "When attacking, targets must re-roll unmodified Defense results of 6 when blocking hits from this model's weapons.",
+    "Bounding": "When this unit is activated, you may move all models with this rule in it by up to D3+1\".",
+    "Caster Group": "Pick one model with this rule in this unit to have Caster(X), where X is the total number of models with this rule in this unit.",
+    "Regeneration": "When this model takes a wound, roll one die. On a 5+ the wound is ignored.",
+    "Strider": "This model ignores movement penalties from difficult terrain.",
+    "Tough(X)": "This model must take X wounds before being removed as a casualty."
+  },
+  "SpellBooks": {
+    "Army Spells": {
+      "Wolf Resilience (1)": "Pick one friendly unit within 12\", which gets +1 to Defense rolls once (next time the effect would apply).",
+      "Biting Bat (1)": "Pick one enemy unit within 6\", which takes 1 hit with Deadly(3) and Hazardous.",
+      "Bat Thirst (2)": "Pick up to two enemy units within 18\" in line of sight, which friendly units gets Piercing Fighter against once.",
+      "Stinging Spider (2)": "Pick one enemy unit within 6\", which takes 6 hits with Bane.",
+      "Spider Might (3)": "Pick up to three friendly units within 18\", which get Enhanced Mischievous once.",
+      "Pouncing Wolf (3)": "Pick one enemy unit within 18\" in line of sight, which takes 6 hits with AP(2)."
+    }
+  }
+}

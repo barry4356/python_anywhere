@@ -414,23 +414,23 @@
           "type": "CHOOSE_ONE",
           "choices": [
             {
-              "name": "Halberd (A1, Rending)",
+              "name": "10x Halberd (A1, Rending)",
               "price": 25,
               "add_weapons": [
-                "Halberd (A1, Rending)"
+                "10x Halberd (A1, Rending)"
               ],
               "remove_weapons": [
-                "Hand Weapon (A1)"
+                "10x Hand Weapon (A1)"
               ]
             },
             {
-              "name": "Spear (A1, Counter)",
+              "name": "10x Spear (A1, Counter)",
               "price": 35,
               "add_weapons": [
-                "Spear (A1, Counter)"
+                "10x Spear (A1, Counter)"
               ],
               "remove_weapons": [
-                "Hand Weapon (A1)"
+                "10x Hand Weapon (A1)"
               ]
             }
           ]
@@ -550,24 +550,24 @@
           "type": "CHOOSE_ONE",
           "choices": [
             {
-              "name": "Heavy Great Weapon (A3, AP(3))",
+              "name": "3x Heavy Great Weapon (A3, AP(3))",
               "price": 10,
               "add_weapons": [
-                "Heavy Great Weapon (A3, AP(3))"
+                "3x Heavy Great Weapon (A3, AP(3))"
               ],
               "remove_weapons": [
-                "Heavy Hand Weapon (A3, AP(1))"
+                "3x Heavy Hand Weapon (A3, AP(1))"
               ]
             },
             {
-              "name": "Throw Rocks (12\", A3, AP(1)), Bash (A2)",
+              "name": "3x Throw Rocks (12\", A3, AP(1)), Bash (A2)",
               "price": 10,
               "add_weapons": [
-                "Throw Rocks (12\", A3, AP(1))",
+                "3x Throw Rocks (12\", A3, AP(1))",
                 "Bash (A2)"
               ],
               "remove_weapons": [
-                "Heavy Hand Weapon (A3, AP(1))"
+                "3x Heavy Hand Weapon (A3, AP(1))"
               ]
             }
           ]
@@ -677,13 +677,13 @@
           "type": "CHOOSE_ONE",
           "choices": [
             {
-              "name": "Crossbow (24\", A1, Rending)",
+              "name": "5x Crossbow (24\", A1, Rending)",
               "price": 35,
               "add_weapons": [
-                "Crossbow (24\", A1, Rending)"
+                "5x Crossbow (24\", A1, Rending)"
               ],
               "remove_weapons": [
-                "Shortbow (18\", A1)"
+                "5x Shortbow (18\", A1)"
               ]
             }
           ]
@@ -734,13 +734,13 @@
           "type": "CHOOSE_ONE",
           "choices": [
             {
-              "name": "Lance (A1, Lance)",
+              "name": "5x Lance (A1, Lance)",
               "price": 10,
               "add_weapons": [
-                "Lance (A1, Lance)"
+                "5x Lance (A1, Lance)"
               ],
               "remove_weapons": [
-                "Hand Weapon (A1)"
+                "5x Hand Weapon (A1)"
               ]
             }
           ]

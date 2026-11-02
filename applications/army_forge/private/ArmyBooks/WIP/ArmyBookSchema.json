@@ -90,6 +90,23 @@
       "Book Name": {
           "Spell Name (cost)": "Description"
       }
-  }
+  },
+   "CampaignSkills": {
+    "Traits": [
+          "Trait"
+          ],
+        "SkillSets": {
+            "skillset": [
+                "skill"
+                ]
+        },
+        "Injuries": [
+            "injury",
+            ],
+        "Talents": [
+            "Talent"
+            ]
+  },
+  "Revision": 1
 }
 
