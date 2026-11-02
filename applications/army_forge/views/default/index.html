@@ -147,7 +147,7 @@
     {{for i, unit in enumerate(session.army_book['Units'].keys()):}}
       <form style="margin-bottom: 20px; background-color: #F5F5F5;">
         <b>{{=unit}} [{{=session.army_book['Units'][unit]['models']}}]</b>
-        <div>Qual: {{=session.army_book['Units'][unit]['quality']}}+&ensp;Def: {{=session.army_book['Units'][unit]['defense']}}+&ensp;Price: {{=session.army_book['Units'][unit]['base_points']}}</div>
+        <div>Qual: {{=session.army_book['Units'][unit]['quality']}}+&ensp;Def: {{=session.army_book['Units'][unit]['defense']}}+&ensp;{{if session.army_book['Units'][unit].get('tough'):}}Tough: {{=session.army_book['Units'][unit]['tough']}}&ensp;{{pass}}Price: {{=session.army_book['Units'][unit]['base_points']}}</div>
         <div>Weapons:</div>
         <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_book['Units'][unit]['weapons'])}}', [], null);">
           {{=', '.join(session.army_book['Units'][unit]['weapons'])}}
@@ -341,7 +341,7 @@
       <label for="combineUnit">Combine Unit: </label>
       <input type="checkbox" id="combineUnit" name="combineUnit" value="combineUnit" onchange="ajax('{{=URL('default', 'combine_unit')}}?unitKey={{=session.editUnit['unit_key']}}&combine=False', [], function(res) {location.reload(true);});" checked>
     {{pass}}
-    {{if 'Hero' in session.editUnit["perks"] and session.embeddable_unit_names:}}
+    {{if 'Hero' in session.editUnit["perks"] and session.editUnit.get('Tough',0) < 7 and session.embeddable_unit_names:}}
       <form>
       <div>Embed Hero in Unit: </div>
         {{=SELECT(*[OPTION(item, _value=item) for item in session.embeddable_unit_names], _name='embedSelection')}}
@@ -389,7 +389,7 @@
     {{if session.editUnit['campaign_filter']:}}
       <h5>Campaign Level</h5>
       <label for="xp">XP: </label>
-      <input type="number" id="xp" name="xp" min="0" max="100" step="1" value="0" onchange="ajax('{{=URL('default', 'update_unit_xp')}}?unitKey={{=session.editUnit['unit_key']}}', ['xp'], null);">
+      <input type="number" id="xp" name="xp" min="0" max="100" step="1" value="{{=session.editUnit['campaign_xp']}}" onchange="ajax('{{=URL('default', 'update_unit_xp')}}?unitKey={{=session.editUnit['unit_key']}}', ['xp'], null);">
       <h6>Traits:</h6>
       {{for trait in session.editUnit.get('campaign_traits',[]):}}
         {{if session.editUnit['campaign_traits'][trait]:}}

@@ -181,6 +181,9 @@ def updateUpgradedViews():
                     continue
                 if 'add_perks' in choice.keys():
                     session.army_list_upgraded["Units"][unit_key]["perks"].extend(choice["add_perks"])
+                if 'remove_perks' in choice.keys():
+                    for perk in choice['remove_perks']:
+                        session.army_list_upgraded["Units"][unit_key]["perks"].remove(perk)
                 if 'add_weapons' in choice.keys():
                     session.army_list_upgraded["Units"][unit_key]['weapons'].extend(choice["add_weapons"])
                 if 'remove_weapons' in choice.keys():
@@ -210,7 +213,6 @@ def updateUpgradedViews():
 def update_unit_xp():
     #response.flash = request.vars.unitKey
     session.army_list['Units'][request.vars.unitKey]['campaign_xp'] = request.vars.xp
-    response.flash = request.vars.xp
 
 def switchTab():
     session.current_tab = int(request.vars.myvar)
