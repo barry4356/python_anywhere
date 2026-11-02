@@ -46,11 +46,11 @@
 <!-- List Information Header -->
 {{if session.army_list:}}
   {{if session.forceOrgPass:}}
-    <button type="button" onclick="ajax('{{=URL('default', 'force_org_message')}}', []);" style="all: unset; cursor: pointer; text-align: right; float: right">
+    <button type="button" onclick="ajax('{{=URL('default', 'force_org_message_api')}}', []);" style="all: unset; cursor: pointer; text-align: right; float: right">
         <img src="{{=URL('static','images/shield_Green.png')}}" alt="Force Org" title="Force Org" width="35" height="35">
     </button>
   {{else:}}
-    <button type="button" onclick="ajax('{{=URL('default', 'force_org_message')}}', []);" style="all: unset; cursor: pointer; text-align: right; float: right">
+    <button type="button" onclick="ajax('{{=URL('default', 'force_org_message_api')}}', []);" style="all: unset; cursor: pointer; text-align: right; float: right">
         <img src="{{=URL('static','images/shield_Yellow.png')}}" alt="Force Org" title="Force Org" width="35" height="35">
     </button>
   {{pass}}
@@ -149,11 +149,11 @@
         <b>{{=unit}} [{{=session.army_book['Units'][unit]['models']}}]</b>
         <div>Qual: {{=session.army_book['Units'][unit]['quality']}}+&ensp;Def: {{=session.army_book['Units'][unit]['defense']}}+&ensp;{{if session.army_book['Units'][unit].get('tough'):}}Tough: {{=session.army_book['Units'][unit]['tough']}}&ensp;{{pass}}Price: {{=session.army_book['Units'][unit]['base_points']}}</div>
         <div>Weapons:</div>
-        <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_book['Units'][unit]['weapons'])}}', [], null);">
+        <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords_api')}}?myvar={{=', '.join(session.army_book['Units'][unit]['weapons'])}}', [], null);">
           {{=', '.join(session.army_book['Units'][unit]['weapons'])}}
         </span>
         <div>Perks:</div>
-        <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_book['Units'][unit]['perks'])}}', [], null);">
+        <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords_api')}}?myvar={{=', '.join(session.army_book['Units'][unit]['perks'])}}', [], null);">
           {{=', '.join(session.army_book['Units'][unit]['perks'])}}
         </span>
         <br>
@@ -176,11 +176,11 @@
     <b>{{=session.army_list_upgraded["Units"][unit_key]["unit_type"]}} [{{=session.army_list_upgraded["Units"][unit_key]['models']}}]</b>
     <div>Qual: {{=session.army_list_upgraded['Units'][unit_key]['quality']}}+&ensp;Def: {{=session.army_list_upgraded['Units'][unit_key]['defense']}}+&ensp;{{if session.army_list_upgraded['Units'][unit_key].get('tough'):}}Tough: {{=session.army_list_upgraded['Units'][unit_key]['tough']}}&ensp;{{pass}}Price: {{=session.army_list_upgraded['Units'][unit_key]['price']}}</div>
     <div>Weapons:</div>
-    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['weapons'])}}', [], null);">
+    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords_api')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['weapons'])}}', [], null);">
       {{=', '.join(session.army_list_upgraded['Units'][unit_key]['weapons'])}}
     </span>
     <div>Perks:</div>
-    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}', [], null);">
+    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords_api')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}', [], null);">
       {{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}
       <br>
     </span>
@@ -238,11 +238,11 @@
     <h5>{{=session.army_list_upgraded["Units"][unit_key]["unit_type"]}} [{{=session.army_list_upgraded["Units"][unit_key]['models']}}]</h5>
     <div>Qual: {{=session.army_list_upgraded['Units'][unit_key]['quality']}}+&ensp;Def: {{=session.army_list_upgraded['Units'][unit_key]['defense']}}+&ensp;{{if session.army_list_upgraded['Units'][unit_key].get('tough'):}}Tough: {{=session.army_list_upgraded['Units'][unit_key]['tough']}}&ensp;{{pass}}Price: {{=session.army_list_upgraded['Units'][unit_key]['price']}}</div>
     <div>Weapons:</div>
-    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['weapons'])}}', [], null);">
+    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords_api')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['weapons'])}}', [], null);">
       {{=', '.join(session.army_list_upgraded['Units'][unit_key]['weapons'])}}
     </span>
     <div>Perks:</div>
-    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}', [], null);">
+    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords_api')}}?myvar={{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}', [], null);">
       {{=', '.join(session.army_list_upgraded['Units'][unit_key]['perks'])}}
       <br>
     </span>
@@ -302,11 +302,11 @@
     <h3>{{=str(session.editUnit["unit_type"])}} [{{=session.editUnit['models']}}]</h3>
     <div>Qual: {{=session.editUnit['quality']}}+&ensp;Def: {{=session.editUnit['defense']}}+&ensp;{{if session.editUnit.get('tough'):}}Tough: {{=session.editUnit['tough']}}&ensp;{{pass}}</div>
     <div>Weapons:</div>
-    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.editUnit['weapons'])}}', [], null);">
+    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords_api')}}?myvar={{=', '.join(session.editUnit['weapons'])}}', [], null);">
       {{=', '.join(session.editUnit['weapons'])}}
     </span>
     <div>Perks:</div>
-    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords')}}?myvar={{=', '.join(session.editUnit['perks'])}}', [], null);">
+    <span>&emsp;</span><span style="text-decoration: underline; cursor: pointer;" onclick="ajax('{{=URL('default', 'display_keywords_api')}}?myvar={{=', '.join(session.editUnit['perks'])}}', [], null);">
       {{=', '.join(session.editUnit['perks'])}}
       <br>
     </span>
