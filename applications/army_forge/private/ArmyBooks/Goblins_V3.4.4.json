@@ -123,7 +123,7 @@
           ]
         },
         {
-          "section": "Upgrade with one:",
+          "section": "Upgrade with one (class):",
           "unit_level": true,
           "type": "CHOOSE_ONE",
           "choices": [
@@ -530,7 +530,7 @@
       "defense": 6,
       "tough": 3,
       "weapons": ["3x Swarm Attacks (A3)"],
-      "perks": ["Scout", "Strider", "Tough(3)"],
+      "perks": ["Scout", "Strider"],
       "upgrades": [],
       "models": 3,
       "height": "",
@@ -542,7 +542,7 @@
       "defense": 4,
       "tough": 3,
       "weapons": ["3x Heavy Hand Weapon (A3, AP(1))"],
-      "perks": ["Regeneration", "Tough(3)"],
+      "perks": ["Regeneration"],
       "upgrades": [
           {
           "section": "Replace any Heavy Hand Weapon:",
@@ -808,7 +808,7 @@
       "defense": 3,
       "tough": 12,
       "weapons": ["Giant Jaws (A8, Rending)", "Stomp (A4, AP(1))"],
-      "perks": ["Boing", "Fear(2)", "Tough(12)"],
+      "perks": ["Boing", "Fear(2)"],
       "upgrades": [
 
           ],
@@ -822,7 +822,7 @@
       "defense": 3,
       "tough": 12,
       "weapons": ["Shortbow Crew (18\", A6)", "Stomp (A4, AP(1))", "Toxic Fangs (A6, Poison)"],
-      "perks": ["Fear(2)", "Strider", "Tough(12)"],
+      "perks": ["Fear(2)", "Strider"],
       "upgrades": [
           {
           "section": "Replace Shortbow Crew:",
@@ -880,7 +880,7 @@
       "defense": 3,
       "tough": 12,
       "weapons": ["Giant Club (A6, AP(2))", "Stomp (A4, AP(1))"],
-      "perks": ["Fear(2)", "Regeneration", "Tough(12)"],
+      "perks": ["Fear(2)", "Regeneration"],
       "upgrades": [
           {
           "section": "Replace Giant Club:",
@@ -952,7 +952,7 @@
       "defense": 3,
       "tough": 6,
       "weapons": ["Bites (A2, AP(1))", "Spear Crew (A2, Lance)"],
-      "perks": ["Fast", "Fearless", "Impact(4)", "Tough(6)"],
+      "perks": ["Fast", "Fearless", "Impact(4)"],
       "upgrades": [{
           "section": "Replace Spear Crew:",
           "unit_level": true,
@@ -981,7 +981,7 @@
       "defense": 3,
       "tough": 6,
       "weapons": ["Crew Attacks (A2)", "Roller (A2, AP(1))"],
-      "perks": ["Boing", "Fear(1)", "Impact(4)", "Tough(6)"],
+      "perks": ["Boing", "Fear(1)", "Impact(4)"],
       "upgrades": [
           {
           "section": "Replace Crew Attacks:",
@@ -1011,7 +1011,7 @@
       "defense": 3,
       "tough": 6,
       "weapons": ["Crew Attacks (A3)"],
-      "perks": ["Bombing Run(1)", "Fast", "Flying", "Tough(6)"],
+      "perks": ["Bombing Run(1)", "Fast", "Flying"],
       "upgrades": [],
       "models": 1,
       "height": "",
@@ -1023,7 +1023,7 @@
       "defense": 5,
       "tough": 3,
       "weapons": ["Scrap-Shooter (18\", A6, AP(1))", "Crew (A3)"],
-      "perks": ["Entrenched", "Immobile", "Tough(3)"],
+      "perks": ["Entrenched", "Immobile"],
       "upgrades": [
           {
           "section": "Replace Scrap-Shooter:",
@@ -1223,5 +1223,6 @@
             "Toughened",
             "Horrible Scars"
             ]
-  }
+  },
+  "Revision": 1
 }
