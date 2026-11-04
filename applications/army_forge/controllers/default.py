@@ -33,10 +33,6 @@ def user():
 
 def index():
     # ======== Initializations ========
-    #session.army_book = ''
-    #session.clear()
-    #session.new_unit = {'weapons': []}
-    #response.flash = ""
     if not session.unit_count:
         session.unit_count = 0
     if not session.army_list:
@@ -65,41 +61,45 @@ def index():
         session.forceOrgPass=True
         redirect(URL('index'))
     elif request.vars.request_id == 'AddUnitToList':
-        unit_uuid = str(uuid.uuid4())
-        new_unit = copy.deepcopy(session.army_book['Units'][request.vars.unitName])
-        new_unit['unit_type'] = request.vars.unitName
-        new_unit['name'] = ''
-        new_unit['price'] = session.army_book['Units'][request.vars.unitName]["base_points"]
-        new_unit['combined'] = False
-        for upgrade in new_unit['upgrades']:
-            for choice in upgrade['choices']:
-                choice['selected'] = False
-        campaign_skills = session.army_book.get('CampaignSkills',[])
-        unit_campaign_traits = {}
-        for trait in campaign_skills['Traits']:
-            unit_campaign_traits[trait] = False
-        new_unit['campaign_xp'] = 0
-        new_unit['campaign_traits'] = unit_campaign_traits
-        if 'Hero' in new_unit['perks']:
-            campaign_skillsets = {}
-            unit_campaign_injuries = {}
-            unit_campaign_talents = {}
-            for skillset in campaign_skills['SkillSets']:
-                campaign_skillset = {}
-                for skill in campaign_skills['SkillSets'][skillset]:
-                    campaign_skillset[skill] = False
-                campaign_skillsets[skillset] = campaign_skillset
-            new_unit['campaign_skillsets'] = campaign_skillsets
-            for injury in campaign_skills['Injuries']:
-                unit_campaign_injuries[injury] = False
-            new_unit['campaign_injuries'] = unit_campaign_injuries
-            for talent in campaign_skills['Talents']:
-                unit_campaign_talents[talent] = False
-            new_unit['campaign_talents'] = unit_campaign_talents
-        session.army_list["Units"][unit_uuid] = new_unit
-        updateListCost()
-        session.unit_count = get_unit_count(session.army_list.get('Units',[]))
-        session.forceOrgPass = force_org_check(session.army_list)
+        try:
+            unit_uuid = str(uuid.uuid4())
+            new_unit = copy.deepcopy(session.army_book['Units'][request.vars.unitName])
+            new_unit['unit_type'] = request.vars.unitName
+            new_unit['name'] = ''
+            new_unit['price'] = session.army_book['Units'][request.vars.unitName]["base_points"]
+            new_unit['combined'] = False
+            for upgrade in new_unit['upgrades']:
+                for choice in upgrade['choices']:
+                    choice['selected'] = False
+            campaign_skills = session.army_book.get('CampaignSkills',[])
+            unit_campaign_traits = {}
+            for trait in campaign_skills['Traits']:
+                unit_campaign_traits[trait] = False
+            new_unit['campaign_xp'] = 0
+            new_unit['campaign_traits'] = unit_campaign_traits
+            if 'Hero' in new_unit['perks']:
+                campaign_skillsets = {}
+                unit_campaign_injuries = {}
+                unit_campaign_talents = {}
+                for skillset in campaign_skills['SkillSets']:
+                    campaign_skillset = {}
+                    for skill in campaign_skills['SkillSets'][skillset]:
+                        campaign_skillset[skill] = False
+                    campaign_skillsets[skillset] = campaign_skillset
+                new_unit['campaign_skillsets'] = campaign_skillsets
+                for injury in campaign_skills['Injuries']:
+                    unit_campaign_injuries[injury] = False
+                new_unit['campaign_injuries'] = unit_campaign_injuries
+                for talent in campaign_skills['Talents']:
+                    unit_campaign_talents[talent] = False
+                new_unit['campaign_talents'] = unit_campaign_talents
+            session.army_list["Units"][unit_uuid] = new_unit
+            updateListCost()
+            session.unit_count = get_unit_count(session.army_list.get('Units',[]))
+            session.forceOrgPass = force_org_check(session.army_list)
+        except Exception as e:
+            session.flash = generate_error_message('index:AddUnitToList', str(e))
+            initSession_api()
         redirect(URL('index'))
     elif request.vars.request_id == 'updateListName':
         session.list_name = request.vars.listName
@@ -487,11 +487,40 @@ def download_list():
     response.headers['Content-Disposition'] = f'attachment; filename={session.army_list_json}'
     return content
 
+'''
+Takes an army list and responds with a popup of Force Org Explanation
+'''
 def force_org_message_api():
     response.flash = XML(build_force_org_message(session.army_list))
 
+'''
+Takes a list of keywords and responds with a popup of words: Descriptions
+'''
 def display_keywords_api():
     response.flash = build_keyword_popup(request.vars.myvar.lower(), session.army_book['Keywords'])
+
+'''
+Function to set a session back to its original 'clean' state
+'''
+def initSession_api():
+        session.unit_count = 0
+        session.army_list = {}
+        session.army_book = None
+        session.current_tab = 1
+        session.armyLists = []
+        session.army_list_upgraded = {}
+        session.list_name = "None"
+        session.forceOrgPass = True
+        session.embeddable_unitLookup = {}
+        session.editUnit = {}
+        session.embeddable_unit_names = []
+        ArmyBookRepo = os.path.join(request.folder, 'private', 'ArmyBooks')
+        armyBookFiles = [f for f in os.listdir(ArmyBookRepo) if f.endswith('.json')]
+        armyBookFiles.sort()
+        session.armyBooks = [armyBook.replace("_", " ").replace('.json','') for armyBook in armyBookFiles]
+        session.army_book_name = None
+        session.army_book_json = None
+        session.army_book = {}
 
 # ======== Modules ========
 
@@ -559,6 +588,19 @@ def get_unit_cost_list(units):
                 unit_cost["price"] += int(hero['price'])
         unit_cost_list.append(unit_cost)
     return unit_cost_list
+
+'''
+Common function used to generate an error message from an exception for
+a popup
+'''
+def generate_error_message(sourceFunction, e):
+    nextline = '                                                      '
+    msg = ''
+    msg += f'Something is wrong! I need an adult! Tell him:{nextline}'
+    msg += f'I broke when running [{sourceFunction}] {nextline}'
+    msg += f'Error Code: [{e}] {nextline}'
+    msg += f'Any info on how to reproduce this would also be appreciated!'
+    return XML(msg)
 
 '''
 Get map of each type of unit and its current count in the
