@@ -1,0 +1,41 @@
+Based on the Campaign Rules PDF provided, here are the traits (including Injury Traits, Talent Traits, Regular Unit Traits, and Hero Skill Traits) formatted into JSON:
+
+```json
+{
+  "Weakened": "Gets -1 to Defense rolls when blocking hits.",
+  "Maimed": "Gets -1 to hit rolls when fighting in melee.",
+  "Blinded": "Gets -1 to hit rolls when using move actions and shooting.",
+  "Crippled": "Moves -1” on Advance and -2” on Rush/Charge actions.",
+  "Lucky Break": "May pick any other trait from the list.",
+  "Natural Talent": "Earns +1 XP.",
+  "Motivated": "Gets +1 to rolls when taking Morale Tests.",
+  "Crazed": "Gets +1 to hit rolls in melee when charging.",
+  "Vigilant": "Gets +1 to hit rolls when shooting.",
+  "Toughened": "Gets Tough(+3).",
+  "Learned Lesson": "May pick any other trait from the list.",
+  "Agile": "Moves +1” on Advance and +2” on Rush/Charge actions.",
+  "Headstrong": "Gets +1 to rolls when taking Morale Tests.",
+  "Specialist": "Gets +1 to hit rolls when in melee or when shooting (pick one).",
+  "Resilient": "Gets +1 to Defense rolls when blocking hits.",
+  "Elite": "May re-roll one roll of any kind once per game.",
+  "Fast Learner": "May pick any other trait from the list.",
+  "Prowler": "The Hero and its unit move +1” on Advance actions.",
+  "Runner": "The Hero and its unit move +2” on Rush/Charge actions.",
+  "Explorer": "Once per game, the Hero and its unit ignore the effects of Difficult and Dangerous terrain.",
+  "Motivator": "The Hero and its unit get +1 to Morale Test rolls triggered by shooting.",
+  "Leader": "The Hero and its unit get +1 to Morale Test rolls in melee.",
+  "Idol": "Once per game, the Hero and its unit may ignore becoming Shaken.",
+  "Duellist": "The Hero and its unit get AP(+1) in melee when charged.",
+  "Fanatic": "The Hero and its unit get AP(+1) in melee when charging.",
+  "Berserker": "Once per game, the Hero and its unit may ignore becoming Fatigued.",
+  "Suppressor": "The Hero and its unit get AP(+1) when using Hold and shooting.",
+  "Destroyer": "The Hero and its unit get AP(+1) when using move actions and shooting.",
+  "Sharpshooter": "Once per game, the Hero and its unit get +12” range when shooting.",
+  "Herbalist": "The Hero and its unit get +1 to Defense rolls in melee.",
+  "Chemist": "The Hero and its unit get +1 to Defense rolls when shot.",
+  "Healer": "Once per game, when the Hero’s unit is activated, it may restore D3 models/wounds.",
+  "Tactician": "Once per game, the Hero and its unit may re-roll one roll of any kind in melee.",
+  "Strategist": "Once per game, the Hero and its unit may re-roll one roll of any kind when shooting.",
+  "Mastermind": "Once per game, when the Hero’s unit is targeted by an enemy, it may force the enemy to re-roll one roll of any kind."
+}
+```
