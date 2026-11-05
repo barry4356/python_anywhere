@@ -1,0 +1,288 @@
+```json
+{
+  "Units": {
+    "Elite Weapon Masters": {
+      "base_points": 60,
+      "quality": 4,
+      "defense": 4,
+      "tough": 1,
+      "weapons": [
+        "5x Hand Weapons (A1, Parry(1))"
+      ],
+      "perks": [
+        "Hold the Line"
+      ],
+      "upgrades": [
+        {
+          "section": "Upgrade one model with",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Message Runner (Extended Buff Range)",
+              "price": 5,
+              "add_perks": [
+                "Extended Buff Range"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Replace all Hand Weapons",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Halberd (A1, Rending)",
+              "price": 5,
+              "add_weapons": [
+                "5x Halberd (A1, Rending)"
+              ],
+              "remove_weapons": [
+                "5x Hand Weapons (A1, Parry(1))"
+              ]
+            },
+            {
+              "name": "Great Weapon (A1, AP(2))",
+              "price": 10,
+              "add_weapons": [
+                "5x Great Weapon (A1, AP(2))"
+              ],
+              "remove_weapons": [
+                "5x Hand Weapons (A1, Parry(1))"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Replace one Hand Weapon",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Dual Hand Weapons (A4)",
+              "price": 10,
+              "add_weapons": [
+                "Dual Hand Weapons (A4)"
+              ],
+              "remove_weapons": [
+                "Hand Weapon (A1, Parry(1))"
+              ]
+            },
+            {
+              "name": "Imperial Great Flail (A3, AP(1), Surge)",
+              "price": 20,
+              "add_weapons": [
+                "Imperial Great Flail (A3, AP(1), Surge)"
+              ],
+              "remove_weapons": [
+                "Hand Weapon (A1, Parry(1))"
+              ]
+            },
+            {
+              "name": "Imperial Great Mace (A1, AP(4), Deadly(3))",
+              "price": 20,
+              "add_weapons": [
+                "Imperial Great Mace (A1, AP(4), Deadly(3))"
+              ],
+              "remove_weapons": [
+                "Hand Weapon (A1, Parry(1))"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade up to three models with one",
+          "unit_level": false,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Sergeant",
+              "price": 5,
+              "add_perks": [
+                "Sergeant"
+              ]
+            },
+            {
+              "name": "Musician",
+              "price": 5,
+              "add_perks": [
+                "Musician"
+              ]
+            },
+            {
+              "name": "Banner",
+              "price": 10,
+              "add_perks": [
+                "Banner"
+              ]
+            }
+          ]
+        }
+      ],
+      "models": 5,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Marksmen": {
+      "base_points": 60,
+      "quality": 5,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Strikes (A1)",
+        "5x Matchlock Rifles (18\", A1, AP(1))"
+      ],
+      "perks": [
+        "Hold the Line"
+      ],
+      "upgrades": [
+        {
+          "section": "Replace all Matchlock Rifles",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Firepowder Rifle (18\", A1, Anti-Cover, Fracture)",
+              "price": 5,
+              "add_weapons": [
+                "5x Firepowder Rifle (18\", A1, Anti-Cover, Fracture)"
+              ],
+              "remove_weapons": [
+                "5x Matchlock Rifles (18\", A1, AP(1))"
+              ]
+            },
+            {
+              "name": "Crossbow (18\", A1, Rending)",
+              "price": 10,
+              "add_weapons": [
+                "5x Crossbow (18\", A1, Rending)"
+              ],
+              "remove_weapons": [
+                "5x Matchlock Rifles (18\", A1, AP(1))"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Replace one Matchlock Rifle and Strike",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Dual Matchlock Pistols (9\", A2, AP(1), Assault)",
+              "price": 5,
+              "add_weapons": [
+                "Dual Matchlock Pistols (9\", A2, AP(1), Assault)"
+              ],
+              "remove_weapons": [
+                "Matchlock Rifle",
+                "Strike"
+              ]
+            },
+            {
+              "name": "Flamethrower (12\", A1, Blast(3), Reliable)",
+              "price": 10,
+              "add_weapons": [
+                "Flamethrower (12\", A1, Blast(3), Reliable)",
+                "Strike (A1)"
+              ],
+              "remove_weapons": [
+                "Matchlock Rifle",
+                "Strike"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade all models with",
+          "unit_level": true,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Pavise Shield (Armor(4), Slow)",
+              "price": 0,
+              "add_perks": [
+                "Armor(4)",
+                "Slow"
+              ]
+            }
+          ]
+        }
+      ],
+      "models": 5,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Hunting Hounds": {
+      "base_points": 75,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Heavy Bites (A1, AP(2))"
+      ],
+      "perks": [
+        "Agile",
+        "Hold the Line",
+        "Strider"
+      ],
+      "upgrades": [
+        {
+          "section": "Replace all Heavy Bites",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Frenzied Bites (A1, AP(1), Surge)",
+              "price": 5,
+              "add_weapons": [
+                "5x Frenzied Bites (A1, AP(1), Surge)"
+              ],
+              "remove_weapons": [
+                "5x Heavy Bites (A1, AP(2))"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade all models with",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Trailblazer Dog Handler (Scout)",
+              "price": 15,
+              "add_perks": [
+                "Scout"
+              ]
+            }
+          ]
+        }
+      ],
+      "models": 5,
+      "height": "Standard",
+      "class": "Beast"
+    }
+  },
+  "Keywords": {
+    "Hold the Line": "If most models in this unit have this rule, they get +1 to Morale Test rolls when shot/charged from over 9\"/6\" away.",
+    "Agile": "Moves +1\" when using Advance, and +2\" when using Rush/Charge.",
+    "Strider": "This model ignores difficult terrain effects when moving.",
+    "Scout": "This unit may be deployed after all other units, and may then immediately move up to its Speed.",
+    "Parry(X)": "The unit counts as having Armor(X) against melee attacks.",
+    "Rending": "Unmodified rolls of 6 to hit deal AP(4) and ignore Regeneration.",
+    "Surge": "This weapon gets +1 to hit when the unit uses a Charge action."
+  },
+  "SpellBooks": {
+    "Human Empire Spells": {
+      "Aura of Heroism (1)": "Pick one friendly unit within 12\", which gets Enhanced Hold the Line once (next time the effect would apply).",
+      "Spirit Leech (1)": "Pick one enemy model within 18\" in line of sight, which takes 2 hits with AP(1). This effect is resolved as if the target was a unit of [1].",
+      "Magic Targeting (2)": "Pick up to two enemy units within 18\" in line of sight, which friendly units get +1 to hit rolls in melee against once (next time the effect would apply).",
+      "Fire Ball (2)": "Pick one enemy unit within 18\" in line of sight, which takes 4 hits with Fracture. Roll as many dice as hits to see if \"on rolls of 6\" effects trigger.",
+      "Elemental Form (3)": "Pick up to three friendly units within 18\", which get AP(+1) on its weapons in melee once (next time the effect would apply).",
+      "Blood Hex (3)": "Pick one enemy unit within 18\" in line of sight, which takes 9 hits."
+    }
+  }
+}
+```
