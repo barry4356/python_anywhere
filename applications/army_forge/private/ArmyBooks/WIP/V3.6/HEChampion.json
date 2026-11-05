@@ -1,0 +1,179 @@
+```json
+{
+  "Units": {
+    "Champion": {
+      "base_points": 35,
+      "quality": 5,
+      "defense": 5,
+      "tough": 3,
+      "weapons": [
+        "Dual Hand Weapons (A4)"
+      ],
+      "perks": [
+        "Hero",
+        "Hold the Line"
+      ],
+      "upgrades": [
+        {
+          "section": "Upgrade with one",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Captain (Rapid Rush Buff)",
+              "price": 20,
+              "add_perks": ["Rapid Rush Buff"]
+            },
+            {
+              "name": "Cleric (Furious Buff)",
+              "price": 25,
+              "add_perks": ["Furious Buff"]
+            },
+            {
+              "name": "Logistics Officer (Precision Shooter Buff)",
+              "price": 30,
+              "add_perks": ["Precision Shooter Buff"]
+            },
+            {
+              "name": "Surgeon (Regeneration Aura)",
+              "price": 35,
+              "add_perks": ["Regeneration Aura"]
+            },
+            {
+              "name": "Engineer (Mend)",
+              "price": 35,
+              "add_perks": ["Mend"]
+            },
+            {
+              "name": "Battle Mage (Caster(2))",
+              "price": 35,
+              "add_perks": ["Caster(2)"]
+            },
+            {
+              "name": "Master Battle Mage (Caster(3))",
+              "price": 55,
+              "add_perks": ["Caster(3)"]
+            }
+          ]
+        },
+        {
+          "section": "Replace Dual Hand Weapons",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Master Hand Weapon (A3, AP(1), Parry(3))",
+              "price": 5,
+              "add_weapons": ["Master Hand Weapon (A3, AP(1), Parry(3))"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Halberd (A3, AP(1), Rending)",
+              "price": 10,
+              "add_weapons": ["Master Halberd (A3, AP(1), Rending)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Spear (A3, AP(1), Counter, Brace(1))",
+              "price": 10,
+              "add_weapons": ["Master Spear (A3, AP(1), Counter, Brace(1))"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Lance (A3, AP(1), Thrust)",
+              "price": 10,
+              "add_weapons": ["Master Lance (A3, AP(1), Thrust)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Great Weapon (A3, AP(4))",
+              "price": 10,
+              "add_weapons": ["Master Great Weapon (A3, AP(4))"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Grenade Launcher (24\", A1, Blast(3)), Strike (A1)",
+              "price": 5,
+              "add_weapons": ["Grenade Launcher (24\", A1, Blast(3))", "Strike (A1)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Throwing Knives (12\", A1, Assault), Spear (A3, Counter, Brace(1))",
+              "price": 10,
+              "add_weapons": ["Throwing Knives (12\", A1, Assault)", "Spear (A3, Counter, Brace(1))"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Dual Gatling Pistols (9\", A4, Anti-Cover, Assault, Surge)",
+              "price": 20,
+              "add_weapons": ["Dual Gatling Pistols (9\", A4, Anti-Cover, Assault, Surge)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Battle Mage Staff (A2, Spell Amplifier)",
+              "price": 20,
+              "add_weapons": ["Battle Mage Staff (A2, Spell Amplifier)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (Mount)",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Horse (Fast, Impact(1))",
+              "price": 10,
+              "add_perks": ["Fast", "Impact(1)"]
+            },
+            {
+              "name": "Robo-Frame Horse (Bounding, Impact(1))",
+              "price": 10,
+              "add_perks": ["Bounding", "Impact(1)"]
+            },
+            {
+              "name": "Pet Companion (Repel Ambushers)",
+              "price": 10,
+              "add_perks": ["Repel Ambushers"]
+            },
+            {
+              "name": "Marksman Horse (Fast, Vanguard)",
+              "price": 10,
+              "add_perks": ["Fast", "Vanguard"]
+            },
+            {
+              "name": "Robo-Hulk (Great Weapon (A3, AP(2)), Armor(4), Tough(3))",
+              "price": 40,
+              "add_weapons": ["Great Weapon (A3, AP(2))"],
+              "add_perks": ["Armor(4)", "Tough(3)"]
+            }
+          ]
+        }
+      ],
+      "models": 1,
+      "height": "Standard",
+      "class": "Hero"
+    }
+  },
+  "Keywords": {
+    "Hold the Line": "If most models in this unit have this rule, they get +1 to Morale Test rolls when shot/charged from over 9\"/6\" away.",
+    "Tough(X)": "This model must take X wounds before being killed.",
+    "Hero": "Heroes may be deployed as part of other units.",
+    "Furious Buff": "Once per activation, before attacking, pick one friendly unit within 12\", which gets Furious once.",
+    "Mend": "Once per activation, before attacking, pick one friendly model within 3\" with Tough, and remove D3 wounds from it.",
+    "Regeneration Aura": "This model and its unit get Regeneration.",
+    "Rapid Rush Buff": "Once per activation, before attacking, pick one friendly unit within 12\", which gets Rapid Rush once."
+  },
+  "SpellBooks": {
+    "Human Empire Spells": {
+      "Aura of Heroism (1)": "Pick one friendly unit within 12\", which gets Enhanced Hold the Line once.",
+      "Spirit Leech (1)": "Pick one enemy model within 18\" in line of sight, which takes 2 hits with AP(1).",
+      "Magic Targeting (2)": "Pick up to two enemy units within 18\" in line of sight, which friendly units get +1 to hit rolls in melee against once.",
+      "Fire Ball (2)": "Pick one enemy unit within 18\" in line of sight, which takes 4 hits with Fracture.",
+      "Elemental Form (3)": "Pick up to three friendly units within 18\", which get AP(+1) on its weapons in melee once.",
+      "Blood Hex (3)": "Pick one enemy unit within 18\" in line of sight, which takes 9 hits."
+    }
+  }
+}
+```
