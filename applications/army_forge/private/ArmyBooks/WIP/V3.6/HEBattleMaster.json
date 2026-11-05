@@ -1,0 +1,187 @@
+```json
+{
+  "Units": {
+    "Battle Master": {
+      "base_points": 45,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "Dual Hand Weapons (A4)"
+      ],
+      "perks": [
+        "Hero",
+        "Hold the Line"
+      ],
+      "upgrades": [
+        {
+          "section": "Upgrade with one",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Great Empire Icon Bearer (Enhanced Hold the Line Buff)",
+              "price": 5,
+              "add_perks": ["Enhanced Hold the Line Buff"]
+            },
+            {
+              "name": "Captain (Rapid Rush Buff)",
+              "price": 20,
+              "add_perks": ["Rapid Rush Buff"]
+            },
+            {
+              "name": "Army Standard Bearer (Fear(2))",
+              "price": 20,
+              "add_perks": ["Fear(2)"]
+            },
+            {
+              "name": "Cleric (Furious Buff)",
+              "price": 25,
+              "add_perks": ["Furious Buff"]
+            },
+            {
+              "name": "Bounty Hunter (Precision Fighting Mark)",
+              "price": 25,
+              "add_perks": ["Precision Fighting Mark"]
+            },
+            {
+              "name": "Logistics Officer (Precision Shooter Buff)",
+              "price": 30,
+              "add_perks": ["Precision Shooter Buff"]
+            },
+            {
+              "name": "General (Coordinate)",
+              "price": 70,
+              "add_perks": ["Coordinate"]
+            }
+          ]
+        },
+        {
+          "section": "Replace Dual Hand Weapons",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Master Hand Weapon (A3, AP(1), Parry(3))",
+              "price": 5,
+              "add_weapons": ["Master Hand Weapon (A3, AP(1), Parry(3))"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Halberd (A3, AP(1), Rending)",
+              "price": 10,
+              "add_weapons": ["Master Halberd (A3, AP(1), Rending)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Lance (A3, AP(1), Thrust)",
+              "price": 10,
+              "add_weapons": ["Master Lance (A3, AP(1), Thrust)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Spear (A3, AP(1), Counter, Brace(1))",
+              "price": 10,
+              "add_weapons": ["Master Spear (A3, AP(1), Counter, Brace(1))"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Great Weapon (A3, AP(4))",
+              "price": 15,
+              "add_weapons": ["Master Great Weapon (A3, AP(4))"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Rapid Firepowder Rifle (18\", A3, Anti-Cover, Fracture), Strike (A1)",
+              "price": 10,
+              "add_weapons": ["Rapid Firepowder Rifle (18\", A3, Anti-Cover, Fracture)", "Strike (A1)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Throwing Knives (12\", A1, Assault), Hand Weapon (A3, Parry(3))",
+              "price": 10,
+              "add_weapons": ["Throwing Knives (12\", A1, Assault)", "Hand Weapon (A3, Parry(3))"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Dual Firepowder Pistols (9\", A4, Anti-Cover, Assault, Fracture)",
+              "price": 20,
+              "add_weapons": ["Dual Firepowder Pistols (9\", A4, Anti-Cover, Assault, Fracture)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Dual Matchlock Pistols (9\", A4, AP(1), Assault)",
+              "price": 25,
+              "add_weapons": ["Dual Matchlock Pistols (9\", A4, AP(1), Assault)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Dual Handbows (9\", A4, Rending, Assault)",
+              "price": 30,
+              "add_weapons": ["Dual Handbows (9\", A4, Rending, Assault)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (Mount)",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Horse (Fast, Impact(1))",
+              "price": 10,
+              "add_perks": ["Fast", "Impact(1)"]
+            },
+            {
+              "name": "Pet Companion (Repel Ambushers)",
+              "price": 10,
+              "add_perks": ["Repel Ambushers"]
+            },
+            {
+              "name": "Pegasus (Fast, Flying, Impact(3), Tough(3))",
+              "price": 90,
+              "add_perks": ["Fast", "Flying", "Impact(3)", "Tough(3)"]
+            },
+            {
+              "name": "Royal Griffon (Sharp Claws (A6, Rending), Stomp (A3, AP(1)), Armor(3), Fear(2), Flying, Tough(9))",
+              "price": 220,
+              "add_perks": ["Armor(3)", "Fear(2)", "Flying", "Tough(9)"],
+              "add_weapons": ["Sharp Claws (A6, Rending)", "Stomp (A3, AP(1))"]
+            },
+            {
+              "name": "Imperial Dragon (Flame Breath (6\", A1, Blast(3), Reliable, Assault), Heavy Claws (A8, AP(2)), Stomp (A4, AP(1)), Armor(3), Fear(2), Flying, Tough(12))",
+              "price": 320,
+              "add_perks": ["Armor(3)", "Fear(2)", "Flying", "Tough(12)"],
+              "add_weapons": ["Flame Breath (6\", A1, Blast(3), Reliable, Assault)", "Heavy Claws (A8, AP(2))", "Stomp (A4, AP(1))"]
+            }
+          ]
+        }
+      ],
+      "models": 1,
+      "height": "",
+      "class": "Hero"
+    }
+  },
+  "Keywords": {
+    "Hold the Line": "If most models in this unit have this rule, they get +1 to Morale Test rolls when shot/charged from over 9\"/6\" away.",
+    "Enhanced Hold the Line Buff": "Once per activation, before attacking, pick one friendly unit within 12\", which gets Enhanced Hold the Line once (next time the effect would apply).",
+    "Rapid Rush Buff": "Once per activation, before attacking, pick one friendly unit within 12\", which gets Rapid Rush once (next time the effect would apply).",
+    "Furious Buff": "Once per activation, before attacking, pick one friendly unit within 12\", which gets Furious once (next time the effect would apply).",
+    "Precision Fighting Mark": "Once per activation, before attacking, pick one enemy unit within 18\" in line of sight, which friendly units get +1 to hit rolls in melee against once (next time the effect would apply).",
+    "Precision Shooter Buff": "Once per activation, before attacking, pick one friendly unit within 12\", which gets +1 to hit rolls when shooting once (next time the effect would apply).",
+    "Coordinate": "At the end of this unit's activation, another friendly unit within 12\" that hasn't activated yet may be activated immediately.",
+    "Repel Ambushers": "Enemy units using Ambush must be set up over 12\" away from this model's unit."
+  },
+  "SpellBooks": {
+    "Human Empire Spells": {
+      "Aura of Heroism (1)": "Pick one friendly unit within 12\", which gets Enhanced Hold the Line once (next time the effect would apply).",
+      "Spirit Leech (1)": "Pick one enemy model within 18\" in line of sight, which takes 2 hits with AP(1). This effect is resolved as if the target was a unit of [1].",
+      "Magic Targeting (2)": "Pick up to two enemy units within 18\" in line of sight, which friendly units get +1 to hit rolls in melee against once (next time the effect would apply).",
+      "Fire Ball (2)": "Pick one enemy unit within 18\" in line of sight, which takes 4 hits with Fracture. Roll as many dice as hits to see if 'on rolls of 6' effects trigger.",
+      "Elemental Form (3)": "Pick up to three friendly units within 18\", which get AP(+1) on its weapons in melee once (next time the effect would apply).",
+      "Blood Hex (3)": "Pick one enemy unit within 18\" in line of sight, which takes 9 hits."
+    }
+  }
+}
+```
