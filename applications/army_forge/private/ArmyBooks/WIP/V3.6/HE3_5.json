@@ -1,0 +1,222 @@
+```json
+{
+  "Units": {
+    "Infantrymen": {
+      "base_points": 90,
+      "quality": 5,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "10x Hand Weapons (A1, Parry(1))"
+      ],
+      "perks": [
+        "Hold the Line"
+      ],
+      "upgrades": [
+        {
+          "section": "Replace all Hand Weapons",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Halberd (A1, Rending)",
+              "price": 5,
+              "add_weapons": ["10x Halberd (A1, Rending)"],
+              "remove_weapons": ["10x Hand Weapons (A1, Parry(1))"]
+            },
+            {
+              "name": "Spear (A1, Counter, Brace(1))",
+              "price": 5,
+              "add_weapons": ["10x Spear (A1, Counter, Brace(1))"],
+              "remove_weapons": ["10x Hand Weapons (A1, Parry(1))"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade one model with:",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Message Runner (Extended Buff Range)",
+              "price": 5,
+              "add_perks": ["Extended Buff Range"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade up to three models with one:",
+          "unit_level": false,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Sergeant",
+              "price": 5,
+              "add_perks": ["Sergeant"]
+            },
+            {
+              "name": "Musician",
+              "price": 10,
+              "add_perks": ["Musician"]
+            },
+            {
+              "name": "Banner",
+              "price": 5,
+              "add_perks": ["Banner"]
+            }
+          ]
+        }
+      ],
+      "models": 10,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Fanatics": {
+      "base_points": 95,
+      "quality": 5,
+      "defense": 6,
+      "tough": 1,
+      "weapons": [
+        "10x Sharp Weapons (A1, Shred)"
+      ],
+      "perks": [
+        "Furious",
+        "Hold the Line"
+      ],
+      "upgrades": [
+        {
+          "section": "Replace all Sharp Weapons",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Flail (A1, AP(1), Surge)",
+              "price": 30,
+              "add_weapons": ["10x Flail (A1, AP(1), Surge)"],
+              "remove_weapons": ["10x Sharp Weapons (A1, Shred)"]
+            }
+          ]
+        },
+        {
+          "section": "Replace up to two Sharp Weapons",
+          "unit_level": false,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Great Scythe (A1, AP(1), Blast(3))",
+              "price": 10,
+              "add_weapons": ["Great Scythe (A1, AP(1), Blast(3))"],
+              "remove_weapons": ["Sharp Weapon (A1, Shred)"]
+            },
+            {
+              "name": "Great Weapon (A3, AP(2))",
+              "price": 15,
+              "add_weapons": ["Great Weapon (A3, AP(2))"],
+              "remove_weapons": ["Sharp Weapon (A1, Shred)"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade up to three models with one:",
+          "unit_level": false,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Sergeant",
+              "price": 5,
+              "add_perks": ["Sergeant"]
+            },
+            {
+              "name": "Musician",
+              "price": 10,
+              "add_perks": ["Musician"]
+            },
+            {
+              "name": "Banner",
+              "price": 5,
+              "add_perks": ["Banner"]
+            }
+          ]
+        }
+      ],
+      "models": 10,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Mercenaries": {
+      "base_points": 60,
+      "quality": 5,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Dual Hand Weapons (A2)"
+      ],
+      "perks": [
+        "Hold the Line",
+        "Scout"
+      ],
+      "upgrades": [
+        {
+          "section": "Replace all Dual Hand Weapons",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Firepowder Pistol (9\", A1, Anti-Cover, Assault, Fracture) & Dagger (A1)",
+              "price": 20,
+              "add_weapons": ["5x Firepowder Pistol (9\", A1, Anti-Cover, Assault, Fracture)", "5x Dagger (A1)"],
+              "remove_weapons": ["5x Dual Hand Weapons (A2)"]
+            },
+            {
+              "name": "Matchlock Pistol (9\", A1, AP(1), Assault) & Dagger (A1)",
+              "price": 20,
+              "add_weapons": ["5x Matchlock Pistol (9\", A1, AP(1), Assault)", "5x Dagger (A1)"],
+              "remove_weapons": ["5x Dual Hand Weapons (A2)"]
+            },
+            {
+              "name": "Dual Firepowder Pistols (9\", A2, Anti-Cover, Assault, Fracture)",
+              "price": 40,
+              "add_weapons": ["5x Dual Firepowder Pistols (9\", A2, Anti-Cover, Assault, Fracture)"],
+              "remove_weapons": ["5x Dual Hand Weapons (A2)"]
+            },
+            {
+              "name": "Dual Matchlock Pistols (9\", A2, AP(1), Assault)",
+              "price": 40,
+              "add_weapons": ["5x Dual Matchlock Pistols (9\", A2, AP(1), Assault)"],
+              "remove_weapons": ["5x Dual Hand Weapons (A2)"]
+            }
+          ]
+        }
+      ],
+      "models": 5,
+      "height": "Standard",
+      "class": "Infantry"
+    }
+  },
+  "Keywords": {
+    "Hold the Line": "If most models in this unit have this rule, they get +1 to Morale Test rolls when shot/charged from over 9\"/6\" away.",
+    "Parry(X)": "When the unit is in melee, the opponent must subtract X from their hit rolls.",
+    "Rending": "Unmodified to-hit rolls of 6 get AP(+4) and ignore Regeneration.",
+    "Counter": "When charged, this unit may strike first with any weapons that have this rule.",
+    "Brace(X)": "When charged, this unit gets +X to its melee attacks.",
+    "Furious": "Whenever this unit charges, it gets +1 to hit in melee.",
+    "Shred": "Whenever this unit rolls a to-hit roll of 6, it counts as 2 hits.",
+    "Surge": "This unit may move an additional +3\" when using a Rush or Charge action.",
+    "Blast(X)": "Multiplies hits by X, but cannot be higher than the number of models in the target unit.",
+    "Scout": "This unit may be deployed after all other units, and may be placed anywhere over 12\" away from enemy units.",
+    "Anti-Cover": "This weapon ignores cover modifiers to hit.",
+    "Fracture": "For each unmodified result of 6 to hit, those hits get AP(+2).",
+    "Extended Buff Range": "If this unit is within 24\" of another friendly unit with this rule that has a Hero in it, then that Hero may use special rules on this unit as if it was in range."
+  },
+  "SpellBooks": {
+    "Human Empire Spells": {
+      "Aura of Heroism (1)": "Pick one friendly unit within 12\", which gets Enhanced Hold the Line once.",
+      "Spirit Leech (1)": "Pick one enemy model within 18\" in line of sight, which takes 2 hits with AP(1).",
+      "Magic Targeting (2)": "Pick up to two enemy units within 18\", which friendly units get +1 to hit rolls in melee against once.",
+      "Fire Ball (2)": "Pick one enemy unit within 18\", which takes 4 hits with Fracture.",
+      "Elemental Form (3)": "Pick up to three friendly units within 18\", which get AP(+1) in melee once.",
+      "Blood Hex (3)": "Pick one enemy unit within 18\", which takes 9 hits."
+    }
+  }
+}
+```
