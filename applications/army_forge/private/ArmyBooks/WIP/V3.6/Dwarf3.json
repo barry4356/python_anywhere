@@ -1,0 +1,240 @@
+
+{
+  "Units": {
+    "Berserker Lord": {
+      "base_points": 55,
+      "quality": 4,
+      "defense": 5,
+      "tough": 3,
+      "weapons": [
+        "Dual Hand Weapons (A4)"
+      ],
+      "perks": [
+        "Fearless",
+        "Furious",
+        "Hero",
+        "Melee Slayer",
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        {
+          "section": "Upgrade with one",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Iron Forger (Enhanced Sturdy Aura)",
+              "price": 5,
+              "add_perks": ["Enhanced Sturdy Aura"]
+            },
+            {
+              "name": "Pathfinder (Swift Aura)",
+              "price": 25,
+              "add_perks": ["Swift Aura"]
+            },
+            {
+              "name": "Rune Lord (Caster(2))",
+              "price": 30,
+              "add_perks": ["Caster(2)"]
+            },
+            {
+              "name": "Prospector (Spell Resistance Aura)",
+              "price": 35,
+              "add_perks": ["Spell Resistance Aura"]
+            },
+            {
+              "name": "Warden (Rending in Melee Aura)",
+              "price": 45,
+              "add_perks": ["Rending in Melee Aura"]
+            }
+          ]
+        },
+        {
+          "section": "Replace Dual Hand Weapons",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Rune Staff (A2, Spell Amplifier)",
+              "price": 20,
+              "add_weapons": ["Rune Staff (A2, Spell Amplifier)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Berserker Greathammer (A1, AP(3), Deadly(3), Reliable)",
+              "price": 25,
+              "add_weapons": ["Master Berserker Greathammer (A1, AP(3), Deadly(3), Reliable)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with any",
+          "unit_level": true,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Rune of Power (Precision Frenzy)",
+              "price": 5,
+              "add_perks": ["Precision Frenzy"]
+            },
+            {
+              "name": "Coal Beast (Ravage(1), Swift)",
+              "price": 10,
+              "add_perks": ["Ravage(1)", "Swift"]
+            }
+          ]
+        }
+      ],
+      "models": 1,
+      "height": "Standard",
+      "class": "Hero"
+    },
+    "Mountain Warriors": {
+      "base_points": 90,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "10x Hand Weapons (A1, Parry(1))"
+      ],
+      "perks": [
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        {
+          "section": "Replace all Hand Weapons",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Halberd (A1, Rending)",
+              "price": 5,
+              "add_weapons": ["10x Halberds (A1, Rending)"],
+              "remove_weapons": ["10x Hand Weapons (A1, Parry(1))"]
+            },
+            {
+              "name": "Spear (A1, Counter, Brace(1))",
+              "price": 15,
+              "add_weapons": ["10x Spears (A1, Counter, Brace(1))"],
+              "remove_weapons": ["10x Hand Weapons (A1, Parry(1))"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade all models with",
+          "unit_level": true,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Rune of Power (Precision Frenzy)",
+              "price": 5,
+              "add_perks": ["Precision Frenzy"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade up to three models with one",
+          "unit_level": false,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            { "name": "Sergeant", "price": 5, "add_perks": ["Sergeant"] },
+            { "name": "Musician", "price": 10, "add_perks": ["Musician"] },
+            { "name": "Banner", "price": 15, "add_perks": ["Banner"] }
+          ]
+        }
+      ],
+      "models": 10,
+      "height": "Standard",
+      "class": "Core"
+    },
+    "Coal Miners": {
+      "base_points": 70,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Mining Picks (A1, Rending)"
+      ],
+      "perks": [
+        "Infiltrate",
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        {
+          "section": "Replace all Mining Picks",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Explosives (12\", A1, AP(2), Indirect), Strike (A1), Blaster (Quick Throw)",
+              "price": 35,
+              "add_weapons": ["5x Explosives (12\", A1, AP(2), Indirect)", "5x Strikes (A1)"],
+              "add_perks": ["Quick Throw"],
+              "remove_weapons": ["5x Mining Picks (A1, Rending)"]
+            }
+          ]
+        },
+        {
+          "section": "Replace one Mining Pick",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Mining Drill (A1, AP(4), Deadly(3))",
+              "price": 20,
+              "add_weapons": ["Mining Drill (A1, AP(4), Deadly(3))"],
+              "remove_weapons": ["Mining Pick (A1, Rending)"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade all models with",
+          "unit_level": true,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Rune of Power (Precision Frenzy)",
+              "price": 5,
+              "add_perks": ["Precision Frenzy"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade up to three models with one",
+          "unit_level": false,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            { "name": "Sergeant", "price": 5, "add_perks": ["Sergeant"] },
+            { "name": "Musician", "price": 5, "add_perks": ["Musician"] },
+            { "name": "Banner", "price": 10, "add_perks": ["Banner"] }
+          ]
+        }
+      ],
+      "models": 5,
+      "height": "Standard",
+      "class": "Core"
+    }
+  },
+  "Keywords": {
+    "Sturdy": "If most models in this unit have this rule, they get +1 to Defense rolls when shot/charged from over 9\"/6\" away.",
+    "Slow": "This model moves -2\" on Advance actions, and -4\" on Rush/Charge actions.",
+    "Fearless": "This model gets +1 to Morale tests.",
+    "Furious": "When charging, unmodified rolls of 6 to hit deal one extra hit.",
+    "Melee Slayer": "When charging, this model's weapons get AP(+2) if most models in the target have Tough(3) or higher.",
+    "Infiltrate": "Counts as having Ambush, but may be deployed anywhere over 3\" away from enemy unit."
+  },
+  "SpellBooks": {
+    "Runic Magic": {
+      "Rune of Spite (1)": "Pick one enemy unit within 18\" in line of sight, which moves -2\" when using Advance actions and -4\" when using Rush/Charge actions once.",
+      "Rune of Breaking (1)": "Pick one enemy model within 18\" in line of sight, which takes 2 hits with AP(1).",
+      "Rune of Protection (2)": "Pick up to two friendly units within 12\", which get Enhanced Sturdy once.",
+      "Rune of Smiting (2)": "Pick one enemy unit within 18\" in line of sight, which takes 2 hits with Blast(3).",
+      "Rune of Battle (3)": "Pick up to three friendly units within 18\", which get Rapid Charge once.",
+      "Rune of Cleaving (3)": "Pick one enemy unit within 18\" in line of sight, which takes 6 hits with Scourge."
+    }
+  }
+}
