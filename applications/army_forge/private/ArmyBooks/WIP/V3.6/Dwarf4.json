@@ -1,0 +1,320 @@
+
+{
+  "Units": {
+    "Hammer Elites": {
+      "base_points": 75,
+      "quality": 3,
+      "defense": 4,
+      "tough": 1,
+      "weapons": [
+        "5x Great Weapons (A1, AP(2))"
+      ],
+      "perks": [
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        {
+          "section": "Replace one Great Weapon",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Great Runic Hammer (A1, AP(1), Blast(3), Scourge, Unwieldy)",
+              "price": 5,
+              "add_weapons": [
+                "Great Runic Hammer (A1, AP(1), Blast(3), Scourge, Unwieldy)"
+              ],
+              "remove_weapons": [
+                "Great Weapon (A1, AP(2))"
+              ]
+            },
+            {
+              "name": "Great Hammer (A1, AP(1), Blast(3))",
+              "price": 5,
+              "add_weapons": [
+                "Great Hammer (A1, AP(1), Blast(3))"
+              ],
+              "remove_weapons": [
+                "Great Weapon (A1, AP(2))"
+              ]
+            },
+            {
+              "name": "Giantslayer Hammer (A1, AP(4), Deadly(3))",
+              "price": 25,
+              "add_weapons": [
+                "Giantslayer Hammer (A1, AP(4), Deadly(3))"
+              ],
+              "remove_weapons": [
+                "Great Weapon (A1, AP(2))"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade up to three models with one:",
+          "unit_level": false,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Sergeant",
+              "price": 5,
+              "add_perks": [
+                "Sergeant"
+              ]
+            },
+            {
+              "name": "Musician",
+              "price": 10,
+              "add_perks": [
+                "Musician"
+              ]
+            },
+            {
+              "name": "Banner",
+              "price": 15,
+              "add_perks": [
+                "Banner"
+              ]
+            }
+          ]
+        }
+      ],
+      "models": 5,
+      "height": "Small",
+      "class": "Infantry"
+    },
+    "Marksmen": {
+      "base_points": 75,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Strikes (A1)",
+        "5x Matchlock Rifles (18\", A1, AP(1))"
+      ],
+      "perks": [
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        {
+          "section": "Replace all Matchlock Rifles",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Crossbow (18\", A1, Rending)",
+              "price": 5,
+              "add_weapons": [
+                "5x Crossbows (18\", A1, Rending)"
+              ],
+              "remove_weapons": [
+                "5x Matchlock Rifles (18\", A1, AP(1))"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Replace one Matchlock Rifle",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Dual Matchlock Pistols (9\", A2, AP(1), Assault)",
+              "price": 10,
+              "add_weapons": [
+                "Dual Matchlock Pistols (9\", A2, AP(1), Assault)"
+              ],
+              "remove_weapons": [
+                "Matchlock Rifle (18\", A1, AP(1))"
+              ]
+            },
+            {
+              "name": "Rapid Matchlock Rifle (18\", A3, AP(1))",
+              "price": 15,
+              "add_weapons": [
+                "Rapid Matchlock Rifle (18\", A3, AP(1))"
+              ],
+              "remove_weapons": [
+                "Matchlock Rifle (18\", A1, AP(1))"
+              ]
+            },
+            {
+              "name": "Rapid Crossbow (18\", A3, Rending)",
+              "price": 20,
+              "add_weapons": [
+                "Rapid Crossbow (18\", A3, Rending)"
+              ],
+              "remove_weapons": [
+                "Matchlock Rifle (18\", A1, AP(1))"
+              ]
+            }
+          ]
+        }
+      ],
+      "models": 5,
+      "height": "Small",
+      "class": "Infantry"
+    },
+    "Iron Warriors": {
+      "base_points": 80,
+      "quality": 3,
+      "defense": 3,
+      "tough": 1,
+      "weapons": [
+        "5x Hand Weapons (A1, Parry(1))"
+      ],
+      "perks": [
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        {
+          "section": "Replace all Hand Weapons",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Runic Hammer (A1, Scourge)",
+              "price": 5,
+              "add_weapons": [
+                "5x Runic Hammers (A1, Scourge)"
+              ],
+              "remove_weapons": [
+                "5x Hand Weapons (A1, Parry(1))"
+              ]
+            },
+            {
+              "name": "Iron Hammer (A1, AP(2))",
+              "price": 15,
+              "add_weapons": [
+                "5x Iron Hammers (A1, AP(2))"
+              ],
+              "remove_weapons": [
+                "5x Hand Weapons (A1, Parry(1))"
+              ]
+            }
+          ]
+        }
+      ],
+      "models": 5,
+      "height": "Small",
+      "class": "Infantry"
+    },
+    "Berserkers": {
+      "base_points": 90,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Dual Hand Weapons (A2)"
+      ],
+      "perks": [
+        "Fearless",
+        "Furious",
+        "Melee Slayer",
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        {
+          "section": "Replace one Dual Hand Weapons",
+          "unit_level": false,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Berserker Greathammer (A1, AP(2), Deadly(3), Reliable)",
+              "price": 30,
+              "add_weapons": [
+                "Berserker Greathammer (A1, AP(2), Deadly(3), Reliable)"
+              ],
+              "remove_weapons": [
+                "Dual Hand Weapons (A2)"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade all models with:",
+          "unit_level": true,
+          "type": "CHOOSE_MULTIPLE",
+          "choices": [
+            {
+              "name": "Rune of Power (Precision Frenzy)",
+              "price": 5,
+              "add_perks": [
+                "Precision Frenzy"
+              ]
+            }
+          ]
+        }
+      ],
+      "models": 5,
+      "height": "Small",
+      "class": "Infantry"
+    },
+    "Rangers": {
+      "base_points": 95,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Strikes (A1)",
+        "5x Crossbows (18\", A1, Rending)"
+      ],
+      "perks": [
+        "Scout",
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        {
+          "section": "Replace all Crossbows and Strikes",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Dual Throwing Picks (12\", A2, Assault)",
+              "price": 15,
+              "add_weapons": [
+                "5x Dual Throwing Picks (12\", A2, Assault)"
+              ],
+              "remove_weapons": [
+                "5x Strikes (A1)",
+                "5x Crossbows (18\", A1, Rending)"
+              ]
+            }
+          ]
+        }
+      ],
+      "models": 5,
+      "height": "Small",
+      "class": "Infantry"
+    }
+  },
+  "Keywords": {
+    "Sturdy": "If most models in this unit have this rule, they get +1 to Defense rolls when shot/charged from over 9\"/6\" away.",
+    "Slow": "This model moves -1\" when using Advance actions and -2\" when using Rush/Charge actions.",
+    "Fearless": "This model gets +1 to its morale tests.",
+    "Furious": "This model gets +1 attack on the charge.",
+    "Melee Slayer": "When charging, this model's weapons get AP(+2) if most models in the target have Tough(3) or higher.",
+    "Scout": "This model may be deployed after all other units, and may be placed anywhere over 12\" away from enemy units.",
+    "Rending": "Unmodified hit rolls of 6 get AP(4) and ignore Regeneration.",
+    "Bane": "This weapon gets +1 to hit rolls.",
+    "Blast(X)": "This weapon ignores cover and multiplies hits by X.",
+    "Scourge": "For each unmodified result of 1 to block hits, enemies count as having taken 2 extra wounds for melee resolution/morale.",
+    "Unwieldy": "Strikes last when charging.",
+    "Deadly(X)": "Each wound dealt is multiplied by X."
+  },
+  "SpellBooks": {
+    "Army Spells": {
+      "Rune of Spite (1)": "Pick one enemy unit within 18\" in line of sight, which moves -2\" when using Advance actions and -4\" when using Rush/Charge actions once.",
+      "Rune of Breaking (1)": "Pick one enemy model within 18\" in line of sight, which takes 2 hits with AP(1).",
+      "Rune of Protection (2)": "Pick up to two friendly units within 12\", which get Enhanced Sturdy once.",
+      "Rune of Smiting (2)": "Pick one enemy unit within 18\" in line of sight, which takes 2 hits with Blast(3).",
+      "Rune of Battle (3)": "Pick up to three friendly units within 18\", which get Rapid Charge once.",
+      "Rune of Cleaving (3)": "Pick one enemy unit within 18\" in line of sight, which takes 6 hits with Scourge."
+    }
+  }
+}
