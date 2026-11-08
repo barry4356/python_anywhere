@@ -1,0 +1,145 @@
+
+{
+  "Units": {
+    "Steam-Suit Champion": {
+      "base_points": 140,
+      "quality": 3,
+      "defense": 3,
+      "tough": 6,
+      "weapons": [
+        "Steam-Suit Fists (A8)"
+      ],
+      "perks": [
+        "Fearless",
+        "Hero",
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        {
+          "section": "Upgrade with one",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Iron Forger (Enhanced Sturdy Aura)",
+              "price": 5,
+              "add_perks": [
+                "Enhanced Sturdy Aura"
+              ]
+            },
+            {
+              "name": "Pathfinder (Swift Aura)",
+              "price": 25,
+              "add_perks": [
+                "Swift Aura"
+              ]
+            },
+            {
+              "name": "Rune Lord (Caster(2))",
+              "price": 30,
+              "add_perks": [
+                "Caster(2)"
+              ]
+            },
+            {
+              "name": "Prospector (Spell Resistance Aura)",
+              "price": 35,
+              "add_perks": [
+                "Spell Resistance Aura"
+              ]
+            },
+            {
+              "name": "Artificer (Relentless Aura)",
+              "price": 35,
+              "add_perks": [
+                "Relentless Aura"
+              ]
+            }
+          ]
+        },
+        {
+          "section": "Replace Steam-Suit Fists",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Master Hand Weapon (A6, AP(1), Parry(3))",
+              "price": 10,
+              "add_weapons": [
+                "Master Hand Weapon (A6, AP(1), Parry(3))"
+              ],
+              "remove_weapons": [
+                "Steam-Suit Fists (A8)"
+              ]
+            },
+            {
+              "name": "Runic Hammer (A6, Scourge), Heavy Shield (Fortified)",
+              "price": 15,
+              "add_weapons": [
+                "Runic Hammer (A6, Scourge)"
+              ],
+              "add_perks": [
+                "Fortified"
+              ],
+              "remove_weapons": [
+                "Steam-Suit Fists (A8)"
+              ]
+            },
+            {
+              "name": "Steam-Gun (12\", A2, Blast(3), Assault), Hand Weapon (A2)",
+              "price": 20,
+              "add_weapons": [
+                "Steam-Gun (12\", A2, Blast(3), Assault)",
+                "Hand Weapon (A2)"
+              ],
+              "remove_weapons": [
+                "Steam-Suit Fists (A8)"
+              ]
+            },
+            {
+              "name": "Iron Hammer (A6, AP(2)), Heavy Shield (Fortified)",
+              "price": 30,
+              "add_weapons": [
+                "Iron Hammer (A6, AP(2))"
+              ],
+              "add_perks": [
+                "Fortified"
+              ],
+              "remove_weapons": [
+                "Steam-Suit Fists (A8)"
+              ]
+            }
+          ]
+        }
+      ],
+      "models": 1,
+      "height": "Standard",
+      "class": "Hero"
+    }
+  },
+  "Keywords": {
+    "Sturdy": "If most models in this unit have this rule, they get +1 to Defense rolls when shot/charged from over 9\"/6\" away.",
+    "Fearless": "When failing a morale test, roll one die. On a 4+ it is passed instead.",
+    "Hero": "Models with this rule may be joined to units, and have various special rules.",
+    "Slow": "This model moves -1\" on Advance and -2\" on Rush/Charge actions.",
+    "Tough(X)": "This model must take X wounds before being removed as a casualty.",
+    "Enhanced Sturdy Aura": "This model and its unit get Enhanced Sturdy.",
+    "Swift Aura": "This model and its unit get Swift.",
+    "Relentless Aura": "This model and its unit get Relentless.",
+    "Spell Resistance Aura": "This model and its unit get Spell Resistance.",
+    "Fortified": "When units where most models have this rule take hits, those hits count as having AP(-1), to a min. of AP(0).",
+    "Scourge": "For each unmodified result of 1 to block hits, enemies count as having taken 2 extra wounds when checking who won melee.",
+    "Parry(X)": "The model counts as having +X to its Defense characteristic when it is attacked in melee."
+  },
+  "SpellBooks": {
+    "Army Spells": {
+      "Rune of Spite (1)": "Pick one enemy unit within 18\" in line of sight, which moves -2\" when using Advance actions and -4\" when using Rush/Charge actions once (next time the effect would apply).",
+      "Rune of Breaking (1)": "Pick one enemy model within 18\" in line of sight, which takes 2 hits with AP(1). This effect is resolved as if the target was a unit of [1].",
+      "Rune of Protection (2)": "Pick up to two friendly units within 12\", which get Enhanced Sturdy once (next time the effect would apply).",
+      "Rune of Smiting (2)": "Pick one enemy unit within 18\" in line of sight, which takes 2 hits with Blast(3).",
+      "Rune of Battle (3)": "Pick up to three friendly units within 18\", which get Rapid Charge once (next time the effect would apply).",
+      "Rune of Cleaving (3)": "Pick one enemy unit within 18\" in line of sight, which takes 6 hits with Scourge."
+    }
+  }
+}
