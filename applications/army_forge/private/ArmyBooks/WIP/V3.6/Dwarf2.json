@@ -1,0 +1,207 @@
+
+{
+  "Units": {
+    "Dwarf Champion": {
+      "base_points": 60,
+      "quality": 3,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "Dual Hand Weapons (A4)"
+      ],
+      "perks": [
+        "Fearless",
+        "Hero",
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        {
+          "section": "Upgrade with one",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Iron Forger (Enhanced Sturdy Aura)",
+              "price": 5,
+              "add_perks": ["Enhanced Sturdy Aura"]
+            },
+            {
+              "name": "Army Standard Bearer (Fear(2))",
+              "price": 20,
+              "add_perks": ["Fear(2)"]
+            },
+            {
+              "name": "Pathfinder (Swift Aura)",
+              "price": 25,
+              "add_perks": ["Swift Aura"]
+            },
+            {
+              "name": "Rune Lord (Caster(2))",
+              "price": 30,
+              "add_perks": ["Caster(2)"]
+            },
+            {
+              "name": "Artificer (Relentless Aura)",
+              "price": 35,
+              "add_perks": ["Relentless Aura"]
+            },
+            {
+              "name": "Warden (Rending in Melee Aura)",
+              "price": 45,
+              "add_perks": ["Rending in Melee Aura"]
+            }
+          ]
+        },
+        {
+          "section": "Replace Dual Hand Weapons",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Master Halberd (A3, AP(1), Rending)",
+              "price": 10,
+              "add_weapons": ["Master Halberd (A3, AP(1), Rending)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Hand Weapon (A3, AP(1), Parry(3))",
+              "price": 10,
+              "add_weapons": ["Master Hand Weapon (A3, AP(1), Parry(3))"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Runic Hammer (A3, AP(1), Scourge)",
+              "price": 10,
+              "add_weapons": ["Master Runic Hammer (A3, AP(1), Scourge)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Axe-Halberd (A3, AP(1), Thrust)",
+              "price": 10,
+              "add_weapons": ["Master Axe-Halberd (A3, AP(1), Thrust)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Spear (A3, AP(1), Counter, Brace(1))",
+              "price": 15,
+              "add_weapons": ["Master Spear (A3, AP(1), Counter, Brace(1))"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Master Great Weapon (A3, AP(4))",
+              "price": 20,
+              "add_weapons": ["Master Great Weapon (A3, AP(4))"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Rune Staff (A2, Spell Amplifier)",
+              "price": 10,
+              "add_weapons": ["Rune Staff (A2, Spell Amplifier)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Throwing Picks (12\", A1, Assault), Hand Weapon (A3, Parry(3))",
+              "price": 10,
+              "add_weapons": ["Throwing Picks (12\", A1, Assault)", "Hand Weapon (A3, Parry(3))"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Rapid Crossbow (18\", A3, Rending), Strike (A1)",
+              "price": 15,
+              "add_weapons": ["Rapid Crossbow (18\", A3, Rending)", "Strike (A1)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Dual Fire Pistols (9\", A4, Assault, Bane)",
+              "price": 25,
+              "add_weapons": ["Dual Fire Pistols (9\", A4, Assault, Bane)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            },
+            {
+              "name": "Dual Matchlock Pistols (9\", A4, AP(1), Assault)",
+              "price": 35,
+              "add_weapons": ["Dual Matchlock Pistols (9\", A4, AP(1), Assault)"],
+              "remove_weapons": ["Dual Hand Weapons (A4)"]
+            }
+          ]
+        },
+        {
+          "section": "Upgrade with one (mounts/gear)",
+          "unit_level": true,
+          "type": "CHOOSE_ONE",
+          "choices": [
+            {
+              "name": "Rune of Power (Precision Frenzy)",
+              "price": 5,
+              "add_perks": ["Precision Frenzy"]
+            },
+            {
+              "name": "Coal Beast (Ravage(1), Swift)",
+              "price": 10,
+              "add_perks": ["Ravage(1)", "Swift"]
+            },
+            {
+              "name": "Ranger (Scout)",
+              "price": 10,
+              "add_perks": ["Scout"]
+            },
+            {
+              "name": "Mining Gear (Infiltrate)",
+              "price": 15,
+              "add_perks": ["Infiltrate"]
+            },
+            {
+              "name": "Doom Cart (Spell Accumulator(2), Tough(3))",
+              "price": 50,
+              "add_perks": ["Spell Accumulator(2)", "Tough(3)"]
+            },
+            {
+              "name": "Shield Platform (Hand Weapon Crew (A3, Parry(3)), Tough(3))",
+              "price": 55,
+              "add_weapons": ["Hand Weapon Crew (A3, Parry(3))"],
+              "add_perks": ["Tough(3)"]
+            },
+            {
+              "name": "Myth Stone (Fear(2), Tough(3))",
+              "price": 55,
+              "add_perks": ["Fear(2)", "Tough(3)"]
+            },
+            {
+              "name": "Beast-Construct (Armor(3), Impact(3), Swift, Tough(3))",
+              "price": 90,
+              "add_perks": ["Armor(3)", "Impact(3)", "Swift", "Tough(3)"]
+            }
+          ]
+        }
+      ],
+      "models": 1,
+      "height": "Small",
+      "class": "Hero"
+    }
+  },
+  "Keywords": {
+    "Sturdy": "If most models in this unit have this rule, they get +1 to Defense rolls when shot/charged from over 9\"/6\" away.",
+    "Fearless": "This model gets +1 to Morale tests.",
+    "Slow": "This model moves -1\" on Advance and -2\" on Rush/Charge actions.",
+    "Hero": "Models with this rule may be joined to units, and have other special rules.",
+    "Tough(X)": "This model must take X wounds before being removed as a casualty.",
+    "Enhanced Sturdy Aura": "This model and its unit get Enhanced Sturdy.",
+    "Swift": "This model may ignore the Slow rule.",
+    "Scourge": "For each unmodified result of 1 to block hits, enemies count as having taken 2 extra wounds when checking who won melee.",
+    "Thrust": "This weapon gets +1 to hit when charging.",
+    "Caster(X)": "This model may cast one spell per activation with a value of X.",
+    "Infiltrate": "Counts as having Ambush, but may be deployed anywhere over 3\" away from enemy unit.",
+    "Precision Frenzy": "Place one token on this unit when it fully destroys an enemy unit... units get +1 to hit rolls until end of game."
+  },
+  "SpellBooks": {
+    "Army Spells": {
+      "Rune of Spite (1)": "Pick one enemy unit within 18\" in line of sight, which moves -2\" when using Advance actions and -4\" when using Rush/Charge actions once.",
+      "Rune of Breaking (1)": "Pick one enemy model within 18\" in line of sight, which takes 2 hits with AP(1). This effect is resolved as if the target was a unit of [1].",
+      "Rune of Protection (2)": "Pick up to two friendly units within 12\", which get Enhanced Sturdy once.",
+      "Rune of Smiting (2)": "Pick one enemy unit within 18\" in line of sight, which takes 2 hits with Blast(3).",
+      "Rune of Battle (3)": "Pick up to three friendly units within 18\", which get Rapid Charge once.",
+      "Rune of Cleaving (3)": "Pick one enemy unit within 18\" in line of sight, which takes 6 hits with Scourge."
+    }
+  }
+}
