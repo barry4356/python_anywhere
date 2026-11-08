@@ -1,0 +1,529 @@
+
+{
+  "Units": {
+    "Steam-Suit Champion": {
+      "base_points": 140,
+      "quality": 3,
+      "defense": 3,
+      "tough": 6,
+      "weapons": [
+        "Steam-Suit Fists (A8)"
+      ],
+      "perks": [
+        "Fearless",
+        "Hero",
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Iron Forger (Enhanced Sturdy Aura)",
+        "Pathfinder (Swift Aura)",
+        "Rune Lord (Caster(2))",
+        "Prospector (Spell Resistance Aura)",
+        "Artificer (Relentless Aura)"
+      ],
+      "models": 1,
+      "height": "Standard",
+      "class": "Hero"
+    },
+    "Dwarf Champion": {
+      "base_points": 60,
+      "quality": 3,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "Dual Hand Weapons (A4)"
+      ],
+      "perks": [
+        "Fearless",
+        "Hero",
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Iron Forger (Enhanced Sturdy Aura)",
+        "Army Standard Bearer (Fear(2))",
+        "Pathfinder (Swift Aura)",
+        "Rune Lord (Caster(2))",
+        "Artificer (Relentless Aura)",
+        "Warden (Rending in Melee Aura)"
+      ],
+      "models": 1,
+      "height": "Standard",
+      "class": "Hero"
+    },
+    "Berserker Lord": {
+      "base_points": 55,
+      "quality": 4,
+      "defense": 5,
+      "tough": 3,
+      "weapons": [
+        "Dual Hand Weapons (A4)"
+      ],
+      "perks": [
+        "Fearless",
+        "Furious",
+        "Hero",
+        "Melee Slayer",
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Iron Forger (Enhanced Sturdy Aura)",
+        "Pathfinder (Swift Aura)",
+        "Rune Lord (Caster(2))",
+        "Prospector (Spell Resistance Aura)",
+        "Warden (Rending in Melee Aura)"
+      ],
+      "models": 1,
+      "height": "Standard",
+      "class": "Hero"
+    },
+    "Mountain Warriors": {
+      "base_points": 90,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "10x Hand Weapons (A1, Parry(1))"
+      ],
+      "perks": [
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Sergeant",
+        "Musician",
+        "Banner"
+      ],
+      "models": 10,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Coal Miners": {
+      "base_points": 70,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Mining Picks (A1, Rending)"
+      ],
+      "perks": [
+        "Infiltrate",
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Sergeant",
+        "Musician",
+        "Banner"
+      ],
+      "models": 5,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Bearded Veterans": {
+      "base_points": 70,
+      "quality": 3,
+      "defense": 4,
+      "tough": 1,
+      "weapons": [
+        "5x Hand Weapons (A1, Parry(1))"
+      ],
+      "perks": [
+        "Fearless",
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Sergeant",
+        "Musician",
+        "Banner"
+      ],
+      "models": 5,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Hammer Elites": {
+      "base_points": 75,
+      "quality": 3,
+      "defense": 4,
+      "tough": 1,
+      "weapons": [
+        "5x Great Weapons (A1, AP(2))"
+      ],
+      "perks": [
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Sergeant",
+        "Musician",
+        "Banner"
+      ],
+      "models": 5,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Marksmen": {
+      "base_points": 75,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Strikes (A1)",
+        "5x Matchlock Rifles (18\", A1, AP(1))"
+      ],
+      "perks": [
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Sergeant",
+        "Musician",
+        "Banner"
+      ],
+      "models": 5,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Iron Warriors": {
+      "base_points": 80,
+      "quality": 3,
+      "defense": 3,
+      "tough": 1,
+      "weapons": [
+        "5x Hand Weapons (A1, Parry(1))"
+      ],
+      "perks": [
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Sergeant",
+        "Musician",
+        "Banner"
+      ],
+      "models": 5,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Berserkers": {
+      "base_points": 90,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Dual Hand Weapons (A2)"
+      ],
+      "perks": [
+        "Fearless",
+        "Furious",
+        "Melee Slayer",
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Sergeant",
+        "Musician",
+        "Banner"
+      ],
+      "models": 5,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Rangers": {
+      "base_points": 95,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Strikes (A1)",
+        "5x Crossbows (18\", A1, Rending)"
+      ],
+      "perks": [
+        "Scout",
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Sergeant",
+        "Musician",
+        "Banner"
+      ],
+      "models": 5,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Iron Marksmen": {
+      "base_points": 110,
+      "quality": 3,
+      "defense": 3,
+      "tough": 1,
+      "weapons": [
+        "5x Strikes (A1)",
+        "5x Fire Rifles (18\", A1, Bane)"
+      ],
+      "perks": [
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Sergeant",
+        "Musician",
+        "Banner"
+      ],
+      "models": 5,
+      "height": "Standard",
+      "class": "Infantry"
+    },
+    "Berserker Coal Beast Riders": {
+      "base_points": 115,
+      "quality": 4,
+      "defense": 5,
+      "tough": 1,
+      "weapons": [
+        "5x Dual Hand Weapons (A2)"
+      ],
+      "perks": [
+        "Fearless",
+        "Furious",
+        "Melee Slayer",
+        "Ravage(1)",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Sergeant",
+        "Musician",
+        "Banner"
+      ],
+      "models": 5,
+      "height": "Large",
+      "class": "Cavalry"
+    },
+    "Coal Golems": {
+      "base_points": 105,
+      "quality": 4,
+      "defense": 4,
+      "tough": 3,
+      "weapons": [
+        "3x Great Maces (A1, AP(1), Blast(3))"
+      ],
+      "perks": [
+        "Slow",
+        "Strider",
+        "Sturdy"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "Large",
+      "class": "Construct"
+    },
+    "Steam-Suits": {
+      "base_points": 190,
+      "quality": 3,
+      "defense": 3,
+      "tough": 3,
+      "weapons": [
+        "3x Steam-Suit Fists (A4)"
+      ],
+      "perks": [
+        "Fearless",
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [],
+      "models": 3,
+      "height": "Large",
+      "class": "Construct"
+    },
+    "Beast-Construct Riders": {
+      "base_points": 190,
+      "quality": 3,
+      "defense": 3,
+      "tough": 3,
+      "weapons": [
+        "3x Hand Weapons (A1, Parry(1))"
+      ],
+      "perks": [
+        "Impact(3)",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Sergeant",
+        "Musician",
+        "Banner"
+      ],
+      "models": 3,
+      "height": "Large",
+      "class": "Cavalry"
+    },
+    "Bomber Helicopter": {
+      "base_points": 200,
+      "quality": 4,
+      "defense": 2,
+      "tough": 6,
+      "weapons": [
+        "Bombing Run (A1, AP(1), Blast(3), Crossing Strike)",
+        "Overrun (A2, Thrust)",
+        "Heavy Flamethrower (12\", A1, AP(1), Blast(3), Reliable)"
+      ],
+      "perks": [
+        "Fast",
+        "Flying",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Rune of Slowing (Speed Debuff)"
+      ],
+      "models": 1,
+      "height": "Extra Large",
+      "class": "Vehicle"
+    },
+    "Attack Helicopter": {
+      "base_points": 200,
+      "quality": 4,
+      "defense": 2,
+      "tough": 6,
+      "weapons": [
+        "Overrun (A2, Thrust)",
+        "Mini-Cannon (18\", A2, AP(1), Blast(3))"
+      ],
+      "perks": [
+        "Fast",
+        "Flying",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Rune of Slowing (Speed Debuff)",
+        "First to Battle (Vanguard)"
+      ],
+      "models": 1,
+      "height": "Extra Large",
+      "class": "Vehicle"
+    },
+    "Giant Construct": {
+      "base_points": 335,
+      "quality": 3,
+      "defense": 2,
+      "tough": 12,
+      "weapons": [
+        "Great Runic Hammer (A3, AP(1), Blast(3), Scourge, Unwieldy)",
+        "Stomp (A4, AP(1))"
+      ],
+      "perks": [
+        "Fear(2)",
+        "Fearless",
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "Gargantuan",
+      "class": "Construct"
+    },
+    "Dwarf Artillery": {
+      "base_points": 75,
+      "quality": 4,
+      "defense": 5,
+      "tough": 3,
+      "weapons": [
+        "Crew (A3)",
+        "Pick Flinger (18\", A2, Blast(3), Rending)"
+      ],
+      "perks": [
+        "Artillery",
+        "Cumbersome",
+        "Sturdy"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "Large",
+      "class": "Artillery"
+    },
+    "Coal Golem Titan": {
+      "base_points": 460,
+      "quality": 4,
+      "defense": 2,
+      "tough": 18,
+      "weapons": [
+        "Sweeping Titan Strike (A2, AP(2), Blast(6))",
+        "Stomp (A6, AP(2))"
+      ],
+      "perks": [
+        "Fear(3)",
+        "Slow",
+        "Strider",
+        "Sturdy"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "Gargantuan",
+      "class": "Construct"
+    },
+    "Great Railway Cannon": {
+      "base_points": 770,
+      "quality": 4,
+      "defense": 2,
+      "tough": 24,
+      "weapons": [
+        "Overrun (A8, Thrust)",
+        "2x Mini-Cannons (18\", A1, AP(1), Blast(3))",
+        "Great Artillery Cannon (30\", A3, AP(2), Blast(6), Indirect)"
+      ],
+      "perks": [
+        "Slow",
+        "Sturdy"
+      ],
+      "upgrades": [],
+      "models": 1,
+      "height": "Gargantuan",
+      "class": "Vehicle"
+    },
+    "Helicopter Construct": {
+      "base_points": 790,
+      "quality": 4,
+      "defense": 2,
+      "tough": 24,
+      "weapons": [
+        "Overrun (A8, Thrust)",
+        "Great Burst Cannon (18\", A18, Anti-Cover, Surge)",
+        "Steam-Gun Array (24\", A2, Blast(3))"
+      ],
+      "perks": [
+        "Flying",
+        "Sturdy"
+      ],
+      "upgrades": [
+        "Rune of Slowing (Speed Debuff)",
+        "Attack Cargo-Bay",
+        "Bomber Cargo-Bay"
+      ],
+      "models": 1,
+      "height": "Gargantuan",
+      "class": "Vehicle"
+    }
+  },
+  "Keywords": {
+    "Sturdy": "If most models in this unit have this rule, they get +1 to Defense rolls when shot/charged from over 9\"/6\" away.",
+    "Crossing Strike": "Once per activation, when this model moves through enemy units, pick one of them and attack with this weapon as if it was shooting. This weapon may only be used in this way.",
+    "Cumbersome": "May only use Hold or Advance actions, but can’t shoot when moving.",
+    "Infiltrate": "Counts as having Ambush, but may be deployed anywhere over 3\" away from enemy unit.",
+    "Melee Slayer": "When charging, this model's weapons get AP(+2) if most models in the target have Tough(3) or higher.",
+    "Ravage": "Once per round, when it’s this model’s turn to strike in melee, roll X dice before attacking, unless this unit is Fatigued. For each 6+ the target takes one wound.",
+    "Scourge": "For each unmodified result of 1 to block hits, enemies count as having taken 2 extra wounds when checking who won melee, or if shooting wounds would trigger Morale Tests.",
+    "Slow": "This model moves -1\" on Advance actions, and -2\" on Rush/Charge actions.",
+    "Fearless": "This model gets +1 to its morale tests.",
+    "Furious": "Whenever this model charges, its melee weapons get +1 hit for each unmodified roll of 6 to hit."
+  },
+  "SpellBooks": {
+    "Army Spells": {
+      "Rune of Spite (1)": "Pick one enemy unit within 18\" in line of sight, which moves -2\" when using Advance actions and -4\" when using Rush/Charge actions once (next time the effect would apply).",
+      "Rune of Breaking (1)": "Pick one enemy model within 18\" in line of sight, which takes 2 hits with AP(1). This effect is resolved as if the target was a unit of [1].",
+      "Rune of Protection (2)": "Pick up to two friendly units within 12\", which get Enhanced Sturdy once (next time the effect would apply).",
+      "Rune of Smiting (2)": "Pick one enemy unit within 18\" in line of sight, which takes 2 hits with Blast(3).",
+      "Rune of Battle (3)": "Pick up to three friendly units within 18\", which get Rapid Charge once (next time the effect would apply).",
+      "Rune of Cleaving (3)": "Pick one enemy unit within 18\" in line of sight, which takes 6 hits with Scourge."
+    }
+  }
+}
