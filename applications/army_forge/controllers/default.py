@@ -8,7 +8,7 @@ import copy
 import html
 import json
 from ArmyBookUtils.Utils import book_name_to_json_name, json_name_to_book_name
-
+from ArmyListUtils.Utils import calculate_unit_price, add_unit_to_list
 
 armyData = []
 armyDataFiltered = []
@@ -63,38 +63,7 @@ def index():
         redirect(URL('index'))
     elif request.vars.request_id == 'AddUnitToList':
         try:
-            unit_uuid = str(uuid.uuid4())
-            new_unit = copy.deepcopy(session.army_book['Units'][request.vars.unitName])
-            new_unit['unit_type'] = request.vars.unitName
-            new_unit['name'] = ''
-            new_unit['price'] = session.army_book['Units'][request.vars.unitName]["base_points"]
-            new_unit['combined'] = False
-            for upgrade in new_unit['upgrades']:
-                for choice in upgrade['choices']:
-                    choice['selected'] = False
-            campaign_skills = session.army_book.get('CampaignSkills',[])
-            unit_campaign_traits = {}
-            for trait in campaign_skills['Traits']:
-                unit_campaign_traits[trait] = False
-            new_unit['campaign_xp'] = 0
-            new_unit['campaign_traits'] = unit_campaign_traits
-            if 'Hero' in new_unit['perks']:
-                campaign_skillsets = {}
-                unit_campaign_injuries = {}
-                unit_campaign_talents = {}
-                for skillset in campaign_skills['SkillSets']:
-                    campaign_skillset = {}
-                    for skill in campaign_skills['SkillSets'][skillset]:
-                        campaign_skillset[skill] = False
-                    campaign_skillsets[skillset] = campaign_skillset
-                new_unit['campaign_skillsets'] = campaign_skillsets
-                for injury in campaign_skills['Injuries']:
-                    unit_campaign_injuries[injury] = False
-                new_unit['campaign_injuries'] = unit_campaign_injuries
-                for talent in campaign_skills['Talents']:
-                    unit_campaign_talents[talent] = False
-                new_unit['campaign_talents'] = unit_campaign_talents
-            session.army_list["Units"][unit_uuid] = new_unit
+            add_unit_to_list(session.army_list, session.army_book, request.vars.unitName)
             updateListCost()
             session.unit_count = get_unit_count(session.army_list.get('Units',[]))
             session.forceOrgPass = force_org_check(session.army_list)
@@ -124,7 +93,6 @@ def index():
             initSession_api()
         finally:
             redirect(URL('index'))
-
     elif request.vars.request_id == 'updateUnitName':
         unit = session.army_list["Units"][request.vars.unitKey]
         unit["name"] = request.vars.unitName
@@ -357,16 +325,7 @@ def editUnit():
 
 def updateUnitCost(unit_key):
     unit = session.army_list['Units'][unit_key]
-    unit['price'] = unit["base_points"]
-    if unit['combined']:
-        unit['price'] += unit['base_points']
-    for upgrade in unit['upgrades']:
-        for choice in upgrade['choices']:
-            if choice['selected']:
-                unit['price'] += choice['price']
-                if unit['combined'] and upgrade['unit_level']:
-                    #Double the price for combined units with unit-wide upgrades
-                    unit['price'] += choice['price']
+    unit['price'] = calculate_unit_price(unit)
 
 def updateListCost():
     session.army_list['Price'] = 0
