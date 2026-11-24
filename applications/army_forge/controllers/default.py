@@ -119,10 +119,12 @@ def index():
             updateListCost()
             session.unit_count = get_unit_count(session.army_list.get('Units',[]))
             session.forceOrgPass = force_org_check(session.army_list)
-            redirect(URL('index'))
-        except:
+        except Exception as e:
             session.flash = generate_error_message('index:loadArmyList', str(e))
             initSession_api()
+        finally:
+            redirect(URL('index'))
+
     elif request.vars.request_id == 'updateUnitName':
         unit = session.army_list["Units"][request.vars.unitKey]
         unit["name"] = request.vars.unitName
