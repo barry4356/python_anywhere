@@ -106,19 +106,23 @@ def index():
         session.list_name = request.vars.listName
         redirect(URL('index'))
     elif request.vars.request_id == 'loadArmyList':
-        session.list_name = request.vars.armyFileSelection
-        session.army_list_json = book_name_to_json_name(request.vars.armyFileSelection)
-        with open(os.path.join(request.folder, 'private', 'ArmyLists', session.username, session.army_list_json), 'r') as file:
-            session.army_list = json.load(file)
-        session.army_book_json = session.army_list['ArmyBook']
-        session.army_book_name = json_name_to_book_name(session.army_book_json)
-        with open(os.path.join(request.folder, 'private', 'ArmyBooks', session.army_book_json), 'r') as file:
-            session.army_book = json.load(file)
-        session.current_tab = 1
-        updateListCost()
-        session.unit_count = get_unit_count(session.army_list.get('Units',[]))
-        session.forceOrgPass = force_org_check(session.army_list)
-        redirect(URL('index'))
+        try:
+            session.list_name = request.vars.armyFileSelection
+            session.army_list_json = book_name_to_json_name(request.vars.armyFileSelection)
+            with open(os.path.join(request.folder, 'private', 'ArmyLists', session.username, session.army_list_json), 'r') as file:
+                session.army_list = json.load(file)
+            session.army_book_json = session.army_list['ArmyBook']
+            session.army_book_name = json_name_to_book_name(session.army_book_json)
+            with open(os.path.join(request.folder, 'private', 'ArmyBooks', session.army_book_json), 'r') as file:
+                session.army_book = json.load(file)
+            session.current_tab = 1
+            updateListCost()
+            session.unit_count = get_unit_count(session.army_list.get('Units',[]))
+            session.forceOrgPass = force_org_check(session.army_list)
+            redirect(URL('index'))
+        except:
+            session.flash = generate_error_message('index:loadArmyList', str(e))
+            initSession_api()
     elif request.vars.request_id == 'updateUnitName':
         unit = session.army_list["Units"][request.vars.unitKey]
         unit["name"] = request.vars.unitName
@@ -164,13 +168,21 @@ def index():
 # ======== APIs ========
 
 def updateAvailableLists():
-    if not session.username:
-        username = auth.user.email
-        username = username.replace('.','_').replace('@','__')
-        session.username = username
-    ArmyListRepo = os.path.join(request.folder, 'private', 'ArmyLists', session.username)
-    armyListFiles = [f for f in os.listdir(ArmyListRepo) if f.endswith('.json')]
-    session.armyLists = [json_name_to_book_name(armyList) for armyList in armyListFiles]
+    try:
+        if not session.username:
+            username = auth.user.email
+            username = username.replace('.','_').replace('@','__')
+            session.username = username
+        ArmyListRepo = os.path.join(request.folder, 'private', 'ArmyLists', session.username)
+        if not os.path.isdir(ArmyListRepo):
+            session.flash = "No Army Lists Saved"
+            session.armyLists = []
+            return
+        armyListFiles = [f for f in os.listdir(ArmyListRepo) if f.endswith('.json')]
+        session.armyLists = [json_name_to_book_name(armyList) for armyList in armyListFiles]
+    except:
+        session.flash = generate_error_message('updateAvailableLists', str(e))
+        initSession_api()
 
 def updateUpgradedViews():
     #Creates a view of our army list that only accounts for selected upgrades
