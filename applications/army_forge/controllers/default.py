@@ -7,6 +7,7 @@ import uuid
 import copy
 import html
 import json
+from ArmyBookUtils.Utils import book_name_to_json_name, json_name_to_book_name
 
 
 armyData = []
@@ -47,12 +48,12 @@ def index():
         ArmyBookRepo = os.path.join(request.folder, 'private', 'ArmyBooks')
         armyBookFiles = [f for f in os.listdir(ArmyBookRepo) if f.endswith('.json')]
         armyBookFiles.sort()
-        session.armyBooks = [armyBook.replace("_", " ").replace('.json','') for armyBook in armyBookFiles]
+        session.armyBooks = [json_name_to_book_name(armyBook) for armyBook in armyBookFiles]
 
     #======== Form Submissions ========
     if request.vars.request_id == 'selectArmyBook':
         session.army_book_name = request.vars.bookSelection
-        session.army_book_json = request.vars.bookSelection.replace(' ','_') + '.json'
+        session.army_book_json = book_name_to_json_name(request.vars.bookSelection)
         with open(os.path.join(request.folder, 'private', 'ArmyBooks', session.army_book_json), 'r') as file:
             session.army_book = json.load(file)
         session.army_list = {"Units": {}, "ArmyBook": session.army_book_json, "Price": 0, "campaign_filter": False}
@@ -106,11 +107,11 @@ def index():
         redirect(URL('index'))
     elif request.vars.request_id == 'loadArmyList':
         session.list_name = request.vars.armyFileSelection
-        session.army_list_json = request.vars.armyFileSelection.replace(' ','_') + '.json'
+        session.army_list_json = book_name_to_json_name(request.vars.armyFileSelection)
         with open(os.path.join(request.folder, 'private', 'ArmyLists', session.username, session.army_list_json), 'r') as file:
             session.army_list = json.load(file)
         session.army_book_json = session.army_list['ArmyBook']
-        session.army_book_name = session.army_book_json.replace('_',' ').replace('.json','')
+        session.army_book_name = json_name_to_book_name(session.army_book_json)
         with open(os.path.join(request.folder, 'private', 'ArmyBooks', session.army_book_json), 'r') as file:
             session.army_book = json.load(file)
         session.current_tab = 1
@@ -130,10 +131,10 @@ def index():
         filename = request.vars.textFile.filename
         session.army_list = json.load(uploaded_file)
         session.army_book_json = session.army_list['ArmyBook']
-        session.army_book_name = session.army_book_json.replace('_', ' ').replace('.json','')
+        session.army_book_name = json_name_to_book_name(session.army_book_json)
         with open(os.path.join(request.folder, 'private', 'ArmyBooks', session.army_book_json), 'r') as file:
             session.army_book = json.load(file)
-        session.list_name = filename.replace('_',' ').replace('.json','')
+        session.list_name = json_name_to_book_name(filename)
         redirect(URL('index'))
     elif request.vars.request_id == 'embedHero':
         hero = session.army_list["Units"][request.vars.heroKey]
@@ -169,7 +170,7 @@ def updateAvailableLists():
         session.username = username
     ArmyListRepo = os.path.join(request.folder, 'private', 'ArmyLists', session.username)
     armyListFiles = [f for f in os.listdir(ArmyListRepo) if f.endswith('.json')]
-    session.armyLists = [armyList.replace("_", " ").replace('.json','') for armyList in armyListFiles]
+    session.armyLists = [json_name_to_book_name(armyList) for armyList in armyListFiles]
 
 def updateUpgradedViews():
     #Creates a view of our army list that only accounts for selected upgrades
@@ -369,7 +370,7 @@ def saveList():
     armyListRepo = os.path.join(armyListRepo, session.username)
     session.army_list['ArmyBook'] = session.army_book_json
     os.makedirs(armyListRepo, exist_ok=True)
-    list_file_name = session.list_name.replace(' ','_') + '.json'
+    list_file_name = book_name_to_json_name(session.list_name)
     list_file = os.path.join(armyListRepo, list_file_name)
     with open(list_file, "w") as file:
         json.dump(session.army_list, file, indent=2)
@@ -481,7 +482,7 @@ def download_list():
     Download List as a file. Called from Configure List Tab
     '''
     content = json.dumps(session.army_list, indent=2)
-    session.army_list_json = str(session.list_name).replace(' ','_') + '.json'
+    session.army_list_json = book_name_to_json_name(session.list_name)
     # Set headers to force download
     response.headers['Content-Type'] = 'text/plain'
     response.headers['Content-Disposition'] = f'attachment; filename={session.army_list_json}'
@@ -517,7 +518,7 @@ def initSession_api():
         ArmyBookRepo = os.path.join(request.folder, 'private', 'ArmyBooks')
         armyBookFiles = [f for f in os.listdir(ArmyBookRepo) if f.endswith('.json')]
         armyBookFiles.sort()
-        session.armyBooks = [armyBook.replace("_", " ").replace('.json','') for armyBook in armyBookFiles]
+        session.armyBooks = [json_name_to_book_name(armyBook) for armyBook in armyBookFiles]
         session.army_book_name = None
         session.army_book_json = None
         session.army_book = {}
